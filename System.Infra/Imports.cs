@@ -1,0 +1,1 @@
+global using IComparerObject = System.Collections.Generic.IComparer<object>;

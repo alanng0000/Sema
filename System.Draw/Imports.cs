@@ -1,0 +1,16 @@
+global using InfraObject = System.Infra.Object;
+global using InfraRange = System.Infra.Range;
+global using ReadOnlySpanChar = System.ReadOnlySpan<char>;
+global using WinGraphics = System.Drawing.Graphics;
+global using WinPoint = System.Drawing.Point;
+global using WinSize = System.Drawing.Size;
+global using WinRectangle = System.Drawing.Rectangle;
+global using WinColor = System.Drawing.Color;
+global using WinBrush = System.Drawing.Brush;
+global using WinSolidBrush = System.Drawing.SolidBrush;
+global using WinFont = System.Drawing.Font;
+global using WinFontFamily = System.Drawing.FontFamily;
+global using WinFontStyle = System.Drawing.FontStyle;
+global using WinGraphicsUnit = System.Drawing.GraphicsUnit;
+global using WinTextRenderer = System.Windows.Forms.TextRenderer;
+global using WinTextFormatFlags = System.Windows.Forms.TextFormatFlags;

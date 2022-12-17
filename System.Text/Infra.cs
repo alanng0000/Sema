@@ -844,6 +844,21 @@ public class Infra : InfraObject
 
 
 
+
+    public bool IsHexDigit(char o)
+    {
+        if ('a' <= o && o <= 'f')
+        {
+            return true;
+        }
+
+
+        return this.IsDigit(o);
+    }
+
+
+
+
     public bool IsLetter(char o)
     {
         return this.IsLowerLetter(o) | this.IsUpperLetter(o);

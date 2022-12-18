@@ -124,7 +124,7 @@ public class Infra : InfraObject
 
     public string Substring(int row, InfraRange range)
     {
-        if (!this.Check(range))
+        if (!this.Check(row, range))
         {
             return null;
         }
@@ -134,7 +134,7 @@ public class Infra : InfraObject
 
         Line line;
 
-        line = this.Text.Lines.Get(range.Pos.Row);
+        line = this.Text.Lines.Get(row);
 
 
 
@@ -147,7 +147,7 @@ public class Infra : InfraObject
         string s;
 
 
-        s = new string(line.Chars.Data, range.Pos.Col, count);
+        s = new string(line.Chars.Data, range.Start, count);
 
         
         return s;

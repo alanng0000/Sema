@@ -52,7 +52,7 @@ public class Infra : InfraObject
 
 
 
-    private int Count(Range range)
+    public int Count(Range range)
     {
         return range.End - range.Pos.Col;
     }

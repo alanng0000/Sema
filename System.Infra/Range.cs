@@ -4,6 +4,14 @@ namespace System.Infra;
 
 public struct Range
 {
+    public bool Init()
+    {
+        return true;
+    }
+    
+
+
+
     public int Start { get; set; }
 
 

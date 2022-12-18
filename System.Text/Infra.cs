@@ -52,20 +52,21 @@ public class Infra : InfraObject
 
 
 
-    public int Count(Range range)
+
+    private int Count(InfraRange range)
     {
-        return range.End - range.Pos.Col;
+        return this.Ranges.Count(range);
     }
 
 
 
 
 
-    public bool Equal(Range range, string other)
+    public bool Equal(int row, InfraRange range, string other)
     {
         int count;
-            
-        count = this.Count(range);
+        
+        count = this.Ranges.Count(range);
 
 
 
@@ -76,16 +77,13 @@ public class Infra : InfraObject
         }
 
 
-
-        int row;
-
-        row = range.Pos.Row;
         
 
 
         Line line;
 
         line = this.Text.Lines.Get(row);
+
 
 
 
@@ -98,7 +96,7 @@ public class Infra : InfraObject
 
         int start;
 
-        start = range.Pos.Col;
+        start = range.Start;
 
 
 
@@ -124,7 +122,7 @@ public class Infra : InfraObject
 
 
 
-    public string Substring(Range range)
+    public string Substring(int row, InfraRange range)
     {
         if (!this.Check(range))
         {
@@ -260,14 +258,8 @@ public class Infra : InfraObject
 
 
 
-    public bool Check(Range range)
+    public bool Check(int row, InfraRange range)
     {
-        int row;
-
-        row = range.Pos.Row;
-
-
-
         if (!this.CheckRow(row))
         {
             return false;
@@ -284,7 +276,7 @@ public class Infra : InfraObject
 
         int col;
 
-        col = range.Pos.Col;
+        col = range.Start;
 
 
 
@@ -295,43 +287,16 @@ public class Infra : InfraObject
 
 
 
-
-
-        int count;
-
-        count = this.Count(range);
-
-
-
-
-        if (count < 0)
-        {
-            return false;
-        }
-        
-
-
-
-        if (!(count < 1))
-        {
-            int u;
-
-            u = count - 1;
-
-
-
-            int k;
-
-            k = col + u;
+        col = range.End - 1;
 
             
 
 
-            if (!this.CheckCol(line, k))
-            {
-                return false;
-            }
+        if (!this.CheckCol(line, col))
+        {
+            return false;
         }
+        
 
 
 
@@ -359,13 +324,30 @@ public class Infra : InfraObject
     }
 
 
-    
+
+
+
+    private Pos Pos(int row, int col)
+    {
+        Pos pos;
+
+        pos = new Pos();
+
+        pos.Init();
+
+        pos.Row = row;
+
+        pos.Col = col;
+
+
+        return pos;
+    }
 
 
 
 
 
-    public string Value(Range range)
+    public string Value(int row, InfraRange range)
     {
         if (this.Count(range) < 2)
         {
@@ -375,7 +357,7 @@ public class Infra : InfraObject
 
 
 
-        if (!this.IsQuote(range.Pos))
+        if (!this.IsQuote(this.Pos(row, range.Start)))
         {
             return null;
         }
@@ -406,7 +388,7 @@ public class Infra : InfraObject
 
 
 
-        start = range.Pos.Col + 1;
+        start = range.Start + 1;
 
 
 
@@ -419,18 +401,14 @@ public class Infra : InfraObject
 
         Pos pos;
 
-        pos = new Pos();
-
-        pos.Row = range.Pos.Row;
+        pos = this.Pos(row, 0);
 
 
 
 
         Pos posA;
 
-        posA = new Pos();
-
-        posA.Row = range.Pos.Row;
+        posA = this.Pos(row, 0);
 
 
 
@@ -612,7 +590,7 @@ public class Infra : InfraObject
 
 
 
-    public ulong? IntValue(Range range)
+    public ulong? IntValue(int row, InfraRange range)
     {
         ulong j;
 
@@ -630,23 +608,17 @@ public class Infra : InfraObject
 
 
 
-        Pos pos;
-
-
-        pos = new Pos();
-
-
-        pos.Row = range.Pos.Row;
-
-
-
-
-
+    
         int start;
 
 
-        start = range.Pos.Col;
+        start = range.Start;
 
+
+
+        Pos pos;
+
+        pos = this.Pos(row, 0);
 
 
 

@@ -211,9 +211,9 @@ public class Infra : InfraObject
 
 
 
-    public bool EndWith(Range range, char oc)
+    public bool EndWith(int row, InfraRange range, char oc)
     {
-        if (!this.Check(range))
+        if (!this.Check(row, range))
         {
             return false;
         }
@@ -231,10 +231,8 @@ public class Infra : InfraObject
         Pos t;
 
 
-        t = range.Pos;
-
-
-        t.Col = range.End - 1;
+        t = this.Pos(row, range.End - 1);
+        
         
 
 

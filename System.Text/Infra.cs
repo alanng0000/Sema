@@ -236,7 +236,7 @@ public class Infra : InfraObject
         t = range.Pos;
 
 
-        t.Col = t.Col + this.Count(range) - 1;
+        t.Col = range.End - 1;
         
 
 

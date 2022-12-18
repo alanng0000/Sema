@@ -177,9 +177,9 @@ public class Infra : InfraObject
 
 
 
-    public bool StartWith(Range range, char oc)
+    public bool StartWith(int row, InfraRange range, char oc)
     {
-        if (!this.Check(range))
+        if (!this.Check(row, range))
         {
             return false;
         }
@@ -195,7 +195,7 @@ public class Infra : InfraObject
 
         char occ;
 
-        occ = this.Char(range.Pos);
+        occ = this.Char(this.Pos(row, range.Start));
 
 
 

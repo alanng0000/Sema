@@ -52,11 +52,21 @@ public class Infra : InfraObject
 
 
 
+    private int Count(Range range)
+    {
+        return range.End - range.Pos.Col;
+    }
+
+
+
+
+
     public bool Equal(Range range, string other)
     {
         int count;
             
-        count = range.Count;
+        count = this.Count(range);
+
 
 
 
@@ -130,10 +140,16 @@ public class Infra : InfraObject
 
 
 
+        int count;
+
+        count = this.Count(range);
+
+
+
         string s;
 
 
-        s = new string(line.Chars.Data, range.Pos.Col, range.Count);
+        s = new string(line.Chars.Data, range.Pos.Col, count);
 
         
         return s;
@@ -172,7 +188,7 @@ public class Infra : InfraObject
 
 
 
-        if (range.Count < 1)
+        if (this.Count(range) < 1)
         {
             return false;
         }
@@ -206,7 +222,7 @@ public class Infra : InfraObject
 
 
 
-        if (range.Count < 1)
+        if (this.Count(range) < 1)
         {
             return false;
         }
@@ -220,7 +236,7 @@ public class Infra : InfraObject
         t = range.Pos;
 
 
-        t.Col = t.Col + range.Count - 1;
+        t.Col = t.Col + this.Count(range) - 1;
         
 
 
@@ -283,7 +299,7 @@ public class Infra : InfraObject
 
         int count;
 
-        count = range.Count;
+        count = this.Count(range);
 
 
 
@@ -351,7 +367,7 @@ public class Infra : InfraObject
 
     public string Value(Range range)
     {
-        if (range.Count < 2)
+        if (this.Count(range) < 2)
         {
             return null;
         }
@@ -371,7 +387,7 @@ public class Infra : InfraObject
         int count;
 
 
-        count = range.Count - 1;
+        count = this.Count(range) - 1;
 
 
 
@@ -609,7 +625,7 @@ public class Infra : InfraObject
         int count;
 
 
-        count = range.Count;
+        count = this.Count(range);
 
 
 

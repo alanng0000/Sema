@@ -16,5 +16,5 @@ public struct Range
 
 
 
-    public int Count;
+    public int End;
 }

@@ -29,15 +29,6 @@ public class Read : InfraObject
         this.RangeInfra.Init();
 
 
-
-
-
-        this.StringInfra = new StringInfra();
-
-
-
-        this.StringInfra.Init();
-
         
 
 
@@ -56,12 +47,6 @@ public class Read : InfraObject
 
 
     private RangeInfra RangeInfra { get; set; }
-
-
-
-
-
-    private StringInfra StringInfra { get; set; }
 
 
 
@@ -828,10 +813,10 @@ public class Read : InfraObject
 
 
 
-        Range range;
+        InfraRange range;
 
 
-        range = this.Range(0, s.Length);
+        range = this.InfraRange(0, s.Length);
 
 
 
@@ -870,9 +855,9 @@ public class Read : InfraObject
 
 
 
-        Range range;
+        InfraRange range;
 
-        range = this.Range(0, end);
+        range = this.InfraRange(0, end);
 
 
 
@@ -902,11 +887,11 @@ public class Read : InfraObject
 
 
 
-    private Range Range(int start, int end)
+    private InfraRange InfraRange(int start, int end)
     {
-        Range range;
+        InfraRange range;
 
-        range = new Range();
+        range = new InfraRange();
 
         range.Init();
 
@@ -915,7 +900,7 @@ public class Read : InfraObject
         range.End = end;
 
 
-        Range ret;
+        InfraRange ret;
 
         ret = range;
 

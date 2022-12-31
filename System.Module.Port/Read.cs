@@ -53,7 +53,7 @@ public class Read : InfraObject
 
 
 
-    public Text Text { get; set; }
+    public TextText Text { get; set; }
 
 
 
@@ -799,6 +799,7 @@ public class Read : InfraObject
         s = this.LineText();
 
 
+
         if (this.Null(s))
         {
             return null;
@@ -807,31 +808,29 @@ public class Read : InfraObject
 
 
 
-        this.StringInfra.String = s;
+        ulong k;
 
 
 
 
+        bool b;
 
-        InfraRange range;
 
-
-        range = this.InfraRange(0, s.Length);
-
+        b = ulong.TryParse(s, out k);
 
 
 
-        ulong? o;
-
-
-        o = this.StringInfra.IntValue(range);
+        if (!b)
+        {
+            return null;
+        }
 
 
 
 
         ulong? ret;
 
-        ret = o;
+        ret = k;
 
 
         return ret;
@@ -857,7 +856,7 @@ public class Read : InfraObject
 
         InfraRange range;
 
-        range = this.InfraRange(0, end);
+        range = this.Range(0, end);
 
 
 
@@ -887,7 +886,7 @@ public class Read : InfraObject
 
 
 
-    private InfraRange InfraRange(int start, int end)
+    private InfraRange Range(int start, int end)
     {
         InfraRange range;
 

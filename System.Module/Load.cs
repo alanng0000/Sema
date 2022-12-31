@@ -92,6 +92,7 @@ public class Load : InfraObject
 
 
 
+
     public bool Execute()
     {
         string modulePath;
@@ -100,6 +101,27 @@ public class Load : InfraObject
 
 
 
+
+        byte[] u;
+
+
+        u = File.ReadAllBytes(modulePath);
+
+
+
+
+
+        InfraData data;
+
+
+        data = new InfraData();
+
+
+        data.Value = u;
+
+
+
+        this.Result = data;
 
 
         return true;

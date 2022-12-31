@@ -4,7 +4,7 @@ namespace System.Module;
 
 
 
-public class Read : InfraObject
+public class TextRead : InfraObject
 {
     public override bool Init()
     {

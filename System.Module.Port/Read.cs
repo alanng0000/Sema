@@ -4,7 +4,7 @@ namespace System.Module.Port;
 
 
 
-public class Read : Object
+public class Read : InfraObject
 {
     public override bool Init()
     {

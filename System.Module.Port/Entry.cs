@@ -5,7 +5,7 @@ namespace System.Module.Port;
 
 
 
-public class Entry : Object
+public class Entry : InfraObject
 {
     public ClassName Class { get; set; }
 }

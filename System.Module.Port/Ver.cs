@@ -5,7 +5,7 @@ namespace System.Module.Port;
 
 
 
-public class Ver : Object
+public class Ver : InfraObject
 {
     public ulong Value { get; set; }
 }

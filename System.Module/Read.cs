@@ -59,7 +59,19 @@ public class Read : InfraObject
         ver = this.ExecuteVer();
 
 
-        if (!this.Null(ver))
+        if (this.Null(ver))
+        {
+            return null;
+        }
+
+
+
+        ImportList import;
+
+        import = this.ExecuteImportList();
+
+
+        if (this.Null(import))
         {
             return null;
         }
@@ -331,6 +343,39 @@ public class Read : InfraObject
         ret.Class = varClass;
 
         ret.Name = name;
+
+        return ret;
+    }
+
+
+
+
+
+
+    private Export ExecuteExport()
+    {
+        ClassName varClass;
+
+
+        varClass = this.ExecuteClassName();
+
+
+
+        if (this.Null(varClass))
+        {
+            return null;
+        }
+
+
+
+
+        Export ret;
+
+        ret = new Export();
+
+        ret.Init();
+
+        ret.Class = varClass;
 
         return ret;
     }

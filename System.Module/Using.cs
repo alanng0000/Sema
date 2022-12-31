@@ -7,3 +7,5 @@ global using TextText = System.Text.Text;
 global using Line = System.Text.Line;
 global using TextInfra = System.Text.Infra;
 global using StringBuilder = System.Text.StringBuilder;
+global using File = System.IO.File;
+global using Path = System.IO.Path;

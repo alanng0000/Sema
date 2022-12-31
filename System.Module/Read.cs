@@ -185,6 +185,78 @@ public class Read : InfraObject
 
 
 
+    
+    private ImportList ExecuteImportList()
+    {
+        ulong? u;
+
+
+        u = this.Count();
+
+
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        ulong count;
+
+        count = u.Value;
+
+
+
+        ulong i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+
+
+
+
+            i = i + 1;
+        }
+
+
+
+        return null;
+    }
+
+
+
+
+
+
+    private Import ExecuteImport()
+    {
+        return null;
+    }
+
+
+
+
+
+
+    private ulong? Count()
+    {
+        ulong? u;
+
+        u = this.ExecuteInt();
+
+
+        return u;
+    }
+    
+
+
+
+
 
     private string NameValue()
     {

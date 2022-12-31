@@ -54,12 +54,26 @@ public class Read : InfraObject
 
 
 
+        Ver ver;
+
+        ver = this.ExecuteVer();
+
+
+        if (!this.Null(ver))
+        {
+            return null;
+        }
+
+
+
+
         Module ret;
 
         ret = new Module();
 
         ret.Name = name;
 
+        ret.Ver = ver;
 
         return ret;
     }
@@ -127,6 +141,42 @@ public class Read : InfraObject
 
         ret.Value = value;
 
+
+        return ret;
+    }
+
+
+
+
+
+    private Ver ExecuteVer()
+    {
+        ulong? u;
+
+        u = this.ExecuteInt();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        ulong value;
+
+
+        value = u.Value;
+
+
+
+        Ver ret;
+
+        ret = new Ver();
+
+        ret.Init();
+
+        ret.Value = value;
 
         return ret;
     }

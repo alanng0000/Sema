@@ -66,6 +66,7 @@ public class Read : InfraObject
 
 
 
+
         ImportList import;
 
         import = this.ExecuteImportList();
@@ -79,6 +80,20 @@ public class Read : InfraObject
 
 
 
+        ExportList export;
+
+        export = this.ExecuteExportList();
+
+
+        if (this.Null(export))
+        {
+            return null;
+        }
+
+
+
+
+
         Module ret;
 
         ret = new Module();
@@ -86,6 +101,10 @@ public class Read : InfraObject
         ret.Name = name;
 
         ret.Ver = ver;
+
+        ret.Import = import;
+
+        ret.Export = export;
 
         return ret;
     }
@@ -346,6 +365,87 @@ public class Read : InfraObject
 
         return ret;
     }
+
+
+
+
+
+
+
+    private ExportList ExecuteExportList()
+    {
+        ulong? u;
+
+
+        u = this.Count();
+
+
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+
+        ExportList list;
+
+        list = new ExportList();
+
+        list.Init();
+
+
+
+
+
+        Export export;
+
+
+
+
+        ulong count;
+
+        count = u.Value;
+
+
+
+
+        ulong i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            export = this.ExecuteExport();
+
+
+            if (this.Null(export))
+            {
+                return null;
+            }
+
+
+
+            list.Add(export);
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ExportList ret;
+
+        ret = list;
+
+        return ret;
+    }
+
+
 
 
 

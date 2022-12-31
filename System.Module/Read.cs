@@ -203,9 +203,26 @@ public class Read : InfraObject
 
 
 
+
+        ImportList list;
+
+        list = new ImportList();
+
+        list.Init();
+
+
+
+
+
+        Import import;
+
+
+
+
         ulong count;
 
         count = u.Value;
+
 
 
 
@@ -216,7 +233,17 @@ public class Read : InfraObject
 
         while (i < count)
         {
+            import = this.ExecuteImport();
 
+
+            if (this.Null(import))
+            {
+                return null;
+            }
+
+
+
+            list.Add(import);
 
 
 
@@ -225,7 +252,11 @@ public class Read : InfraObject
 
 
 
-        return null;
+        ImportList ret;
+
+        ret = list;
+
+        return ret;
     }
 
 
@@ -235,7 +266,73 @@ public class Read : InfraObject
 
     private Import ExecuteImport()
     {
-        return null;
+        ModuleName module;
+
+        module = this.ExecuteModuleName();
+
+
+        if (this.Null((module)))
+        {
+            return null;
+        }
+
+
+
+
+        Ver ver;
+
+        ver = this.ExecuteVer();
+
+
+        if (this.Null(ver))
+        {
+            return null;
+        }
+
+
+
+
+        ClassName varClass;
+
+        varClass = this.ExecuteClassName();
+
+
+        if (this.Null(varClass))
+        {
+            return null;
+        }
+
+
+
+
+
+        ClassName name;
+
+        name = this.ExecuteClassName();
+
+
+        if (this.Null(name))
+        {
+            return null;
+        }
+
+
+
+        Import ret;
+
+        ret = new Import();
+
+        ret.Init();
+
+        ret.Module = module;
+
+        ret.Ver = ver;
+
+        ret.Class = varClass;
+
+        ret.Name = name;
+
+        return ret;
     }
 
 

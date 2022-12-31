@@ -58,7 +58,7 @@ public class Read : InfraObject
 
 
 
-        Ver ver;
+        ModuleVer ver;
 
         ver = this.ExecuteVer();
 
@@ -202,7 +202,7 @@ public class Read : InfraObject
 
 
 
-    private Ver ExecuteVer()
+    private ModuleVer ExecuteVer()
     {
         ulong? u;
 
@@ -223,9 +223,9 @@ public class Read : InfraObject
 
 
 
-        Ver ret;
+        ModuleVer ret;
 
-        ret = new Ver();
+        ret = new ModuleVer();
 
         ret.Init();
 
@@ -332,7 +332,7 @@ public class Read : InfraObject
 
 
 
-        Ver ver;
+        ModuleVer ver;
 
         ver = this.ExecuteVer();
 

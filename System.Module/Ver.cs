@@ -5,7 +5,7 @@ namespace System.Module;
 
 
 
-public class Ver : InfraObject
+public class ModuleVer : InfraObject
 {
     public ulong Value { get; set; }
 }

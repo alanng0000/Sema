@@ -12,7 +12,7 @@ public class Import : InfraObject
 
 
 
-    public Ver Ver { get; set; }
+    public ModuleVer Ver { get; set; }
 
 
 

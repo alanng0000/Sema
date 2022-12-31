@@ -11,7 +11,7 @@ public class Module : InfraObject
 
 
 
-    public Ver Ver { get; set; }
+    public ModuleVer Ver { get; set; }
 
 
 

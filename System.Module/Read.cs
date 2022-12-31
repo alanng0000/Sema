@@ -622,12 +622,6 @@ public class Read : InfraObject
 
 
 
-        if (this.Null(varClass))
-        {
-            return null;
-        }
-
-
 
         this.NextRow();
 

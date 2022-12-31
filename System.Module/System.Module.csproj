@@ -7,7 +7,8 @@
 
     <ItemGroup>
         <ProjectReference Include="../System.Infra/System.Infra.csproj" />
-        <ProjectReference Include="../System.Module.Port/System.Module.Port.csproj" />
+        <ProjectReference Include="../System.List/System.List.csproj" />
+        <ProjectReference Include="../System.Text/System.Text.csproj" />
     </ItemGroup>
 
 </Project>

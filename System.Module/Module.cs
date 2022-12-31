@@ -3,7 +3,7 @@ namespace System.Module;
 
 
 
-public class Module : Object
+public class Module : InfraObject
 {
     public PortPort Port { get; set; }
 }

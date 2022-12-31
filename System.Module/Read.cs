@@ -17,9 +17,13 @@ public class Read : InfraObject
 
 
 
+    public Module Result { get; set; }
 
 
-    public Module Execute()
+
+
+
+    public bool Execute()
     {
         Module module;
 
@@ -29,12 +33,11 @@ public class Read : InfraObject
 
 
 
-        Module ret;
-
-        ret = module;
+        this.Result = module;
 
 
-        return ret;
+
+        return true;
     }
 
 
@@ -54,6 +57,7 @@ public class Read : InfraObject
 
 
 
+
         Ver ver;
 
         ver = this.ExecuteVer();
@@ -63,6 +67,7 @@ public class Read : InfraObject
         {
             return null;
         }
+
 
 
 
@@ -94,6 +99,20 @@ public class Read : InfraObject
 
 
 
+        Entry entry;
+
+        entry = this.ExecuteEntry();
+
+
+        if (this.Null(entry))
+        {
+            return null;
+        }
+
+
+
+
+
         Module ret;
 
         ret = new Module();
@@ -106,8 +125,11 @@ public class Read : InfraObject
 
         ret.Export = export;
 
+        ret.Entry = entry;
+
         return ret;
     }
+
 
 
 
@@ -479,6 +501,32 @@ public class Read : InfraObject
 
         return ret;
     }
+
+
+
+
+
+
+    private Entry ExecuteEntry()
+    {
+        ClassName varClass;
+
+
+        varClass = this.ExecuteClassName();
+
+
+
+        Entry ret;
+
+        ret = new Entry();
+
+        ret.Init();
+
+        ret.Class = varClass;
+
+        return ret;
+    }
+
 
 
 

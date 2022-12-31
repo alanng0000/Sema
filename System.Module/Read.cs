@@ -60,7 +60,7 @@ public class Read : InfraObject
 
         ModuleVer ver;
 
-        ver = this.ExecuteVer();
+        ver = this.ExecuteModuleVer();
 
 
         if (this.Null(ver))
@@ -202,7 +202,7 @@ public class Read : InfraObject
 
 
 
-    private ModuleVer ExecuteVer()
+    private ModuleVer ExecuteModuleVer()
     {
         ulong? u;
 
@@ -334,7 +334,7 @@ public class Read : InfraObject
 
         ModuleVer ver;
 
-        ver = this.ExecuteVer();
+        ver = this.ExecuteModuleVer();
 
 
         if (this.Null(ver))

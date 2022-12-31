@@ -128,7 +128,7 @@ public class TextRead : InfraObject
 
         ModuleVer ver;
 
-        ver = this.Ver();
+        ver = this.ModuleVer();
 
 
         if (this.Null(ver))
@@ -376,7 +376,7 @@ public class TextRead : InfraObject
         ModuleVer ver;
 
 
-        ver = this.Ver();
+        ver = this.ModuleVer();
 
 
 
@@ -740,7 +740,7 @@ public class TextRead : InfraObject
 
 
 
-    private ModuleVer Ver()
+    private ModuleVer ModuleVer()
     {
         ulong? o;
 

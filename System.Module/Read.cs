@@ -12,18 +12,142 @@ public class Read : InfraObject
 
 
 
-    private ulong Index { get; set; }
+    public ulong Index { get; set; }
+
+
+
 
 
 
     public Module Execute()
     {
+        Module module;
+
+
+        module = this.ExecuteModule();
 
 
 
 
-        return null;
+        Module ret;
+
+        ret = module;
+
+
+        return ret;
     }
+
+
+
+
+    private Module ExecuteModule()
+    {
+        ModuleName name;
+
+        name = this.ExecuteModuleName();
+
+
+        if (this.Null(name))
+        {
+            return null;
+        }
+
+
+
+        Module ret;
+
+        ret = new Module();
+
+        ret.Name = name;
+
+
+        return ret;
+    }
+
+
+
+
+
+    private ModuleName ExecuteModuleName()
+    {
+        string value;
+
+
+        value = this.NameValue();
+
+
+
+        if (this.Null(value))
+        {
+            return null;
+        }
+
+
+
+
+        ModuleName ret;
+
+        ret = new ModuleName();
+
+        ret.Init();
+
+        ret.Value = value;
+
+
+        return ret;
+    }
+
+
+
+
+
+
+    private ClassName ExecuteClassName()
+    {
+        string value;
+
+
+        value = this.NameValue();
+
+
+
+        if (this.Null(value))
+        {
+            return null;
+        }
+
+
+
+
+        ClassName ret;
+
+        ret = new ClassName();
+
+        ret.Init();
+
+        ret.Value = value;
+
+
+        return ret;
+    }
+
+
+
+
+
+
+    private string NameValue()
+    {
+        string value;
+
+        value = this.ExecuteString();
+
+
+
+        return value;
+    }
+
+
 
 
 
@@ -33,6 +157,9 @@ public class Read : InfraObject
         get
         {
             return sizeof(ulong);
+        }
+        set
+        {
         }
     }
 
@@ -44,9 +171,10 @@ public class Read : InfraObject
         {
             return 8;
         }
+        set
+        {
+        }
     }
-
-
 
 
 
@@ -57,12 +185,108 @@ public class Read : InfraObject
         ulong a;
 
 
-        a = (ulong)this.Data.Value.Length;
+        a = this.ULong(this.Data.Value.Length);
 
 
 
         return this.Index + count <= a;
     }
+
+
+
+
+
+    private string ExecuteString()
+    {
+        ulong? u;
+
+
+        u = this.ExecuteInt();
+
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+
+        ulong count;
+
+        count = u.Value;
+
+
+
+
+        if (!this.CheckByteAvailable(count))
+        {
+            return null;
+        }
+
+
+
+
+        StringBuilder sb;
+
+
+        sb = new StringBuilder();
+
+
+
+
+        char oc;
+
+
+        byte ob;
+
+
+
+
+        ulong i;
+
+
+        i = 0;
+
+
+
+        while (i < count)
+        {
+            ob = this.Byte();
+
+
+
+            oc = (char)ob;
+
+
+
+            sb.Append(oc);
+
+
+
+            i = i + 1;
+        }
+
+
+
+        string s;
+
+
+        s = sb.ToString();
+
+
+
+
+        string ret;
+
+        ret = s;
+
+
+        return ret;
+    }
+
+
 
 
 
@@ -178,6 +402,25 @@ public class Read : InfraObject
         ret = ob;
 
         return ret;
+    }
+
+
+
+
+
+
+    private bool Null(object o)
+    {
+        return o == null;
+    }
+
+
+
+
+
+    private ulong ULong(int k)
+    {
+        return (ulong)k;
     }
 
 

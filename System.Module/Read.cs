@@ -66,7 +66,7 @@ public class Read : InfraObject
 
 
 
-    public Port Execute()
+    public Module Execute()
     {
         this.TextInfra.Text = this.Text;
 
@@ -77,12 +77,12 @@ public class Read : InfraObject
 
 
 
-        Port port;
+        Module module;
 
-        port = this.Port();
+        module = this.Module();
 
 
-        if (this.Null(port))
+        if (this.Null(module))
         {
             return null;
         }
@@ -90,9 +90,9 @@ public class Read : InfraObject
 
 
 
-        Port ret;
+        Module ret;
 
-        ret = port;
+        ret = module;
 
 
         return ret;
@@ -103,7 +103,7 @@ public class Read : InfraObject
 
 
 
-    private Port Port()
+    private Module Module()
     {
         ModuleName name;
 
@@ -224,10 +224,10 @@ public class Read : InfraObject
 
 
 
-        Port ret;
+        Module ret;
 
 
-        ret = new Port();
+        ret = new Module();
 
 
         ret.Init();

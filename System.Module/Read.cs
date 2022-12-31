@@ -204,20 +204,12 @@ public class Read : InfraObject
         Entry entry;
 
 
-        entry = null;
+        entry = this.Entry();
 
 
-
-
-        if (this.Row < this.Text.Lines.Count)
+        if (this.Null(entry))
         {
-            entry = this.Entry();
-
-
-            if (this.Null(entry))
-            {
-                return null;
-            }
+            return null;
         }
         
 

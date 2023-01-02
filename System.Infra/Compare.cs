@@ -9,4 +9,13 @@ public class Compare : Object
     {
         return 0;
     }
+
+
+
+
+
+    protected bool Null(object o)
+    {
+        return o == null;
+    }
 }

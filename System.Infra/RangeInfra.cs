@@ -36,6 +36,30 @@ public class RangeInfra : Object
 
 
 
+    public Range Range(int start, int end)
+    {
+        Range range;
+
+        range = new Range();
+
+        range.Init();
+
+        range.Start = start;
+
+        range.End = end;
+
+
+        Range ret;
+
+        ret = range;
+
+
+        return ret;
+    }
+
+
+
+
 
     public int Count(Range range)
     {

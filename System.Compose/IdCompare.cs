@@ -56,12 +56,4 @@ public class IdCompare : Compare
 
         return ret;
     }
-
-
-
-
-    private bool Null(object o)
-    {
-        return o == null;
-    }
 }

@@ -316,7 +316,7 @@ public class Infra : InfraObject
 
 
 
-    private bool CheckRow(int row)
+    public bool CheckRow(int row)
     {
         return (0 <= row & row < this.Text.Lines.Count);
     }
@@ -325,7 +325,7 @@ public class Infra : InfraObject
 
 
 
-    private bool CheckCol(Line line, int col)
+    public bool CheckCol(Line line, int col)
     {
         return (0 <= col & col < line.Chars.Count);
     }

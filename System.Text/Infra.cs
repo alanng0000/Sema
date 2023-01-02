@@ -82,7 +82,7 @@ public class Infra : InfraObject
 
         Line line;
 
-        line = this.Text.Lines.Get(row);
+        line = this.Line(row);
 
 
 
@@ -134,7 +134,7 @@ public class Infra : InfraObject
 
         Line line;
 
-        line = this.Text.Lines.Get(row);
+        line = this.Line(row);
 
 
 
@@ -161,7 +161,7 @@ public class Infra : InfraObject
     {
         Line line;
 
-        line = this.Text.Lines.Get(pos.Row);
+        line = this.Line(pos.Row);
 
 
 
@@ -268,7 +268,7 @@ public class Infra : InfraObject
 
         Line line;
 
-        line = this.Text.Lines.Get(row);
+        line = this.Line(row);
 
 
 
@@ -302,6 +302,15 @@ public class Infra : InfraObject
         return true;
     }
 
+
+
+
+
+
+    public Line Line(int row)
+    {
+        return (Line)this.Text.Lines.Get(row);
+    }
 
 
 

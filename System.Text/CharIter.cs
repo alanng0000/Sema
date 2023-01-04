@@ -6,7 +6,7 @@ namespace System.Text;
 
 public struct CharIter
 {
-    internal Chars Chars { get; set; }
+    internal CharList Chars { get; set; }
 
 
 

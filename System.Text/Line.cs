@@ -13,10 +13,10 @@ public class Line : InfraObject
 
 
 
-        this.Chars = new Chars();
+        this.Char = new CharList();
 
 
-        this.Chars.Init();
+        this.Char.Init();
 
 
 
@@ -26,5 +26,5 @@ public class Line : InfraObject
 
 
 
-    public Chars Chars { get; private set; }
+    public CharList Char { get; private set; }
 }

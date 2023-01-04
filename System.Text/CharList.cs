@@ -5,7 +5,7 @@ namespace System.Text;
 
 
 
-public class Chars : InfraObject
+public class CharList : InfraObject
 {
     public override bool Init()
     {

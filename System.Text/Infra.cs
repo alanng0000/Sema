@@ -309,7 +309,7 @@ public class Infra : InfraObject
 
     public Line Line(int row)
     {
-        return (Line)this.Text.Lines.Get(row);
+        return (Line)this.Text.Line.Get(row);
     }
 
 
@@ -318,7 +318,7 @@ public class Infra : InfraObject
 
     public bool CheckRow(int row)
     {
-        return (0 <= row & row < this.Text.Lines.Count);
+        return (0 <= row & row < this.Text.Line.Count);
     }
 
 

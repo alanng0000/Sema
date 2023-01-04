@@ -13,10 +13,10 @@ public class Text : InfraObject
 
 
 
-        this.Lines = new Lines();
+        this.Line = new LineList();
 
 
-        this.Lines.Init();
+        this.Line.Init();
 
 
 
@@ -26,5 +26,5 @@ public class Text : InfraObject
 
 
 
-    public Lines Lines { get; private set; }
+    public LineList Line { get; private set; }
 }

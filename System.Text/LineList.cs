@@ -3,7 +3,7 @@ namespace System.Text;
 
 
 
-public class Lines : InfraObject
+public class LineList : InfraObject
 {
     private ListLine Data { get; set; }
 

@@ -87,9 +87,9 @@ public class Infra : InfraObject
 
 
 
-        Chars chars;
+        CharList varChar;
 
-        chars = line.Chars;
+        varChar = line.Char;
 
 
 
@@ -100,19 +100,34 @@ public class Infra : InfraObject
 
 
 
+        char oca;
+
+        char ocb;
+
+
+
+
         int i;
 
         i = 0;
 
         while (i < count)
         {
-            if (chars.Get(start + i) != other[i])
+            oca = varChar.Get(start + i);
+
+
+            ocb = other[i];
+
+
+
+            if (!(oca == ocb))
             {
                 return false;
             }
 
 
-            i++;
+
+            i = i + 1;
         }
 
 
@@ -147,7 +162,7 @@ public class Infra : InfraObject
         string s;
 
 
-        s = new string(line.Chars.Data, range.Start, count);
+        s = new string(line.Char.Data, range.Start, count);
 
         
         return s;
@@ -167,7 +182,7 @@ public class Infra : InfraObject
 
         char oc;
 
-        oc = line.Chars.Data[pos.Col];
+        oc = line.Char.Data[pos.Col];
 
 
         return oc;
@@ -327,7 +342,7 @@ public class Infra : InfraObject
 
     public bool CheckCol(Line line, int col)
     {
-        return (0 <= col & col < line.Chars.Count);
+        return (0 <= col & col < line.Char.Count);
     }
 
 

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="../System.Infra/System.Infra.csproj" />
+        <ProjectReference Include="../System.List/System.List.csproj" />
+        <ProjectReference Include="../System.Compose/System.Compose.csproj" />
+        <ProjectReference Include="../System.Control/System.Control.csproj" />
+        <ProjectReference Include="../System.Draw/System.Draw.csproj" />
+    </ItemGroup>
+
+</Project>

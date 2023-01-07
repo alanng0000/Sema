@@ -17,14 +17,15 @@ public class ColorBrush : Brush
 
 
 
-        WinColor c;
+
+        WinColor winColor;
 
 
-        c = WinColor.FromArgb(this.Color.Alpha, this.Color.Red, this.Color.Green, this.Color.Blue);
+        winColor = Create.This.CreateWinColor(this.Color);
 
 
 
-        this.WinBrush = new WinSolidBrush(c);
+        this.WinBrush = new WinSolidBrush(winColor);
 
 
 

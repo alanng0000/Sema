@@ -23,11 +23,16 @@ public class Font : InfraObject
         
 
 
+        int end;
 
-        if (100 < this.Size)
+        end = 100;
+
+
+        if (!(this.Size < end))
         {
-            this.Size = 100;
+            this.Size = end - 1;
         }
+
 
 
 

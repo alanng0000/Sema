@@ -5,7 +5,7 @@ namespace System.Draw;
 
 public class Draw : InfraObject
 {
-    public WinGraphics WinGraphics { get; set; }
+    private WinGraphics WinGraphic { get; set; }
 
 
 
@@ -34,7 +34,43 @@ public class Draw : InfraObject
 
 
 
+
+
+    public bool SetWin(WinGraphics graphic)
+    {
+        this.WinGraphic = graphic;
+
+
+
+        this.SetGraphicDefault(this.WinGraphic);
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private bool SetGraphicDefault(WinGraphics g)
+    {
+        g.TextRenderingHint = WinTextRenderingHint.ClearTypeGridFit;
+
+
+        g.PageUnit = WinGraphicsUnit.Pixel;
+
+
+        return true;
+    }
+
+
+
+
     
+
     public bool Rect(Brush brush, Rect rect)
     {
         WinRectangle u;
@@ -44,7 +80,7 @@ public class Draw : InfraObject
 
 
 
-        this.WinGraphics.FillRectangle(brush.WinBrush, u);
+        this.WinGraphic.FillRectangle(brush.WinBrush, u);
 
 
 
@@ -88,7 +124,7 @@ public class Draw : InfraObject
 
 
 
-        WinTextRenderer.DrawText(this.WinGraphics, t, font.WinFont, winPoint, winColor, Constant.This.TextFormatFlag);
+        WinTextRenderer.DrawText(this.WinGraphic, t, font.WinFont, winPoint, winColor, Constant.This.TextFormatFlag);
 
 
 

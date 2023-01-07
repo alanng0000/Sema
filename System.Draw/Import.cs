@@ -15,3 +15,4 @@ global using WinFontStyle = System.Drawing.FontStyle;
 global using WinGraphicsUnit = System.Drawing.GraphicsUnit;
 global using WinTextRenderer = System.Windows.Forms.TextRenderer;
 global using WinTextFormatFlags = System.Windows.Forms.TextFormatFlags;
+global using WinTextRenderingHint = System.Drawing.Text.TextRenderingHint;

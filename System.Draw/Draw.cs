@@ -10,6 +10,28 @@ public class Draw : InfraObject
 
 
 
+    private RangeInfra RangeInfra { get; set; }
+
+
+
+
+    public override bool Init()
+    {
+        base.Init();
+
+
+
+
+        this.RangeInfra = new RangeInfra();
+
+
+        this.RangeInfra.Init();
+
+
+
+        return true;
+    }
+
 
 
     
@@ -17,7 +39,8 @@ public class Draw : InfraObject
     {
         WinRectangle u;
 
-        u = this.CreateWinRectangle(rect);
+        u = Create.This.ExecuteWinRectangle(rect);
+
 
 
 
@@ -38,48 +61,38 @@ public class Draw : InfraObject
 
     public bool Text(char[] charList, InfraRange range, Font font, Color color, Pos pos)
     {
-        return true;
-    }
+        int count;
+
+        count = this.RangeInfra.Count(range);
 
     
 
 
+        ReadOnlySpanChar t;
 
 
-    private WinRectangle CreateWinRectangle(Rect rect)
-    {
-        WinRectangle u;
-
-        u = new WinRectangle(this.CreateWinPoint(rect.Pos), this.CreateWinSize(rect.Size));
-
-
-        return u;
-    }
+        t = new ReadOnlySpanChar(charList, range.Start, count);
 
 
 
 
+        WinPoint winPoint;
 
-    private WinPoint CreateWinPoint(Pos pos)
-    {
-        WinPoint u;
-        
-        u = new WinPoint(pos.Left, pos.Up);
-
-
-        return u;
-    }
+        winPoint = Create.This.ExecuteWinPoint(pos);
 
 
 
+        WinColor winColor;
 
-    private WinSize CreateWinSize(Size size)
-    {
-        WinSize u;
-        
-        u = new WinSize(size.Width, size.Height);
+        winColor = Create.This.ExecuteWinColor(color);
 
 
-        return u;
+
+        WinTextRenderer.DrawText(this.WinGraphics, t, font.WinFont, winPoint, winColor, Constant.This.TextFormatFlag);
+
+
+
+
+        return true;
     }
 }

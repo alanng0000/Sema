@@ -26,11 +26,11 @@ class Create : InfraObject
 
 
 
-    public WinRectangle CreateWinRectangle(Rect rect)
+    public WinRectangle ExecuteWinRectangle(Rect rect)
     {
         WinRectangle u;
 
-        u = new WinRectangle(this.CreateWinPoint(rect.Pos), this.CreateWinSize(rect.Size));
+        u = new WinRectangle(this.ExecuteWinPoint(rect.Pos), this.ExecuteWinSize(rect.Size));
 
 
         return u;
@@ -40,7 +40,7 @@ class Create : InfraObject
 
 
 
-    public WinPoint CreateWinPoint(Pos pos)
+    public WinPoint ExecuteWinPoint(Pos pos)
     {
         WinPoint u;
         
@@ -53,7 +53,7 @@ class Create : InfraObject
 
 
 
-    public WinSize CreateWinSize(Size size)
+    public WinSize ExecuteWinSize(Size size)
     {
         WinSize u;
         
@@ -66,7 +66,7 @@ class Create : InfraObject
 
 
 
-    public WinColor CreateWinColor(Color color)
+    public WinColor ExecuteWinColor(Color color)
     {
         WinColor c;
 

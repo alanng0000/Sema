@@ -5,11 +5,6 @@ namespace System.Draw;
 
 public class Draw : InfraObject
 {
-    private WinGraphics WinGraphic { get; set; }
-
-
-
-
     private RangeInfra RangeInfra { get; set; }
 
 
@@ -31,41 +26,6 @@ public class Draw : InfraObject
 
         return true;
     }
-
-
-
-
-
-    public bool SetWin(WinGraphics graphic)
-    {
-        this.WinGraphic = graphic;
-
-
-
-        this.SetGraphicDefault(this.WinGraphic);
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-    private bool SetGraphicDefault(WinGraphics g)
-    {
-        g.TextRenderingHint = WinTextRenderingHint.ClearTypeGridFit;
-
-
-        g.PageUnit = WinGraphicsUnit.Pixel;
-
-
-        return true;
-    }
-
 
 
 

@@ -33,14 +33,6 @@ public class Draw : InfraObject
         set
         {
             this.AreaData = value;
-
-
-
-
-            Rect area;
-
-
-            area = this.AreaData;
         }
     }
 

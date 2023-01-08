@@ -124,6 +124,17 @@ static class Extern
 
 
 
+    [DllImport(FormDll)]
+    public static extern ulong Frame_SetTitle(ulong o, ulong value);
+
+
+
+
+    [DllImport(FormDll)]
+    public static extern ulong Frame_SetVisible(ulong o, ulong value);
+
+
+
 
     [DllImport(FormDll)]
     public static extern ulong Frame_Execute(ulong o);

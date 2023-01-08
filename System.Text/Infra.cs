@@ -164,10 +164,12 @@ public class Infra : InfraObject
 
 
 
+        
+
         string s;
 
 
-        s = new string(line.Char.Data, range.Start, count);
+        s = Encoding.ASCII.GetString(line.Char.Data, range.Start, count);
 
         
         return s;
@@ -177,7 +179,7 @@ public class Infra : InfraObject
 
 
 
-    public char Char(Pos pos)
+    public byte Char(Pos pos)
     {
         Line line;
 
@@ -185,19 +187,19 @@ public class Infra : InfraObject
 
 
 
-        char oc;
+        byte ob;
 
-        oc = line.Char.Data[pos.Col];
+        ob = line.Char.Data[pos.Col];
 
 
-        return oc;
+        return ob;
     }
 
 
 
 
 
-    public bool StartWith(int row, InfraRange range, char oc)
+    public bool StartWith(int row, InfraRange range, byte ob)
     {
         if (!this.Check(row, range))
         {
@@ -213,15 +215,15 @@ public class Infra : InfraObject
 
 
 
-        char occ;
+        byte obb;
 
-        occ = this.Char(this.Pos(row, range.Start));
+        obb = this.Char(this.Pos(row, range.Start));
 
 
 
         bool ret;
 
-        ret = (occ == oc);
+        ret = (obb == ob);
 
 
         return ret;
@@ -231,7 +233,7 @@ public class Infra : InfraObject
 
 
 
-    public bool EndWith(int row, InfraRange range, char oc)
+    public bool EndWith(int row, InfraRange range, byte ob)
     {
         if (!this.Check(row, range))
         {
@@ -256,16 +258,16 @@ public class Infra : InfraObject
         
 
 
-        char occ;
+        byte obb;
 
-        occ = this.Char(t);
+        obb = this.Char(t);
 
 
 
 
         bool ret;
 
-        ret = (occ == oc);
+        ret = (obb == ob);
 
 
         return ret;
@@ -440,7 +442,7 @@ public class Infra : InfraObject
 
 
 
-        char c;
+        byte c;
 
 
 
@@ -462,12 +464,12 @@ public class Infra : InfraObject
 
 
 
-        char u;
+        byte u;
 
 
 
 
-        char escapeValue;
+        byte escapeValue;
 
 
 

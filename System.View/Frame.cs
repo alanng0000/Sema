@@ -42,27 +42,6 @@ public class Frame : ComposeObject
 
 
 
-        this.Area = new DrawRect();
-
-
-        this.Area.Init();
-
-
-
-        this.Area.Pos.Left = 0;
-
-
-        this.Area.Pos.Up = 0;
-
-
-        this.Area.Size.Width = this.Size.Width;
-
-
-        this.Area.Size.Height = this.Size.Height;
-
-
-
-
 
 
 
@@ -113,120 +92,9 @@ public class Frame : ComposeObject
 
 
 
-
-
-
-
-    private bool SetGraphicsDefault()
-    {
-        this.Graphics.TextRenderingHint = WinTextRenderingHint.ClearTypeGridFit;
-
-
-        this.Graphics.PageUnit = WinGraphicsUnit.Pixel;
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-
-    internal bool DrawGraphics(WinGraphics g)
-    {
-        this.Graphics = g;
-
-
-
-        this.SetGraphicsDefault();
-
-
-
-
-
-        this.Draw();
-
-
-
-
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-    private bool Draw()
-    {
-        if (this.Null(this.View))
-        {
-            return true;
-        }
-
-
-
-
-        DrawDraw draw;
-
-
-        draw = this.View.LocalViewDraw;
-
-
-
-        draw.Graphics = this.Graphics;
-
-
-
-        draw.Area = this.Area;
-
-
-
-
-        this.View.LocalDraw(draw);
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-    private DrawRect Area;
-
-
-
-
-
-    private WinGraphics Graphics { get; set; }
-
-
-
-
-
-
     public virtual bool Execute()
     {
-        WinCursor.Hide();
 
-
-
-
-        WinApplication.AddMessageFilter(this.Form);
-
-
-        WinApplication.Run(this.Form);
 
 
 
@@ -240,7 +108,7 @@ public class Frame : ComposeObject
 
     public virtual bool Update()
     {
-        this.Form.Invalidate();
+        
 
 
 

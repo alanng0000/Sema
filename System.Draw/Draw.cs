@@ -80,7 +80,7 @@ public class Draw : InfraObject
 
 
 
-            this.ColorRect(colorBrush, ref rect);
+            this.ColorRect(ref colorBrush.Color, ref rect);
         }
 
 
@@ -92,12 +92,12 @@ public class Draw : InfraObject
 
 
 
-    private bool ColorRect(ColorBrush brush, ref Rect rect)
+    private bool ColorRect(ref Color color, ref Rect rect)
     {
-        uint color;
+        uint colorInt;
 
 
-        color = this.ColorInt(ref brush.Color);
+        colorInt = this.ColorInt(ref color);
 
 
 
@@ -135,7 +135,7 @@ public class Draw : InfraObject
 
 
 
-        Extern.Draw_Method_Color(bufferPointer, bufferStride, rectRow, rectCol, rectWidth, rectHeight, color);
+        Extern.Draw_Method_Color(bufferPointer, bufferStride, rectRow, rectCol, rectWidth, rectHeight, colorInt);
     
 
 

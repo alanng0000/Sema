@@ -690,7 +690,7 @@ public class Infra : InfraObject
 
 
 
-            char ob;
+            byte ob;
 
 
             ob = this.Char(pos);
@@ -805,7 +805,7 @@ public class Infra : InfraObject
 
 
 
-    public ulong Digit(char o)
+    public ulong Digit(byte o)
     {
         ulong u;
 
@@ -845,7 +845,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsAlphanumeric(char o)
+    public bool IsAlphanumeric(byte o)
     {
         return this.IsLetter(o) | this.IsDigit(o);
     }
@@ -853,7 +853,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsDigit(char o)
+    public bool IsDigit(byte o)
     {
         return '0' <= o && o <= '9';
     }
@@ -862,7 +862,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsHexDigit(char o)
+    public bool IsHexDigit(byte o)
     {
         if ('a' <= o && o <= 'f')
         {
@@ -876,7 +876,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsLetter(char o)
+    public bool IsLetter(byte o)
     {
         return this.IsLowerLetter(o) | this.IsUpperLetter(o);
     }
@@ -884,14 +884,14 @@ public class Infra : InfraObject
 
 
 
-    public bool IsLowerLetter(char o)
+    public bool IsLowerLetter(byte o)
     {
         return 'a' <= o & o <= 'z';
     }
 
 
 
-    public bool IsUpperLetter(char o)
+    public bool IsUpperLetter(byte o)
     {
         return 'A' <= o & o <= 'Z';
     }
@@ -913,7 +913,7 @@ public class Infra : InfraObject
 
     private bool IsQuote(Pos pos)
     {
-        char oc;
+        byte oc;
 
 
 

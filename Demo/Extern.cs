@@ -10,6 +10,10 @@ static class Extern
 
 
 
+    const string FormDll = "Infra.Form.Windows.dll";
+    
+
+
 
 
     [DllImport(Dll)]

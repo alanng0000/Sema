@@ -17,18 +17,6 @@ public class ColorBrush : Brush
 
 
 
-
-        WinColor winColor;
-
-
-        winColor = Create.This.ExecuteWinColor(this.Color);
-
-
-
-        this.WinBrush = new WinSolidBrush(winColor);
-
-
-
         return true;
     }
 }

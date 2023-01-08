@@ -7,7 +7,17 @@ public class Exe : InfraObject
 {
     public int Execute()
     {
-        this.ExecuteThread();
+        bool b;
+        
+        b = this.ExecuteThread();
+
+
+        if (!b)
+        {
+            return 10;
+        }
+
+        
 
 
 

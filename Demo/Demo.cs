@@ -11,7 +11,7 @@ class Demo : Object
 
 
 
-        
+
 
 
 
@@ -23,16 +23,16 @@ class Demo : Object
 
 
 
-    private bool ExecuteA()
+    private bool ExecuteFrame()
     {
-        string s;
-
-
-        s = "2222 DEMO SUCCESS\n";
+        return true;
+    }
 
 
 
 
+    private byte[] StringByteList(string s)
+    {
         int count;
 
         count = s.Length;
@@ -71,11 +71,38 @@ class Demo : Object
 
 
 
+        byte[] ret;
+
+        ret = array;
+
+
+        return ret;
+    }
+
+
+
+
+    private bool ExecuteA()
+    {
+        string s;
+
+
+        s = "2222 DEMO SUCCESS\n";
+
+
+
+
+        byte[] array;
+
+        array = this.StringByteList(s);
+
+
+
 
 
         ulong length;
 
-        length = (ulong)count;
+        length = (ulong)array.Length;
 
 
 
@@ -91,7 +118,7 @@ class Demo : Object
 
 
 
-        Marshal.Copy(array, 0, ptr, count);
+        Marshal.Copy(array, 0, ptr, array.Length);
 
 
 

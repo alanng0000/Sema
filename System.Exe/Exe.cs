@@ -89,11 +89,6 @@ public class Exe : InfraObject
 
     private void ThreadWork()
     {
-        Extern.Draw_Method_Init();
-
-
-
-
         int o;
 
         o = this.ExecuteWork();

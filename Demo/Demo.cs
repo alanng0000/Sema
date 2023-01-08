@@ -106,7 +106,7 @@ class Demo : Object
 
 
 
-        Extern.Frame_SetTitle(frame, 1);
+        Extern.Frame_SetVisible(frame, 1);
 
 
 
@@ -155,6 +155,7 @@ class Demo : Object
         int count;
 
         count = s.Length;
+
 
 
         byte[] array;

@@ -5,15 +5,18 @@ namespace System.Exe;
 
 public class Exe : InfraObject
 {
-    public bool Execute()
+    public int Execute()
     {
         this.ExecuteThread();
 
 
 
+        int ret;
+
+        ret = this.Result;
 
 
-        return true;
+        return ret;
     }
 
 
@@ -58,12 +61,15 @@ public class Exe : InfraObject
 
 
 
+    private int Result { get; set; }
 
 
 
-    protected virtual bool ExecuteMain()
+
+
+    protected virtual int ExecuteWork()
     {
-        return true;
+        return 0;
     }
 
     
@@ -73,6 +79,18 @@ public class Exe : InfraObject
 
     private void ThreadWork()
     {
-        this.ExecuteMain();
+        Extern.Draw_Method_Init();
+
+
+
+
+        int o;
+
+        o = this.ExecuteWork();
+
+
+
+
+        this.Result = o;
     }
 }

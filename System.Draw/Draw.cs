@@ -196,7 +196,7 @@ public class Draw : InfraObject
 
         return true;
     }
-    
+
 
 
 
@@ -208,7 +208,7 @@ public class Draw : InfraObject
 
 
 
-    public bool Text(char[] charList, InfraRange range, Font font, Color color, Pos pos)
+    public bool Text(byte[] charList, InfraRange range, Font font, Color color, Pos pos)
     {
         
 

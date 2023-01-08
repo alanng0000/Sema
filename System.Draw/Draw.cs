@@ -22,7 +22,20 @@ public class Draw : InfraObject
 
     public bool Rect(Brush brush, Rect rect)
     {
-        
+        if (brush is ColorBrush)
+        {
+            ColorBrush colorBrush;
+
+
+            colorBrush = (ColorBrush)brush;
+
+
+
+
+            
+        }
+
+
 
         return true;
     }

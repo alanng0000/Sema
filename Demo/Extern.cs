@@ -11,7 +11,7 @@ static class Extern
 
 
     const string FormDll = "Infra.Form.Windows.dll";
-    
+
 
 
 
@@ -106,4 +106,38 @@ static class Extern
 
     [DllImport(Dll)]
     public static extern ulong Console_Delete(ulong o);
+
+
+
+
+
+
+    [DllImport(FormDll)]
+    public static extern ulong Frame_New();
+
+
+
+
+    [DllImport(FormDll)]
+    public static extern ulong Frame_Init(ulong o);
+
+
+
+
+
+    [DllImport(FormDll)]
+    public static extern ulong Frame_Execute(ulong o);
+
+
+
+
+
+    [DllImport(FormDll)]
+    public static extern ulong Frame_Final(ulong o);
+
+
+
+
+    [DllImport(FormDll)]
+    public static extern ulong Frame_Delete(ulong o);
 }

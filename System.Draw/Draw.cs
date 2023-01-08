@@ -171,27 +171,6 @@ public class Draw : InfraObject
 
 
 
-        DrawColorMethod method;
-
-
-        method = Extern.Draw_Method_Color;
-
-
-
-
-        if (isOpaque)
-        {
-            method = Extern.Draw_Method_OpaqueColor;
-        }
-
-
-
-
-
-        method(bufferPointer, bufferStride, rectRow, rectCol, rectWidth, rectHeight, colorInt);
-
-
-
 
 
         return true;
@@ -200,9 +179,6 @@ public class Draw : InfraObject
 
 
 
-
-
-    delegate void DrawColorMethod(ulong bufferPointer, uint bufferStride, uint rectRow, uint rectCol, uint rectWidth, uint rectHeight, uint color);
 
 
 

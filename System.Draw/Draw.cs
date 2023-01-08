@@ -11,10 +11,33 @@ public class Draw : InfraObject
 
 
 
+        Pos pos;
+
+        pos = new Pos();
+
+        pos.Init();
+
+
+
+
+        this.Area = new Rect();
+
+
+        this.Area.Init();
+
+
+        this.Area.Pos = pos;
+
+
+        this.Area.Size = this.Size;
+        
+
+
 
 
         return true;
     }
+
 
 
 
@@ -34,10 +57,20 @@ public class Draw : InfraObject
 
 
 
+
+    private Rect Area;
+
+
+
     
 
     public bool Rect(Brush brush, Rect rect)
     {
+        this.BoundArea(ref this.Area, ref rect);
+
+
+
+
         if (brush is ColorBrush)
         {
             ColorBrush colorBrush;
@@ -47,7 +80,7 @@ public class Draw : InfraObject
 
 
 
-            this.ColorRect(colorBrush, rect);
+            this.ColorRect(colorBrush, ref rect);
         }
 
 
@@ -59,7 +92,7 @@ public class Draw : InfraObject
 
 
 
-    private bool ColorRect(ColorBrush brush, Rect rect)
+    private bool ColorRect(ColorBrush brush, ref Rect rect)
     {
         uint color;
 
@@ -68,17 +101,50 @@ public class Draw : InfraObject
 
 
 
+
         ulong bufferPointer;
 
         bufferPointer = this.Buffer;
+
 
         uint bufferStride;
 
         bufferStride = this.BufferStride;
 
 
+
+        uint rectRow;
+
+        rectRow = this.UInt(rect.Pos.Up);
+
+
+        uint rectCol;
+
+        rectCol = this.UInt(rect.Pos.Left);
+
+
+        uint rectWidth;
+
+        rectWidth = this.UInt(rect.Size.Width);
+
+
+        uint rectHeight;
+
+        rectHeight = this.UInt(rect.Size.Height);
+
+
+
+
+        Extern.Draw_Method_Color(bufferPointer, bufferStride, rectRow, rectCol, rectWidth, rectHeight, color);
+    
+
+
         return true;
     }
+
+
+
+
 
 
 
@@ -94,6 +160,149 @@ public class Draw : InfraObject
 
         return true;
     }
+
+
+
+
+
+
+
+
+    private uint UInt(int a)
+    {
+        return (uint)a;
+    }
+
+
+
+
+
+
+    private bool BoundArea(ref Rect bound, ref Rect area)
+    {
+        int left;
+
+        left = area.Pos.Left;
+
+
+
+        int up;
+
+        up = area.Pos.Up;
+
+
+
+
+        int width;
+
+        width = area.Size.Width;
+
+
+
+        int height;
+
+        height = area.Size.Height;
+
+
+
+
+        int right;
+
+        right = left + width;
+
+
+
+        int down;
+
+        down = up + height;
+
+
+
+
+
+        int boundRight;
+
+        boundRight = bound.Pos.Left + bound.Size.Width;
+
+
+
+        int boundDown;
+
+        boundDown = bound.Pos.Up + bound.Size.Height;
+
+
+
+
+
+        if (left < bound.Pos.Left)
+        {
+            left = bound.Pos.Left;
+        }
+
+
+
+        if (up < bound.Pos.Up)
+        {
+            up = bound.Pos.Up;
+        }
+
+
+
+
+
+        if (boundRight < right)
+        {
+            right = boundRight;
+        }
+
+
+
+        if (boundDown < down)
+        {
+            down = boundDown;
+        }
+
+
+
+
+
+
+        int w;
+
+
+        w = IntOp.This.Sub(right, left);
+
+
+
+
+
+        int h;
+
+
+        h = IntOp.This.Sub(down, up);
+
+
+
+
+
+        area.Pos.Left = left;
+
+
+        area.Pos.Up = up;
+
+
+        area.Size.Width = w;
+
+
+        area.Size.Height = h;
+
+
+
+
+        return true;
+    }
+
+
 
 
 

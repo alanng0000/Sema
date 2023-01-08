@@ -94,10 +94,45 @@ public class Draw : InfraObject
 
     private bool ColorRect(ref Color color, ref Rect rect)
     {
+        Color c;
+
+
+        c = color;
+
+
+
+
+        bool isOpaque;
+
+        isOpaque = false;
+
+
+
+
+        if (c.Alpha == byte.MaxValue)
+        {
+            isOpaque = true;
+        }
+
+
+
+        if (isOpaque)
+        {
+            c.Alpha = 0;
+        }
+
+
+
+        
+        
+
+
+
+
         uint colorInt;
 
 
-        colorInt = this.ColorInt(ref color);
+        colorInt = this.ColorInt(ref c);
 
 
 
@@ -135,18 +170,39 @@ public class Draw : InfraObject
 
 
 
-        Extern.Draw_Method_Color(bufferPointer, bufferStride, rectRow, rectCol, rectWidth, rectHeight, colorInt);
-    
+
+        DrawColorMethod method;
+
+
+        method = Extern.Draw_Method_Color;
+
+
+
+
+        if (isOpaque)
+        {
+            method = Extern.Draw_Method_OpaqueColor;
+        }
+
+
+
+
+
+        method(bufferPointer, bufferStride, rectRow, rectCol, rectWidth, rectHeight, colorInt);
+
+
+
 
 
         return true;
     }
+    
 
 
 
 
 
-
+    delegate void DrawColorMethod(ulong bufferPointer, uint bufferStride, uint rectRow, uint rectCol, uint rectWidth, uint rectHeight, uint color);
 
 
 

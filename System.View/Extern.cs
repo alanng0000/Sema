@@ -68,4 +68,38 @@ static class Extern
 
     [DllImport(Dll)]
     public static extern ulong String_Delete(ulong o);
+
+
+
+
+
+
+
+    [DllImport(Dll)]
+    public static extern ulong Console_New();
+
+
+
+
+    [DllImport(Dll)]
+    public static extern ulong Console_Init(ulong o);
+
+
+
+
+    [DllImport(Dll)]
+    public static extern ulong Console_Write(ulong o, ulong text);
+
+
+
+
+
+    [DllImport(Dll)]
+    public static extern ulong Console_Final(ulong o);
+
+
+
+
+    [DllImport(Dll)]
+    public static extern ulong Console_Delete(ulong o);
 }

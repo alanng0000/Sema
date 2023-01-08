@@ -12,11 +12,11 @@ public class Infra : InfraObject
 
 
 
-        this.Quote = '\"';
+        this.Quote = (byte)'\"';
 
 
 
-        this.BackSlash = '\\';
+        this.BackSlash = (byte)'\\';
 
 
 
@@ -474,6 +474,11 @@ public class Infra : InfraObject
 
 
 
+        char oc;
+
+
+
+
         int i;
 
 
@@ -522,17 +527,17 @@ public class Infra : InfraObject
 
 
                     
-                    if (u == Quote)
+                    if (u == this.Quote)
                     {
                         escapeValue = u;
                     }
                     else if (u == 't')
                     {
-                        escapeValue = '\t';
+                        escapeValue = this.Tab;
                     }
                     else if (u == 'n')
                     {
-                        escapeValue = '\n';
+                        escapeValue = this.LineEnd;
                     }
                     else if (u == this.BackSlash)
                     {
@@ -544,7 +549,12 @@ public class Infra : InfraObject
                     }
 
 
-                    sb.Append(escapeValue);
+
+                    oc = (char)escapeValue;
+
+
+
+                    sb.Append(oc);
 
 
 
@@ -900,13 +910,25 @@ public class Infra : InfraObject
 
 
 
-    private char Quote;
+    private byte Quote;
 
 
 
 
-    private char BackSlash;
+    private byte BackSlash;
 
+
+
+
+    private byte Tab;
+
+
+
+
+    private byte LineEnd;
+
+
+    
 
 
 

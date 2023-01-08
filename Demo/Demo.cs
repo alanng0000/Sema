@@ -11,6 +11,7 @@ class Demo : Object
 
 
 
+        this.ExecuteFrame();
 
 
 
@@ -25,8 +26,126 @@ class Demo : Object
 
     private bool ExecuteFrame()
     {
+        string title;
+
+
+        title = "Demo Frame";
+
+
+
+
+        byte[] array;
+
+
+        array = this.StringByteList(title);
+
+
+
+
+        ulong length;
+
+        length = (ulong)array.Length;
+
+
+
+
+        ulong p;
+        
+        p = Extern.New(length);
+
+
+
+        IntPtr ptr;
+
+        ptr = (IntPtr)p;
+
+
+
+        Marshal.Copy(array, 0, ptr, array.Length);
+
+
+
+
+
+
+        ulong ss;
+
+
+        ss = Extern.String_New();
+
+
+
+        Extern.String_Init(ss);
+
+
+
+        Extern.String_SetLength(ss, length);
+
+
+        Extern.String_SetData(ss, p);
+
+
+
+
+
+
+
+
+        ulong frame;
+
+
+        frame = Extern.Frame_New();
+
+
+
+        Extern.Frame_SetTitle(frame, ss);
+
+
+
+        Extern.Frame_Init(frame);
+
+
+
+        Extern.Frame_SetTitle(frame, 1);
+
+
+
+        Extern.Frame_Execute(frame);
+
+
+
+        Extern.Frame_Final(frame);
+
+
+
+        Extern.Frame_Delete(frame);
+
+
+
+
+
+
+        Extern.String_Final(ss);
+
+
+
+        Extern.String_Delete(ss);
+
+
+
+
+
+        Extern.Delete(p);
+
+
+
+
+
         return true;
     }
+
+
+
 
 
 
@@ -78,6 +197,9 @@ class Demo : Object
 
         return ret;
     }
+
+
+
 
 
 

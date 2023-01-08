@@ -7,6 +7,16 @@ class Exe : ExeExe
 {
     protected override int ExecuteWork()
     {
+        Demo demo;
+
+        demo = new Demo();
+
+        demo.Init();
+
+
+        demo.Execute();
+        
+
         return 0;
     }
 

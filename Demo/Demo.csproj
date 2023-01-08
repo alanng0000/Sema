@@ -9,4 +9,10 @@
         <ProjectReference Include="../System.Exe/System.Exe.csproj" />
     </ItemGroup>
     
+    <ItemGroup>
+        <Content Include="../../Out/Infra.dll" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="../../Out/Infra.Form.Infra.dll" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="../../Out/Infra.Form.Windows.dll" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
 </Project>

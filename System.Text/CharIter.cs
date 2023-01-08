@@ -6,7 +6,7 @@ namespace System.Text;
 
 public struct CharIter
 {
-    internal CharList Chars { get; set; }
+    internal CharList Char { get; set; }
 
 
 
@@ -67,11 +67,11 @@ public struct CharIter
 
 
 
-    public char Value
+    public byte Value
     {
         get
         {
-            return this.Chars.Get(this.CurrentIndex);
+            return this.Char.Get(this.CurrentIndex);
         }
 
         set
@@ -104,7 +104,7 @@ public struct CharIter
         }
 
 
-        if (!(index < this.Chars.Count))
+        if (!(index < this.Char.Count))
         {
             return false;
         }

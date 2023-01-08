@@ -100,10 +100,12 @@ public class Infra : InfraObject
 
 
 
-        char oca;
+        byte oba;
 
-        char ocb;
+        byte obb;
 
+
+        char oc;
 
 
 
@@ -113,14 +115,17 @@ public class Infra : InfraObject
 
         while (i < count)
         {
-            oca = varChar.Get(start + i);
+            oba = varChar.Get(start + i);
 
 
-            ocb = other[i];
+            oc = other[i];
+
+
+            obb = (byte)oc;
 
 
 
-            if (!(oca == ocb))
+            if (!(oba == obb))
             {
                 return false;
             }

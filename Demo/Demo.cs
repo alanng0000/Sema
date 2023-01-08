@@ -7,10 +7,28 @@ class Demo : Object
 {
     public bool Execute()
     {
+        this.ExecuteA();
+
+
+
+        
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+    private bool ExecuteA()
+    {
         string s;
 
 
-        s = "DEMO SUCCESS\n";
+        s = "2222 DEMO SUCCESS\n";
 
 
 

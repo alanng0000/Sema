@@ -171,12 +171,6 @@ public class Frame : ComposeObject
 
 
 
-    private WinGraphics Graphics { get; set; }
-
-
-
-
-
 
     public virtual bool Execute()
     {

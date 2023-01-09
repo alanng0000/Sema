@@ -12,7 +12,7 @@ public class Field : InfraObject
 
 
 
-    protected FieldHandle Handle { get; set; }
+    public FieldHandle Handle { get; set; }
 
 
 
@@ -332,7 +332,7 @@ public class Field : InfraObject
         return true;
     }
 
-    
+
 
 
 

@@ -2,8 +2,30 @@ namespace System.Control;
 
 
 
-public class Keys : InfraObject
+public class Key : InfraObject
 {
+    public static Key This { get; } = CreateGlobal();
+
+
+
+
+    private static Key CreateGlobal()
+    {
+        Key global;
+
+        global = new Key();
+
+        global.Init();
+
+
+        return global;
+    }
+
+
+
+
+
+
     public byte Enter { get; private set; }
 
 

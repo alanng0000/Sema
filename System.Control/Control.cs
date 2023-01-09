@@ -73,15 +73,6 @@ public class Control : InfraObject
     {
         base.Init();
 
-
-
-
-
-
-        this.Keys = new Keys();
-
-
-        this.Keys.Init();
         
 
 
@@ -195,11 +186,6 @@ public class Control : InfraObject
         return true;
     }
 
-
-
-
-    
-    public Keys Keys { get; private set; }
 
 
 

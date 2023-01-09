@@ -59,7 +59,8 @@ class Constant : InfraObject
         WinTextFormatFlags.Left | 
         WinTextFormatFlags.Top | 
         WinTextFormatFlags.NoPadding |
-        WinTextFormatFlags.NoPrefix;
+        WinTextFormatFlags.NoPrefix |
+        WinTextFormatFlags.PreserveGraphicsClipping;
 
 
         return true;

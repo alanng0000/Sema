@@ -3,7 +3,7 @@ namespace System.Control;
 
 
 
-public struct EventArg
+public class KeyEventArg
 {
     public byte Key;
 

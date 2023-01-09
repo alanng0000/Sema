@@ -27,7 +27,7 @@ public class Control : InfraObject
 
 
 
-    public virtual ControlEvent KeyInput
+    public virtual EventEvent KeyInput
     {
         get
         {
@@ -40,14 +40,14 @@ public class Control : InfraObject
 
 
 
-    protected ControlEvent KeyInputData { get; set; }
+    protected EventEvent KeyInputData { get; set; }
 
 
 
 
 
 
-    public virtual ControlCharEvent CharInput
+    public virtual EventEvent CharInput
     {
         get
         {
@@ -62,7 +62,7 @@ public class Control : InfraObject
 
 
 
-    protected ControlCharEvent CharInputData { get; set; }
+    protected EventEvent CharInputData { get; set; }
 
 
 
@@ -91,7 +91,7 @@ public class Control : InfraObject
 
 
 
-        this.KeyInputData = new ControlEvent();
+        this.KeyInputData = new EventEvent();
 
 
         this.KeyInputData.Init();
@@ -100,7 +100,7 @@ public class Control : InfraObject
 
 
 
-        this.CharInputData = new ControlCharEvent();
+        this.CharInputData = new EventEvent();
 
 
         this.CharInput.Init();

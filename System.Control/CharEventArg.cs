@@ -3,7 +3,7 @@ namespace System.Control;
 
 
 
-public struct CharEventArg
+public class CharEventArg
 {
     public char Char;
 }

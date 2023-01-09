@@ -3,7 +3,7 @@ namespace System.Draw;
 
 
 
-class Convert : InfraObject
+public class Convert : InfraObject
 {
     public static Convert This { get; } = CreateGlobal();
 

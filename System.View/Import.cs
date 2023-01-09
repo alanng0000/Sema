@@ -14,6 +14,7 @@ global using DrawRect = System.Draw.Rect;
 global using DrawColor = System.Draw.Color;
 global using DrawBrush = System.Draw.Brush;
 global using DrawColorBrush = System.Draw.ColorBrush;
+global using DrawConvert = System.Draw.Convert;
 global using Stream = System.IO.Stream;
 global using ControlControl = System.Control.Control;
 global using WinForm = System.Windows.Forms.Form;

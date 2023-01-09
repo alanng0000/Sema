@@ -7,35 +7,6 @@ public class Image : View
 {
     public override bool Init()
     {
-        this.WinPictureBox = new WinPictureBox();
-
-
-        this.WinPictureBox.Text = "";
-
-
-        this.WinPictureBox.BackColor = WinColor.Transparent;
-
-
-        this.WinPictureBox.ForeColor = WinColor.Transparent;
-
-
-        this.WinPictureBox.Margin = new WinPadding(0);
-
-
-        this.WinPictureBox.Padding = new WinPadding(0);
-
-
-        this.WinPictureBox.Location = new WinPoint(0, 0);
-
-
-        this.WinPictureBox.BorderStyle = WinBorderStyle.None;
-
-
-        this.WinPictureBox.SizeMode = WinPictureBoxSizeMode.Normal;
-
-
-
-
         this.ValueField = new Field();
 
 
@@ -63,9 +34,6 @@ public class Image : View
 
         
 
-        this.Internal.Controls.Add(this.WinPictureBox);
-
-
 
 
 
@@ -75,7 +43,7 @@ public class Image : View
 
 
 
-        this.Mode = ImageModes.This.Actual;
+        this.Mode = ImageModeList.This.Actual;
 
 
 
@@ -111,35 +79,6 @@ public class Image : View
 
     protected virtual bool ChangeValue(Change change)
     {
-        if (!this.Null(this.WinPictureBox.Image))
-        {
-            this.WinPictureBox.Image.Dispose();
-
-
-            this.WinPictureBox.Image = null;
-        }
-
-
-
-
-        WinBitmap bitmap;
-
-
-        bitmap = null;
-
-
-
-        if (!this.Null(this.Value))
-        {
-            bitmap = new WinBitmap(this.Value);
-        }
-
-
-
-        this.WinPictureBox.Image = bitmap;
-        
-
-
         this.Trigger(this.ValueField);
 
 
@@ -147,17 +86,6 @@ public class Image : View
         return true;
     }
 
-
-
-
-
-    public WinBitmap Bitmap
-    {
-        get
-        {
-            return (WinBitmap)this.WinPictureBox.Image;
-        }
-    }
 
 
 
@@ -186,18 +114,6 @@ public class Image : View
 
     protected virtual bool ChangeMode(Change change)
     {
-        WinPictureBoxSizeMode t;
-
-
-        t = this.WinCreate.ImageMode(this.Mode);
-
-
-
-        this.WinPictureBox.SizeMode = t;
-        
-
-
-
         this.Trigger(this.ModeField);
 
 
@@ -207,22 +123,6 @@ public class Image : View
 
 
 
-
-
-    protected override bool ChangeSize(Change change)
-    {
-        this.WinPictureBox.Size = this.WinCreate.Size(this.Size);
-
-
-
-
-        base.ChangeSize(change);
-
-
-
-
-        return true;
-    }
 
 
 
@@ -264,17 +164,4 @@ public class Image : View
         {
         }
     }
-
-
-
-
-    private bool Null(object o)
-    {
-        return o == null;
-    }
-
-
-
-
-    private WinPictureBox WinPictureBox { get; set; }
 }

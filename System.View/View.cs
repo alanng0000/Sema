@@ -404,6 +404,9 @@ public class View : ComposeObject
 
 
 
+
+
+
     internal bool ExecuteDraw(DrawDraw draw)
     {
         this.Draw(draw);

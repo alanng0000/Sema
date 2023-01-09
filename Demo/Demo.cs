@@ -88,6 +88,40 @@ class Demo : Object
 
 
 
+        FrameControlHandleMethod m;
+
+
+
+        m = this.FrameControlHandle;
+        
+
+
+
+
+        this.ControlHandleMethodDelegate = m;
+
+
+
+
+
+        IntPtr fp;
+
+
+        fp = Marshal.GetFunctionPointerForDelegate(this.ControlHandleMethodDelegate);
+
+
+
+        ulong oo;
+
+
+        oo = (ulong)fp;
+
+
+
+
+
+
+
 
 
 
@@ -103,6 +137,10 @@ class Demo : Object
 
 
         Extern.Frame_Init(frame);
+
+
+
+        Extern.Frame_SetControlHandle(frame, oo);
 
 
 
@@ -142,6 +180,35 @@ class Demo : Object
 
 
         return true;
+    }
+
+
+
+
+    private System.Delegate ControlHandleMethodDelegate { get; set; }
+
+
+
+
+
+    delegate ulong FrameControlHandleMethod(ulong o, ulong key, ulong value);
+
+
+
+
+
+    private ulong FrameControlHandle(ulong o, ulong key, ulong value)
+    {
+        string s;
+
+        s = key.ToString() + ", " + value.ToString() + "\n";
+
+
+        System.Console.Write(s);
+
+
+
+        return 1;
     }
 
 

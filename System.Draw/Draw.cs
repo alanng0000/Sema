@@ -37,6 +37,10 @@ public class Draw : InfraObject
 
 
 
+    public Pos Pos;
+
+
+
 
     public bool SetWin(WinGraphics graphic)
     {
@@ -75,6 +79,20 @@ public class Draw : InfraObject
 
     public bool Rect(Brush brush, Rect rect)
     {
+        Pos pos;
+
+        pos = rect.Pos;
+
+        pos.Left = pos.Left + this.Pos.Left;
+
+        pos.Up = pos.Up + this.Pos.Up;
+
+
+
+        rect.Pos = pos;
+
+
+
         WinRectangle u;
 
         u = Convert.This.WinRectangle(rect);
@@ -112,6 +130,14 @@ public class Draw : InfraObject
         t = new ReadOnlySpanChar(charList, range.Start, count);
 
 
+
+
+        pos.Left = pos.Left + this.Pos.Left;
+
+
+        pos.Up = pos.Up + this.Pos.Up;
+
+        
 
 
         WinPoint winPoint;

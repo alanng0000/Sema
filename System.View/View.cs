@@ -414,6 +414,28 @@ public class View : ComposeObject
 
 
 
+        this.ExecuteChildDraw(draw);
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+    protected virtual bool ExecuteChildDraw(DrawDraw draw)
+    {
+        if (this.Null(this.Child))
+        {
+            return true;
+        }
+
+
+
+
         int left;
         
         left = this.Pos.Left;
@@ -512,7 +534,11 @@ public class View : ComposeObject
 
 
 
-        this.ExecuteChildDraw(draw);
+
+
+        this.Child.ExecuteDraw(draw);
+
+
 
 
 
@@ -525,25 +551,9 @@ public class View : ComposeObject
         draw.Area = u;
 
 
+
         draw.SetClip();
 
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-    protected virtual bool ExecuteChildDraw(DrawDraw draw)
-    {
-        if (!this.Null(this.Child))
-        {
-            this.Child.ExecuteDraw(draw);
-        }
 
 
 

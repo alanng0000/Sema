@@ -215,67 +215,6 @@ public class Grid : View
             return true;
         }
 
-
-
-        bool ba;
-
-        
-        ba = false;
-
-
-
-        bool bb;
-
-
-        bb = false;
-
-
-
-        ListChange t;
-
-        t = null;
-
-
-
-        if (change is ListChange)
-        {
-            t = (ListChange)change;
-
-
-            ba = (t.Kind == ListChangeKinds.This.Item);
-
-
-            bb = (t.Kind == ListChangeKinds.This.Add);
-        }
-
-
-
-        if (ba)
-        {
-            return true;
-        }
-
-
-
-
-        if (bb)
-        {
-            GridChild child;
-            
-            
-            child = (GridChild)t.Item;
-
-
-
-            this.AddGridChild(child);
-        }
-
-
-
-        if (!bb)
-        {
-            this.UpdateLayout();
-        }
         
 
 
@@ -301,9 +240,6 @@ public class Grid : View
 
 
 
-        this.SetChildControls();
-
-
 
         return true;
     }
@@ -313,37 +249,8 @@ public class Grid : View
 
 
 
-    private bool SetChildControls()
+    private bool DrawChildList()
     {
-        IEnumerator enumerator;
-
-
-        enumerator = this.Internal.Controls.GetEnumerator();
-
-
-
-        while (enumerator.MoveNext())
-        {
-            ViewControl control;
-
-
-            control = (ViewControl)enumerator.Current;
-
-
-            control.View.Clip = false;
-        }
-
-
-
-
-
-
-        this.Internal.Controls.Clear();
-
-
-
-
-
         ListIter iter;
 
 
@@ -363,7 +270,7 @@ public class Grid : View
 
 
 
-            this.AddGridChild(child);
+            this.DrawGridChild(child);
         }
 
 
@@ -376,7 +283,7 @@ public class Grid : View
 
 
 
-    protected virtual bool AddGridChild(GridChild child)
+    protected virtual bool DrawGridChild(GridChild child)
     {
         GridRange range;
 

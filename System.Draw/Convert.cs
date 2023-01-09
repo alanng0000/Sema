@@ -201,37 +201,38 @@ public class Convert : InfraObject
 
 
 
+        char[] a;
 
-        if (!this.Null(charSpan.Array))
+        a = charSpan.Array;
+
+
+
+        string s;
+
+
+        s = charSpan.String;
+
+
+
+
+        if (!this.Null(a))
         {
-            char[] a;
-
-            a = charSpan.Array;
-            
-
-
             u = new ReadOnlySpanChar(a, start, count);
         }
 
 
 
-        if (!this.Null(charSpan.String))
+        if (!this.Null(s))
         {
-            string s;
-
-
-            s = charSpan.String;
-
-
-
             u = s.AsSpan(start, count);
         }
 
 
 
+
         return u;
     }
-    
+
 
 
 

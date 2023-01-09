@@ -151,7 +151,7 @@ public class List : ComposeObject
 
 
 
-        o.Changed.AddHandle(this.EventHandle);
+        o.Changed.Handle.AddHandle(this.EventHandle);
 
 
 
@@ -193,7 +193,7 @@ public class List : ComposeObject
             o = (ListItem)iter.Value;
 
 
-            o.Changed.RemoveHandle(this.EventHandle);
+            o.Changed.Handle.RemoveHandle(this.EventHandle);
         }
 
 
@@ -314,7 +314,7 @@ public class List : ComposeObject
 
 
 
-        o.Changed.AddHandle(this.EventHandle);
+        o.Changed.Handle.AddHandle(this.EventHandle);
 
 
 
@@ -356,7 +356,7 @@ public class List : ComposeObject
 
 
 
-        o.Changed.RemoveHandle(this.EventHandle);
+        o.Changed.Handle.RemoveHandle(this.EventHandle);
 
 
 
@@ -455,7 +455,7 @@ public class List : ComposeObject
 
 
 
-        oa.Changed.RemoveHandle(this.EventHandle);
+        oa.Changed.Handle.RemoveHandle(this.EventHandle);
 
 
 
@@ -485,7 +485,7 @@ public class List : ComposeObject
 
 
 
-        ob.Changed.AddHandle(this.EventHandle);
+        ob.Changed.Handle.AddHandle(this.EventHandle);
 
 
 

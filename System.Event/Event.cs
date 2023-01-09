@@ -8,7 +8,26 @@ public class Event : InfraObject
     public HandleMap Handle { get; set; }
 
 
-    
+
+
+    public override bool Init()
+    {
+        base.Init();
+
+
+
+
+        this.Handle = new HandleMap();
+
+
+        this.Handle.Init();
+
+
+
+
+        return true;
+    }
+
 
 
 

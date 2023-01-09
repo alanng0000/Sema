@@ -460,17 +460,6 @@ public class Grid : View
 
 
 
-        global::System.Console.Write("Grid AddGridChild()" + ", " + 
-        "left" + ": " + left + ", " + 
-        "up" + ": " + up + ", " +
-        "width" + ": " + width + ", " + 
-        "height" + ": " + height +
-        "\n");
-
-
-
-
-
 
 
         View view;
@@ -482,33 +471,12 @@ public class Grid : View
 
 
 
-        ViewControl o;
-        
-
-
-        o = view.Internal;
-
-
-
-        o.Margin = new WinPadding(left, up, 0 , 0);
 
 
 
 
 
-        view.Clip = true;
 
-
-
-
-        view.ClipSize = new WinSize(width, height);
-        
-
-
-
-
-
-        this.Internal.Controls.Add(o);
 
 
 
@@ -665,37 +633,6 @@ public class Grid : View
     }
 
 
-
-
-
-    private WinUserControl CreateChildControl()
-    {
-        WinUserControl o;
-
-        o = new WinUserControl();
-
-        o.Padding = new WinPadding(0);
-
-        o.Margin = new WinPadding(0);
-
-        o.Location = new WinPoint(0, 0);
-
-        o.Size = new WinSize(0, 0);
-
-        o.BackColor = WinColor.Transparent;
-
-        o.BorderStyle = WinBorderStyle.None;
-
-
-
-
-        WinUserControl ret;
-
-        ret = o;
-
-
-        return ret;
-    }
 
 
 

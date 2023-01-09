@@ -70,7 +70,22 @@ class AView : View
 
 
 
+        Grid grid;
+
+
+        grid = new Grid();
+
+
+        grid.Init();
+
+
+        grid.Size.Width = 700;
+
+
+
+
         
+
 
 
 

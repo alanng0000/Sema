@@ -11,7 +11,7 @@ public class Object : InfraObject
 
 
 
-        this.ObjectChanged = new Event();
+        this.ObjectChanged = new EventEvent();
 
 
         this.ObjectChanged.Init();
@@ -38,6 +38,8 @@ public class Object : InfraObject
 
         change = new Change();
 
+        change.Init();
+
         change.Object = this;
 
         change.Field = field;
@@ -53,13 +55,13 @@ public class Object : InfraObject
 
 
 
-    private Event ObjectChanged { get; set; }
+    private EventEvent ObjectChanged { get; set; }
 
 
 
 
 
-    public Event Changed
+    public EventEvent Changed
     {
         get
         {

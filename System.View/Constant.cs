@@ -38,12 +38,12 @@ class Constant : InfraObject
 
 
 
-        this.WhiteColor = this.CreateColor(this.CompMax, this.CompMax, this.CompMax, this.CompMax);
+        this.WhiteColor = this.CreateDrawColor(this.CompMax, this.CompMax, this.CompMax, this.CompMax);
 
 
 
 
-        this.BlackColor = this.CreateColor(this.CompMax, 0, 0, 0);
+        this.BlackColor = this.CreateDrawColor(this.CompMax, 0, 0, 0);
 
 
 
@@ -55,11 +55,11 @@ class Constant : InfraObject
 
 
 
-    private Color CreateColor(byte alpha, byte red, byte green, byte blue)
+    private DrawColor CreateDrawColor(byte alpha, byte red, byte green, byte blue)
     {
-        Color color;
+        DrawColor color;
 
-        color = new Color();
+        color = new DrawColor();
 
         color.Init();
 
@@ -84,7 +84,7 @@ class Constant : InfraObject
 
 
 
-    public Color WhiteColor
+    public DrawColor WhiteColor
     {
         get;
         private set;
@@ -93,7 +93,7 @@ class Constant : InfraObject
 
 
 
-    public Color BlackColor
+    public DrawColor BlackColor
     {
         get;
         private set;

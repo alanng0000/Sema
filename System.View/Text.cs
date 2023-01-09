@@ -70,7 +70,17 @@ public class Text : View
 
 
 
-        this.Fore = Constant.This.BlackColor;
+        Color color;
+
+        color = new Color();
+
+        color.Init();
+
+        color.Value = Constant.This.BlackColor;
+
+
+
+        this.Fore = color;
 
 
 
@@ -290,6 +300,12 @@ public class Text : View
 
 
 
+        DrawColor drawColor;
+
+
+        drawColor = this.Fore.Value;
+
+
 
         DrawPos pos;
 
@@ -300,7 +316,7 @@ public class Text : View
 
 
 
-        draw.Text(charSpan, this.Font, this.Fore, pos);
+        draw.Text(charSpan, this.Font, drawColor, pos);
 
 
 

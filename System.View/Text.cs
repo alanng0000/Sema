@@ -19,6 +19,18 @@ public class Text : View
 
 
 
+        this.ForeField = new Field();
+
+
+        this.ForeField.Object = this;
+
+
+        this.ForeField.Init();
+
+
+
+
+
         this.FontField = new Field();
 
 
@@ -41,6 +53,11 @@ public class Text : View
 
 
         this.Value = "";
+
+
+
+
+        this.Fore = Constant.This.BlackColor;
 
 
 
@@ -138,6 +155,43 @@ public class Text : View
 
 
 
+
+    public virtual Field ForeField { get; set; }
+
+
+
+
+    public virtual Color Fore
+    {
+        get
+        {
+            return (Color)this.ForeField.GetObject();
+        }
+
+        set
+        {
+            this.ForeField.SetObject(value);
+        }
+    }
+
+
+
+
+
+    protected virtual bool ChangeFore(Change change)
+    {
+        this.Trigger(this.ForeField);
+
+
+
+        return true;
+    }
+
+
+
+
+
+
     public virtual Field FontField { get; set; }
 
 
@@ -187,6 +241,12 @@ public class Text : View
         }
 
 
+        if (this.ForeField == field)
+        {
+            this.ChangeFore(change);
+        }
+
+
         if (this.FontField == field)
         {
             this.ChangeFont(change);
@@ -204,14 +264,28 @@ public class Text : View
 
     protected override bool Draw(DrawDraw draw)
     {
-        if (!this.Visible)
-        {
-            return true;
-        }
+        string s;
+
+        s = this.Value;
+
+
+        ReadOnlySpanChar charSpan;
+
+
+        charSpan = s;
 
 
 
 
+        DrawPos pos;
+
+        pos = new DrawPos();
+
+        pos.Init();
+
+
+
+        draw.Text(charSpan, this.Font, this.Fore, pos);
 
 
 

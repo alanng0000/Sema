@@ -302,7 +302,7 @@ public class Grid : View
 
 
         view = child.View;
-        
+
 
 
 
@@ -713,7 +713,7 @@ public class Grid : View
 
 
 
-            global::System.Console.Write("Grid SetChildLeftArray()" + ", " + "left" + ": " + left + "\n");
+            //global::System.Console.Write("Grid SetChildLeftArray()" + ", " + "left" + ": " + left + "\n");
 
 
 
@@ -775,7 +775,7 @@ public class Grid : View
 
 
 
-            global::System.Console.Write("Grid SetChildUpArray()" + ", " + "up" + ": " + up + "\n");
+            //global::System.Console.Write("Grid SetChildUpArray()" + ", " + "up" + ": " + up + "\n");
 
 
 

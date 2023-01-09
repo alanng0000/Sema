@@ -93,6 +93,11 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
         draw.SetWin(g);
+
+
+
+
+        this.Frame.ExecuteDraw();
     }
 
 

@@ -127,8 +127,7 @@ public class Frame : ComposeObject
 
 
 
-
-    private bool ExecuteDraw()
+    internal bool ExecuteDraw()
     {
         this.Draw.Area = this.Area;
 

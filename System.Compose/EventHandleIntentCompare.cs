@@ -3,7 +3,7 @@ namespace System.Compose;
 
 
 
-public class IdCompare : Compare
+public class EventHandleIntentCompare : Compare
 {
     public override int Execute(object left, object right)
     {
@@ -22,19 +22,19 @@ public class IdCompare : Compare
 
 
 
-        ulong leftO;
+        EventHandleIntent leftO;
 
 
-        leftO = (ulong)left;
+        leftO = (EventHandleIntent)left;
 
 
 
 
 
-        ulong rightO;
+        EventHandleIntent rightO;
 
 
-        rightO = (ulong)right;
+        rightO = (EventHandleIntent)right;
 
 
 
@@ -43,7 +43,7 @@ public class IdCompare : Compare
         int t;
 
 
-        t = leftO.CompareTo(rightO);
+        t = leftO.Value.CompareTo(rightO.Value);
 
 
 

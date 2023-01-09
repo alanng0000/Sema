@@ -145,8 +145,24 @@ public class Control : InfraObject
 
 
 
+
     public virtual bool SetKeyState(byte key, bool state)
     {
+        bool a;
+
+
+        a = this.KeyStateList[key];
+
+
+
+        if (a == state)
+        {
+            return true;
+        }
+        
+
+
+
         this.KeyStateList[key] = state;
 
 

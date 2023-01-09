@@ -426,10 +426,10 @@ public class View : ComposeObject
 
 
 
-        left = left + draw.Area.Pos.Left;
+        left = left + draw.Pos.Left;
 
 
-        up = up + draw.Area.Pos.Up;
+        up = up + draw.Pos.Up;
 
 
 
@@ -474,6 +474,31 @@ public class View : ComposeObject
 
 
 
+        DrawPos o;
+
+        o = new DrawPos();
+
+        o.Init();
+
+        o.Left = left;
+
+        o.Up = up;
+
+
+
+
+
+        DrawPos un;
+
+        un = draw.Pos;
+
+
+
+
+        draw.Pos = o;
+
+
+
 
         draw.Area = rect;
 
@@ -488,6 +513,10 @@ public class View : ComposeObject
 
 
 
+
+
+        draw.Pos = un;
+        
 
 
         draw.Area = u;

@@ -86,7 +86,8 @@ public class Control : InfraObject
 
 
 
-        this.KeyStates = new bool[0x100];
+        this.KeyStateList = new bool[0x100];
+
 
 
 

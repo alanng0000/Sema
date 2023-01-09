@@ -26,6 +26,36 @@ public class Convert : InfraObject
 
 
 
+    public override bool Init()
+    {
+        base.Init();
+
+
+
+        this.RangeInfra = new RangeInfra();
+
+
+
+        this.RangeInfra.Init();
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+    private RangeInfra RangeInfra { get; set; }
+
+
+
+
+
+
+
     public WinRectangle WinRectangle(Rect rect)
     {
         WinRectangle u;
@@ -140,5 +170,74 @@ public class Convert : InfraObject
 
 
         return u;
+    }
+
+
+
+
+
+
+    public ReadOnlySpanChar ReadOnlySpanChar(CharSpan charSpan)
+    {
+        ReadOnlySpanChar u;
+
+
+        u = new ReadOnlySpanChar();
+
+
+
+
+
+        int start;
+
+        start = charSpan.Range.Start;
+
+
+
+        int count;
+
+
+        count = this.RangeInfra.Count(charSpan.Range);
+
+
+
+
+        if (!this.Null(charSpan.Array))
+        {
+            char[] a;
+
+            a = charSpan.Array;
+            
+
+
+            u = new ReadOnlySpanChar(a, start, count);
+        }
+
+
+
+        if (!this.Null(charSpan.String))
+        {
+            string s;
+
+
+            s = charSpan.String;
+
+
+
+            u = s.AsSpan(start, count);
+        }
+
+
+
+        return u;
+    }
+    
+
+
+
+
+    private bool Null(object o)
+    {
+        return ObjectInfra.This.Null(o);
     }
 }

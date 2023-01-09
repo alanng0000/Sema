@@ -86,7 +86,13 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-        this.Frame.Draw.SetWin(g);
+        DrawDraw draw;
+
+        draw = this.Frame.Draw;
+
+
+
+        draw.SetWin(g);
     }
 
 

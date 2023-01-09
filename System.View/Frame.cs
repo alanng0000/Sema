@@ -130,6 +130,15 @@ public class Frame : ComposeObject
 
     private bool ExecuteDraw()
     {
+
+        this.Draw.Pos.Left = 0;
+
+        this.Draw.Pos.Up = 0;
+
+
+
+        
+        
         if (this.Null(this.View))
         {
             return true;

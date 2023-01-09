@@ -101,7 +101,7 @@ class Demo : Object
 
         text.Pos.Up = 50;
 
-        text.Size.Width = 300;
+        text.Size.Width = 400;
 
         text.Size.Height = 100;
 
@@ -202,7 +202,7 @@ class Demo : Object
 
     public bool Aa()
     {
-        this.View.Size.Width = 600;
+        this.View.Size.Width = 700;
 
 
 

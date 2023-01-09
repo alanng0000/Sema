@@ -40,9 +40,32 @@ public class Text : View
 
 
 
-
         this.Value = "";
 
+
+
+
+
+        this.InitFont();
+
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+    private bool InitFont()
+    {
+        FontStyle fontStyle;
+
+        fontStyle = new FontStyle();
+
+        fontStyle.Init();
 
 
 
@@ -53,17 +76,27 @@ public class Text : View
         font = new Font();
 
 
+        font.Family = "Segoe UI Variable Display";
+
+
+        font.Size = 16;
+
+
+        font.Style = fontStyle;
+
+
         font.Init();
+
 
 
         this.Font = font;
 
 
-
-
-
+        
         return true;
     }
+
+
 
 
 

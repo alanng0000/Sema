@@ -35,6 +35,7 @@ class Demo : Object
 
 
 
+
         View view;
 
         view = new View();
@@ -45,13 +46,59 @@ class Demo : Object
 
         view.Pos.Up = 100;
 
-        view.Size.Width = 100;
+        view.Size.Width = 400;
 
-        view.Size.Height = 100;
+        view.Size.Height = 400;
 
 
         view.Back = blueBrush;
 
+
+
+
+
+        ColorBrush transparentBrush;
+
+        transparentBrush = new ColorBrush();
+
+        transparentBrush.Color = Constant.This.TransparentColor;
+
+        transparentBrush.Init();
+
+
+
+
+        Text text;
+
+        text = new Text();
+
+        text.Init();
+
+        text.Size.Width = 300;
+
+        text.Size.Height = 100;
+
+
+        text.Back = transparentBrush;
+
+
+
+
+        string s;
+
+        s = "AAABBB HHHH KKKK OOOOO";
+
+
+
+        text.Value.Span.String = s;
+
+
+        text.Value.Span.Range.End = s.Length;
+
+
+
+
+        view.Child = text;
 
 
 

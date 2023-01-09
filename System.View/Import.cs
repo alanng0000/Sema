@@ -1,5 +1,6 @@
 global using InfraObject = System.Infra.Object;
 global using IntOp = System.Infra.IntOp;
+global using ObjectInfra = System.Infra.ObjectInfra;
 global using InfraList = System.List.List;
 global using InfraListIter = System.List.ListIter;
 global using InfraIIter = System.List.IIter;

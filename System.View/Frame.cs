@@ -293,6 +293,6 @@ public class Frame : ComposeObject
 
     private bool Null(object o)
     {
-        return o == null;
+        return ObjectInfra.This.Null(o);
     }
 }

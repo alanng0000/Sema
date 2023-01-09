@@ -16,6 +16,6 @@ public class Compare : Object
 
     protected bool Null(object o)
     {
-        return o == null;
+        return ObjectInfra.This.Null(o);
     }
 }

@@ -407,7 +407,7 @@ public class View : ComposeObject
 
 
 
-    internal bool ExecuteDraw(DrawDraw draw)
+    protected virtual bool ExecuteDraw(DrawDraw draw)
     {
         this.Draw(draw);
 
@@ -484,10 +484,7 @@ public class View : ComposeObject
 
 
 
-        if (!this.Null(this.Child))
-        {
-            this.Child.ExecuteDraw(draw);
-        }
+        this.ExecuteChildDraw(draw);
 
 
 
@@ -507,6 +504,34 @@ public class View : ComposeObject
 
 
 
+
+
+    protected virtual bool ExecuteChildDraw(DrawDraw draw)
+    {
+        if (!this.Null(this.Child))
+        {
+            this.Child.ExecuteDraw(draw);
+        }
+
+
+
+        return true;
+    }
+
+    
+
+
+
+
+
+    internal bool LocalExecuteDraw(DrawDraw draw)
+    {
+        this.ExecuteDraw(draw);
+
+
+
+        return true;
+    }
 
 
 

@@ -152,7 +152,7 @@ public class Frame : ComposeObject
 
 
 
-        this.View.ExecuteDraw(this.Draw);
+        this.View.LocalExecuteDraw(this.Draw);
 
 
 

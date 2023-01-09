@@ -287,6 +287,11 @@ public class Text : View
 
     protected override bool Draw(DrawDraw draw)
     {
+        base.Draw(draw);
+
+        
+
+
         TextValue value;
 
 

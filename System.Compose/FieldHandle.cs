@@ -5,7 +5,7 @@ namespace System.Compose;
 
 
 
-public class FieldHandle : EventHandle
+public class FieldHandle : Handle
 {
     public Field Field { get; set; }
 

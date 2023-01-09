@@ -65,7 +65,7 @@ public class Field : InfraObject
     {
         if (!this.Null(this.Value))
         {
-            this.Value.Changed.RemoveHandle(this.Handle);
+            this.Value.Changed.Handle.RemoveHandle(this.Handle);
         }
 
 
@@ -78,7 +78,7 @@ public class Field : InfraObject
 
         if (!this.Null(this.Value))
         {
-            this.Value.Changed.AddHandle(this.Handle);
+            this.Value.Changed.Handle.AddHandle(this.Handle);
         }
 
 
@@ -332,6 +332,8 @@ public class Field : InfraObject
         return true;
     }
 
+    
+
 
 
 
@@ -341,6 +343,9 @@ public class Field : InfraObject
 
 
         change = new Change();
+
+
+        change.Init();
 
 
 

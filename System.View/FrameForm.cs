@@ -3,7 +3,7 @@ namespace System.View;
 
 
 
-public class FrameForm : InfraObject, WinIMessageFilter
+public class FrameForm : WinForm, WinIMessageFilter
 {
     public Frame Frame { get; set; }
 
@@ -43,15 +43,27 @@ public class FrameForm : InfraObject, WinIMessageFilter
 
 
 
-    public override bool Init()
+    public bool Init()
     {
-        base.Init();
-        
+        this.DoubleBuffered = true;
 
 
 
 
-        this.Title = this.Frame.Title;
+        this.WindowState = WinFormWindowState.Maximized;
+
+
+
+        this.FormBorderStyle = WinFormBorderStyle.None;
+
+
+
+        this.BackColor = WinColor.White;
+
+
+
+
+        this.Text = this.Frame.Title;
 
         
 
@@ -64,7 +76,20 @@ public class FrameForm : InfraObject, WinIMessageFilter
 
 
 
-    private string Title { get; set; }
+
+    protected override void OnPaint(WinPaintEventArgs e)
+    {
+        WinGraphics g;
+
+
+        g = e.Graphics;
+
+
+
+        this.Frame.DrawGraphics(g);
+    }
+
+
 
 
 
@@ -361,4 +386,11 @@ public class FrameForm : InfraObject, WinIMessageFilter
 
         return ret;
     }
+
+
+
+
+
+    //[DllImport("user32.dll")]
+    //private static extern short GetKeyState(int nVirtKey);
 }

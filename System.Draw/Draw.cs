@@ -5,32 +5,44 @@ namespace System.Draw;
 
 public class Draw : InfraObject
 {
+    private WinGraphics WinGraphic { get; set; }
+
+
+
+
+    private RangeInfra RangeInfra { get; set; }
+
+
+
+
     public override bool Init()
     {
         base.Init();
 
 
 
-        Pos pos;
 
-        pos = new Pos();
-
-        pos.Init();
+        this.RangeInfra = new RangeInfra();
 
 
+        this.RangeInfra.Init();
 
 
-        this.Area = new Rect();
+
+        return true;
+    }
 
 
-        this.Area.Init();
 
 
-        this.Area.Pos = pos;
+
+    public bool SetWin(WinGraphics graphic)
+    {
+        this.WinGraphic = graphic;
 
 
-        this.Area.Size = this.Size;
-        
+
+        this.SetGraphicDefault(this.WinGraphic);
 
 
 
@@ -42,23 +54,18 @@ public class Draw : InfraObject
 
 
 
-    public ulong Buffer { get; set; }
+
+    private bool SetGraphicDefault(WinGraphics g)
+    {
+        g.TextRenderingHint = WinTextRenderingHint.ClearTypeGridFit;
 
 
+        g.PageUnit = WinGraphicsUnit.Pixel;
 
 
-    public uint BufferStride { get; set; }
+        return true;
+    }
 
-
-
-
-
-    public Size Size;
-
-
-
-
-    private Rect Area;
 
 
 
@@ -66,109 +73,14 @@ public class Draw : InfraObject
 
     public bool Rect(Brush brush, Rect rect)
     {
-        this.BoundArea(ref this.Area, ref rect);
+        WinRectangle u;
 
+        u = Create.This.ExecuteWinRectangle(rect);
 
 
 
-        if (brush is ColorBrush)
-        {
-            ColorBrush colorBrush;
 
-
-            colorBrush = (ColorBrush)brush;
-
-
-
-            this.ColorRect(ref colorBrush.Color, ref rect);
-        }
-
-
-
-        return true;
-    }
-
-
-
-
-
-    private bool ColorRect(ref Color color, ref Rect rect)
-    {
-        Color c;
-
-
-        c = color;
-
-
-
-
-        bool isOpaque;
-
-        isOpaque = false;
-
-
-
-
-        if (c.Alpha == byte.MaxValue)
-        {
-            isOpaque = true;
-        }
-
-
-
-        if (isOpaque)
-        {
-            c.Alpha = 0;
-        }
-
-
-
-        
-        
-
-
-
-
-        uint colorInt;
-
-
-        colorInt = this.ColorInt(ref c);
-
-
-
-
-        ulong bufferPointer;
-
-        bufferPointer = this.Buffer;
-
-
-        uint bufferStride;
-
-        bufferStride = this.BufferStride;
-
-
-
-        uint rectRow;
-
-        rectRow = this.UInt(rect.Pos.Up);
-
-
-        uint rectCol;
-
-        rectCol = this.UInt(rect.Pos.Left);
-
-
-        uint rectWidth;
-
-        rectWidth = this.UInt(rect.Size.Width);
-
-
-        uint rectHeight;
-
-        rectHeight = this.UInt(rect.Size.Height);
-
-
-
+        this.WinGraphic.FillRectangle(brush.WinBrush, u);
 
 
 
@@ -183,238 +95,40 @@ public class Draw : InfraObject
 
 
 
-
-    public bool Text(byte[] charList, InfraRange range, Font font, Color color, Pos pos)
+    public bool Text(char[] charList, InfraRange range, Font font, Color color, Pos pos)
     {
-        
+        int count;
 
+        count = this.RangeInfra.Count(range);
 
+    
 
-        return true;
-    }
 
+        ReadOnlySpanChar t;
 
 
+        t = new ReadOnlySpanChar(charList, range.Start, count);
 
 
 
 
+        WinPoint winPoint;
 
-    private uint UInt(int a)
-    {
-        return (uint)a;
-    }
+        winPoint = Create.This.ExecuteWinPoint(pos);
 
 
 
+        WinColor winColor;
 
+        winColor = Create.This.ExecuteWinColor(color);
 
 
-    private bool BoundArea(ref Rect bound, ref Rect area)
-    {
-        int left;
 
-        left = area.Pos.Left;
-
-
-
-        int up;
-
-        up = area.Pos.Up;
-
-
-
-
-        int width;
-
-        width = area.Size.Width;
-
-
-
-        int height;
-
-        height = area.Size.Height;
-
-
-
-
-        int right;
-
-        right = left + width;
-
-
-
-        int down;
-
-        down = up + height;
-
-
-
-
-
-        int boundRight;
-
-        boundRight = bound.Pos.Left + bound.Size.Width;
-
-
-
-        int boundDown;
-
-        boundDown = bound.Pos.Up + bound.Size.Height;
-
-
-
-
-
-        if (left < bound.Pos.Left)
-        {
-            left = bound.Pos.Left;
-        }
-
-
-
-        if (up < bound.Pos.Up)
-        {
-            up = bound.Pos.Up;
-        }
-
-
-
-
-
-        if (boundRight < right)
-        {
-            right = boundRight;
-        }
-
-
-
-        if (boundDown < down)
-        {
-            down = boundDown;
-        }
-
-
-
-
-
-
-        int w;
-
-
-        w = IntOp.This.Sub(right, left);
-
-
-
-
-
-        int h;
-
-
-        h = IntOp.This.Sub(down, up);
-
-
-
-
-
-        area.Pos.Left = left;
-
-
-        area.Pos.Up = up;
-
-
-        area.Size.Width = w;
-
-
-        area.Size.Height = h;
+        WinTextRenderer.DrawText(this.WinGraphic, t, font.WinFont, winPoint, winColor, Constant.This.TextFormatFlag);
 
 
 
 
         return true;
-    }
-
-
-
-
-
-
-    private uint ColorInt(ref Color color)
-    {
-        int i;
-
-        i = 0;
-
-
-
-        uint k;
-
-
-        k = 0;
-
-
-
-        k = k | this.ColorIntComp(color.Blue, i);
-
-
-        i = i + 1;
-
-
-        k = k | this.ColorIntComp(color.Green, i);
-
-
-        i = i + 1;
-
-
-        k = k | this.ColorIntComp(color.Red, i);
-
-
-        i = i + 1;
-
-
-        k = k | this.ColorIntComp(color.Alpha, i);
-
-
-
-
-
-        uint ret;
-
-        ret = k;
-
-
-        return ret;
-    }
-
-
-
-
-    private int BitPerByte { get { return 8; } }
-
-
-
-
-    private uint ColorIntComp(byte comp, int index)
-    {
-        int o;
-
-        o = this.BitPerByte;
-
-
-
-        uint k;
-
-        k = comp;
-
-        k = k << (index * o);
-
-
-
-        uint ret;
-
-        ret = k;
-
-
-        return ret;
     }
 }

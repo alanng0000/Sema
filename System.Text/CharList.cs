@@ -14,12 +14,12 @@ public class CharList : InfraObject
 
 
 
-        this.Data = new byte[InitialCapacity];
+        this.Data = new char[InitialCapacity];
 
 
 
 
-        this.AddInsertOneCharList = new byte[1];
+        this.AddInsertOneChars = new char[1];
 
 
 
@@ -52,23 +52,23 @@ public class CharList : InfraObject
 
 
 
-    public byte[] Data { get; private set; }
+    public char[] Data { get; private set; }
 
 
 
 
 
-    private byte[] AddInsertOneCharList { get; set; }
+    private char[] AddInsertOneChars { get; set; }
 
 
 
 
 
-    public byte Get(int index)
+    public char Get(int index)
     {
         if (!this.CheckIndex(index))
         {
-            return 0;
+            return (char)0;
         }
 
 
@@ -81,7 +81,7 @@ public class CharList : InfraObject
 
 
 
-    public bool Set(int index, byte item)
+    public bool Set(int index, char item)
     {
         if (!this.CheckIndex(index))
         {
@@ -104,9 +104,9 @@ public class CharList : InfraObject
 
 
 
-    public bool Add(byte item)
+    public bool Add(char item)
     {
-        this.AddInsertOneCharList[0] = item;
+        this.AddInsertOneChars[0] = item;
 
 
 
@@ -122,7 +122,7 @@ public class CharList : InfraObject
 
 
 
-        this.AddRange(this.AddInsertOneCharList, range);
+        this.AddRange(this.AddInsertOneChars, range);
 
 
 
@@ -137,7 +137,7 @@ public class CharList : InfraObject
 
 
 
-    public bool AddRange(byte[] items, InfraRange range)
+    public bool AddRange(char[] items, InfraRange range)
     {
         int count;
 
@@ -165,10 +165,10 @@ public class CharList : InfraObject
 
 
 
-            byte[] d;
+            char[] d;
 
 
-            d = new byte[capacity];
+            d = new char[capacity];
 
 
 
@@ -209,9 +209,9 @@ public class CharList : InfraObject
 
 
 
-    public bool Insert(int index, byte item)
+    public bool Insert(int index, char item)
     {
-        this.AddInsertOneCharList[0] = item;
+        this.AddInsertOneChars[0] = item;
 
 
 
@@ -227,7 +227,7 @@ public class CharList : InfraObject
 
 
 
-        this.InsertRange(index, this.AddInsertOneCharList, range);
+        this.InsertRange(index, this.AddInsertOneChars, range);
 
 
 
@@ -241,7 +241,7 @@ public class CharList : InfraObject
 
 
 
-    public bool InsertRange(int index, byte[] items, InfraRange range)
+    public bool InsertRange(int index, char[] items, InfraRange range)
     {
         int count;
 
@@ -277,10 +277,10 @@ public class CharList : InfraObject
 
 
 
-            byte[] d;
+            char[] d;
 
 
-            d = new byte[capacity];
+            d = new char[capacity];
 
 
 
@@ -334,7 +334,7 @@ public class CharList : InfraObject
 
 
 
-            this.MoveCharListToNext(index, remainCount, count);
+            this.MoveCharsToNext(index, remainCount, count);
 
 
 
@@ -503,7 +503,7 @@ public class CharList : InfraObject
         iter = new CharIter();
 
 
-        iter.Char = this;
+        iter.Chars = this;
 
 
         iter.Init();
@@ -528,7 +528,7 @@ public class CharList : InfraObject
 
     private bool MoveCharsToPrevious(int index, int count, int previous)
     {
-        byte[] array;
+        char[] array;
 
 
         array = this.Data;
@@ -570,9 +570,9 @@ public class CharList : InfraObject
 
 
 
-    private bool MoveCharListToNext(int index, int count, int next)
+    private bool MoveCharsToNext(int index, int count, int next)
     {
-        byte[] array;
+        char[] array;
 
 
         array = this.Data;
@@ -680,5 +680,5 @@ public class CharList : InfraObject
 
     
 
-    private static int InitialCapacity { get; } = 256;
+    private static int InitialCapacity { get; } = 128;
 }

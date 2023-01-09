@@ -12,11 +12,11 @@ public class Infra : InfraObject
 
 
 
-        this.Quote = (byte)'\"';
+        this.Quote = '\"';
 
 
 
-        this.BackSlash = (byte)'\\';
+        this.BackSlash = '\\';
 
 
 
@@ -100,12 +100,10 @@ public class Infra : InfraObject
 
 
 
-        byte oba;
+        char oca;
 
-        byte obb;
+        char ocb;
 
-
-        char oc;
 
 
 
@@ -115,17 +113,14 @@ public class Infra : InfraObject
 
         while (i < count)
         {
-            oba = varChar.Get(start + i);
+            oca = varChar.Get(start + i);
 
 
-            oc = other[i];
-
-
-            obb = (byte)oc;
+            ocb = other[i];
 
 
 
-            if (!(oba == obb))
+            if (!(oca == ocb))
             {
                 return false;
             }
@@ -164,12 +159,10 @@ public class Infra : InfraObject
 
 
 
-        
-
         string s;
 
 
-        s = Encoding.ASCII.GetString(line.Char.Data, range.Start, count);
+        s = new string(line.Char.Data, range.Start, count);
 
         
         return s;
@@ -179,7 +172,7 @@ public class Infra : InfraObject
 
 
 
-    public byte Char(Pos pos)
+    public char Char(Pos pos)
     {
         Line line;
 
@@ -187,19 +180,19 @@ public class Infra : InfraObject
 
 
 
-        byte ob;
+        char oc;
 
-        ob = line.Char.Data[pos.Col];
+        oc = line.Char.Data[pos.Col];
 
 
-        return ob;
+        return oc;
     }
 
 
 
 
 
-    public bool StartWith(int row, InfraRange range, byte ob)
+    public bool StartWith(int row, InfraRange range, char oc)
     {
         if (!this.Check(row, range))
         {
@@ -215,15 +208,15 @@ public class Infra : InfraObject
 
 
 
-        byte obb;
+        char occ;
 
-        obb = this.Char(this.Pos(row, range.Start));
+        occ = this.Char(this.Pos(row, range.Start));
 
 
 
         bool ret;
 
-        ret = (obb == ob);
+        ret = (occ == oc);
 
 
         return ret;
@@ -233,7 +226,7 @@ public class Infra : InfraObject
 
 
 
-    public bool EndWith(int row, InfraRange range, byte ob)
+    public bool EndWith(int row, InfraRange range, char oc)
     {
         if (!this.Check(row, range))
         {
@@ -258,16 +251,16 @@ public class Infra : InfraObject
         
 
 
-        byte obb;
+        char occ;
 
-        obb = this.Char(t);
+        occ = this.Char(t);
 
 
 
 
         bool ret;
 
-        ret = (obb == ob);
+        ret = (occ == oc);
 
 
         return ret;
@@ -442,7 +435,7 @@ public class Infra : InfraObject
 
 
 
-        byte c;
+        char c;
 
 
 
@@ -464,17 +457,12 @@ public class Infra : InfraObject
 
 
 
-        byte u;
+        char u;
 
 
 
 
-        byte escapeValue;
-
-
-
-
-        char oc;
+        char escapeValue;
 
 
 
@@ -527,17 +515,17 @@ public class Infra : InfraObject
 
 
                     
-                    if (u == this.Quote)
+                    if (u == Quote)
                     {
                         escapeValue = u;
                     }
                     else if (u == 't')
                     {
-                        escapeValue = this.Tab;
+                        escapeValue = '\t';
                     }
                     else if (u == 'n')
                     {
-                        escapeValue = this.LineEnd;
+                        escapeValue = '\n';
                     }
                     else if (u == this.BackSlash)
                     {
@@ -549,12 +537,7 @@ public class Infra : InfraObject
                     }
 
 
-
-                    oc = (char)escapeValue;
-
-
-
-                    sb.Append(oc);
+                    sb.Append(escapeValue);
 
 
 
@@ -700,7 +683,7 @@ public class Infra : InfraObject
 
 
 
-            byte ob;
+            char ob;
 
 
             ob = this.Char(pos);
@@ -815,7 +798,7 @@ public class Infra : InfraObject
 
 
 
-    public ulong Digit(byte o)
+    public ulong Digit(char o)
     {
         ulong u;
 
@@ -855,7 +838,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsAlphanumeric(byte o)
+    public bool IsAlphanumeric(char o)
     {
         return this.IsLetter(o) | this.IsDigit(o);
     }
@@ -863,7 +846,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsDigit(byte o)
+    public bool IsDigit(char o)
     {
         return '0' <= o && o <= '9';
     }
@@ -872,7 +855,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsHexDigit(byte o)
+    public bool IsHexDigit(char o)
     {
         if ('a' <= o && o <= 'f')
         {
@@ -886,7 +869,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsLetter(byte o)
+    public bool IsLetter(char o)
     {
         return this.IsLowerLetter(o) | this.IsUpperLetter(o);
     }
@@ -894,14 +877,14 @@ public class Infra : InfraObject
 
 
 
-    public bool IsLowerLetter(byte o)
+    public bool IsLowerLetter(char o)
     {
         return 'a' <= o & o <= 'z';
     }
 
 
 
-    public bool IsUpperLetter(byte o)
+    public bool IsUpperLetter(char o)
     {
         return 'A' <= o & o <= 'Z';
     }
@@ -910,32 +893,20 @@ public class Infra : InfraObject
 
 
 
-    private byte Quote;
+    private char Quote;
 
 
 
 
-    private byte BackSlash;
+    private char BackSlash;
 
-
-
-
-    private byte Tab;
-
-
-
-
-    private byte LineEnd;
-
-
-    
 
 
 
 
     private bool IsQuote(Pos pos)
     {
-        byte oc;
+        char oc;
 
 
 

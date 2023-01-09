@@ -5,29 +5,54 @@ namespace System.Exe;
 
 public class Exe : InfraObject
 {
-    public int Execute()
+    public bool Execute()
     {
-        Extern.Infra_Form_Init();
-
-
-
-        int o;
-
-        o = this.ExecuteWork();
+        this.ExecuteThread();
 
 
 
 
-        Extern.Infra_Form_Final();
+
+        return true;
+    }
+
+
+
+
+
+    private bool ExecuteThread()
+    {
+        Thread thread;
+
+
+        thread = new Thread(this.ThreadWork);
+
+
+
+
+        bool b;
+
+
+        b = thread.TrySetApartmentState(ApartmentState.STA);
+
+
+        if (!b)
+        {
+            return false;
+        }
+
+
+
+
+        thread.Start();
+
+
+
+        thread.Join();
+
+
         
-
-
-
-        int ret;
-
-        ret = o;
-
-        return ret;
+        return true;
     }
 
 
@@ -36,8 +61,18 @@ public class Exe : InfraObject
 
 
 
-    protected virtual int ExecuteWork()
+    protected virtual bool ExecuteMain()
     {
-        return 0;
+        return true;
+    }
+
+    
+
+
+
+
+    private void ThreadWork()
+    {
+        this.ExecuteMain();
     }
 }

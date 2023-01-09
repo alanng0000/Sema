@@ -538,7 +538,7 @@ public class View : ComposeObject
 
 
 
-    private DrawInfra DrawInfra { get; set; }
+    protected DrawInfra DrawInfra { get; set; }
 
 
 

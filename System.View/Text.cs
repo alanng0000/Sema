@@ -41,11 +41,6 @@ public class Text : View
 
 
 
-        this.Color.Alpha = byte.MaxValue;
-
-
-
-
         this.Value = "";
 
 
@@ -119,12 +114,12 @@ public class Text : View
     {
         get
         {
-            return (Font)this.FontField.Get();
+            return (Font)this.FontField.GetObject();
         }
 
         set
         {
-            this.FontField.Set(value);
+            this.FontField.SetObject(value);
         }
     }
 

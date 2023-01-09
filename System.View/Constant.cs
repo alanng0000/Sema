@@ -2,7 +2,10 @@ namespace System.View;
 
 
 
-class Constant : InfraObject
+
+
+
+public class Constant : InfraObject
 {
     public static Constant This { get; } = CreateGlobal();
 
@@ -80,6 +83,17 @@ class Constant : InfraObject
 
     private byte CompMax;
 
+
+
+
+
+    public byte ColorCompMax
+    {
+        get
+        {
+            return this.CompMax;
+        }
+    }
 
 
 

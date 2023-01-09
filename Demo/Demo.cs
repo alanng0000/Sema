@@ -171,6 +171,21 @@ class Demo : Object
 
         this.View = view;
 
+
+
+
+        Handle handle;
+
+        handle = new Handle();
+
+        handle.Init();
+
+
+        handle.Demo = this;
+
+
+
+        Control.This.CharInput.Handle.AddHandle(handle);
         
 
 
@@ -192,7 +207,7 @@ class Demo : Object
 
 
         this.Frame.Update();
-        
+
 
 
         

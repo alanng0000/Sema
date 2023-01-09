@@ -51,8 +51,21 @@ public class Text : View
         
 
 
+        TextValue value;
 
-        this.Value = "";
+        value = new TextValue();
+
+        value.Init();
+
+        value.Span.String = "";
+
+        value.Span.Range.Start = 0;
+
+        value.Span.Range.End = 0;
+
+
+
+        this.Value = value;
 
 
 
@@ -124,16 +137,16 @@ public class Text : View
 
 
 
-    public virtual string Value
+    public virtual TextValue Value
     {
         get
         {
-            return this.ValueField.GetString();
+            return (TextValue)this.ValueField.GetObject();
         }
 
         set
         {
-            this.ValueField.SetString(value);
+            this.ValueField.SetObject(value);
         }
     }
 
@@ -264,15 +277,16 @@ public class Text : View
 
     protected override bool Draw(DrawDraw draw)
     {
-        string s;
-
-        s = this.Value;
+        TextValue value;
 
 
-        ReadOnlySpanChar charSpan;
+        value = this.Value;
 
 
-        charSpan = s;
+
+        CharSpan charSpan;
+
+        charSpan = value.Span;
 
 
 
@@ -282,6 +296,7 @@ public class Text : View
         pos = new DrawPos();
 
         pos.Init();
+
 
 
 

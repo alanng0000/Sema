@@ -37,17 +37,17 @@ public class Draw : InfraObject
 
 
 
-    public Pos Pos;
+    public Rect Area;
 
 
 
 
 
-    public bool SetClip(Rect rect)
+    public bool SetClip()
     {
         WinRectangle winRect;
 
-        winRect = Convert.This.WinRectangle(rect);
+        winRect = Convert.This.WinRectangle(this.Area);
 
 
 
@@ -102,9 +102,9 @@ public class Draw : InfraObject
 
         pos = rect.Pos;
 
-        pos.Left = pos.Left + this.Pos.Left;
+        pos.Left = pos.Left + this.Area.Pos.Left;
 
-        pos.Up = pos.Up + this.Pos.Up;
+        pos.Up = pos.Up + this.Area.Pos.Up;
 
 
 
@@ -151,10 +151,10 @@ public class Draw : InfraObject
 
 
 
-        pos.Left = pos.Left + this.Pos.Left;
+        pos.Left = pos.Left + this.Area.Pos.Left;
 
 
-        pos.Up = pos.Up + this.Pos.Up;
+        pos.Up = pos.Up + this.Area.Pos.Up;
 
         
 

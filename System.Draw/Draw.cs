@@ -130,10 +130,17 @@ public class Draw : InfraObject
 
 
 
-    public bool Text(ReadOnlySpanChar charSpan, Font font, Color color, Pos pos)
+    public bool Text(CharSpan charSpan, Font font, Color color, Pos pos)
     {
         this.Absolute(ref pos);
 
+
+
+
+        ReadOnlySpanChar u;
+
+
+        u = Convert.This.ReadOnlySpanChar(charSpan);
 
         
 
@@ -150,7 +157,7 @@ public class Draw : InfraObject
 
 
 
-        WinTextRenderer.DrawText(this.WinGraphic, charSpan, font.WinFont, winPoint, winColor, Constant.This.TextFormatFlag);
+        WinTextRenderer.DrawText(this.WinGraphic, u, font.WinFont, winPoint, winColor, Constant.This.TextFormatFlag);
 
 
 

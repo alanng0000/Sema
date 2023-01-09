@@ -70,21 +70,32 @@ class AView : View
 
 
 
-        Grid grid;
+        ColorBrush redBrush;
+
+        redBrush = new ColorBrush();
+
+        redBrush.Color.Alpha = Constant.This.ColorCompMax;
+
+        redBrush.Color.Red = Constant.This.ColorCompMax;
+
+        redBrush.Init();
 
 
-        grid = new Grid();
-
-
-        grid.Init();
-
-
-        grid.Size.Width = 700;
 
 
 
 
-        
+        View viewA;
+
+        viewA = new View();
+
+        viewA.Init();
+
+        viewA.Size.Width = 450;
+
+        viewA.Size.Height = 400;
+
+        viewA.Back = greenBrush;
 
 
 
@@ -97,16 +108,19 @@ class AView : View
 
         text.Init();
 
-        text.Pos.Left = 100;
+        text.Pos.Left = 50;
 
-        text.Pos.Up = 50;
+        text.Pos.Up = 100;
 
         text.Size.Width = 400;
 
         text.Size.Height = 100;
 
 
-        text.Back = greenBrush;
+        text.Back = redBrush;
+
+
+
 
 
 
@@ -155,7 +169,100 @@ class AView : View
 
 
 
-        this.Child = text;
+
+
+
+        Grid grid;
+
+
+        grid = new Grid();
+
+
+        grid.Init();
+
+
+        grid.Size.Width = 700;
+
+
+        grid.Size.Height = 500;
+
+        
+
+
+
+        GridCol colA;
+
+        colA = new GridCol();
+
+        colA.Init();
+
+
+        colA.Width = 200;
+
+
+
+        GridCol colB;
+
+        colB = new GridCol();
+
+        colB.Init();
+
+
+        colB.Width = 500;
+
+
+
+        grid.Cols.Add(colA);
+
+
+        grid.Cols.Add(colB);
+
+
+
+
+
+
+
+        GridChild childA;
+
+        childA = new GridChild();
+
+        childA.Init();
+
+        childA.View = text;
+
+        childA.Range.End.Col = 1;
+
+
+
+
+        GridChild childB;
+
+        childB = new GridChild();
+
+        childB.Init();
+
+        childB.View = viewA;
+
+        childB.Range.Start.Col = 1;
+
+        childB.Range.End.Col = 2;
+
+
+
+
+        grid.Childs.Add(childA);
+
+
+        grid.Childs.Add(childB);
+
+
+
+
+
+
+
+        this.Child = grid;
 
 
 

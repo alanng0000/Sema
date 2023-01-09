@@ -108,15 +108,46 @@ public class Control : InfraObject
 
 
 
+
+        this.KeyEventArg = new KeyEventArg();
+
+
+        this.KeyEventArg.Init();
+
+
+
+
+
+        this.CharEventArg = new CharEventArg();
+
+
+        this.CharEventArg.Init();
+
+
+
+
+
+
         return true;
     }
 
 
 
 
+
+    private KeyEventArg KeyEventArg { get; set; }
+
+
+
+    private CharEventArg CharEventArg { get; set; }
+
+
+
+
+
     public virtual bool GetKeyState(byte key)
     {
-        return this.KeyStates[key];
+        return this.KeyStateList[key];
     }
 
 
@@ -124,22 +155,18 @@ public class Control : InfraObject
 
     public virtual bool SetKeyState(byte key, bool state)
     {
-        this.KeyStates[key] = state;
+        this.KeyStateList[key] = state;
 
 
 
 
-        EventArg arg;
+        this.KeyEventArg.Key = key;
 
-        arg = new EventArg();
-
-        arg.Key = key;
-
-        arg.State = state;
+        this.KeyEventArg.State = state;
 
 
 
-        this.KeyInput.Trigger(arg);
+        this.KeyInput.Trigger(this.KeyEventArg);
 
 
 
@@ -150,17 +177,16 @@ public class Control : InfraObject
 
 
 
+
+
+
     public virtual bool KeyChar(char oc)
     {
-        CharEventArg arg;
-
-        arg = new CharEventArg();
-
-        arg.Char = oc;
+        this.CharEventArg.Char = oc;
 
 
 
-        this.CharInput.Trigger(arg);
+        this.CharInput.Trigger(this.CharEventArg);
 
 
 
@@ -177,5 +203,6 @@ public class Control : InfraObject
 
 
 
-    protected virtual bool[] KeyStates { get; set; }
+
+    protected virtual bool[] KeyStateList { get; set; }
 }

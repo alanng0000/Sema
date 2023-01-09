@@ -3,10 +3,10 @@ namespace System.Control;
 
 
 
-public class KeyEventArg
+public class KeyEventArg : InfraObject
 {
-    public byte Key;
+    public byte Key { get; set; }
 
 
-    public bool State;
+    public bool State { get; set; }
 }

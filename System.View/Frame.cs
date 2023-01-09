@@ -142,7 +142,7 @@ public class Frame : ComposeObject
     internal bool ExecuteDraw()
     {
         this.Draw.Pos = this.Pos;
-        
+
 
 
         this.Draw.Area = this.Area;
@@ -154,9 +154,17 @@ public class Frame : ComposeObject
         
 
 
+
+        View view;
+
+
+        view = this.View;
+
+
+
         
 
-        if (this.Null(this.View))
+        if (this.Null(view))
         {
             return true;
         }
@@ -167,7 +175,7 @@ public class Frame : ComposeObject
 
 
 
-        this.View.LocalExecuteDraw(this.Draw);
+        view.LocalExecuteDraw(this.Draw);
 
 
 

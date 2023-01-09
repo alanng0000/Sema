@@ -503,7 +503,7 @@ public class CharList : InfraObject
         iter = new CharIter();
 
 
-        iter.Chars = this;
+        iter.CharList = this;
 
 
         iter.Init();

@@ -68,6 +68,20 @@ class Demo : Object
 
 
 
+        ColorBrush greenBrush;
+
+        greenBrush = new ColorBrush();
+
+        greenBrush.Color.Alpha = Constant.This.ColorCompMax;
+
+        greenBrush.Color.Green = Constant.This.ColorCompMax;
+
+        greenBrush.Init();
+
+
+
+
+
         Text text;
 
         text = new Text();
@@ -83,7 +97,7 @@ class Demo : Object
         text.Size.Height = 100;
 
 
-        text.Back = transparentBrush;
+        text.Back = greenBrush;
 
 
 
@@ -98,6 +112,36 @@ class Demo : Object
 
 
         text.Value.Span.Range.End = s.Length;
+
+
+
+        FontStyle fontStyle;
+
+        fontStyle = new FontStyle();
+
+        fontStyle.Init();
+
+        fontStyle.Underline = true;
+
+
+
+
+        Font font;
+
+        font = new Font();
+
+        font.Family = "Cascadia Mono";
+
+        font.Size = 30;
+
+        font.Style = fontStyle;
+
+
+        font.Init();
+
+
+
+        text.Font = font;
 
 
 

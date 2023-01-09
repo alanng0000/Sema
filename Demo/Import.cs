@@ -1,5 +1,7 @@
 global using Object = System.Infra.Object;
 global using ColorBrush = System.Draw.ColorBrush;
+global using Font = System.Draw.Font;
+global using FontStyle = System.Draw.FontStyle;
 global using View = System.View.View;
 global using Frame = System.View.Frame;
 global using Text = System.View.Text;

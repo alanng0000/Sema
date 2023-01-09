@@ -55,7 +55,7 @@ public class Event : InfraObject
         pair = new Pair();
 
 
-        pair.Key = handle.LocalId;
+        pair.Key = handle.Intent;
 
 
         pair.Value = handle;
@@ -73,14 +73,14 @@ public class Event : InfraObject
 
     public virtual bool RemoveHandle(EventHandle handle)
     {
-        ulong id;
+        EventHandleIntent intent;
 
         
-        id = handle.LocalId;
+        intent = handle.Intent;
 
 
 
-        this.Handles.Remove(id);
+        this.Handles.Remove(intent);
 
 
 

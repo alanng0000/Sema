@@ -436,6 +436,16 @@ public class View : ComposeObject
 
     public virtual bool ExecuteDraw(DrawDraw draw)
     {
+        if (!this.Visible)
+        {
+            return true;
+        }
+        
+
+
+
+
+
         this.Draw(draw);
 
 

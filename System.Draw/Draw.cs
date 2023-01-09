@@ -103,17 +103,8 @@ public class Draw : InfraObject
 
     public bool Rect(Brush brush, Rect rect)
     {
-        Pos pos;
+        this.Absolute(ref rect.Pos);
 
-        pos = rect.Pos;
-
-        pos.Left = pos.Left + this.Pos.Left;
-
-        pos.Up = pos.Up + this.Pos.Up;
-
-
-
-        rect.Pos = pos;
 
 
 
@@ -156,10 +147,8 @@ public class Draw : InfraObject
 
 
 
-        pos.Left = pos.Left + this.Pos.Left;
+        this.Absolute(ref pos);
 
-
-        pos.Up = pos.Up + this.Pos.Up;
 
         
 
@@ -178,6 +167,23 @@ public class Draw : InfraObject
 
         WinTextRenderer.DrawText(this.WinGraphic, t, font.WinFont, winPoint, winColor, Constant.This.TextFormatFlag);
 
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private bool Absolute(ref Pos pos)
+    {
+        pos.Left = pos.Left + this.Pos.Left;
+
+
+        pos.Up = pos.Up + this.Pos.Up;
 
 
 

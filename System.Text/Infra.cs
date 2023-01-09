@@ -12,11 +12,11 @@ public class Infra : InfraObject
 
 
 
-        this.Quote = '\"';
+        this.Quote = this.Byte('\"');
 
 
 
-        this.BackSlash = '\\';
+        this.BackSlash = this.Byte('\\');
 
 
 
@@ -100,10 +100,13 @@ public class Infra : InfraObject
 
 
 
-        char oca;
+        byte oba;
 
-        char ocb;
 
+        byte obb;
+
+
+        char oc;
 
 
 
@@ -113,14 +116,17 @@ public class Infra : InfraObject
 
         while (i < count)
         {
-            oca = varChar.Get(start + i);
+            oba = varChar.Get(start + i);
 
 
-            ocb = other[i];
+            oc = other[i];
+
+
+            obb = this.Byte(oc);
 
 
 
-            if (!(oca == ocb))
+            if (!(oba == obb))
             {
                 return false;
             }
@@ -435,7 +441,7 @@ public class Infra : InfraObject
 
 
 
-        char c;
+        byte c;
 
 
 
@@ -457,13 +463,16 @@ public class Infra : InfraObject
 
 
 
-        char u;
+        byte u;
 
 
 
 
-        char escapeValue;
+        byte escapeValue;
 
+
+
+        char ocu;
 
 
 
@@ -537,7 +546,10 @@ public class Infra : InfraObject
                     }
 
 
-                    sb.Append(escapeValue);
+                    ocu = (char)escapeValue;
+
+
+                    sb.Append(ocu);
 
 
 
@@ -683,7 +695,7 @@ public class Infra : InfraObject
 
 
 
-            char ob;
+            byte ob;
 
 
             ob = this.Char(pos);
@@ -798,7 +810,7 @@ public class Infra : InfraObject
 
 
 
-    public ulong Digit(char o)
+    public ulong Digit(byte o)
     {
         ulong u;
 
@@ -838,7 +850,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsAlphanumeric(char o)
+    public bool IsAlphanumeric(byte o)
     {
         return this.IsLetter(o) | this.IsDigit(o);
     }
@@ -846,7 +858,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsDigit(char o)
+    public bool IsDigit(byte o)
     {
         return '0' <= o && o <= '9';
     }
@@ -855,7 +867,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsHexDigit(char o)
+    public bool IsHexDigit(byte o)
     {
         if ('a' <= o && o <= 'f')
         {
@@ -869,7 +881,7 @@ public class Infra : InfraObject
 
 
 
-    public bool IsLetter(char o)
+    public bool IsLetter(byte o)
     {
         return this.IsLowerLetter(o) | this.IsUpperLetter(o);
     }
@@ -877,14 +889,14 @@ public class Infra : InfraObject
 
 
 
-    public bool IsLowerLetter(char o)
+    public bool IsLowerLetter(byte o)
     {
         return 'a' <= o & o <= 'z';
     }
 
 
 
-    public bool IsUpperLetter(char o)
+    public bool IsUpperLetter(byte o)
     {
         return 'A' <= o & o <= 'Z';
     }
@@ -893,12 +905,12 @@ public class Infra : InfraObject
 
 
 
-    private char Quote;
+    private byte Quote;
 
 
 
 
-    private char BackSlash;
+    private byte BackSlash;
 
 
 
@@ -906,7 +918,7 @@ public class Infra : InfraObject
 
     private bool IsQuote(Pos pos)
     {
-        char oc;
+        byte oc;
 
 
 
@@ -934,5 +946,13 @@ public class Infra : InfraObject
 
 
         return ret;
+    }
+
+
+
+
+    private byte Byte(char oc)
+    {
+        return (byte)oc;
     }
 }

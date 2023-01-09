@@ -419,6 +419,7 @@ public class View : ComposeObject
         left = this.Pos.Left;
 
 
+
         int up;
 
         up = this.Pos.Up;
@@ -429,6 +430,7 @@ public class View : ComposeObject
 
 
         up = up + draw.Area.Pos.Up;
+
 
 
 

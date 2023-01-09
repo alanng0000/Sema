@@ -67,7 +67,7 @@ public struct CharIter
 
 
 
-    public byte Value
+    public char Value
     {
         get
         {

@@ -28,4 +28,40 @@ public class HandleMap : Map
 
         return true;
     }
+
+
+
+
+    public bool AddHandle(Handle handle)
+    {
+        Pair pair;
+
+        pair = new Pair();
+
+        pair.Init();
+
+        pair.Key = handle.Intent;
+
+        pair.Value = handle;
+
+
+
+        this.Add(pair);
+
+
+
+        return true;
+    }
+
+
+
+
+    public bool RemoveHandle(Handle handle)
+    {
+        this.Remove(handle.Intent);
+
+
+
+        return true;
+    }
 }

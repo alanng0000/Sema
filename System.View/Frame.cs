@@ -118,7 +118,7 @@ public class Frame : ComposeObject
 
 
 
-    private DrawDraw Draw { get; set; }
+    internal DrawDraw Draw { get; set; }
 
 
 

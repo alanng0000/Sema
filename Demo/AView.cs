@@ -35,9 +35,9 @@ class AView : View
 
         this.Pos.Up = 100;
 
-        this.Size.Width = 400;
+        this.Size.Width = 800;
 
-        this.Size.Height = 400;
+        this.Size.Height = 600;
 
 
         this.Back = blueBrush;
@@ -66,6 +66,11 @@ class AView : View
         greenBrush.Color.Green = Constant.This.ColorCompMax;
 
         greenBrush.Init();
+
+
+
+
+        
 
 
 
@@ -137,7 +142,7 @@ class AView : View
 
         this.Child = text;
 
-        
+
 
 
 

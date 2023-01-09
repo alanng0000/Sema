@@ -80,7 +80,7 @@ class Demo : Object
 
     public bool Aa()
     {
-        this.AView.Size.Width = 700;
+        this.AView.Size.Width = 1000;
 
 
 

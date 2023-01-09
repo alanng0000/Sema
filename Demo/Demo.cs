@@ -53,8 +53,6 @@ class Demo : Object
         view.Back = blueBrush;
 
 
-        view.Visible = true;
-
 
 
 

@@ -76,4 +76,49 @@ class Convert : InfraObject
 
         return c;
     }
+
+
+
+
+
+
+
+    public WinFontStyle WinFontStyle(FontStyle style)
+    {
+        WinFontStyle t;
+
+
+        t = global::System.Drawing.FontStyle.Regular;
+
+
+
+
+        if (style.Bold)
+        {
+            t = t | global::System.Drawing.FontStyle.Bold;
+        }
+
+
+        if (style.Italic)
+        {
+            t = t | global::System.Drawing.FontStyle.Italic;
+        }
+
+
+        if (style.Underline)
+        {
+            t = t | global::System.Drawing.FontStyle.Underline;
+        }
+
+
+
+
+        WinFontStyle ret;
+
+
+        ret = t;
+
+
+        return ret;
+    }
 }

@@ -47,7 +47,7 @@ public class Font : InfraObject
         WinFontStyle style;
 
 
-        style = this.CreateWinFontStyle(this.Style);
+        style = Convert.This.WinFontStyle(this.Style);
 
 
 
@@ -67,46 +67,6 @@ public class Font : InfraObject
 
 
 
-
-
-    private WinFontStyle CreateWinFontStyle(FontStyle style)
-    {
-        WinFontStyle t;
-
-
-        t = WinFontStyle.Regular;
-
-
-
-
-        if (style.Bold)
-        {
-            t = t | WinFontStyle.Bold;
-        }
-
-
-        if (style.Italic)
-        {
-            t = t | WinFontStyle.Italic;
-        }
-
-
-        if (style.Underline)
-        {
-            t = t | WinFontStyle.Underline;
-        }
-
-
-
-
-        WinFontStyle ret;
-
-
-        ret = t;
-
-
-        return ret;
-    }
 
 
 

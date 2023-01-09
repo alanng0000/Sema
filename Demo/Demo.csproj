@@ -6,6 +6,7 @@
 
     <ItemGroup>
         <ProjectReference Include="../System.Infra/System.Infra.csproj" />
+        <ProjectReference Include="../System.View/System.View.csproj" />
         <ProjectReference Include="../System.Exe/System.Exe.csproj" />
     </ItemGroup>
 

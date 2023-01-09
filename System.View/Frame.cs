@@ -41,6 +41,20 @@ public class Frame : ComposeObject
 
 
 
+        this.Pos = new DrawPos();
+
+
+        this.Pos.Init();
+
+
+        this.Pos.Left = 0;
+
+
+        this.Pos.Up = 0;
+
+
+
+
 
         this.Area = new DrawRect();
 
@@ -49,10 +63,8 @@ public class Frame : ComposeObject
 
 
 
-        this.Area.Pos.Left = 0;
+        this.Area.Pos = this.Pos;
 
-
-        this.Area.Pos.Up = 0;
 
 
         this.Area.Size.Width = this.Size.Width;
@@ -129,6 +141,10 @@ public class Frame : ComposeObject
 
     internal bool ExecuteDraw()
     {
+        this.Draw.Pos = this.Pos;
+        
+
+
         this.Draw.Area = this.Area;
 
 
@@ -160,6 +176,9 @@ public class Frame : ComposeObject
     }
 
 
+
+
+    private DrawPos Pos;
 
 
 
@@ -233,6 +252,26 @@ public class Frame : ComposeObject
 
     protected virtual bool ChangeView(Change change)
     {
+        this.Trigger(this.ViewField);
+
+
+        return true;
+    }
+
+
+
+
+
+
+    public override bool Change(Field field, Change change)
+    {
+        if (this.ViewField == field)
+        {
+            this.ChangeView(change);
+        }
+
+
+
         return true;
     }
 

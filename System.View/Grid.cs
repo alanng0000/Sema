@@ -318,6 +318,14 @@ public class Grid : View
 
 
 
+        if (!this.Null(child.View))
+        {
+            return true;
+        }
+        
+
+
+
 
         GridPos start;
 

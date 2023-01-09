@@ -13,16 +13,6 @@ public class View : ComposeObject
 
 
 
-        this.ViewDraw = new DrawDraw();
-
-
-
-        this.ViewDraw.Init();
-
-
-
-
-
 
         this.PosField = new Field();
 
@@ -50,13 +40,13 @@ public class View : ComposeObject
 
 
 
-        this.ColorField = new Field();
+        this.BackField = new Field();
 
 
-        this.ColorField.Object = this;
+        this.BackField.Object = this;
 
 
-        this.ColorField.Init();
+        this.BackField.Init();
 
 
 
@@ -134,15 +124,22 @@ public class View : ComposeObject
 
 
 
-        Color color;
-
-        color = new Color();
-
-        color.Init();
+        
+        ColorBrush brush;
 
 
+        brush = new ColorBrush();
 
-        this.Color = color;
+
+        brush.Color = Constant.This.WhiteColor;
+
+
+        brush.Init();
+        
+
+
+
+        this.Back = brush;
 
 
 
@@ -155,7 +152,6 @@ public class View : ComposeObject
 
         return true;
     }
-
 
 
 
@@ -236,21 +232,21 @@ public class View : ComposeObject
 
 
 
-    public virtual Field ColorField { get; set; }
+    public virtual Field BackField { get; set; }
 
 
 
 
-    public virtual Color Color
+    public virtual Brush Back
     {
         get
         {
-            return (Color)this.ColorField.Get();
+            return (Brush)this.BackField.GetObject();
         }
 
         set
         {
-            this.ColorField.Set(value);
+            this.BackField.SetObject(value);
         }
     }
 
@@ -258,9 +254,9 @@ public class View : ComposeObject
 
 
 
-    protected virtual bool ChangeColor(Change change)
+    protected virtual bool ChangeBack(Change change)
     {
-        this.Trigger(this.ColorField);
+        this.Trigger(this.BackField);
 
 
 
@@ -362,9 +358,9 @@ public class View : ComposeObject
 
 
 
-        if (this.ColorField == field)
+        if (this.BackField == field)
         {
-            this.ChangeColor(change);
+            this.ChangeBack(change);
         }
 
 
@@ -392,165 +388,6 @@ public class View : ComposeObject
 
 
 
-    protected virtual bool Draw(DrawDraw draw)
-    {
-        if (!this.Visible)
-        {
-            return true;
-        }
-
-
-
-
-
-        DrawColor color;
-
-
-        color = Create.This.DrawColor(this.Color);
-
-
-
-
-
-        DrawColorBrush brush;
-
-
-
-        brush = new DrawColorBrush();
-
-
-
-        brush.Color = color;
-
-
-
-        brush.Init();
-
-
-
-
-
-        DrawRect rect;
-
-
-        rect = new DrawRect();
-
-
-        rect.Init();
-
-
-
-        rect.Pos.Left = this.Pos.Left;
-
-
-        rect.Pos.Up = this.Pos.Up;
-
-
-        rect.Size.Width = this.Size.Width;
-
-
-        rect.Size.Height = this.Size.Height;
-
-
-
-
-
-        draw.Rect(brush, rect);
-
-
-
-
-
-
-        this.DrawChild();
-
-
-
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-    protected virtual bool DrawChild()
-    {
-        if (this.Null(this.Child))
-        {
-            return true;
-        }
-
-
-
-
-
-        DrawRect area;
-
-
-        area = new DrawRect();
-
-
-        area.Init();
-
-
-
-        area.Pos.Left = this.ViewDraw.Area.Pos.Left + this.Pos.Left;
-
-
-        area.Pos.Up = this.ViewDraw.Area.Pos.Up + this.Pos.Up;
-
-
-
-        area.Size.Width = this.Size.Width;
-
-
-        area.Size.Height = this.Size.Height;
-
-
-
-
-
-
-        this.BoundArea(this.ViewDraw.Area, ref area);
-
-
-
-
-
-
-        DrawDraw draw;
-
-
-
-        draw = this.Child.ViewDraw;
-
-
-
-
-        draw.Graphics = this.ViewDraw.Graphics;
-
-
-
-        draw.Area = area;
-
-
-
-
-
-        this.Child.Draw(draw);
-
-
-
-
-
-
-        return true;
-    }
 
 
 
@@ -687,33 +524,6 @@ public class View : ComposeObject
 
 
 
-
-    internal bool LocalDraw(DrawDraw draw)
-    {
-        return this.Draw(draw);
-    }
-
-
-
-
-
-
-
-
-    private DrawDraw ViewDraw { get; set; }
-
-
-
-
-
-
-    internal DrawDraw LocalViewDraw
-    { 
-        get
-        {
-            return this.ViewDraw;
-        }
-    }
 
 
 

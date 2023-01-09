@@ -21,7 +21,7 @@ public class Frame : ComposeObject
 
 
 
-        this.Size = Create.This.DrawSize(rect.Size);
+        this.Size = DrawConvert.This.Size(rect.Size);
 
 
 
@@ -78,6 +78,15 @@ public class Frame : ComposeObject
 
 
 
+        this.Draw = new DrawDraw();
+
+
+
+        this.Draw.Init();
+
+
+
+
         return true;
     }
 
@@ -109,6 +118,7 @@ public class Frame : ComposeObject
 
 
 
+    private DrawDraw Draw { get; set; }
 
 
 
@@ -117,54 +127,8 @@ public class Frame : ComposeObject
 
 
 
-    private bool SetGraphicsDefault()
-    {
-        this.Graphics.TextRenderingHint = WinTextRenderingHint.ClearTypeGridFit;
 
-
-        this.Graphics.PageUnit = WinGraphicsUnit.Pixel;
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-
-    internal bool DrawGraphics(WinGraphics g)
-    {
-        this.Graphics = g;
-
-
-
-        this.SetGraphicsDefault();
-
-
-
-
-
-        this.Draw();
-
-
-
-
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-    private bool Draw()
+    private bool ExecuteDraw()
     {
         if (this.Null(this.View))
         {
@@ -278,11 +242,6 @@ public class Frame : ComposeObject
 
     protected virtual bool ChangeView(Change change)
     {
-        this.Update();
-
-
-
-
         return true;
     }
 

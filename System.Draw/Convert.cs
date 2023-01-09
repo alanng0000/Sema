@@ -121,4 +121,24 @@ public class Convert : InfraObject
 
         return ret;
     }
+
+
+
+
+
+    public Size Size(WinSize winSize)
+    {
+        Size u;
+        
+        u = new Size();
+
+        u.Init();
+
+        u.Width = winSize.Width;
+
+        u.Height = winSize.Height;
+
+
+        return u;
+    }
 }

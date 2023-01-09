@@ -230,6 +230,24 @@ public class Grid : View
 
 
 
+
+    protected override bool ExecuteChildDraw(DrawDraw draw)
+    {
+        if (!this.Null(this.Childs))
+        {
+            this.DrawChildList(draw);
+        }
+
+
+
+        return true;
+    }
+
+
+
+
+
+
     private bool UpdateLayout()
     {
         this.SetChildLeftArray();
@@ -249,7 +267,7 @@ public class Grid : View
 
 
 
-    private bool DrawChildList()
+    private bool DrawChildList(DrawDraw draw)
     {
         ListIter iter;
 
@@ -270,7 +288,7 @@ public class Grid : View
 
 
 
-            this.DrawGridChild(child);
+            this.DrawGridChild(draw, child);
         }
 
 
@@ -283,7 +301,7 @@ public class Grid : View
 
 
 
-    protected virtual bool DrawGridChild(GridChild child)
+    protected virtual bool DrawGridChild(DrawDraw draw, GridChild child)
     {
         GridRange range;
 
@@ -380,7 +398,7 @@ public class Grid : View
 
 
 
-
+        view.ExecuteDraw(draw);
 
 
 

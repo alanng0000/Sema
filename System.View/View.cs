@@ -407,7 +407,7 @@ public class View : ComposeObject
 
 
 
-    protected virtual bool ExecuteDraw(DrawDraw draw)
+    public virtual bool ExecuteDraw(DrawDraw draw)
     {
         this.Draw(draw);
 

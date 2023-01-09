@@ -51,9 +51,16 @@ public class Constant : InfraObject
 
 
 
+        this.TransparentColor = this.CreateDrawColor(0, 0, 0, 0);
+
+
+
+
 
         return true;
     }
+
+    
 
 
 
@@ -108,6 +115,14 @@ public class Constant : InfraObject
 
 
     public DrawColor BlackColor
+    {
+        get;
+        private set;
+    }
+
+
+
+    public DrawColor TransparentColor
     {
         get;
         private set;

@@ -172,7 +172,7 @@ public class Infra : InfraObject
 
 
 
-    public char Char(Pos pos)
+    public byte Char(Pos pos)
     {
         Line line;
 
@@ -180,7 +180,7 @@ public class Infra : InfraObject
 
 
 
-        char oc;
+        byte oc;
 
         oc = line.Char.Data[pos.Col];
 
@@ -192,7 +192,7 @@ public class Infra : InfraObject
 
 
 
-    public bool StartWith(int row, InfraRange range, char oc)
+    public bool StartWith(int row, InfraRange range, byte oc)
     {
         if (!this.Check(row, range))
         {
@@ -208,7 +208,7 @@ public class Infra : InfraObject
 
 
 
-        char occ;
+        byte occ;
 
         occ = this.Char(this.Pos(row, range.Start));
 
@@ -226,7 +226,7 @@ public class Infra : InfraObject
 
 
 
-    public bool EndWith(int row, InfraRange range, char oc)
+    public bool EndWith(int row, InfraRange range, byte oc)
     {
         if (!this.Check(row, range))
         {
@@ -251,7 +251,7 @@ public class Infra : InfraObject
         
 
 
-        char occ;
+        byte occ;
 
         occ = this.Char(t);
 

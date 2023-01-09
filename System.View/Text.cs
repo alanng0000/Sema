@@ -318,6 +318,10 @@ public class Text : View
 
         pos.Init();
 
+        pos.Left = this.Pos.Left;
+
+        pos.Up = this.Pos.Up;
+
 
 
 

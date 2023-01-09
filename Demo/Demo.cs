@@ -74,6 +74,10 @@ class Demo : Object
 
         text.Init();
 
+        text.Pos.Left = 100;
+
+        text.Pos.Up = 50;
+
         text.Size.Width = 300;
 
         text.Size.Height = 100;

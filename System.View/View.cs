@@ -589,7 +589,7 @@ public class View : ComposeObject
 
 
 
-    private bool Null(object o)
+    protected bool Null(object o)
     {
         return o == null;
     }

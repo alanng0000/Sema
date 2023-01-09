@@ -848,13 +848,4 @@ public class Grid : View
         {
         }
     }
-
-
-
-
-
-    private bool Null(object o)
-    {
-        return o == null;
-    }
 }

@@ -42,6 +42,11 @@ public class Draw : InfraObject
 
 
 
+    public Pos Pos;
+
+
+
+
 
     public bool SetClip()
     {
@@ -102,9 +107,9 @@ public class Draw : InfraObject
 
         pos = rect.Pos;
 
-        pos.Left = pos.Left + this.Area.Pos.Left;
+        pos.Left = pos.Left + this.Pos.Left;
 
-        pos.Up = pos.Up + this.Area.Pos.Up;
+        pos.Up = pos.Up + this.Pos.Up;
 
 
 
@@ -151,10 +156,10 @@ public class Draw : InfraObject
 
 
 
-        pos.Left = pos.Left + this.Area.Pos.Left;
+        pos.Left = pos.Left + this.Pos.Left;
 
 
-        pos.Up = pos.Up + this.Area.Pos.Up;
+        pos.Up = pos.Up + this.Pos.Up;
 
         
 

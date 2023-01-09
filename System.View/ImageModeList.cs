@@ -3,18 +3,18 @@ namespace System.View;
 
 
 
-public class ImageModes : InfraObject
+public class ImageModeList : InfraObject
 {
-    public static ImageModes This { get; } = CreateGlobal();
+    public static ImageModeList This { get; } = CreateGlobal();
 
 
 
 
-    private static ImageModes CreateGlobal()
+    private static ImageModeList CreateGlobal()
     {
-        ImageModes global;
+        ImageModeList global;
 
-        global = new ImageModes();
+        global = new ImageModeList();
 
         global.Init();
 

@@ -5,6 +5,15 @@ namespace Demo;
 
 class Demo : Object
 {
+    private View View { get; set; }
+
+
+
+    private Frame Frame { get; set; }
+
+
+
+
     public int Execute()
     {
         Frame frame;
@@ -156,11 +165,37 @@ class Demo : Object
 
 
 
+        this.Frame = frame;
+
+
+
+        this.View = view;
+
+        
+
+
 
         frame.Execute();
 
 
 
         return 0;
+    }
+
+
+
+
+    public bool Aa()
+    {
+        this.View.Size.Width = 600;
+
+
+
+        this.Frame.Update();
+        
+
+
+        
+        return true;
     }
 }

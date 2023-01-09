@@ -1,4 +1,7 @@
 global using Object = System.Infra.Object;
+global using EventHandle = System.Event.Handle;
+global using Control = System.Control.Control;
+global using CharEventArg = System.Control.CharEventArg;
 global using ColorBrush = System.Draw.ColorBrush;
 global using Font = System.Draw.Font;
 global using FontStyle = System.Draw.FontStyle;

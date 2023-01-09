@@ -175,7 +175,7 @@ public class Infra : InfraObject
         string s;
 
 
-        s = new string(line.Char.Data, range.Start, count);
+        s = Encoding.ASCII.GetString(line.Char.Data, range.Start, count);
 
         
         return s;

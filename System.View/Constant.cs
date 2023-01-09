@@ -32,12 +32,18 @@ class Constant : InfraObject
 
 
 
-        this.WhiteColor = this.CreateColor(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
+
+        this.CompMax = byte.MaxValue;
 
 
 
 
-        this.BlackColor = this.CreateColor(byte.MaxValue, 0, 0, 0);
+        this.WhiteColor = this.CreateColor(this.CompMax, this.CompMax, this.CompMax, this.CompMax);
+
+
+
+
+        this.BlackColor = this.CreateColor(this.CompMax, 0, 0, 0);
 
 
 
@@ -68,6 +74,11 @@ class Constant : InfraObject
 
         return color;
     }
+
+
+
+
+    private byte CompMax;
 
 
 

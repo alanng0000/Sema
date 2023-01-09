@@ -149,25 +149,6 @@ public class Frame : ComposeObject
 
 
 
-        int left;
-        
-        left = this.View.Pos.Left;
-
-
-        int up;
-
-        up = this.View.Pos.Up;
-
-
-
-
-        this.Draw.Area.Pos.Left = left;
-
-
-        this.Draw.Area.Pos.Up = up;
-
-
-
 
 
 

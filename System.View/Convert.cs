@@ -13,26 +13,26 @@ class Convert : InfraObject
 
 
 
-        ImageModes imageModes;
+        ImageModeList imageModeList;
 
 
-        imageModes = ImageModes.This;
+        imageModeList = ImageModeList.This;
 
 
 
-        if (imageMode == imageModes.Actual)
+        if (imageMode == imageModeList.Actual)
         {
             t = WinPictureBoxSizeMode.Normal;
         }
 
 
-        if (imageMode == imageModes.Stretch)
+        if (imageMode == imageModeList.Stretch)
         {
             t = WinPictureBoxSizeMode.StretchImage;
         }
 
 
-        if (imageMode == imageModes.Zoom)
+        if (imageMode == imageModeList.Zoom)
         {
             t = WinPictureBoxSizeMode.Zoom;
         }

@@ -41,6 +41,8 @@ public class Frame : ComposeObject
 
 
 
+
+
         this.Pos = new DrawPos();
 
 

@@ -20,6 +20,13 @@ public class Infra : InfraObject
 
 
 
+        this.Tab = this.Byte('\t');
+
+
+
+        this.NewLine = this.Byte('\n');
+
+
 
         this.Ranges = new RangeInfra();
 
@@ -530,11 +537,11 @@ public class Infra : InfraObject
                     }
                     else if (u == 't')
                     {
-                        escapeValue = '\t';
+                        escapeValue = this.Tab;
                     }
                     else if (u == 'n')
                     {
-                        escapeValue = '\n';
+                        escapeValue = this.NewLine;
                     }
                     else if (u == this.BackSlash)
                     {
@@ -912,6 +919,15 @@ public class Infra : InfraObject
 
     private byte BackSlash;
 
+
+
+
+    private byte Tab;
+
+
+
+
+    private byte NewLine;
 
 
 

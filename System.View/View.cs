@@ -476,6 +476,7 @@ public class View : ComposeObject
 
 
 
+
         DrawRect u;
 
         u = draw.Area;

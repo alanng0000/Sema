@@ -385,6 +385,88 @@ public class Grid : View
 
 
 
+        left = left + draw.Pos.Left;
+
+
+        up = up + draw.Pos.Up;
+
+
+
+
+
+
+    
+
+
+        DrawPos pos;
+
+        pos = new DrawPos();
+
+        pos.Init();
+
+        pos.Left = left;
+
+        pos.Up = up;
+
+
+
+
+        DrawRect rect;
+
+        rect = new DrawRect();
+
+        rect.Init();
+
+        rect.Pos.Left = left;
+
+        rect.Pos.Up = up;
+
+        rect.Size.Width = width;
+
+        rect.Size.Height = height;
+
+
+
+
+        DrawRect u;
+
+        u = draw.Area;
+
+
+
+
+        this.DrawInfra.BoundArea(u, ref rect);
+
+
+
+
+
+
+        DrawPos un;
+
+        un = draw.Pos;
+
+
+
+
+
+        draw.Pos = pos;
+
+
+
+
+        draw.Area = rect;
+
+
+
+        draw.SetClip();
+
+
+
+
+
+
+
 
 
         View view;
@@ -406,8 +488,28 @@ public class Grid : View
 
 
 
+
+        draw.Pos = un;
+
+
+
+
+        draw.Area = u;
+
+
+
+        draw.SetClip();
+
+
+
+
+
+
+
         return true;
     }
+
+
 
 
 

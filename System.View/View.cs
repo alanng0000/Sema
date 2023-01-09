@@ -400,9 +400,6 @@ public class View : ComposeObject
 
 
 
-        draw.Rect(this.Back, )
-
-
         return true;
     }
 
@@ -411,7 +408,7 @@ public class View : ComposeObject
 
     internal bool ExecuteDraw(DrawDraw draw)
     {
-        
+
 
 
 

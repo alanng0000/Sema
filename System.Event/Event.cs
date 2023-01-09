@@ -1,43 +1,14 @@
-namespace System.Compose;
+namespace System.Event;
 
 
 
 
 public class Event : InfraObject
 {
-    private Map Handle { get; set; }
+    public HandleMap Handle { get; set; }
 
-
-
-
-    public override bool Init()
-    {
-        base.Init();
-        
-
-
-
-
-
-
-
-
-
-        this.Handle = new Map();
-
-
-        this.Handle.Compare = compare;
-
-
-        this.Handle.Init();
-
-
-
-        return true;
-    }
 
     
-
 
 
 
@@ -47,7 +18,7 @@ public class Event : InfraObject
         MapIter iter;
 
 
-        iter = this.Handles.Iter();
+        iter = this.Handle.Iter();
 
 
         while (iter.Next())
@@ -59,10 +30,10 @@ public class Event : InfraObject
 
 
 
-            EventHandle handle;
+            Handle handle;
 
 
-            handle = (EventHandle)pair.Value;
+            handle = (Handle)pair.Value;
 
 
 

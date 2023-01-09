@@ -1,90 +1,13 @@
-namespace System.Compose;
+namespace System.Event;
 
 
 
 
 public class GenericEvent<T> : InfraObject where T : struct
 {
-    private Map Handles { get; set; }
+    public HandleMap Handle { get; set; }
 
 
-
-
-    public override bool Init()
-    {
-        base.Init();
-        
-
-
-
-
-        IdCompare compare;
-        
-        
-        compare = new IdCompare();
-
-
-        compare.Init();
-
-
-
-
-
-        this.Handles = new Map();
-
-
-        this.Handles.Compare = compare;
-
-
-        this.Handles.Init();
-
-
-
-        return true;
-    }
-
-
-
-
-    public virtual bool AddHandle(GenericEventHandle<T> handle)
-    {
-        Pair pair;
-
-
-        pair = new Pair();
-
-
-        pair.Key = handle.LocalId;
-
-
-        pair.Value = handle;
-
-
-
-        this.Handles.Add(pair);
-
-
-        return true;
-    }
-
-
-
-
-    public virtual bool RemoveHandle(GenericEventHandle<T> handle)
-    {
-        ulong id;
-
-        
-        id = handle.LocalId;
-
-
-
-        this.Handles.Remove(id);
-
-
-
-        return true;
-    }
 
 
 
@@ -95,7 +18,7 @@ public class GenericEvent<T> : InfraObject where T : struct
         MapIter iter;
 
 
-        iter = this.Handles.Iter();
+        iter = this.Handle.Iter();
 
 
         while (iter.Next())
@@ -107,10 +30,10 @@ public class GenericEvent<T> : InfraObject where T : struct
 
 
 
-            GenericEventHandle<T> handle;
+            GenericHandle<T> handle;
 
 
-            handle = (GenericEventHandle<T>)pair.Value;
+            handle = (GenericHandle<T>)pair.Value;
 
 
 

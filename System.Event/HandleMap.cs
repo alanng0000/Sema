@@ -17,7 +17,15 @@ public class HandleMap : Map
 
 
 
+        this.Compare = compare;
+
+
 
         base.Init();
+
+
+
+
+        return true;
     }
 }

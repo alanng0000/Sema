@@ -5,16 +5,6 @@ namespace System.Draw;
 
 public class Draw : InfraObject
 {
-    private WinGraphics WinGraphic { get; set; }
-
-
-
-
-    private RangeInfra RangeInfra { get; set; }
-
-
-
-
     public override bool Init()
     {
         base.Init();
@@ -31,6 +21,18 @@ public class Draw : InfraObject
 
         return true;
     }
+
+
+
+
+
+    private WinGraphics WinGraphic { get; set; }
+
+
+
+
+    private RangeInfra RangeInfra { get; set; }
+
 
 
 
@@ -75,7 +77,7 @@ public class Draw : InfraObject
     {
         WinRectangle u;
 
-        u = Create.This.ExecuteWinRectangle(rect);
+        u = Convert.This.WinRectangle(rect);
 
 
 
@@ -114,13 +116,13 @@ public class Draw : InfraObject
 
         WinPoint winPoint;
 
-        winPoint = Create.This.ExecuteWinPoint(pos);
+        winPoint = Convert.This.WinPoint(pos);
 
 
 
         WinColor winColor;
 
-        winColor = Create.This.ExecuteWinColor(color);
+        winColor = Convert.This.WinColor(color);
 
 
 

@@ -21,7 +21,7 @@ public class ColorBrush : Brush
         WinColor winColor;
 
 
-        winColor = Create.This.ExecuteWinColor(this.Color);
+        winColor = Convert.This.WinColor(this.Color);
 
 
 

@@ -130,15 +130,17 @@ public class Frame : ComposeObject
 
     private bool ExecuteDraw()
     {
+        this.Draw.Area = this.Area;
 
-        this.Draw.Pos.Left = 0;
 
-        this.Draw.Pos.Up = 0;
-
+        this.Draw.SetClip();
 
 
         
+
+
         
+
         if (this.Null(this.View))
         {
             return true;
@@ -147,23 +149,29 @@ public class Frame : ComposeObject
 
 
 
-        DrawDraw draw;
+        int left;
+        
+        left = this.View.Pos.Left;
 
 
-        draw = this.View.LocalViewDraw;
+        int up;
 
-
-
-        draw.Graphics = this.Graphics;
-
-
-
-        draw.Area = this.Area;
+        up = this.View.Pos.Up;
 
 
 
 
-        this.View.LocalDraw(draw);
+        this.Draw.Area.Pos.Left = left;
+
+
+        this.Draw.Area.Pos.Up = up;
+
+
+
+
+
+
+        this.View.ExecuteDraw(this.Draw);
 
 
 

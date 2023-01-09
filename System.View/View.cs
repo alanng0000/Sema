@@ -386,137 +386,41 @@ public class View : ComposeObject
 
 
 
-
-
-
-
-
-
-
-
-    private bool BoundArea(DrawRect bound, ref DrawRect area)
+    protected virtual bool Draw(DrawDraw draw)
     {
-        int left;
+        DrawRect rect;
 
-        left = area.Pos.Left;
+        rect = new DrawRect();
 
+        rect.Init();
 
+        rect.Size.Width = this.Size.Width;
 
-        int up;
+        rect.Size.Height = this.Size.Height;
 
-        up = area.Pos.Up;
 
 
+        draw.Rect(this.Back, )
 
 
-        int width;
+        return true;
+    }
 
-        width = area.Size.Width;
 
 
 
-        int height;
-
-        height = area.Size.Height;
-
-
-
-
-        int right;
-
-        right = left + width;
-
-
-
-        int down;
-
-        down = up + height;
-
-
-
-
-
-        int boundRight;
-
-        boundRight = bound.Pos.Left + bound.Size.Width;
-
-
-
-        int boundDown;
-
-        boundDown = bound.Pos.Up + bound.Size.Height;
-
-
-
-
-
-        if (left < bound.Pos.Left)
-        {
-            left = bound.Pos.Left;
-        }
-
-
-
-        if (up < bound.Pos.Up)
-        {
-            up = bound.Pos.Up;
-        }
-
-
-
-
-
-        if (boundRight < right)
-        {
-            right = boundRight;
-        }
-
-
-
-        if (boundDown < down)
-        {
-            down = boundDown;
-        }
-
-
-
-
-
-
-        int w;
-
-
-        w = IntOp.This.Sub(right, left);
-
-
-
-
-
-        int h;
-
-
-        h = IntOp.This.Sub(down, up);
-
-
-
-
-
-        area.Pos.Left = left;
-
-
-        area.Pos.Up = up;
-
-
-        area.Size.Width = w;
-
-
-        area.Size.Height = h;
-
+    internal bool ExecuteDraw(DrawDraw draw)
+    {
+        
 
 
 
         return true;
     }
+
+
+
+
 
 
 

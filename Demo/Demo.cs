@@ -58,6 +58,12 @@ class Demo : Object
 
 
 
+        frame.View = view;
+
+
+
+
+
         frame.Execute();
 
 

@@ -13,6 +13,16 @@ public class View : ComposeObject
 
 
 
+        this.DrawInfra = new DrawInfra();
+
+
+
+        this.DrawInfra.Init();
+
+
+
+
+
 
         this.PosField = new Field();
 
@@ -396,6 +406,11 @@ public class View : ComposeObject
 
     internal bool ExecuteDraw(DrawDraw draw)
     {
+        this.Draw(draw);
+
+
+
+
         int left;
         
         left = this.Pos.Left;
@@ -443,6 +458,42 @@ public class View : ComposeObject
 
 
 
+        DrawRect u;
+
+        u = draw.Area;
+
+
+
+        this.DrawInfra.BoundArea(u, ref rect);
+
+
+
+
+
+        draw.Area = rect;
+
+
+
+        draw.SetClip();
+
+
+
+
+        if (!this.Null(this.Child))
+        {
+            this.Child.ExecuteDraw(draw);
+        }
+
+
+
+
+
+        draw.Area = u;
+
+
+        draw.SetClip();
+
+
 
 
 
@@ -457,7 +508,7 @@ public class View : ComposeObject
 
 
 
-
+    private DrawInfra DrawInfra { get; set; }
 
 
 

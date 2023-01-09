@@ -37,6 +37,11 @@ class Constant : InfraObject
 
 
 
+        this.BlackColor = this.CreateColor(byte.MaxValue, 0, 0, 0);
+
+
+
+
 
         return true;
     }
@@ -69,6 +74,15 @@ class Constant : InfraObject
 
 
     public Color WhiteColor
+    {
+        get;
+        private set;
+    }
+
+
+
+
+    public Color BlackColor
     {
         get;
         private set;

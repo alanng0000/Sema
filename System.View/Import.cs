@@ -46,3 +46,4 @@ global using WinFontStyle = System.Drawing.FontStyle;
 global using WinPoint = System.Drawing.Point;
 global using WinBitmap = System.Drawing.Bitmap;
 global using WinTextRenderingHint = System.Drawing.Text.TextRenderingHint;
+global using ReadOnlySpanChar = System.ReadOnlySpan<char>;

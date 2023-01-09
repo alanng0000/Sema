@@ -101,7 +101,7 @@ public class Draw : InfraObject
 
     
 
-    public bool Rect(Brush brush, Rect rect)
+    public bool Rect(Rect rect, Brush brush)
     {
         this.Absolute(ref rect.Pos);
 

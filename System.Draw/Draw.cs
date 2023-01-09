@@ -42,6 +42,25 @@ public class Draw : InfraObject
 
 
 
+
+    public bool SetClip(Rect rect)
+    {
+        WinRectangle winRect;
+
+        winRect = Convert.This.WinRectangle(rect);
+
+
+
+        this.WinGraphic.SetClip(winRect);
+
+
+
+        return true;
+    }
+
+
+
+
     public bool SetWin(WinGraphics graphic)
     {
         this.WinGraphic = graphic;

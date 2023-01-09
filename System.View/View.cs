@@ -398,6 +398,33 @@ public class View : ComposeObject
 
     protected virtual bool Draw(DrawDraw draw)
     {
+        Brush brush;
+
+        brush = this.Back;
+
+
+
+
+        DrawRect rect;
+
+        rect = new DrawRect();
+
+        rect.Init();
+
+        rect.Pos.Left = this.Pos.Left;
+
+        rect.Pos.Up = this.Pos.Up;
+
+        rect.Size.Width = this.Size.Width;
+
+        rect.Size.Height = this.Size.Height;
+
+
+
+        draw.Rect(brush, rect);
+
+
+
         return true;
     }
 

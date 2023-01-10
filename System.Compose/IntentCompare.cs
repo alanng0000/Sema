@@ -22,6 +22,7 @@ public class IntentCompare : Compare
 
 
 
+
         Intent leftO;
 
 

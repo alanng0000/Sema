@@ -7,6 +7,11 @@ public class Image : View
 {
     public override bool Init()
     {
+        base.Init();
+
+
+
+
         this.ValueField = new Field();
 
 
@@ -43,16 +48,36 @@ public class Image : View
 
         
 
-
-
-        base.Init();
-
-
         
 
 
 
         this.Value = null;
+
+
+
+
+
+        Rect dest;
+
+        dest = new Rect();
+
+        dest.Init();
+
+
+        this.Dest = dest;
+
+
+
+
+        Rect src;
+
+        src = new Rect();
+
+        src.Init();
+
+
+        this.Src = src;
 
 
 

@@ -7,6 +7,11 @@ public class Text : View
 {
     public override bool Init()
     {
+        base.Init();
+
+
+
+
         this.ValueField = new Field();
 
 
@@ -55,12 +60,6 @@ public class Text : View
 
 
 
-
-
-
-        base.Init();
-
-
         
 
 
@@ -100,6 +99,18 @@ public class Text : View
 
 
         this.InitFont();
+
+
+
+
+        Rect dest;
+
+        dest = new Rect();
+
+        dest.Init();
+
+
+        this.Dest = dest;
 
 
 

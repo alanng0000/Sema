@@ -84,9 +84,7 @@ public class Image : View
 
 
         
-        
-
-
+        this.DrawImage(draw);
 
 
 
@@ -94,7 +92,16 @@ public class Image : View
         return true;
     }
 
+    
 
+
+
+
+
+    protected virtual bool DrawImage(DrawDraw draw)
+    {
+        return true;
+    }
 
 
 

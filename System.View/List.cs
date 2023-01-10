@@ -11,10 +11,24 @@ public class List : ComposeObject
 
 
 
-        this.ItemList = new InfraList();
+        IntentCompare compare;
 
 
-        this.ItemList.Init();
+        compare = new IntentCompare();
+
+
+        compare.Init();
+
+
+
+
+        this.ItemMap = new Map();
+
+
+        this.ItemMap.Compare = compare;
+
+
+        this.ItemMap.Init();
 
 
 
@@ -29,13 +43,15 @@ public class List : ComposeObject
 
 
 
+
         return true;
     }
 
 
 
 
-    protected virtual InfraList ItemList { get; set; }
+
+    protected virtual Map ItemMap { get; set; }
 
 
 
@@ -59,12 +75,13 @@ public class List : ComposeObject
     {
         get
         {
-            return this.ItemList.Count;
+            return this.ItemMap.Count;
         }
         set
         {
         }
     }
+
 
 
 
@@ -112,7 +129,7 @@ public class List : ComposeObject
 
 
 
-    public virtual object Add(ComposeObject item)
+    public virtual bool Add(ComposeObject item)
     {
         if (this.Null(item))
         {
@@ -123,30 +140,28 @@ public class List : ComposeObject
 
 
 
-        ListItem o;
+
+        Pair pair;
 
 
-        o = new ListItem();
+        pair = new Pair();
 
 
-        o.Init();
+        pair.Init();
 
 
-        o.Object = item;
+        pair.Key = item.Intent;
 
 
-
-
-
-        object key;
-
-
-        key = this.ItemList.Add(o);
+        pair.Value = item;
 
 
 
 
-        o.Key = key;
+
+        this.ItemMap.Add(pair);
+
+
 
 
 
@@ -163,7 +178,6 @@ public class List : ComposeObject
         change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Add;
-        change.Key = key;
         change.Item = item;
 
 
@@ -172,7 +186,7 @@ public class List : ComposeObject
 
 
 
-        return key;
+        return true;
     }
 
 
@@ -182,25 +196,25 @@ public class List : ComposeObject
 
     public virtual bool Clear()
     {
-        InfraListIter iter;
+        MapIter iter;
 
 
-        iter = this.ItemList.Iter();
+        iter = this.ItemMap.Iter();
 
 
 
 
         while (iter.Next())
         {
-            ListItem o;
+            Pair pair;
             
-            o = (ListItem)iter.Value;
+            pair = (Pair)iter.Value;
 
 
 
             ComposeObject item;
 
-            item = o.Object;
+            item = (ComposeObject)pair.Value;
 
 
 
@@ -210,7 +224,7 @@ public class List : ComposeObject
 
 
 
-        this.ItemList.Clear();
+        this.ItemMap.Clear();
 
 
 
@@ -240,10 +254,10 @@ public class List : ComposeObject
 
     public virtual ListIter Iter()
     {
-        InfraListIter o;
+        MapIter o;
 
 
-        o = this.ItemList.Iter();
+        o = this.ItemMap.Iter();
 
 
 
@@ -276,7 +290,7 @@ public class List : ComposeObject
 
 
 
-    public virtual bool Contain(object key)
+    public virtual bool Contain(Intent key)
     {
         return this.Valid(key);
     }
@@ -287,12 +301,13 @@ public class List : ComposeObject
 
 
 
-    public virtual object Insert(object key, ComposeObject item)
+    public virtual bool Insert(Intent key, ComposeObject item)
     {
         if (!this.Valid(key))
         {
             return true;
         }
+
 
 
 
@@ -305,31 +320,27 @@ public class List : ComposeObject
 
 
 
-        ListItem o;
+        Pair pair;
 
 
-        o = new ListItem();
+        pair = new Pair();
 
 
-        o.Init();
+        pair.Init();
 
 
-        o.Object = item;
+        pair.Key = item.Intent;
 
 
-
-
-
-        object u;
-
-
-        u = this.ItemList.Insert(key, o);
+        pair.Value = item;
 
 
 
 
 
-        o.Key = u;
+
+        this.ItemMap.Insert(key, pair);
+
 
 
 
@@ -345,7 +356,6 @@ public class List : ComposeObject
         change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Insert;
-        change.Key = key;
         change.Item = item;
 
         this.Trigger(change);
@@ -353,38 +363,25 @@ public class List : ComposeObject
 
 
 
-        return u;
+        return true;
     }
 
 
 
 
 
-    public virtual bool Remove(object key)
+    public virtual bool Remove(ComposeObject item)
     {
-        if (!this.Valid(key))
+        if (!this.Valid(item.Intent))
         {
             return true;
         }
 
 
 
-        ListItem o;
 
+        this.ItemMap.Remove(item.Intent);
 
-        o = (ListItem)this.ItemList.Get(key);
-
-        
-
-        this.ItemList.Remove(key);
-
-
-
-
-
-        ComposeObject item;
-
-        item = o.Object;
 
 
 
@@ -401,7 +398,6 @@ public class List : ComposeObject
         change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Remove;
-        change.Key = key;
         change.Item = item;
 
         this.Trigger(change);
@@ -413,112 +409,20 @@ public class List : ComposeObject
 
 
 
-    public virtual bool Valid(object key)
+    public virtual bool Valid(Intent key)
     {
-        return this.ItemList.Contain(key);
+        return this.ItemMap.Contain(key);
     }
 
 
 
 
 
-    public virtual ComposeObject Get(object key)
+    public virtual ComposeObject Get(Intent key)
     {
-        if (!this.Valid(key))
-        {
-            return null;
-        }
-
-
-
-
-        ListItem o;
-
-
-        o = (ListItem)this.ItemList.Get(key);
-
-
-
-
-        ComposeObject item;
-
-
-        item = o.Object;
-
-
-
-
-        ComposeObject ret;
-
-
-        ret = item;
-
-
-        return ret;
+        return (ComposeObject)this.ItemMap.Get(key);
     }
 
-
-
-
-
-
-
-    public virtual bool Set(object key, ComposeObject value)
-    {
-        if (!this.Valid(key))
-        {
-            return true;
-        }
-
-
-
-
-        ListItem oa;
-
-
-        oa = (ListItem)this.ItemList.Get(key);
-
-
-
-
-
-        oa.Object.Changed.Handle.RemoveHandle(this.EventHandle);
-
-
-
-
-
-
-
-        oa.Object = value;
-
-
-
-
-
-
-
-        oa.Object.Changed.Handle.AddHandle(this.EventHandle);
-
-
-
-
-
-
-        ListChange change;
-        change = new ListChange();
-        change.Init();
-        change.List = this;
-        change.Kind = ListChangeKinds.This.Set;
-        change.Key = key;
-        change.Item = value;
-
-
-        this.Trigger(change);
-
-        
-        return true;
-    }
 
 
 

@@ -4,7 +4,7 @@ namespace System.View;
 
 public struct ListIter : InfraIIter
 {
-    internal InfraListIter Iter;
+    internal MapIter Iter;
 
 
 
@@ -44,10 +44,10 @@ public struct ListIter : InfraIIter
     {
         get
         {
-            ListItem o;
+            Pair pair;
 
 
-            o = (ListItem)this.Iter.Value;
+            pair = (Pair)this.Iter.Value;
 
 
 
@@ -55,7 +55,7 @@ public struct ListIter : InfraIIter
             ComposeObject item;
             
 
-            item = o.Object;
+            item = (ComposeObject)pair.Value;
 
 
 

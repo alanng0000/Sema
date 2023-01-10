@@ -217,9 +217,114 @@ public class Image : View
 
 
 
+
+
+        int left;
+
+        left = this.Pos.Left;
+
+
+        int up;
+
+        up = this.Pos.Up;
+
+
+
+
+        left = left + draw.Pos.Left;
+
+
+        up = up + draw.Pos.Up;
+
+
+
+
+
+        int width;
+
+        width = this.Size.Width;
+
+
+
+        int height;
+
+        height = this.Size.Height;
+
+
+
+
+        DrawPos pos;
+
+        pos = new DrawPos();
+
+        pos.Init();
+
+        pos.Left = left;
+
+        pos.Up = up;
+
+
+
+
+        DrawRect rect;
+
+        rect = new DrawRect();
+
+        rect.Init();
+
+        rect.Pos.Left = left;
+
+        rect.Pos.Up = up;
+
+        rect.Size.Width = width;
+
+        rect.Size.Height = height;
+
+
+
+
+        DrawRect u;
+
+        u = draw.Area;
+
+
+
+        this.DrawInfra.BoundArea(u, ref rect);
+
+
+
+
+
+
+        DrawPos un;
+
+        un = draw.Pos;
+
+
+
+
+
+        draw.Pos = pos;
+
+
+
+
+        draw.Area = rect;
+
+
+
+        draw.SetClip();
+
+
+
+
+
+
         DrawRect destRect;
 
+
         destRect = new DrawRect();
+
 
         destRect.Init();
 
@@ -230,44 +335,19 @@ public class Image : View
 
 
 
-        int left;
-
-        left = destRect.Pos.Left;
-
-
-
-        int up;
-
-        up = destRect.Pos.Up;
-
-
-
-        left = left + this.Pos.Left;
-
-
-        up = up + this.Pos.Up;
-
-
-
-
-        destRect.Pos.Left = left;
-
-
-        destRect.Pos.Up = up;
-
-
-
-
 
         DrawRect srcRect;
 
+
         srcRect = new DrawRect();
+
 
         srcRect.Init();
 
 
 
         this.DrawRect(this.Src, ref srcRect);
+        
 
 
 
@@ -275,6 +355,21 @@ public class Image : View
 
         draw.Image(image, destRect, srcRect);
 
+
+
+
+
+
+
+        draw.Pos = un;
+
+
+
+        draw.Area = u;
+
+
+
+        draw.SetClip();
 
 
 

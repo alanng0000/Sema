@@ -170,7 +170,7 @@ public class Map : List
 
 
 
-        if (! t.HasNode)
+        if (!t.HasNode)
         {
             return null;
         }
@@ -302,9 +302,117 @@ public class Map : List
 
 
 
+
+
+
     public override object Insert(object key, object item)
     {
-        return null;
+        if (this.Null(key))
+        {
+            return false;
+        }
+
+
+
+
+        ListNode node;
+
+
+
+        
+        node = this.ListNode(key);
+
+
+
+
+        if (this.Null(node))
+        {
+            return false;
+        }
+
+
+
+
+
+
+
+        if (this.Null(item))
+        {
+            return null;
+        }
+
+
+
+
+        Pair pair;
+
+
+
+        pair = this.Pair(item);
+
+
+
+
+
+        if (this.Null(pair))
+        {
+            return null;
+        }
+
+
+
+
+
+
+        ListNode u;
+
+
+
+        u = this.ListNode(pair.Key);
+
+
+
+
+        if (!this.Null(u))
+        {
+            return null;
+        }
+
+
+
+
+
+        object o;
+
+
+
+        o = this.List.Insert(node, pair);
+
+
+
+
+
+        ListNode oo;
+
+
+        oo = (ListNode)o;
+
+
+
+
+        this.Tree.Insert(pair.Key, oo);
+
+
+
+
+
+        object ret;
+
+
+        ret = pair.Key;
+
+
+        return ret;
     }
 
 

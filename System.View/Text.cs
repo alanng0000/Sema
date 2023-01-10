@@ -305,6 +305,13 @@ public class Text : View
 
 
 
+        Font font;
+
+        font = this.Font;
+
+
+
+
         DrawColor drawColor;
 
 
@@ -325,7 +332,7 @@ public class Text : View
 
 
 
-        draw.Text(charSpan, this.Font, drawColor, pos);
+        draw.Text(charSpan, font, drawColor, pos);
 
 
 

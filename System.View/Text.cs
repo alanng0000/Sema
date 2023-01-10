@@ -292,6 +292,22 @@ public class Text : View
         
 
 
+        this.DrawText(draw);
+
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    protected virtual bool DrawText(DrawDraw draw)
+    {
         TextValue value;
 
 
@@ -337,12 +353,8 @@ public class Text : View
 
 
 
-
-
         return true;
     }
-
-
 
 
 

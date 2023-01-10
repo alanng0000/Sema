@@ -15,16 +15,6 @@ public class Image : View
 
         this.ValueField.Init();
 
-
-
-
-        this.ModeField = new Field();
-
-
-        this.ModeField.Object = this;
-
-
-        this.ModeField.Init();
         
 
 
@@ -36,14 +26,9 @@ public class Image : View
 
 
 
-
         this.Value = null;
 
 
-
-
-
-        this.Mode = ImageModeList.This.Actual;
 
 
 
@@ -60,11 +45,11 @@ public class Image : View
 
 
 
-    public virtual Stream Value
+    public virtual DrawImage Value
     {
         get
         {
-            return (Stream)this.ValueField.GetObject();
+            return (DrawImage)this.ValueField.GetObject();
         }
 
         set
@@ -92,34 +77,23 @@ public class Image : View
 
 
 
-    public virtual Field ModeField { get; set; }
-
-
-
-    public virtual ImageMode Mode
+    protected override bool Draw(DrawDraw draw)
     {
-        get
-        {
-            return (ImageMode)this.ModeField.GetObject();
-        }
-
-        set
-        {
-            this.ModeField.SetObject(value);
-        }
-    }
+        base.Draw(draw);
 
 
 
+        
+        
 
-    protected virtual bool ChangeMode(Change change)
-    {
-        this.Trigger(this.ModeField);
+
+
 
 
 
         return true;
     }
+
 
 
 
@@ -139,11 +113,6 @@ public class Image : View
             this.ChangeValue(change);
         }
 
-
-        if (this.ModeField == field)
-        {
-            this.ChangeMode(change);
-        }
 
 
 

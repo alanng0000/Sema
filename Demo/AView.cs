@@ -138,13 +138,13 @@ class AView : View
 
 
 
-        text.Dest.Pos.Left = 0;
+        text.Dest.Pos.Left = 40;
 
-        text.Dest.Pos.Up = 0;
+        text.Dest.Pos.Up = 30;
 
         text.Dest.Size.Width = 500;
 
-        text.Dest.Size.Height = 100;
+        text.Dest.Size.Height = 20;
 
 
 

@@ -169,6 +169,21 @@ public class Draw : InfraObject
 
 
 
+    public bool Image()
+    {
+        
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
 
     private bool Absolute(ref Pos pos)
     {

@@ -26,7 +26,6 @@ global using DrawImage = System.Draw.Image;
 global using DrawInfra = System.Draw.Infra;
 global using DrawConvert = System.Draw.Convert;
 global using CharSpan = System.Draw.CharSpan;
-global using Stream = System.IO.Stream;
 global using ControlControl = System.Control.Control;
 global using ControlKey = System.Control.Key;
 global using WinForm = System.Windows.Forms.Form;

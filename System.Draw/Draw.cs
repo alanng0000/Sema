@@ -169,9 +169,31 @@ public class Draw : InfraObject
 
 
 
-    public bool Image()
+    public bool Image(Image image, Rect destRect, Rect srcRect)
     {
-        
+        WinBitmap winBitmap;
+
+        winBitmap = image.WinBitmap;
+
+
+
+
+        WinRectangle winDestRect;
+
+        winDestRect = Convert.This.WinRectangle(destRect);
+
+
+
+
+        WinRectangle winSrcRect;
+
+        winSrcRect = Convert.This.WinRectangle(srcRect);
+
+
+
+
+        this.WinGraphic.DrawImage(winBitmap, winDestRect, winSrcRect, WinGraphicsUnit.Pixel);
+
 
 
 

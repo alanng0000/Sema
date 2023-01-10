@@ -77,7 +77,7 @@ public class Control : InfraObject
 
 
 
-        this.KeyStateList = new bool[0x100];
+        this.KeyList = new bool[0x100];
 
 
 
@@ -139,7 +139,7 @@ public class Control : InfraObject
 
     public virtual bool Get(byte key)
     {
-        return this.KeyStateList[key];
+        return this.KeyList[key];
     }
 
 
@@ -151,7 +151,7 @@ public class Control : InfraObject
         bool a;
 
 
-        a = this.KeyStateList[key];
+        a = this.KeyList[key];
 
 
 
@@ -163,7 +163,7 @@ public class Control : InfraObject
 
 
 
-        this.KeyStateList[key] = state;
+        this.KeyList[key] = state;
 
 
 
@@ -208,5 +208,5 @@ public class Control : InfraObject
 
 
 
-    protected virtual bool[] KeyStateList { get; set; }
+    protected virtual bool[] KeyList { get; set; }
 }

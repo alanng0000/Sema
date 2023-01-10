@@ -137,7 +137,7 @@ public class Control : InfraObject
 
 
 
-    public virtual bool GetState(byte key)
+    public virtual bool Get(byte key)
     {
         return this.KeyStateList[key];
     }

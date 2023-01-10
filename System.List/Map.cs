@@ -256,7 +256,7 @@ public class Map : List
 
 
 
-        if (! this.Null(u))
+        if (!this.Null(u))
         {
             return null;
         }

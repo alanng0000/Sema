@@ -333,9 +333,17 @@ public class List : ComposeObject
 
 
 
-    public virtual bool Remove(ComposeObject item)
+    public virtual bool Remove(Intent intent)
     {
-        if (!this.Valid(item.Intent))
+        ComposeObject item;
+
+
+        item = this.Get(intent);
+        
+
+
+
+        if (this.Null(item))
         {
             return true;
         }
@@ -398,7 +406,7 @@ public class List : ComposeObject
 
     public virtual bool Valid(Intent key)
     {
-        return this.ItemMap.Contain(key);
+        return !this.Null(this.Get(key));
     }
 
 

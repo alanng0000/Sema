@@ -146,14 +146,14 @@ class Demo : Object
 
     public bool ImageSrcMoveUp()
     {
-        return this.MoveVertical(this.AView.Image.Src.Pos, -10);
+        return this.MoveVertical(this.AView.Image.Src.Pos, 10);
     }
 
 
 
     public bool ImageSrcMoveDown()
     {
-        return this.MoveVertical(this.AView.Image.Src.Pos, 10);
+        return this.MoveVertical(this.AView.Image.Src.Pos, -10);
     }
 
 
@@ -161,7 +161,7 @@ class Demo : Object
 
     public bool ImageSrcMoveLeft()
     {
-        return this.MoveHorizontal(this.AView.Image.Src.Pos, -10);
+        return this.MoveHorizontal(this.AView.Image.Src.Pos, 10);
     }
 
 
@@ -169,7 +169,7 @@ class Demo : Object
 
     public bool ImageSrcMoveRight()
     {
-        return this.MoveHorizontal(this.AView.Image.Src.Pos, 10);
+        return this.MoveHorizontal(this.AView.Image.Src.Pos, -10);
     }
 
 

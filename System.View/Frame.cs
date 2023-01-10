@@ -176,14 +176,16 @@ public class Frame : ComposeObject
 
 
 
-
         view.LocalExecuteDraw(this.Draw);
+
 
 
 
 
         return true;
     }
+
+
 
 
 

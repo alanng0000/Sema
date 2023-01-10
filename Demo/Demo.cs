@@ -78,6 +78,105 @@ class Demo : Object
 
 
 
+
+    public bool MoveUp()
+    {
+        return this.MoveVertical(-10);
+    }
+
+
+
+    public bool MoveDown()
+    {
+        return this.MoveVertical(10);
+    }
+
+
+
+
+    public bool MoveLeft()
+    {
+        return this.MoveHorizontal(-10);
+    }
+    
+
+
+
+    public bool MoveRight()
+    {
+        return this.MoveHorizontal(10);
+    }
+
+
+
+
+    private bool MoveHorizontal(int offset)
+    {
+        int left;
+
+
+
+        left = this.AView.Grid.Pos.Left;
+
+
+
+        left = left + offset;
+
+
+
+        this.AView.Grid.Pos.Left = left;
+
+
+
+        this.Frame.Update();
+
+
+
+        return true;
+    }
+
+
+
+
+
+    private bool MoveVertical(int offset)
+    {
+        int up;
+
+
+
+        up = this.AView.Grid.Pos.Up;
+
+
+
+        up = up + offset;
+
+
+
+        this.AView.Grid.Pos.Up = up;
+
+
+
+        this.Frame.Update();
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
     public bool Aa()
     {
         global::System.Console.Write("Demo Aa()\n");

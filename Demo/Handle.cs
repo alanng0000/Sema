@@ -17,9 +17,33 @@ class Handle : EventHandle
 
 
 
-        if (o.Char == 'a')
+        char c;
+
+        c = o.Char;
+
+
+
+        if (c == 'w')
         {
-            this.Demo.Aa();
+            this.Demo.MoveUp();
+        }
+
+
+        if (c == 's')
+        {
+            this.Demo.MoveDown();
+        }
+
+
+        if (c == 'a')
+        {
+            this.Demo.MoveLeft();
+        }
+
+
+        if (c == 'd')
+        {
+            this.Demo.MoveRight();
         }
 
 

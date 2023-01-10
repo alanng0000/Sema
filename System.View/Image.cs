@@ -77,6 +77,43 @@ public class Image : View
 
 
 
+    public virtual Field DestField { get; set; }
+
+
+
+
+    public virtual Rect Dest
+    {
+        get
+        {
+            return (Rect)this.DestField.Get();
+        }
+
+        set
+        {
+            this.DestField.Set(value);
+        }
+    }
+
+
+
+
+
+    protected virtual bool ChangeDest(Change change)
+    {
+        this.Trigger(this.DestField);
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
     protected override bool Draw(DrawDraw draw)
     {
         base.Draw(draw);
@@ -92,7 +129,7 @@ public class Image : View
         return true;
     }
 
-    
+
 
 
 

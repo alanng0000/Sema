@@ -80,11 +80,31 @@ class Demo : Object
 
     public bool Aa()
     {
+        global::System.Console.Write("Demo Aa()\n");
+
+
         this.AView.Size.Width = 1000;
 
 
 
+        global::System.Console.Write("Demo Aa() 1\n");
+
+
+
+        this.AView.ColA.Width = 500;
+
+
+
+        global::System.Console.Write("Demo Aa() 2\n");
+        
+
+
+
         this.Frame.Update();
+
+
+
+        global::System.Console.Write("Demo Aa() 3\n");
 
 
 

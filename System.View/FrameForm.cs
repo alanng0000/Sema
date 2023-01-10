@@ -140,21 +140,6 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-            //if (key == this.VK_CAPITAL)
-            //{
-            //    bool b;
-
-
-            //    b = this.ToggledOn(key);
-
-
-
-            //    ControlControl.This.CapsLock = b;
-            //}
-
-
-
-
 
             ControlControl.This.Set(key, state);
 
@@ -243,84 +228,10 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-
-
-    //private bool ToggledOn(byte key)
-    //{
-    //    short o;
-        
-    //    o = GetKeyState(key);
-
-
-
-
-    //    ushort k;
-
-    //    k = (ushort)o;
-
-
-
-
-    //    ulong n;
-
-
-    //    n = k;
-
-
-
-
-    //    ulong i;
-
-
-    //    i = 0x1;
-
-
-
-        
-    //    n = n & i;
-
-
-
-
-    //    bool b;
-
-
-    //    b = !(n == 0);
-
-
-
-
-    //    bool toggledOn;
-
-
-    //    toggledOn = b;
-
-
-
-
-    //    bool ret;
-
-
-    //    ret = toggledOn;
-
-
-    //    return ret;
-    //}
-
-
-
-
-
-
-
-
-
-
     private ulong CharCode(char oc)
     {
         return oc;
     }
-
 
 
 
@@ -394,11 +305,4 @@ public class FrameForm : WinForm, WinIMessageFilter
 
         return ret;
     }
-
-
-
-
-
-    //[DllImport("user32.dll")]
-    //private static extern short GetKeyState(int nVirtKey);
 }

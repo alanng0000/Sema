@@ -146,7 +146,7 @@ public class Control : InfraObject
 
 
 
-    public virtual bool SetState(byte key, bool state)
+    public virtual bool Set(byte key, bool state)
     {
         bool a;
 

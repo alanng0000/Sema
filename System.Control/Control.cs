@@ -101,19 +101,19 @@ public class Control : InfraObject
 
 
 
-        this.KeyEventArg = new KeyEventArg();
+        this.KeyArg = new KeyArg();
 
 
-        this.KeyEventArg.Init();
+        this.KeyArg.Init();
 
 
 
 
 
-        this.CharEventArg = new CharEventArg();
+        this.CharArg = new CharArg();
 
 
-        this.CharEventArg.Init();
+        this.CharArg.Init();
 
 
 
@@ -127,11 +127,11 @@ public class Control : InfraObject
 
 
 
-    private KeyEventArg KeyEventArg { get; set; }
+    private KeyArg KeyArg { get; set; }
 
 
 
-    private CharEventArg CharEventArg { get; set; }
+    private CharArg CharArg { get; set; }
 
 
 
@@ -168,14 +168,14 @@ public class Control : InfraObject
 
 
 
-        this.KeyEventArg.Key = key;
+        this.KeyArg.Key = key;
 
-        this.KeyEventArg.State = state;
-
-
+        this.KeyArg.State = state;
 
 
-        this.KeyInput.Trigger(this.KeyEventArg);
+
+
+        this.KeyInput.Trigger(this.KeyArg);
 
 
 
@@ -191,11 +191,11 @@ public class Control : InfraObject
 
     public virtual bool KeyChar(char oc)
     {
-        this.CharEventArg.Char = oc;
+        this.CharArg.Char = oc;
 
 
 
-        this.CharInput.Trigger(this.CharEventArg);
+        this.CharInput.Trigger(this.CharArg);
 
 
 

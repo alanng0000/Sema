@@ -3,7 +3,7 @@ namespace System.Control;
 
 
 
-public class KeyEventArg : InfraObject
+public class KeyArg : InfraObject
 {
     public byte Key { get; set; }
 

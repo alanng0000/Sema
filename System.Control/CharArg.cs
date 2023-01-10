@@ -3,7 +3,7 @@ namespace System.Control;
 
 
 
-public class CharEventArg : InfraObject
+public class CharArg : InfraObject
 {
     public char Char { get; set; }
 }

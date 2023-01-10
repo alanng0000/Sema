@@ -430,6 +430,61 @@ public class Key : InfraObject
 
 
 
+    public byte LetterKey(int index)
+    {
+        int cc;
+        
+        cc = 'A';
+
+
+        return this.IndexKey(index, cc);
+    }
+
+
+
+
+    public byte DigitKey(int index)
+    {
+        int cc;
+        
+        cc = '0';
+
+
+        return this.IndexKey(index, cc);
+    }
+
+
+
+
+
+
+    private byte IndexKey(int index, int start)
+    {
+        int k;
+
+        k = start + index;
+
+
+
+        byte o;
+
+        o = (byte)k;
+
+
+
+
+        byte ret;
+
+        ret = o;
+
+
+        return ret;
+    }
+
+
+
+
+
 
     private byte AddCode()
     {

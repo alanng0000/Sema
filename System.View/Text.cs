@@ -437,8 +437,15 @@ public class Text : View
 
 
 
+        DrawPos o;
 
-        draw.Text(charSpan, font, drawColor, pos);
+        o = new DrawPos();
+
+        o.Init();
+
+
+
+        draw.Text(charSpan, font, drawColor, o);
 
 
 

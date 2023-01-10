@@ -43,6 +43,15 @@ public class Object : InfraObject
 
 
 
+
+        this.TriggerArg = new Change();
+
+
+        this.TriggerArg.Init();
+
+
+
+
         return true;
     }
 
@@ -68,22 +77,25 @@ public class Object : InfraObject
 
     protected virtual bool Trigger(Field field)
     {
-        Change change;
-
-        change = new Change();
-
-        change.Init();
-
-        change.Object = this;
-
-        change.Field = field;
+        this.TriggerArg.Object = this;
 
 
-        this.Changed.Trigger(change);
+        this.TriggerArg.Field = field;
+
+
+
+        this.Changed.Trigger(this.TriggerArg);
+        
 
 
         return true;
     }
+
+
+
+
+
+    private Change TriggerArg { get; set; }
 
 
 

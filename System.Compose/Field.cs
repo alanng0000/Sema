@@ -39,8 +39,22 @@ public class Field : InfraObject
 
 
 
+
+
+
+        this.SetChangeArg = new Change();
+
+
+
+        this.SetChangeArg.Init();
+
+
+
+
+
         return true;
     }
+
 
 
 
@@ -339,21 +353,18 @@ public class Field : InfraObject
 
     protected bool SetChange()
     {
-        Change change;
-
-
-        change = new Change();
-
-
-        change.Init();
-
-
-
-        this.Change(change);
+        this.Change(this.SetChangeArg);
 
 
         return true;
     }
+
+
+
+
+
+    private Change SetChangeArg { get; set; }
+    
 
 
 

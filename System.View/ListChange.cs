@@ -12,9 +12,6 @@ public class ListChange : Change
 
 
 
-    public virtual object Key { get; set; }
-
-
 
     public virtual ComposeObject Item { get; set; }
 }

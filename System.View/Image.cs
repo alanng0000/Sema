@@ -331,7 +331,7 @@ public class Image : View
 
 
 
-        this.DrawRect(this.Dest, ref destRect);
+        Infra.This.DrawRect(this.Dest, ref destRect);
 
 
 
@@ -347,7 +347,7 @@ public class Image : View
 
 
 
-        this.DrawRect(this.Src, ref srcRect);
+        Infra.This.DrawRect(this.Src, ref srcRect);
         
 
 
@@ -382,33 +382,6 @@ public class Image : View
 
 
 
-    private bool DrawRect(Rect rect, ref DrawRect drawRect)
-    {
-        drawRect.Pos = new DrawPos();
-
-        drawRect.Pos.Init();
-
-
-        drawRect.Pos.Left = rect.Pos.Left;
-
-        drawRect.Pos.Up = rect.Pos.Up;
-
-
-
-
-        drawRect.Size = new DrawSize();
-
-        drawRect.Size.Init();
-
-
-        drawRect.Size.Width = rect.Size.Width;
-
-        drawRect.Size.Height = rect.Size.Height;
-
-
-
-        return true;
-    }
 
 
 

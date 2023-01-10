@@ -52,7 +52,7 @@ public class Text : View
 
         this.DestField.Init();
 
-        
+
 
 
 
@@ -491,15 +491,26 @@ public class Text : View
 
 
 
-        DrawPos o;
-
-        o = new DrawPos();
-
-        o.Init();
 
 
+        DrawRect destRect;
 
-        draw.Text(charSpan, font, drawColor, o);
+
+        destRect = new DrawRect();
+
+
+        destRect.Init();
+
+
+
+        Infra.This.DrawRect(this.Dest, ref destRect);
+
+
+
+
+
+        draw.Text(charSpan, font, drawColor, destRect);
+
 
 
 

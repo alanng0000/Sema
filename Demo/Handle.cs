@@ -75,6 +75,14 @@ class Handle : EventHandle
 
 
 
+        if (c == 'c')
+        {
+            this.Demo.TextWidthIncrease();
+        }
+
+
+
+
 
         if (c == 'b')
         {

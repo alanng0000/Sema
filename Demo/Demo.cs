@@ -214,6 +214,38 @@ class Demo : Object
 
     
 
+    
+    public bool TextWidthIncrease()
+    {
+        int width;
+
+
+
+        width = this.AView.Text.Size.Width;
+
+
+
+
+        width = width + 10;
+
+
+
+
+        this.AView.Text.Size.Width = width;
+
+
+
+
+
+        this.Frame.Update();
+
+
+
+        
+        return true;
+    }
+
+
 
 
 

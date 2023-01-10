@@ -412,9 +412,20 @@ public class Key : InfraObject
 
 
 
+
+        this.Count = 0x100;
+
+
+
+
+
         return true;
     }
 
+
+
+
+    public int Count { get; private set; }
 
 
 

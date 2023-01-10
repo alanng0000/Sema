@@ -190,7 +190,7 @@ public class Control : InfraObject
 
 
 
-    public virtual bool KeyChar(char oc)
+    public virtual bool Char(char oc)
     {
         this.CharArg.Char = oc;
 

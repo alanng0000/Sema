@@ -196,7 +196,7 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-            ControlControl.This.KeyChar(oc);
+            ControlControl.This.Char(oc);
 
 
 

@@ -44,6 +44,19 @@ public class Text : View
 
 
 
+        this.DestField = new Field();
+
+
+        this.DestField.Object = this;
+
+
+        this.DestField.Init();
+
+        
+
+
+
+
 
         base.Init();
 
@@ -251,6 +264,41 @@ public class Text : View
 
 
 
+    public virtual Field DestField { get; set; }
+
+
+
+
+    public virtual Rect Dest
+    {
+        get
+        {
+            return (Rect)this.DestField.Get();
+        }
+
+        set
+        {
+            this.DestField.Set(value);
+        }
+    }
+
+
+
+
+
+    protected virtual bool ChangeDest(Change change)
+    {
+        this.Trigger(this.DestField);
+
+
+
+        return true;
+    }
+
+
+
+
+
 
     public override bool Change(Field field, Change change)
     {
@@ -273,6 +321,12 @@ public class Text : View
         if (this.FontField == field)
         {
             this.ChangeFont(change);
+        }
+
+
+        if (this.DestField == field)
+        {
+            this.ChangeDest(change);
         }
 
 

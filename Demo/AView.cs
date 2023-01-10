@@ -186,7 +186,20 @@ class AView : View
 
         grid.Size.Height = 500;
 
-        
+
+
+
+        GridRow rowA;
+
+        rowA = new GridRow();
+
+        rowA.Init();
+
+
+        rowA.Height = 500;
+
+
+
 
 
 
@@ -198,6 +211,7 @@ class AView : View
 
 
         colA.Width = 200;
+        
 
 
 
@@ -209,6 +223,11 @@ class AView : View
 
 
         colB.Width = 500;
+
+
+
+
+        grid.Rows.Add(rowA);
 
 
 
@@ -231,6 +250,8 @@ class AView : View
 
         childA.View = text;
 
+        childA.Range.End.Row = 1;
+
         childA.Range.End.Col = 1;
 
 
@@ -246,6 +267,8 @@ class AView : View
 
         childB.Range.Start.Col = 1;
 
+        childB.Range.End.Row = 1;
+
         childB.Range.End.Col = 2;
 
 
@@ -260,9 +283,13 @@ class AView : View
 
 
 
-
-
         this.Child = grid;
+
+
+
+
+        
+        this.ColA = colA;
 
 
 
@@ -270,4 +297,9 @@ class AView : View
 
         return true;
     }
+
+
+
+
+    public GridCol ColA { get; set; }
 }

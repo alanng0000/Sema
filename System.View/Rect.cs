@@ -39,6 +39,34 @@ public class Rect : ComposeObject
 
 
 
+        Pos pos;
+
+        pos = new Pos();
+
+        pos.Init();
+
+
+
+        this.Pos = pos;
+
+
+
+
+        Size size;
+
+        size = new Size();
+
+        size.Init();
+
+
+
+        this.Size = size;
+        
+
+
+
+
+
         return true;
     }
 

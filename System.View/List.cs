@@ -112,7 +112,7 @@ public class List : ComposeObject
 
 
 
-    public virtual bool Add(ComposeObject item)
+    public virtual object Add(ComposeObject item)
     {
         if (this.Null(item))
         {
@@ -166,11 +166,13 @@ public class List : ComposeObject
         change.Key = key;
         change.Item = item;
 
+
         this.Trigger(change);
 
 
 
-        return true;
+
+        return key;
     }
 
 
@@ -313,14 +315,21 @@ public class List : ComposeObject
 
 
         o.Object = item;
-
-
-        o.Key = key;
-
+        
 
 
 
-        this.ObjectList.Insert(o.Key, o);
+        object u;
+
+
+        u = this.ObjectList.Insert(key, o);
+
+
+
+
+
+        o.Key = u;
+
 
 
 
@@ -368,10 +377,6 @@ public class List : ComposeObject
 
 
 
-        o.Changed.Handle.RemoveHandle(this.EventHandle);
-
-
-
 
 
         ComposeObject item;
@@ -381,9 +386,16 @@ public class List : ComposeObject
 
 
 
+        item.Changed.Handle.RemoveHandle(this.EventHandle);
+
+
+
+
+
 
         ListChange change;
         change = new ListChange();
+        change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Remove;
         change.Key = key;
@@ -467,37 +479,23 @@ public class List : ComposeObject
 
 
 
-        oa.Changed.Handle.RemoveHandle(this.EventHandle);
+        oa.Object.Changed.Handle.RemoveHandle(this.EventHandle);
 
 
 
 
 
 
-        ListItem ob;
 
-
-        ob = new ListItem();
-
-
-        ob.Init();
-
-
-        ob.Key = key;
-
-
-        ob.Object = value;
+        oa.Object = value;
 
 
 
 
 
-        this.ObjectList.Set(key, ob);
 
 
-
-
-        ob.Changed.Handle.AddHandle(this.EventHandle);
+        oa.Object.Changed.Handle.AddHandle(this.EventHandle);
 
 
 
@@ -506,6 +504,7 @@ public class List : ComposeObject
 
         ListChange change;
         change = new ListChange();
+        change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Set;
         change.Key = key;
@@ -526,6 +525,6 @@ public class List : ComposeObject
 
     private bool Null(object o)
     {
-        return o == null;
+        return ObjectInfra.This.Null(o);
     }
 }

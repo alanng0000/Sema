@@ -73,7 +73,7 @@ public class List : ComposeObject
         ListItem u;
 
 
-        u = (ListItem)o;
+        u = null;
 
 
 
@@ -287,7 +287,7 @@ public class List : ComposeObject
 
 
 
-    public virtual bool Insert(object key, ComposeObject item)
+    public virtual object Insert(object key, ComposeObject item)
     {
         if (!this.Valid(key))
         {
@@ -351,7 +351,9 @@ public class List : ComposeObject
         this.Trigger(change);
 
 
-        return true;
+
+
+        return u;
     }
 
 

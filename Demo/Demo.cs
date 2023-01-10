@@ -98,7 +98,7 @@ class Demo : Object
     {
         return this.MoveHorizontal(-10);
     }
-    
+
 
 
 
@@ -168,6 +168,14 @@ class Demo : Object
 
 
 
+    public bool Close()
+    {
+        this.Frame.Close();
+
+
+
+        return true;
+    }
 
 
 

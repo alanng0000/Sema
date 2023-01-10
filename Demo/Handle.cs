@@ -48,6 +48,14 @@ class Handle : EventHandle
 
 
 
+
+        if (c == 'k')
+        {
+            this.Demo.Close();
+        }
+
+
+
         return true;
     }
 }

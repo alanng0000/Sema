@@ -85,39 +85,13 @@ public class List : ComposeObject
 
 
 
-    public virtual bool ItemChange(ComposeObject o)
+    public virtual bool ItemChange(ComposeObject item)
     {
-        ListItem u;
-
-
-        u = null;
-
-
-
-
-
-        ComposeObject item;
-
-
-        item = u.Object;
-
-
-
-
-        object key;
-
-
-        key = u.Key;
-
-        
-
-
         ListChange change;
         change = new ListChange();
         change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Item;
-        change.Key = key;
         change.Item = item;
 
         this.Trigger(change);

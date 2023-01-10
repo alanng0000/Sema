@@ -144,7 +144,7 @@ class AView : View
 
         string s;
 
-        s = "AAABBB HHHH KKKK OOOOO";
+        s = "AAABBB HHHH KKKKOOOOOOOMMMMMMMMMMM";
 
 
 

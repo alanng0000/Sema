@@ -30,11 +30,14 @@ public class Key : InfraObject
 
 
 
+
     public byte Up { get; private set; }
 
 
 
+
     public byte Right { get; private set; }
+
 
 
 

@@ -214,6 +214,66 @@ class AView : View
 
 
 
+        string imageFileName;
+
+        imageFileName = "sun_and_cloud.jpg";
+
+
+
+
+        Stream stream;
+
+        stream = new FileStream(imageFileName, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.ReadWrite);
+
+
+
+
+        DrawImage drawImage;
+
+        drawImage = new DrawImage();
+
+        drawImage.Stream = stream;
+
+        drawImage.Init();
+
+
+
+
+
+        Image image;
+
+        image = new Image();
+
+        image.Init();
+
+
+        image.Value = drawImage;
+
+
+        image.Size.Width = 500;
+
+        image.Size.Height = 100;
+
+
+        image.Dest.Size.Width = 500;
+
+        image.Dest.Size.Height = 100;
+
+
+
+        image.Src.Pos.Left = 400;
+
+        image.Src.Pos.Up = 400;
+
+
+        image.Src.Size.Width = 500;
+
+        image.Src.Size.Height = 100;
+
+
+
+
+
 
 
         Grid grid;
@@ -358,8 +418,13 @@ class AView : View
 
 
         grid.Childs.Add(childC);
-        
 
+
+
+
+
+        uView.Child = image;
+        
 
 
 

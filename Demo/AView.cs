@@ -313,8 +313,15 @@ class AView : View
 
 
 
+
+        this.Text = text;
+
+
+
+
         
         this.ColA = colA;
+
 
 
 
@@ -327,6 +334,11 @@ class AView : View
 
 
     public Grid Grid { get; set; }
+
+
+
+
+    public Text Text { get; set; }
 
 
 

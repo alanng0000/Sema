@@ -25,31 +25,58 @@ class Handle : EventHandle
 
         if (c == 'w')
         {
-            this.Demo.MoveUp();
+            this.Demo.GridMoveUp();
         }
 
 
         if (c == 's')
         {
-            this.Demo.MoveDown();
+            this.Demo.GridMoveDown();
         }
 
 
         if (c == 'a')
         {
-            this.Demo.MoveLeft();
+            this.Demo.GridMoveLeft();
         }
 
 
         if (c == 'd')
         {
-            this.Demo.MoveRight();
+            this.Demo.GridMoveRight();
         }
 
 
 
 
+        if (c == 'i')
+        {
+            this.Demo.TextMoveUp();
+        }
+
+
         if (c == 'k')
+        {
+            this.Demo.TextMoveDown();
+        }
+
+
+        if (c == 'j')
+        {
+            this.Demo.TextMoveLeft();
+        }
+
+
+        if (c == 'l')
+        {
+            this.Demo.TextMoveRight();
+        }
+        
+
+
+
+
+        if (c == 'b')
         {
             this.Demo.Close();
         }

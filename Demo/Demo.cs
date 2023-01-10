@@ -79,44 +79,77 @@ class Demo : Object
 
 
 
-    public bool MoveUp()
+    public bool GridMoveUp()
     {
-        return this.MoveVertical(-10);
+        return this.MoveVertical(this.AView.Grid.Pos, -10);
     }
 
 
 
-    public bool MoveDown()
+    public bool GridMoveDown()
     {
-        return this.MoveVertical(10);
-    }
-
-
-
-
-    public bool MoveLeft()
-    {
-        return this.MoveHorizontal(-10);
+        return this.MoveVertical(this.AView.Grid.Pos, 10);
     }
 
 
 
 
-    public bool MoveRight()
+    public bool GridMoveLeft()
     {
-        return this.MoveHorizontal(10);
+        return this.MoveHorizontal(this.AView.Grid.Pos, -10);
     }
 
 
 
 
-    private bool MoveHorizontal(int offset)
+    public bool GridMoveRight()
+    {
+        return this.MoveHorizontal(this.AView.Grid.Pos, 10);
+    }
+
+
+
+
+
+    public bool TextMoveUp()
+    {
+        return this.MoveVertical(this.AView.Text.Pos, -10);
+    }
+
+
+
+    public bool TextMoveDown()
+    {
+        return this.MoveVertical(this.AView.Text.Pos, 10);
+    }
+
+
+
+
+    public bool TextMoveLeft()
+    {
+        return this.MoveHorizontal(this.AView.Text.Pos, -10);
+    }
+
+
+
+
+    public bool TextMoveRight()
+    {
+        return this.MoveHorizontal(this.AView.Text.Pos, 10);
+    }
+
+
+
+
+
+    private bool MoveHorizontal(Pos pos, int offset)
     {
         int left;
 
 
 
-        left = this.AView.Grid.Pos.Left;
+        left = pos.Left;
 
 
 
@@ -124,7 +157,7 @@ class Demo : Object
 
 
 
-        this.AView.Grid.Pos.Left = left;
+        pos.Left = left;
 
 
 
@@ -139,13 +172,13 @@ class Demo : Object
 
 
 
-    private bool MoveVertical(int offset)
+    private bool MoveVertical(Pos pos, int offset)
     {
         int up;
 
 
 
-        up = this.AView.Grid.Pos.Up;
+        up = pos.Up;
 
 
 
@@ -153,7 +186,7 @@ class Demo : Object
 
 
 
-        this.AView.Grid.Pos.Up = up;
+        pos.Up = up;
 
 
 
@@ -187,31 +220,11 @@ class Demo : Object
 
     public bool Aa()
     {
-        global::System.Console.Write("Demo Aa()\n");
-
-
         this.AView.Grid.Pos.Left = 500;
 
 
 
-        global::System.Console.Write("Demo Aa() 1\n");
-
-
-
-        // this.AView.ColA.Width = 500;
-
-
-
-        // global::System.Console.Write("Demo Aa() 2\n");
-        
-
-
-
         this.Frame.Update();
-
-
-
-        global::System.Console.Write("Demo Aa() 3\n");
 
 
 

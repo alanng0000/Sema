@@ -9,6 +9,7 @@ global using View = System.View.View;
 global using Frame = System.View.Frame;
 global using Grid = System.View.Grid;
 global using Text = System.View.Text;
+global using Pos = System.View.Pos;
 global using GridCol = System.View.GridCol;
 global using GridRow = System.View.GridRow;
 global using GridChild = System.View.GridChild;

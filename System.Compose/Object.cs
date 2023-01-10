@@ -18,8 +18,42 @@ public class Object : InfraObject
 
 
 
+
+
+
+
+        ulong o;
+
+
+        o = IntentInfra.This.NewValue();
+        
+
+
+
+
+        this.Intent = new Intent();
+
+
+        this.Intent.Init();
+
+
+        this.Intent.Value = o;
+
+
+
+
+
         return true;
     }
+
+
+
+
+
+
+    public Intent Intent { get; set; }
+
+
 
 
 

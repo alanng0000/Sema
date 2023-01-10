@@ -11,9 +11,9 @@ class Handle : EventHandle
 
     public override bool Execute(object arg)
     {
-        CharEventArg o;
+        CharArg o;
 
-        o = (CharEventArg)arg;
+        o = (CharArg)arg;
 
 
 

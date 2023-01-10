@@ -156,10 +156,7 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-            if (ControlKey.This.IsKey(key))
-            {
-                ControlControl.This.SetKeyState(key, state);
-            }
+            ControlControl.This.SetKeyState(key, state);
 
 
 

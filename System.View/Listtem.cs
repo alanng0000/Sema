@@ -3,7 +3,7 @@ namespace System.View;
 
 
 
-class ListItem : ComposeObject
+class ListItem : InfraObject
 {
     public ComposeObject Object { get; set; }
 

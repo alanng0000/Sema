@@ -215,16 +215,28 @@ public class Convert : InfraObject
 
 
 
-        if (!this.Null(a))
+        bool b;
+
+        b = false;
+
+
+
+        if (!b & !this.Null(a))
         {
             u = new ReadOnlySpanChar(a, start, count);
+
+
+            b = true;
         }
 
 
 
-        if (!this.Null(s))
+        if (!b & !this.Null(s))
         {
             u = s.AsSpan(start, count);
+
+
+            b = true;
         }
 
 

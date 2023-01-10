@@ -171,6 +171,12 @@ public class Draw : InfraObject
 
     public bool Image(Image image, Rect destRect, Rect srcRect)
     {
+        this.Absolute(ref destRect.Pos);
+
+        
+
+
+
         WinBitmap winBitmap;
 
         winBitmap = image.WinBitmap;

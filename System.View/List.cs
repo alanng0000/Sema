@@ -97,6 +97,7 @@ public class List : ComposeObject
 
         ListChange change;
         change = new ListChange();
+        change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Item;
         change.Key = key;
@@ -151,7 +152,7 @@ public class List : ComposeObject
 
 
 
-        o.Changed.Handle.AddHandle(this.EventHandle);
+        item.Changed.Handle.AddHandle(this.EventHandle);
 
 
 
@@ -159,6 +160,7 @@ public class List : ComposeObject
 
         ListChange change;
         change = new ListChange();
+        change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Add;
         change.Key = key;
@@ -193,7 +195,14 @@ public class List : ComposeObject
             o = (ListItem)iter.Value;
 
 
-            o.Changed.Handle.RemoveHandle(this.EventHandle);
+
+            ComposeObject item;
+
+            item = o.Object;
+
+
+
+            item.Changed.Handle.RemoveHandle(this.EventHandle);
         }
 
 
@@ -208,6 +217,8 @@ public class List : ComposeObject
         ListChange change;
 
         change = new ListChange();
+
+        change.Init();
         
         change.List = this;
         
@@ -309,18 +320,19 @@ public class List : ComposeObject
 
 
 
-        this.ObjectList.Insert(key, o);
+        this.ObjectList.Insert(o.Key, o);
 
 
 
 
-        o.Changed.Handle.AddHandle(this.EventHandle);
+        item.Changed.Handle.AddHandle(this.EventHandle);
 
 
 
 
         ListChange change;
         change = new ListChange();
+        change.Init();
         change.List = this;
         change.Kind = ListChangeKinds.This.Insert;
         change.Key = key;

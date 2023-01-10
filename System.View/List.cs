@@ -91,7 +91,7 @@ public class List : ComposeObject
         change = new ListChange();
         change.Init();
         change.List = this;
-        change.Kind = ListChangeKinds.This.Item;
+        change.Kind = ListChangeKindList.This.Item;
         change.Item = item;
 
         this.Trigger(change);
@@ -151,7 +151,7 @@ public class List : ComposeObject
         change = new ListChange();
         change.Init();
         change.List = this;
-        change.Kind = ListChangeKinds.This.Add;
+        change.Kind = ListChangeKindList.This.Add;
         change.Item = item;
 
 
@@ -212,7 +212,7 @@ public class List : ComposeObject
         
         change.List = this;
         
-        change.Kind = ListChangeKinds.This.Clear;
+        change.Kind = ListChangeKindList.This.Clear;
 
 
 
@@ -329,7 +329,7 @@ public class List : ComposeObject
         change = new ListChange();
         change.Init();
         change.List = this;
-        change.Kind = ListChangeKinds.This.Insert;
+        change.Kind = ListChangeKindList.This.Insert;
         change.Item = item;
 
         this.Trigger(change);
@@ -371,7 +371,7 @@ public class List : ComposeObject
         change = new ListChange();
         change.Init();
         change.List = this;
-        change.Kind = ListChangeKinds.This.Remove;
+        change.Kind = ListChangeKindList.This.Remove;
         change.Item = item;
 
         this.Trigger(change);

@@ -1,18 +1,18 @@
 namespace System.View;
 
 
-public class ListChangeKinds : InfraObject
+public class ListChangeKindList : InfraObject
 {
-    public static ListChangeKinds This { get; } = CreateGlobal();
+    public static ListChangeKindList This { get; } = CreateGlobal();
 
 
 
 
-    private static ListChangeKinds CreateGlobal()
+    private static ListChangeKindList CreateGlobal()
     {
-        ListChangeKinds global;
+        ListChangeKindList global;
 
-        global = new ListChangeKinds();
+        global = new ListChangeKindList();
 
         global.Init();
 
@@ -38,9 +38,6 @@ public class ListChangeKinds : InfraObject
     public virtual ListChangeKind Clear { get { return this.ClearData; } set {} }
 
 
-    public virtual ListChangeKind Set { get { return this.SetData; } set {} }
-
-
     public virtual ListChangeKind Item { get { return this.ItemData; } set {} }
 
 
@@ -54,7 +51,6 @@ public class ListChangeKinds : InfraObject
 
     private ListChangeKind ClearData { get; set; }
 
-    private ListChangeKind SetData { get; set; }
 
 
     private ListChangeKind ItemData { get; set; }
@@ -81,8 +77,6 @@ public class ListChangeKinds : InfraObject
 
         this.ClearData = this.CreateKind();
 
-
-        this.SetData = this.CreateKind();
 
 
         this.ItemData = this.CreateKind();

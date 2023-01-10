@@ -11,10 +11,10 @@ public class List : ComposeObject
 
 
 
-        this.ObjectList = new InfraList();
+        this.ItemList = new InfraList();
 
 
-        this.ObjectList.Init();
+        this.ItemList.Init();
 
 
 
@@ -35,7 +35,7 @@ public class List : ComposeObject
 
 
 
-    protected virtual InfraList ObjectList { get; set; }
+    protected virtual InfraList ItemList { get; set; }
 
 
 
@@ -59,7 +59,7 @@ public class List : ComposeObject
     {
         get
         {
-            return this.ObjectList.Count;
+            return this.ItemList.Count;
         }
         set
         {
@@ -141,7 +141,7 @@ public class List : ComposeObject
         object key;
 
 
-        key = this.ObjectList.Add(o);
+        key = this.ItemList.Add(o);
 
 
 
@@ -185,7 +185,7 @@ public class List : ComposeObject
         InfraListIter iter;
 
 
-        iter = this.ObjectList.Iter();
+        iter = this.ItemList.Iter();
 
 
 
@@ -210,7 +210,7 @@ public class List : ComposeObject
 
 
 
-        this.ObjectList.Clear();
+        this.ItemList.Clear();
 
 
 
@@ -243,7 +243,7 @@ public class List : ComposeObject
         InfraListIter o;
 
 
-        o = this.ObjectList.Iter();
+        o = this.ItemList.Iter();
 
 
 
@@ -315,14 +315,14 @@ public class List : ComposeObject
 
 
         o.Object = item;
-        
+
 
 
 
         object u;
 
 
-        u = this.ObjectList.Insert(key, o);
+        u = this.ItemList.Insert(key, o);
 
 
 
@@ -369,11 +369,11 @@ public class List : ComposeObject
         ListItem o;
 
 
-        o = (ListItem)this.ObjectList.Get(key);
+        o = (ListItem)this.ItemList.Get(key);
 
         
 
-        this.ObjectList.Remove(key);
+        this.ItemList.Remove(key);
 
 
 
@@ -412,7 +412,7 @@ public class List : ComposeObject
 
     public virtual bool Valid(object key)
     {
-        return this.ObjectList.Contain(key);
+        return this.ItemList.Contain(key);
     }
 
 
@@ -432,7 +432,7 @@ public class List : ComposeObject
         ListItem o;
 
 
-        o = (ListItem)this.ObjectList.Get(key);
+        o = (ListItem)this.ItemList.Get(key);
 
 
 
@@ -473,7 +473,7 @@ public class List : ComposeObject
         ListItem oa;
 
 
-        oa = (ListItem)this.ObjectList.Get(key);
+        oa = (ListItem)this.ItemList.Get(key);
 
 
 

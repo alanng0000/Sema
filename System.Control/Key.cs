@@ -295,19 +295,11 @@ public class Key : InfraObject
 
 
 
-
-
-
         this.Code = 0x08;
 
 
 
         this.Backspace = this.AddCode();
-
-
-
-
-
 
 
 
@@ -439,7 +431,7 @@ public class Key : InfraObject
 
         return this.IndexKey(index, cc);
     }
-    
+
 
 
 

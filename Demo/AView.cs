@@ -261,9 +261,9 @@ class AView : View
 
 
 
-        image.Src.Pos.Left = 400;
+        image.Src.Pos.Left = 1900;
 
-        image.Src.Pos.Up = 400;
+        image.Src.Pos.Up = 1000;
 
 
         image.Src.Size.Width = 500;
@@ -424,7 +424,7 @@ class AView : View
 
 
         uView.Child = image;
-        
+
 
 
 
@@ -441,6 +441,11 @@ class AView : View
 
 
         this.Text = text;
+
+
+
+
+        this.Image = image;
 
 
 
@@ -465,6 +470,12 @@ class AView : View
 
 
     public Text Text { get; set; }
+
+
+
+
+    public Image Image { get; set; }
+
 
 
 

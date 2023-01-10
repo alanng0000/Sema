@@ -143,6 +143,39 @@ class Demo : Object
 
 
 
+
+    public bool ImageSrcMoveUp()
+    {
+        return this.MoveVertical(this.AView.Image.Src.Pos, -10);
+    }
+
+
+
+    public bool ImageSrcMoveDown()
+    {
+        return this.MoveVertical(this.AView.Image.Src.Pos, 10);
+    }
+
+
+
+
+    public bool ImageSrcMoveLeft()
+    {
+        return this.MoveHorizontal(this.AView.Image.Src.Pos, -10);
+    }
+
+
+
+
+    public bool ImageSrcMoveRight()
+    {
+        return this.MoveHorizontal(this.AView.Image.Src.Pos, 10);
+    }
+
+
+
+
+
     private bool MoveHorizontal(Pos pos, int offset)
     {
         int left;

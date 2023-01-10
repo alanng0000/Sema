@@ -71,6 +71,36 @@ class Handle : EventHandle
         {
             this.Demo.TextMoveRight();
         }
+
+
+
+
+        if (c == 'I')
+        {
+            this.Demo.ImageSrcMoveUp();
+        }
+
+
+        if (c == 'K')
+        {
+            this.Demo.ImageSrcMoveDown();
+        }
+
+
+        if (c == 'J')
+        {
+            this.Demo.ImageSrcMoveLeft();
+        }
+
+
+        if (c == 'L')
+        {
+            this.Demo.ImageSrcMoveRight();
+        }
+
+
+
+
         
 
 

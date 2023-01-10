@@ -207,8 +207,73 @@ public class Image : View
 
 
 
-        
 
+        
+        DrawImage image;
+
+
+        image = this.Value;
+
+
+
+
+        DrawRect destRect;
+
+        destRect = new DrawRect();
+
+        destRect.Init();
+
+
+
+        this.DrawRect(this.Dest, ref destRect);
+
+
+
+
+        int left;
+
+        left = destRect.Pos.Left;
+
+
+
+        int up;
+
+        up = destRect.Pos.Up;
+
+
+
+        left = left + this.Pos.Left;
+
+
+        up = up + this.Pos.Up;
+
+
+
+
+        destRect.Pos.Left = left;
+
+
+        destRect.Pos.Up = up;
+
+
+
+
+
+        DrawRect srcRect;
+
+        srcRect = new DrawRect();
+
+        srcRect.Init();
+
+
+
+        this.DrawRect(this.Src, ref srcRect);
+
+
+
+
+
+        draw.Image(image, destRect, srcRect);
 
 
 
@@ -218,6 +283,36 @@ public class Image : View
         return true;
     }
 
+
+
+
+    private bool DrawRect(Rect rect, ref DrawRect drawRect)
+    {
+        drawRect.Pos = new DrawPos();
+
+        drawRect.Pos.Init();
+
+
+        drawRect.Pos.Left = rect.Pos.Left;
+
+        drawRect.Pos.Up = rect.Pos.Up;
+
+
+
+
+        drawRect.Size = new DrawSize();
+
+        drawRect.Size.Init();
+
+
+        drawRect.Size.Width = rect.Size.Width;
+
+        drawRect.Size.Height = rect.Size.Height;
+
+
+
+        return true;
+    }
 
 
 

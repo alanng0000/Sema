@@ -364,7 +364,7 @@ public class Field : InfraObject
 
 
     private Change SetChangeArg { get; set; }
-    
+
 
 
 
@@ -372,6 +372,6 @@ public class Field : InfraObject
 
     private bool Null(object o)
     {
-        return o == null;
+        return ObjectInfra.This.Null(o);
     }
 }

@@ -238,6 +238,19 @@ public class Frame : ComposeObject
 
 
 
+    public virtual bool Close()
+    {
+        this.Form.Close();
+        
+
+
+        return true;
+    }
+
+
+
+
+
 
     public virtual Field ViewField { get; set; }
 

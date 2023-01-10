@@ -72,7 +72,7 @@ public class Draw : InfraObject
 
 
 
-        this.SetGraphicDefault(this.WinGraphic);
+        this.SetWinDefault(this.WinGraphic);
 
 
 
@@ -85,7 +85,7 @@ public class Draw : InfraObject
 
 
 
-    private bool SetGraphicDefault(WinGraphics g)
+    private bool SetWinDefault(WinGraphics g)
     {
         g.TextRenderingHint = WinTextRenderingHint.ClearTypeGridFit;
 

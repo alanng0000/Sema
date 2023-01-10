@@ -27,13 +27,13 @@ public class Rect : ComposeObject
 
 
 
-        this.UpField = new Field();
+        this.SizeField = new Field();
 
 
-        this.UpField.Object = this;
+        this.SizeField.Object = this;
 
 
-        this.UpField.Init();
+        this.SizeField.Init();
 
 
 
@@ -57,9 +57,9 @@ public class Rect : ComposeObject
 
 
 
-        if (this.UpField == field)
+        if (this.SizeField == field)
         {
-            this.ChangeUp(change);
+            this.ChangeSize(change);
         }
 
 
@@ -109,30 +109,30 @@ public class Rect : ComposeObject
 
 
 
-    public virtual Field UpField { get; set; }
+    public virtual Field SizeField { get; set; }
 
 
 
 
-    public virtual int Up
+    public virtual Size Size
     {
         get
         {
-            return this.UpField.GetAxisInt();
+            return (Size)this.SizeField.Get();
         }
 
         set
         {
-            this.UpField.SetAxisInt(value);
+            this.SizeField.Set(value);
         }
     }
 
 
 
 
-    protected virtual bool ChangeUp(Change change)
+    protected virtual bool ChangeSize(Change change)
     {
-        this.Trigger(this.UpField);
+        this.Trigger(this.SizeField);
 
 
 

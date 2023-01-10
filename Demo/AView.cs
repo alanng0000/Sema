@@ -194,6 +194,26 @@ class AView : View
 
 
 
+        View uView;
+
+
+        uView = new View();
+
+
+        uView.Init();
+
+
+        uView.Size.Width = 500;
+
+
+        uView.Size.Height = 100;
+
+
+        uView.Back = redBrush;
+
+
+
+
 
 
         Grid grid;
@@ -223,9 +243,19 @@ class AView : View
         rowA.Init();
 
 
-        rowA.Height = 500;
+        rowA.Height = 400;
 
 
+
+
+        GridRow rowB;
+
+        rowB = new GridRow();
+
+        rowB.Init();
+
+
+        rowB.Height = 100;
 
 
 
@@ -255,6 +285,9 @@ class AView : View
 
 
         grid.Rows.Add(rowA);
+
+
+        grid.Rows.Add(rowB);
 
 
 
@@ -301,10 +334,31 @@ class AView : View
 
 
 
+        GridChild childC;
+
+        childC = new GridChild();
+
+        childC.Init();
+
+        childC.View = uView;
+
+        childC.Range.Start.Row = 1;
+
+        childC.Range.End.Row = 2;
+
+        childC.Range.End.Col = 2;
+
+
+
+
         grid.Childs.Add(childA);
 
 
         grid.Childs.Add(childB);
+
+
+        grid.Childs.Add(childC);
+        
 
 
 

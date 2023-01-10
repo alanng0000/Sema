@@ -156,7 +156,7 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-            ControlControl.This.SetState(key, state);
+            ControlControl.This.Set(key, state);
 
 
 

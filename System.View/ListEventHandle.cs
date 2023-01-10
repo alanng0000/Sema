@@ -18,12 +18,14 @@ public class ListEventHandle : EventHandle
 
 
 
-        ComposeObject o;
+        ComposeObject item;
 
-        o = change.Object;
+        item = change.Object;
 
 
-        this.List.ItemChange(o);
+        this.List.ItemChange(item);
+
+        
 
 
         return true;

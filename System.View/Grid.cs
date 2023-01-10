@@ -242,6 +242,109 @@ public class Grid : View
 
 
 
+
+        int left;
+        
+        left = this.Pos.Left;
+
+
+
+        int up;
+
+        up = this.Pos.Up;
+
+
+
+        left = left + draw.Pos.Left;
+
+
+        up = up + draw.Pos.Up;
+
+
+
+
+        int width;
+
+        width = this.Size.Width;
+
+
+
+        int height;
+
+        height = this.Size.Height;
+
+
+
+
+        DrawPos pos;
+
+        pos = new DrawPos();
+
+        pos.Init();
+
+        pos.Left = left;
+
+        pos.Up = up;
+
+
+
+
+        DrawRect rect;
+
+        rect = new DrawRect();
+
+        rect.Init();
+
+        rect.Pos.Left = left;
+
+        rect.Pos.Up = up;
+
+        rect.Size.Width = width;
+
+        rect.Size.Height = height;
+
+
+
+
+        DrawRect u;
+
+        u = draw.Area;
+
+
+
+        this.DrawInfra.BoundArea(u, ref rect);
+
+
+
+
+
+
+        DrawPos un;
+
+        un = draw.Pos;
+
+
+
+
+
+        draw.Pos = pos;
+
+
+
+
+        draw.Area = rect;
+
+
+
+        draw.SetClip();
+
+
+
+
+
+
+
+
         ListIter iter;
 
 
@@ -263,6 +366,22 @@ public class Grid : View
 
             this.DrawGridChild(draw, child);
         }
+
+
+
+
+
+
+        draw.Pos = un;
+
+
+
+        draw.Area = u;
+
+
+
+        draw.SetClip();
+
 
 
 
@@ -407,9 +526,6 @@ public class Grid : View
 
 
 
-
-
-
     
 
 
@@ -422,6 +538,9 @@ public class Grid : View
         pos.Left = left;
 
         pos.Up = up;
+
+
+
 
 
 

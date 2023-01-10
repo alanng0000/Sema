@@ -76,8 +76,15 @@ public class Control : InfraObject
         
 
 
+        int count;
 
-        this.KeyList = new bool[0x100];
+
+        count = Key.This.Count;
+
+
+
+
+        this.KeyList = new bool[count];
 
 
 

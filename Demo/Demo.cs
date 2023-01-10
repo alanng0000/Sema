@@ -83,7 +83,7 @@ class Demo : Object
         global::System.Console.Write("Demo Aa()\n");
 
 
-        this.AView.Size.Width = 1000;
+        this.AView.Grid.Pos.Left = 500;
 
 
 
@@ -91,11 +91,11 @@ class Demo : Object
 
 
 
-        this.AView.ColA.Width = 500;
+        // this.AView.ColA.Width = 500;
 
 
 
-        global::System.Console.Write("Demo Aa() 2\n");
+        // global::System.Console.Write("Demo Aa() 2\n");
         
 
 

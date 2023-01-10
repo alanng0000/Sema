@@ -85,13 +85,30 @@ class AView : View
 
 
 
+        ColorBrush yellowBrush;
+
+        yellowBrush = new ColorBrush();
+
+        yellowBrush.Color.Alpha = Constant.This.ColorCompMax;
+
+        yellowBrush.Color.Red = Constant.This.ColorCompMax;
+
+        yellowBrush.Color.Green = Constant.This.ColorCompMax;
+
+        yellowBrush.Init();
+
+
+
+
+
+
         View viewA;
 
         viewA = new View();
 
         viewA.Init();
 
-        viewA.Size.Width = 450;
+        viewA.Size.Width = 500;
 
         viewA.Size.Height = 400;
 
@@ -181,10 +198,13 @@ class AView : View
         grid.Init();
 
 
-        grid.Size.Width = 700;
+        grid.Size.Width = 500;
 
 
         grid.Size.Height = 500;
+
+
+        grid.Back = yellowBrush;
 
 
 
@@ -222,7 +242,7 @@ class AView : View
         colB.Init();
 
 
-        colB.Width = 500;
+        colB.Width = 600;
 
 
 
@@ -288,6 +308,11 @@ class AView : View
 
 
 
+
+        this.Grid = grid;
+
+
+
         
         this.ColA = colA;
 
@@ -297,6 +322,11 @@ class AView : View
 
         return true;
     }
+
+
+
+
+    public Grid Grid { get; set; }
 
 
 

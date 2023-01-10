@@ -15,6 +15,32 @@ public class Image : View
 
         this.ValueField.Init();
 
+
+
+
+
+
+        this.DestField = new Field();
+
+
+        this.DestField.Object = this;
+
+
+        this.DestField.Init();
+
+
+
+
+
+        this.SrcField = new Field();
+
+
+        this.SrcField.Object = this;
+
+
+        this.SrcField.Init();
+
+
         
 
 
@@ -114,6 +140,43 @@ public class Image : View
 
 
 
+    public virtual Field SrcField { get; set; }
+
+
+
+
+    public virtual Rect Src
+    {
+        get
+        {
+            return (Rect)this.SrcField.Get();
+        }
+
+        set
+        {
+            this.SrcField.Set(value);
+        }
+    }
+
+
+
+
+
+    protected virtual bool ChangeSrc(Change change)
+    {
+        this.Trigger(this.SrcField);
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
     protected override bool Draw(DrawDraw draw)
     {
         base.Draw(draw);
@@ -137,6 +200,21 @@ public class Image : View
 
     protected virtual bool DrawImage(DrawDraw draw)
     {
+        if (this.Null(this.Value))
+        {
+            return true;
+        }
+
+
+
+        
+
+
+
+
+
+
+
         return true;
     }
 
@@ -152,9 +230,22 @@ public class Image : View
 
 
 
+
         if (this.ValueField == field)
         {
             this.ChangeValue(change);
+        }
+
+
+        if (this.DestField == field)
+        {
+            this.ChangeDest(change);
+        }
+
+
+        if (this.SrcField == field)
+        {
+            this.ChangeSrc(change);
         }
 
 
@@ -162,6 +253,8 @@ public class Image : View
 
         return true;
     }
+
+
 
 
 

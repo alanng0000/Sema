@@ -44,6 +44,18 @@ public class List : ComposeObject
 
 
 
+
+
+        this.ListChange = new ListChange();
+
+
+        this.ListChange.Init();
+
+
+        this.ListChange.List = this;
+
+
+
         return true;
     }
 
@@ -87,18 +99,13 @@ public class List : ComposeObject
 
     public virtual bool ItemChange(ComposeObject item)
     {
-        ListChange change;
-        change = new ListChange();
-        change.Init();
-        change.List = this;
-        change.Kind = ListChangeKindList.This.Item;
-        change.Item = item;
+        this.TriggerList(ListChangeKindList.This.Item, item);
 
-        this.Trigger(change);
 
 
         return true;
     }
+
 
 
 
@@ -147,15 +154,10 @@ public class List : ComposeObject
 
 
 
-        ListChange change;
-        change = new ListChange();
-        change.Init();
-        change.List = this;
-        change.Kind = ListChangeKindList.This.Add;
-        change.Item = item;
 
 
-        this.Trigger(change);
+        this.TriggerList(ListChangeKindList.This.Add, item);
+
 
 
 
@@ -204,23 +206,15 @@ public class List : ComposeObject
 
 
 
-        ListChange change;
 
-        change = new ListChange();
-
-        change.Init();
-        
-        change.List = this;
-        
-        change.Kind = ListChangeKindList.This.Clear;
+        this.TriggerList(ListChangeKindList.This.Clear, null);
 
 
-
-        this.Trigger(change);
 
 
         return true;
     }
+
 
 
     
@@ -325,14 +319,9 @@ public class List : ComposeObject
 
 
 
-        ListChange change;
-        change = new ListChange();
-        change.Init();
-        change.List = this;
-        change.Kind = ListChangeKindList.This.Insert;
-        change.Item = item;
 
-        this.Trigger(change);
+        this.TriggerList(ListChangeKindList.This.Insert, item);
+
 
 
 
@@ -366,19 +355,43 @@ public class List : ComposeObject
 
 
 
+        this.TriggerList(ListChangeKindList.This.Remove, item);
 
-        ListChange change;
-        change = new ListChange();
-        change.Init();
-        change.List = this;
-        change.Kind = ListChangeKindList.This.Remove;
-        change.Item = item;
 
-        this.Trigger(change);
 
 
         return true;
     }
+
+
+
+
+
+    private bool TriggerList(ListChangeKind kind, ComposeObject item)
+    {
+        this.ListChange.Kind = kind;
+
+
+
+        this.ListChange.Item = item;
+
+
+
+
+        this.Trigger(this.ListChange);
+
+
+
+        return true;
+    }
+
+
+
+
+
+    private ListChange ListChange { get; set; }
+
+
 
 
 

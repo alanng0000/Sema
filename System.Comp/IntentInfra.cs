@@ -1,4 +1,4 @@
-namespace System.Compose;
+namespace System.Comp;
 
 
 

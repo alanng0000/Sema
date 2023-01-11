@@ -3,7 +3,7 @@ namespace System.View;
 
 
 
-public class View : ComposeObject
+public class View : CompObject
 {
     public override bool Init()
     {

@@ -13,5 +13,5 @@ public class ListChange : Change
 
 
 
-    public virtual ComposeObject Item { get; set; }
+    public virtual CompObject Item { get; set; }
 }

@@ -18,7 +18,7 @@ public class ListEventHandle : EventHandle
 
 
 
-        ComposeObject item;
+        CompObject item;
 
         item = change.Object;
 

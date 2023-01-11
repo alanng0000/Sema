@@ -2,7 +2,7 @@ namespace System.View;
 
 
 
-public class Frame : ComposeObject
+public class Frame : CompObject
 {
     public override bool Init()
     {

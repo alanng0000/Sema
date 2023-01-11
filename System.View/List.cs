@@ -2,7 +2,7 @@ namespace System.View;
 
 
 
-public class List : ComposeObject
+public class List : CompObject
 {
     public override bool Init()
     {
@@ -97,7 +97,7 @@ public class List : ComposeObject
 
 
 
-    public virtual bool ItemChange(ComposeObject item)
+    public virtual bool ItemChange(CompObject item)
     {
         this.TriggerList(ListChangeKindList.This.Item, item);
 
@@ -110,7 +110,7 @@ public class List : ComposeObject
 
 
 
-    public virtual bool Add(ComposeObject item)
+    public virtual bool Add(CompObject item)
     {
         if (this.Null(item))
         {
@@ -188,9 +188,9 @@ public class List : ComposeObject
 
 
 
-            ComposeObject item;
+            CompObject item;
 
-            item = (ComposeObject)pair.Value;
+            item = (CompObject)pair.Value;
 
 
 
@@ -269,7 +269,7 @@ public class List : ComposeObject
 
 
 
-    public virtual bool Insert(Intent key, ComposeObject item)
+    public virtual bool Insert(Intent key, CompObject item)
     {
         if (!this.Valid(key))
         {
@@ -335,7 +335,7 @@ public class List : ComposeObject
 
     public virtual bool Remove(Intent intent)
     {
-        ComposeObject item;
+        CompObject item;
 
 
         item = this.Get(intent);
@@ -375,7 +375,7 @@ public class List : ComposeObject
 
 
 
-    private bool TriggerList(ListChangeKind kind, ComposeObject item)
+    private bool TriggerList(ListChangeKind kind, CompObject item)
     {
         this.ListChange.Kind = kind;
 
@@ -413,9 +413,9 @@ public class List : ComposeObject
 
 
 
-    public virtual ComposeObject Get(Intent key)
+    public virtual CompObject Get(Intent key)
     {
-        return (ComposeObject)this.ItemMap.Get(key);
+        return (CompObject)this.ItemMap.Get(key);
     }
 
 

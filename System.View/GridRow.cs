@@ -3,7 +3,7 @@ namespace System.View;
 
 
 
-public class GridRow : ComposeObject
+public class GridRow : CompObject
 {
     public override bool Init()
     {

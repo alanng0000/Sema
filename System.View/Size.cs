@@ -3,7 +3,7 @@ namespace System.View;
 
 
 
-public class Size : ComposeObject
+public class Size : CompObject
 {
     public override bool Init()
     {

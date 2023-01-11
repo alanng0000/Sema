@@ -52,15 +52,15 @@ public struct ListIter : InfraIIter
 
 
 
-            ComposeObject item;
+            CompObject item;
             
 
-            item = (ComposeObject)pair.Value;
+            item = (CompObject)pair.Value;
 
 
 
 
-            ComposeObject ret;
+            CompObject ret;
 
 
             ret = item;

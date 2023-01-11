@@ -37,13 +37,13 @@ public class Image : View
 
 
 
-        this.SrcField = new Field();
+        this.SourceField = new Field();
 
 
-        this.SrcField.Object = this;
+        this.SourceField.Object = this;
 
 
-        this.SrcField.Init();
+        this.SourceField.Init();
 
 
         
@@ -70,14 +70,14 @@ public class Image : View
 
 
 
-        Rect src;
+        Rect source;
 
-        src = new Rect();
+        source = new Rect();
 
-        src.Init();
+        source.Init();
 
 
-        this.Src = src;
+        this.Source = source;
 
 
 
@@ -165,21 +165,21 @@ public class Image : View
 
 
 
-    public virtual Field SrcField { get; set; }
+    public virtual Field SourceField { get; set; }
 
 
 
 
-    public virtual Rect Src
+    public virtual Rect Source
     {
         get
         {
-            return (Rect)this.SrcField.Get();
+            return (Rect)this.SourceField.Get();
         }
 
         set
         {
-            this.SrcField.Set(value);
+            this.SourceField.Set(value);
         }
     }
 
@@ -187,9 +187,9 @@ public class Image : View
 
 
 
-    protected virtual bool ChangeSrc(Change change)
+    protected virtual bool ChangeSource(Change change)
     {
-        this.Trigger(this.SrcField);
+        this.Trigger(this.SourceField);
 
 
 
@@ -362,24 +362,24 @@ public class Image : View
 
 
 
-        DrawRect srcRect;
+        DrawRect sourceRect;
 
 
-        srcRect = new DrawRect();
+        sourceRect = new DrawRect();
 
 
-        srcRect.Init();
+        sourceRect.Init();
 
 
 
-        Infra.This.DrawRect(this.Src, ref srcRect);
+        Infra.This.DrawRect(this.Source, ref sourceRect);
         
 
 
 
 
 
-        draw.Image(image, destRect, srcRect);
+        draw.Image(image, destRect, sourceRect);
 
 
 
@@ -432,9 +432,9 @@ public class Image : View
         }
 
 
-        if (this.SrcField == field)
+        if (this.SourceField == field)
         {
-            this.ChangeSrc(change);
+            this.ChangeSource(change);
         }
 
 

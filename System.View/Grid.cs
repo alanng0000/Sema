@@ -12,13 +12,13 @@ public class Grid : View
 
 
 
-        this.RowsField = new Field();
+        this.RowField = new Field();
 
 
-        this.RowsField.Object = this;
+        this.RowField.Object = this;
 
 
-        this.RowsField.Init();
+        this.RowField.Init();
 
 
 
@@ -46,15 +46,15 @@ public class Grid : View
 
 
 
-        List rows;
+        List row;
 
-        rows = new List();
+        row = new List();
 
-        rows.Init();
+        row.Init();
 
 
 
-        this.Rows = rows;
+        this.Row = row;
 
 
 
@@ -91,21 +91,21 @@ public class Grid : View
 
 
 
-    public virtual Field RowsField { get; set; }
+    public virtual Field RowField { get; set; }
 
 
 
 
-    public virtual List Rows
+    public virtual List Row
     {
         get
         {
-            return (List)this.RowsField.Get();
+            return (List)this.RowField.Get();
         }
 
         set
         {
-            this.RowsField.Set(value);
+            this.RowField.Set(value);
         }
     }
 
@@ -113,9 +113,9 @@ public class Grid : View
 
 
 
-    protected virtual bool ChangeRows(Change change)
+    protected virtual bool ChangeRow(Change change)
     {
-        if (this.Null(this.Rows) | this.Null(this.Cols) | this.Null(this.Childs))
+        if (this.Null(this.Row) | this.Null(this.Cols) | this.Null(this.Childs))
         {
             return true;
         }
@@ -128,7 +128,7 @@ public class Grid : View
 
 
 
-        this.Trigger(this.RowsField);
+        this.Trigger(this.RowField);
 
 
 
@@ -163,7 +163,7 @@ public class Grid : View
 
     protected virtual bool ChangeCols(Change change)
     {
-        if (this.Null(this.Rows) | this.Null(this.Cols) | this.Null(this.Childs))
+        if (this.Null(this.Row) | this.Null(this.Cols) | this.Null(this.Childs))
         {
             return true;
         }
@@ -210,7 +210,7 @@ public class Grid : View
 
     protected virtual bool ChangeChilds(Change change)
     {
-        if (this.Null(this.Rows) | this.Null(this.Cols) | this.Null(this.Childs))
+        if (this.Null(this.Row) | this.Null(this.Cols) | this.Null(this.Childs))
         {
             return true;
         }
@@ -657,13 +657,13 @@ public class Grid : View
 
         bool baa;
 
-        baa = start.Row < this.Rows.Count;
+        baa = start.Row < this.Row.Count;
 
 
 
         bool bab;
 
-        bab = this.Rows.Count < end.Row;
+        bab = this.Row.Count < end.Row;
 
 
 
@@ -851,7 +851,7 @@ public class Grid : View
 
     private bool SetChildUpArray()
     {
-        this.ChildUpArray = new int[this.Rows.Count];
+        this.ChildUpArray = new int[this.Row.Count];
 
 
 
@@ -859,7 +859,7 @@ public class Grid : View
         ListIter iter;
 
 
-        iter = this.Rows.Iter();
+        iter = this.Row.Iter();
 
 
 
@@ -929,9 +929,9 @@ public class Grid : View
 
 
 
-        if (this.RowsField == field)
+        if (this.RowField == field)
         {
-            this.ChangeRows(change);
+            this.ChangeRow(change);
         }
 
 

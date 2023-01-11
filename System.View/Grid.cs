@@ -34,13 +34,13 @@ public class Grid : View
 
 
 
-        this.ChildsField = new Field();
+        this.ChildField = new Field();
 
 
-        this.ChildsField.Object = this;
+        this.ChildField.Object = this;
 
 
-        this.ChildsField.Init();
+        this.ChildField.Init();
 
 
 
@@ -59,28 +59,28 @@ public class Grid : View
 
 
 
-        List cols;
+        List col;
 
-        cols = new List();
+        col = new List();
 
-        cols.Init();
-
-
-
-        this.Col = cols;
+        col.Init();
 
 
 
-
-        List childs;
-
-        childs = new List();
-
-        childs.Init();
+        this.Col = col;
 
 
 
-        this.Childs = childs;
+
+        List child;
+
+        child = new List();
+
+        child.Init();
+
+
+
+        this.Child = child;
         
 
 
@@ -115,7 +115,7 @@ public class Grid : View
 
     protected virtual bool ChangeRow(Change change)
     {
-        if (this.Null(this.Row) | this.Null(this.Col) | this.Null(this.Childs))
+        if (this.Null(this.Row) | this.Null(this.Col) | this.Null(this.Child))
         {
             return true;
         }
@@ -163,7 +163,7 @@ public class Grid : View
 
     protected virtual bool ChangeCol(Change change)
     {
-        if (this.Null(this.Row) | this.Null(this.Col) | this.Null(this.Childs))
+        if (this.Null(this.Row) | this.Null(this.Col) | this.Null(this.Child))
         {
             return true;
         }
@@ -186,21 +186,21 @@ public class Grid : View
 
 
 
-    public virtual Field ChildsField { get; set; }
+    public new virtual Field ChildField { get; set; }
 
 
 
 
-    public virtual List Childs
+    public new virtual List Child
     {
         get
         {
-            return (List)this.ChildsField.Get();
+            return (List)this.ChildField.Get();
         }
 
         set
         {
-            this.ChildsField.Set(value);
+            this.ChildField.Set(value);
         }
     }
 
@@ -208,9 +208,9 @@ public class Grid : View
 
 
 
-    protected virtual bool ChangeChilds(Change change)
+    protected new virtual bool ChangeChild(Change change)
     {
-        if (this.Null(this.Row) | this.Null(this.Col) | this.Null(this.Childs))
+        if (this.Null(this.Row) | this.Null(this.Col) | this.Null(this.Child))
         {
             return true;
         }
@@ -219,7 +219,7 @@ public class Grid : View
 
 
 
-        this.Trigger(this.ChildsField);
+        this.Trigger(this.ChildField);
 
 
 
@@ -233,7 +233,7 @@ public class Grid : View
 
     protected override bool ExecuteChildDraw(DrawDraw draw)
     {
-        if (this.Null(this.Childs))
+        if (this.Null(this.Child))
         {
             return true;
         }
@@ -348,7 +348,7 @@ public class Grid : View
         ListIter iter;
 
 
-        iter = this.Childs.Iter();
+        iter = this.Child.Iter();
 
 
 
@@ -832,9 +832,6 @@ public class Grid : View
 
 
 
-            //global::System.Console.Write("Grid SetChildLeftArray()" + ", " + "left" + ": " + left + "\n");
-
-
 
             i = i + 1;
         }
@@ -894,10 +891,6 @@ public class Grid : View
 
 
 
-            //global::System.Console.Write("Grid SetChildUpArray()" + ", " + "up" + ": " + up + "\n");
-
-
-
 
             i = i + 1;
         }
@@ -941,30 +934,13 @@ public class Grid : View
         }
 
 
-        if (this.ChildsField == field)
+        if (this.ChildField == field)
         {
-            this.ChangeChilds(change);
+            this.ChangeChild(change);
         }
 
 
 
         return true;
-    }
-
-
-
-
-
-    
-    public override View Child
-    {
-        get
-        {
-            return null;
-        }
-
-        set
-        {
-        }
     }
 }

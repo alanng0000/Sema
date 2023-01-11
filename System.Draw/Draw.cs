@@ -177,7 +177,7 @@ public class Draw : InfraObject
 
 
 
-    public bool Image(Image image, Rect destRect, Rect srcRect)
+    public bool Image(Image image, Rect destRect, Rect sourceRect)
     {
         this.Absolute(ref destRect.Pos);
 
@@ -199,14 +199,14 @@ public class Draw : InfraObject
 
 
 
-        WinRectangle winSrcRect;
+        WinRectangle winSourceRect;
 
-        winSrcRect = Convert.This.WinRectangle(srcRect);
-
-
+        winSourceRect = Convert.This.WinRectangle(sourceRect);
 
 
-        this.WinGraphic.DrawImage(winBitmap, winDestRect, winSrcRect, WinGraphicsUnit.Pixel);
+
+
+        this.WinGraphic.DrawImage(winBitmap, winDestRect, winSourceRect, WinGraphicsUnit.Pixel);
 
 
 

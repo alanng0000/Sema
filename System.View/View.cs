@@ -602,19 +602,6 @@ public class View : CompObject
 
 
 
-    internal bool LocalExecuteDraw(DrawDraw draw)
-    {
-        this.ExecuteDraw(draw);
-
-
-
-        return true;
-    }
-
-
-
-
-
 
     protected DrawInfra DrawInfra { get; set; }
 

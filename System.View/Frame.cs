@@ -176,7 +176,7 @@ public class Frame : CompObject
 
 
 
-        view.LocalExecuteDraw(this.Draw);
+        view.ExecuteDraw(this.Draw);
 
 
 

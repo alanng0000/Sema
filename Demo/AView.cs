@@ -344,17 +344,17 @@ class AView : View
 
 
 
-        grid.Rows.Add(rowA);
+        grid.Row.Add(rowA);
 
 
-        grid.Rows.Add(rowB);
+        grid.Row.Add(rowB);
 
 
 
-        grid.Cols.Add(colA);
+        grid.Col.Add(colA);
 
 
-        grid.Cols.Add(colB);
+        grid.Col.Add(colB);
 
 
 
@@ -411,13 +411,13 @@ class AView : View
 
 
 
-        grid.Childs.Add(childA);
+        grid.Child.Add(childA);
 
 
-        grid.Childs.Add(childB);
+        grid.Child.Add(childB);
 
 
-        grid.Childs.Add(childC);
+        grid.Child.Add(childC);
 
 
 

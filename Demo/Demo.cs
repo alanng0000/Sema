@@ -144,32 +144,32 @@ class Demo : Object
 
 
 
-    public bool ImageSrcMoveUp()
+    public bool ImageSourceMoveUp()
     {
-        return this.MoveVertical(this.AView.Image.Src.Pos, 10);
+        return this.MoveVertical(this.AView.Image.Source.Pos, 10);
     }
 
 
 
-    public bool ImageSrcMoveDown()
+    public bool ImageSourceMoveDown()
     {
-        return this.MoveVertical(this.AView.Image.Src.Pos, -10);
-    }
-
-
-
-
-    public bool ImageSrcMoveLeft()
-    {
-        return this.MoveHorizontal(this.AView.Image.Src.Pos, 10);
+        return this.MoveVertical(this.AView.Image.Source.Pos, -10);
     }
 
 
 
 
-    public bool ImageSrcMoveRight()
+    public bool ImageSourceMoveLeft()
     {
-        return this.MoveHorizontal(this.AView.Image.Src.Pos, -10);
+        return this.MoveHorizontal(this.AView.Image.Source.Pos, 10);
+    }
+
+
+
+
+    public bool ImageSourceMoveRight()
+    {
+        return this.MoveHorizontal(this.AView.Image.Source.Pos, -10);
     }
 
 

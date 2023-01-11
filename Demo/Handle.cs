@@ -77,25 +77,25 @@ class Handle : EventHandle
 
         if (c == 'I')
         {
-            this.Demo.ImageSrcMoveUp();
+            this.Demo.ImageSourceMoveUp();
         }
 
 
         if (c == 'K')
         {
-            this.Demo.ImageSrcMoveDown();
+            this.Demo.ImageSourceMoveDown();
         }
 
 
         if (c == 'J')
         {
-            this.Demo.ImageSrcMoveLeft();
+            this.Demo.ImageSourceMoveLeft();
         }
 
 
         if (c == 'L')
         {
-            this.Demo.ImageSrcMoveRight();
+            this.Demo.ImageSourceMoveRight();
         }
 
 

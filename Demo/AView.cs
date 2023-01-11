@@ -261,14 +261,14 @@ class AView : View
 
 
 
-        image.Src.Pos.Left = 1900;
+        image.Source.Pos.Left = 1900;
 
-        image.Src.Pos.Up = 1000;
+        image.Source.Pos.Up = 1000;
 
 
-        image.Src.Size.Width = 500;
+        image.Source.Size.Width = 500;
 
-        image.Src.Size.Height = 100;
+        image.Source.Size.Height = 100;
 
 
 

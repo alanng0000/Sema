@@ -17,7 +17,7 @@ public class Font : InfraObject
         WinFontFamily family;
 
 
-        family = new WinFontFamily(this.Family);
+        family = this.Family.WinFontFamily;
 
 
         
@@ -74,7 +74,7 @@ public class Font : InfraObject
 
 
 
-    public string Family { get; set; }
+    public FontFamily Family { get; set; }
 
 
 

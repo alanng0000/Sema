@@ -101,6 +101,11 @@ class Handle : EventHandle
 
 
 
+        if (c == 'h')
+        {
+            this.Demo.GridToggleVisible();
+        }
+
         
 
 

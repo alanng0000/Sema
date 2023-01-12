@@ -125,6 +125,18 @@ public class Text : View
 
     private bool InitFont()
     {
+        FontFamily fontFamily;
+
+        fontFamily = new FontFamily();
+
+        fontFamily.Name = "Segoe UI Variable Display";
+
+        fontFamily.Init();
+
+
+
+
+
         FontStyle fontStyle;
 
         fontStyle = new FontStyle();
@@ -140,7 +152,7 @@ public class Text : View
         font = new Font();
 
 
-        font.Family = "Segoe UI Variable Display";
+        font.Family = fontFamily;
 
 
         font.Size = 16;

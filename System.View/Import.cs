@@ -18,6 +18,7 @@ global using DrawColor = System.Draw.Color;
 global using Brush = System.Draw.Brush;
 global using ColorBrush = System.Draw.ColorBrush;
 global using Font = System.Draw.Font;
+global using FontFamily = System.Draw.FontFamily;
 global using FontStyle = System.Draw.FontStyle;
 global using DrawImage = System.Draw.Image;
 global using DrawInfra = System.Draw.Infra;

@@ -245,6 +245,32 @@ class Demo : Object
 
 
 
+
+    public bool GridToggleVisible()
+    {
+        bool b;
+
+
+        b = this.AView.Grid.Visible;
+
+
+
+        b = !b;
+
+
+
+        this.AView.Grid.Visible = b;
+
+
+
+
+        this.Frame.Update();
+
+
+        return true;
+    }
+
+
     
 
     

@@ -69,7 +69,19 @@ public class Font : InfraObject
 
 
 
+    public bool Close()
+    {
+        this.WinFont.Dispose();
 
+
+        this.WinFont = null;
+
+        
+
+        return true;
+    }
+
+    
 
 
 

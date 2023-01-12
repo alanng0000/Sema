@@ -28,5 +28,23 @@ public class FontFamily : InfraObject
 
 
 
+
+
+    public bool Close()
+    {
+        this.WinFontFamily.Dispose();
+
+
+        this.WinFontFamily = null;
+
+        
+
+        return true;
+    }
+
+
+
+
+
     internal WinFontFamily WinFontFamily { get; set; }
 }

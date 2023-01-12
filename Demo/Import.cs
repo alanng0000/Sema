@@ -4,6 +4,7 @@ global using Control = System.Control.Control;
 global using CharArg = System.Control.CharArg;
 global using ColorBrush = System.Draw.ColorBrush;
 global using Font = System.Draw.Font;
+global using FontFamily = System.Draw.FontFamily;
 global using FontStyle = System.Draw.FontStyle;
 global using DrawImage = System.Draw.Image;
 global using View = System.View.View;

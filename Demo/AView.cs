@@ -144,7 +144,7 @@ class AView : View
 
         text.Dest.Size.Width = 500;
 
-        text.Dest.Size.Height = 20;
+        text.Dest.Size.Height = 80;
 
 
 
@@ -159,6 +159,20 @@ class AView : View
 
 
         text.Value.Span.Range.End = s.Length;
+
+
+
+
+
+        FontFamily fontFamily;
+
+        fontFamily = new FontFamily();
+
+        fontFamily.Name = "Cascadia Mono";
+
+        fontFamily.Init();
+
+
 
 
 
@@ -177,7 +191,7 @@ class AView : View
 
         font = new Font();
 
-        font.Family = "Cascadia Mono";
+        font.Family = fontFamily;
 
         font.Size = 30;
 

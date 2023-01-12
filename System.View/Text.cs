@@ -350,14 +350,14 @@ public class Text : View
 
 
 
-    protected override bool ExecuteDrawThis(DrawDraw draw)
+    protected override bool DrawThis(DrawDraw draw)
     {
-        base.ExecuteDrawThis(draw);
+        base.DrawThis(draw);
 
         
 
 
-        this.ExecuteDrawText(draw);
+        this.DrawText(draw);
 
 
 
@@ -371,7 +371,7 @@ public class Text : View
 
 
 
-    protected virtual bool ExecuteDrawText(DrawDraw draw)
+    protected virtual bool DrawText(DrawDraw draw)
     {
         TextValue value;
 

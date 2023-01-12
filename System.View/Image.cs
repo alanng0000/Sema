@@ -202,14 +202,14 @@ public class Image : View
 
 
 
-    protected override bool ExecuteDrawThis(DrawDraw draw)
+    protected override bool DrawThis(DrawDraw draw)
     {
-        base.ExecuteDrawThis(draw);
+        base.DrawThis(draw);
 
 
 
         
-        this.ExecuteDrawImage(draw);
+        this.DrawImage(draw);
 
 
 
@@ -223,7 +223,7 @@ public class Image : View
 
 
 
-    protected virtual bool ExecuteDrawImage(DrawDraw draw)
+    protected virtual bool DrawImage(DrawDraw draw)
     {
         if (this.Null(this.Value))
         {

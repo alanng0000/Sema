@@ -231,7 +231,7 @@ public class Grid : View
 
 
 
-    protected override bool ExecuteDrawChild(DrawDraw draw)
+    protected override bool DrawChild(DrawDraw draw)
     {
         if (this.Null(this.Child))
         {
@@ -602,7 +602,7 @@ public class Grid : View
 
 
 
-        view.ExecuteDraw(draw);
+        view.Draw(draw);
 
 
 

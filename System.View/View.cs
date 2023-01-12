@@ -396,7 +396,42 @@ public class View : CompObject
 
 
 
-    protected virtual bool ExecuteDrawThis(DrawDraw draw)
+
+
+
+    public virtual bool Draw(DrawDraw draw)
+    {
+        if (!this.Visible)
+        {
+            return true;
+        }
+        
+
+
+
+
+
+        this.DrawThis(draw);
+
+
+
+
+        this.DrawChild(draw);
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
+
+    protected virtual bool DrawThis(DrawDraw draw)
     {
         DrawRect rect;
 
@@ -433,36 +468,9 @@ public class View : CompObject
 
 
 
-    public virtual bool ExecuteDraw(DrawDraw draw)
-    {
-        if (!this.Visible)
-        {
-            return true;
-        }
-        
 
 
-
-
-
-        this.ExecuteDrawThis(draw);
-
-
-
-
-        this.ExecuteDrawChild(draw);
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-    protected virtual bool ExecuteDrawChild(DrawDraw draw)
+    protected virtual bool DrawChild(DrawDraw draw)
     {
         if (this.Null(this.Child))
         {
@@ -572,7 +580,7 @@ public class View : CompObject
 
 
 
-        this.Child.ExecuteDraw(draw);
+        this.Child.Draw(draw);
 
 
 

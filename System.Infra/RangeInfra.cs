@@ -4,6 +4,29 @@ namespace System.Infra;
 
 public class RangeInfra : Object
 {
+    public static RangeInfra This { get; } = CreateGlobal();
+
+
+
+
+    private static RangeInfra CreateGlobal()
+    {
+        RangeInfra global;
+
+        global = new RangeInfra();
+
+        global.Init();
+
+
+        return global;
+    }
+
+
+
+
+
+
+
     public override bool Init()
     {
         base.Init();
@@ -21,6 +44,10 @@ public class RangeInfra : Object
 
 
 
+        this.NullVar.Init();
+
+
+
         this.NullVar.Start = this.NullInt;
 
 
@@ -32,6 +59,7 @@ public class RangeInfra : Object
 
         return true;
     }
+
 
 
 

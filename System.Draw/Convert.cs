@@ -152,9 +152,9 @@ public class Convert : InfraObject
 
     public ReadOnlySpanChar ReadOnlySpanChar(CharSpan charSpan)
     {
-        RangeInfra rangeInfra;
+        RangeInfra infra;
 
-        rangeInfra = RangeInfra.This;
+        infra = RangeInfra.This;
 
 
 
@@ -177,7 +177,7 @@ public class Convert : InfraObject
         int count;
 
 
-        count = rangeInfra.Count(charSpan.Range);
+        count = infra.Count(charSpan.Range);
 
 
 

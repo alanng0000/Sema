@@ -123,6 +123,14 @@ public class Frame : CompObject
 
 
 
+
+    public ControlControl Control { get; set; }
+
+
+
+
+
+
     public DrawSize Size
     {
         get; private set;

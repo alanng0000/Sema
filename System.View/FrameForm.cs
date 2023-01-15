@@ -141,7 +141,7 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-            ControlControl.This.Set(key, state);
+            this.Frame.Control.Set(key, state);
 
 
 
@@ -196,7 +196,7 @@ public class FrameForm : WinForm, WinIMessageFilter
 
 
 
-            ControlControl.This.Char(oc);
+            this.Frame.Control.Char(oc);
 
 
 

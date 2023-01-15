@@ -411,7 +411,13 @@ public class CharList : InfraObject
 
     private int CountRange(InfraRange range)
     {
-        return range.End - range.Start;
+        RangeInfra infra;
+
+        infra = RangeInfra.This;
+
+
+
+        return infra.Count(range);
     }
 
 

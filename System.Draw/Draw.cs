@@ -5,33 +5,8 @@ namespace System.Draw;
 
 public class Draw : InfraObject
 {
-    public override bool Init()
-    {
-        base.Init();
-
-
-
-
-        this.RangeInfra = new RangeInfra();
-
-
-        this.RangeInfra.Init();
-
-
-
-        return true;
-    }
-
-
-
-
-
     private WinGraphics WinGraphic { get; set; }
 
-
-
-
-    private RangeInfra RangeInfra { get; set; }
 
 
 

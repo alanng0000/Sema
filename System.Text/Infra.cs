@@ -5,36 +5,6 @@ namespace System.Text;
 
 public class Infra : InfraObject
 {
-    public override bool Init()
-    {
-        base.Init();
-
-
-
-
-
-        this.Ranges = new RangeInfra();
-
-
-
-        this.Ranges.Init();
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-    private RangeInfra Ranges { get; set; }
-
-
-
-
     public Text Text
     {
         get; set;
@@ -47,7 +17,13 @@ public class Infra : InfraObject
 
     private int Count(InfraRange range)
     {
-        return this.Ranges.Count(range);
+        RangeInfra infra;
+
+        infra = RangeInfra.This;
+
+
+
+        return infra.Count(range);
     }
 
 
@@ -58,7 +34,7 @@ public class Infra : InfraObject
     {
         int count;
         
-        count = this.Ranges.Count(range);
+        count = this.Count(range);
 
 
 

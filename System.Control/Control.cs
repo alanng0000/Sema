@@ -155,21 +155,6 @@ public class Control : InfraObject
 
     public virtual bool Set(byte key, bool state)
     {
-        // bool a;
-
-
-        // a = this.KeyList[key];
-
-
-
-        // if (a == state)
-        // {
-        //     return true;
-        // }
-        
-
-
-
         this.KeyList[key] = state;
 
 

@@ -388,7 +388,7 @@ public class CharList : InfraObject
 
 
 
-        this.MoveCharsToPrevious(index, count, previous);
+        this.MoveCharListToPrevious(index, count, previous);
 
 
 
@@ -455,7 +455,7 @@ public class CharList : InfraObject
 
 
 
-    private bool MoveCharsToPrevious(int index, int count, int previous)
+    private bool MoveCharListToPrevious(int index, int count, int previous)
     {
         char[] array;
 

@@ -102,7 +102,7 @@ public class CharList : InfraObject
 
 
 
-    public bool Add(char[] items, InfraRange range)
+    public bool Add(char[] item, InfraRange range)
     {
         int count;
 
@@ -151,7 +151,7 @@ public class CharList : InfraObject
 
 
 
-        SystemArray.Copy(items, range.Start, this.Data, this.Count, count);
+        SystemArray.Copy(item, range.Start, this.Data, this.Count, count);
 
 
 
@@ -174,7 +174,7 @@ public class CharList : InfraObject
 
 
 
-    public bool Insert(int index, char[] items, InfraRange range)
+    public bool Insert(int index, char[] item, InfraRange range)
     {
         int count;
 
@@ -224,7 +224,7 @@ public class CharList : InfraObject
 
 
 
-            SystemArray.Copy(items, range.Start, d, index, count);
+            SystemArray.Copy(item, range.Start, d, index, count);
 
 
 
@@ -273,7 +273,7 @@ public class CharList : InfraObject
 
 
 
-            SystemArray.Copy(items, range.Start, this.Data, index, count);
+            SystemArray.Copy(item, range.Start, this.Data, index, count);
         }
 
 

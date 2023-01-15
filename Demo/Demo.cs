@@ -329,6 +329,20 @@ class Demo : Object
 
 
 
+    public bool FrameNotVisible()
+    {
+        this.Frame.Visible = false;
+
+
+
+        return true;
+    }
+
+
+
+
+
+
     public bool Aa()
     {
         this.AView.Grid.Pos.Left = 500;

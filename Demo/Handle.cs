@@ -119,6 +119,15 @@ class Handle : EventHandle
 
 
 
+        if (c == 't')
+        {
+            this.Demo.FrameNotVisible();
+        }
+
+
+
+
+
         if (c == 'b')
         {
             this.Demo.Close();

@@ -93,12 +93,17 @@ public class Infra : InfraObject
 
 
 
+        IntOp intOp;
+
+        intOp = IntOp.This;
+
+
 
 
         int w;
 
 
-        w = IntOp.This.Sub(right, left);
+        w = intOp.Sub(right, left);
 
 
 
@@ -107,7 +112,7 @@ public class Infra : InfraObject
         int h;
 
 
-        h = IntOp.This.Sub(down, up);
+        h = intOp.Sub(down, up);
 
 
 

@@ -222,6 +222,8 @@ public class CharList : InfraObject
 
         range = new InfraRange();
 
+        range.Init();
+
         range.Start = 0;
 
         range.End = range.Start + 1;

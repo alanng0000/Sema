@@ -19,10 +19,6 @@ public class CharList : InfraObject
 
 
 
-        this.AddInsertOneCharList = new char[1];
-
-
-
 
         return true;
     }
@@ -53,14 +49,6 @@ public class CharList : InfraObject
 
 
     public char[] Data { get; private set; }
-
-
-
-
-
-    private char[] AddInsertOneCharList { get; set; }
-
-
 
 
     

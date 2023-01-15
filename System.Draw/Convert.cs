@@ -26,33 +26,6 @@ public class Convert : InfraObject
 
 
 
-    public override bool Init()
-    {
-        base.Init();
-
-
-
-        this.RangeInfra = new RangeInfra();
-
-
-
-        this.RangeInfra.Init();
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-    private RangeInfra RangeInfra { get; set; }
-
-
-
-
 
 
 
@@ -179,6 +152,13 @@ public class Convert : InfraObject
 
     public ReadOnlySpanChar ReadOnlySpanChar(CharSpan charSpan)
     {
+        RangeInfra rangeInfra;
+
+        rangeInfra = RangeInfra.This;
+
+
+
+
         ReadOnlySpanChar u;
 
 
@@ -197,7 +177,7 @@ public class Convert : InfraObject
         int count;
 
 
-        count = this.RangeInfra.Count(charSpan.Range);
+        count = rangeInfra.Count(charSpan.Range);
 
 
 

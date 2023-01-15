@@ -246,6 +246,23 @@ public class Frame : CompObject
 
 
 
+    public virtual bool Visible
+    {
+        get
+        {
+            return this.Form.Visible;
+        }
+        set
+        {
+            this.Form.Visible = value;
+        }
+    }
+
+
+
+
+
+
     public virtual bool Close()
     {
         this.Form.Close();

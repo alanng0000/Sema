@@ -340,7 +340,7 @@ public class CharList : InfraObject
 
 
 
-    public bool RemoveRange(InfraRange range)
+    public bool Remove(InfraRange range)
     {
         if (!this.CheckRange(range))
         {

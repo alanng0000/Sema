@@ -89,6 +89,16 @@ public class RangeInfra : Object
 
 
 
+    public Range IndexRange(int index)
+    {
+        return this.Range(index, index + 1);
+    }
+
+
+
+
+
+
     public int Count(Range range)
     {
         return range.End - range.Start;

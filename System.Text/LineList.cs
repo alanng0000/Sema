@@ -55,13 +55,14 @@ public class LineList : InfraObject
 
     public bool Remove(int index)
     {
+        RangeInfra rangeInfra;
+
+        rangeInfra = RangeInfra.This;
+
+
         InfraRange range;
 
-        range = new InfraRange();
-
-        range.Start = index;
-
-        range.End = index + 1;
+        range = rangeInfra.IndexRange(index);
         
 
 

@@ -12,14 +12,6 @@ public class Infra : InfraObject
 
 
 
-        this.Quote = '\"';
-
-
-
-        this.BackSlash = '\\';
-
-
-
 
         this.Ranges = new RangeInfra();
 
@@ -349,7 +341,7 @@ public class Infra : InfraObject
 
 
 
-    private Pos Pos(int row, int col)
+    public Pos Pos(int row, int col)
     {
         Pos pos;
 
@@ -527,37 +519,6 @@ public class Infra : InfraObject
 
 
 
-    public string EscapeString(string s)
-    {
-        string t;
-        
-        
-        t = s;
-
-
-        t = t.Replace("\\", "\\\\");
-
-
-        t = t.Replace("\"", "\\\"");
-
-
-        t = t.Replace("\t", "\\t");
-
-
-        t = t.Replace("\n", "\\n");
-
-
-        t = t.Replace("\r", "\\r");
-
-
-        string ret;
-        ret = t;
-
-        return ret;
-    }
-
-
-
 
 
     public ulong Digit(char o)
@@ -649,52 +610,5 @@ public class Infra : InfraObject
     public bool IsUpperLetter(char o)
     {
         return 'A' <= o & o <= 'Z';
-    }
-
-
-
-
-
-    private char Quote;
-
-
-
-
-    private char BackSlash;
-
-
-
-
-
-    private bool IsQuote(Pos pos)
-    {
-        char oc;
-
-
-
-
-        oc = this.Char(pos);
-
-
-
-
-        bool b;
-
-
-
-        b = (oc == Quote);
-
-
-
-
-        bool ret;
-
-
-
-        ret = b;
-
-
-
-        return ret;
     }
 }

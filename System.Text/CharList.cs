@@ -63,12 +63,22 @@ public class CharList : InfraObject
 
 
 
+    
+
+
+
+
 
     public char Get(int index)
     {
         if (!this.CheckIndex(index))
         {
-            return (char)0;
+            Constant constant;
+
+            constant = Constant.This;
+
+
+            return constant.DefaultCar;
         }
 
 
@@ -97,40 +107,6 @@ public class CharList : InfraObject
         return true;
     }
 
-
-
-
-
-
-
-
-    public bool Add(char item)
-    {
-        this.AddInsertOneCharList[0] = item;
-
-
-
-
-        InfraRange range;
-
-        range = new InfraRange();
-
-        range.Init();
-
-        range.Start = 0;
-
-        range.End = range.Start + 1;
-
-
-
-
-        this.AddRange(this.AddInsertOneCharList, range);
-
-
-
-
-        return true;
-    }
 
 
 
@@ -204,40 +180,6 @@ public class CharList : InfraObject
     }
 
 
-
-
-
-
-
-
-
-    public bool Insert(int index, char item)
-    {
-        this.AddInsertOneCharList[0] = item;
-
-
-
-
-        InfraRange range;
-
-        range = new InfraRange();
-
-        range.Init();
-
-        range.Start = 0;
-
-        range.End = range.Start + 1;
-
-
-
-
-        this.InsertRange(index, this.AddInsertOneCharList, range);
-
-
-
-
-        return true;
-    }
 
 
 
@@ -393,30 +335,6 @@ public class CharList : InfraObject
     }
 
 
-
-
-
-
-    public bool Remove(int index)
-    {
-        InfraRange range;
-
-        range = new InfraRange();
-
-        range.Init();
-
-        range.Start = index;
-
-        range.End = index + 1;
-
-
-
-        this.RemoveRange(range);
-
-
-
-        return true;
-    }
 
 
 

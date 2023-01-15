@@ -19,7 +19,7 @@ public class CharList : InfraObject
 
 
 
-        this.AddInsertOneChars = new char[1];
+        this.AddInsertOneCharList = new char[1];
 
 
 
@@ -58,7 +58,7 @@ public class CharList : InfraObject
 
 
 
-    private char[] AddInsertOneChars { get; set; }
+    private char[] AddInsertOneCharList { get; set; }
 
 
 
@@ -106,7 +106,7 @@ public class CharList : InfraObject
 
     public bool Add(char item)
     {
-        this.AddInsertOneChars[0] = item;
+        this.AddInsertOneCharList[0] = item;
 
 
 
@@ -122,7 +122,7 @@ public class CharList : InfraObject
 
 
 
-        this.AddRange(this.AddInsertOneChars, range);
+        this.AddRange(this.AddInsertOneCharList, range);
 
 
 
@@ -211,7 +211,7 @@ public class CharList : InfraObject
 
     public bool Insert(int index, char item)
     {
-        this.AddInsertOneChars[0] = item;
+        this.AddInsertOneCharList[0] = item;
 
 
 
@@ -227,7 +227,7 @@ public class CharList : InfraObject
 
 
 
-        this.InsertRange(index, this.AddInsertOneChars, range);
+        this.InsertRange(index, this.AddInsertOneCharList, range);
 
 
 

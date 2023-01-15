@@ -14,6 +14,11 @@ class Demo : Object
 
 
 
+    private Control Control { get; set; }
+
+
+
+
     public int Execute()
     {
         Frame frame;
@@ -47,6 +52,20 @@ class Demo : Object
 
 
 
+
+        this.Control = new Control();
+
+
+        this.Control.Init();
+
+
+
+
+        this.Frame.Control = this.Control;
+
+
+
+
         this.AView = aview;
 
 
@@ -63,12 +82,13 @@ class Demo : Object
 
 
 
-        Control.This.CharInput.Handle.AddHandle(handle);
+
+        this.Control.CharInput.Handle.AddHandle(handle);
         
 
 
 
-        frame.Execute();
+        this.Frame.Execute();
 
 
 

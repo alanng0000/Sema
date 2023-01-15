@@ -114,7 +114,7 @@ public class CharList : InfraObject
 
 
 
-    public bool AddRange(char[] items, InfraRange range)
+    public bool Add(char[] items, InfraRange range)
     {
         int count;
 
@@ -186,7 +186,7 @@ public class CharList : InfraObject
 
 
 
-    public bool InsertRange(int index, char[] items, InfraRange range)
+    public bool Insert(int index, char[] items, InfraRange range)
     {
         int count;
 

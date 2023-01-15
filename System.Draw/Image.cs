@@ -20,7 +20,14 @@ public class Image : InfraObject
 
 
 
-        this.SizeData = Convert.This.Size(this.WinBitmap.Size);
+
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+        this.SizeData = convert.Size(this.WinBitmap.Size);
 
 
 

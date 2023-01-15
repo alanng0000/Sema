@@ -291,7 +291,7 @@ public class CharList : InfraObject
 
 
 
-            System.Array.Copy(items, range.Start, d, index, count);
+            SystemArray.Copy(items, range.Start, d, index, count);
 
 
 
@@ -334,7 +334,7 @@ public class CharList : InfraObject
 
 
 
-            this.MoveCharsToNext(index, remainCount, count);
+            this.MoveCharListToNext(index, remainCount, count);
 
 
 
@@ -570,7 +570,7 @@ public class CharList : InfraObject
 
 
 
-    private bool MoveCharsToNext(int index, int count, int next)
+    private bool MoveCharListToNext(int index, int count, int next)
     {
         char[] array;
 

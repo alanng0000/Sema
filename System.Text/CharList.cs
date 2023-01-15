@@ -403,6 +403,8 @@ public class CharList : InfraObject
 
         range = new InfraRange();
 
+        range.Init();
+
         range.Start = index;
 
         range.End = index + 1;

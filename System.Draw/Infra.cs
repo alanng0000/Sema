@@ -93,18 +93,13 @@ public class Infra : InfraObject
 
 
 
-        IntOp intOp;
-
-        intOp = IntOp.This;
-
-
-
-
         int w;
 
 
-        w = intOp.Sub(right, left);
+        w = right - left;
 
+
+        w = this.Int(w);
 
 
 
@@ -112,7 +107,10 @@ public class Infra : InfraObject
         int h;
 
 
-        h = intOp.Sub(down, up);
+        h = down - up;
+
+
+        h = this.Int(h);
 
 
 
@@ -133,5 +131,25 @@ public class Infra : InfraObject
 
 
         return true;
+    }
+
+
+
+
+    private int Int(int a)
+    {
+        int o;
+
+        o = a;
+
+
+
+        if (o < 0)
+        {
+            o = 0;
+        }
+
+
+        return o;
     }
 }

@@ -39,10 +39,34 @@ public class LineList : InfraObject
 
 
 
-    public bool Add(Line[] item, InfraRange range)
+
+    public Line Get(int index)
     {
-        return this.List.Add(item, range);
+        return this.List.Get(index);
     }
+
+
+
+
+    public bool Set(int index, Line item)
+    {
+        return this.List.Set(index, item);
+    }
+
+
+
+
+
+
+
+    public bool Add(LineList item, InfraRange range)
+    {
+        return this.List.Add(item.List.Data, range);
+    }
+
+
+
+
 
 
 

@@ -39,7 +39,7 @@ public class CharList : InfraObject
 
 
 
-    internal char[] Data
+    public char[] Data
     {
         get
         {
@@ -70,18 +70,18 @@ public class CharList : InfraObject
 
 
 
-    public bool Add(CharList item, InfraRange range)
+    public bool Add(char[] item, InfraRange range)
     {
-        return this.List.Add(item.List.Data, range);
+        return this.List.Add(item, range);
     }
 
 
 
 
 
-    public bool Insert(int index, CharList item, InfraRange range)
+    public bool Insert(int index, char[] item, InfraRange range)
     {
-        return this.List.Insert(index, item.List.Data, range);
+        return this.List.Insert(index, item, range);
     }
 
 

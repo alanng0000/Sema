@@ -5,15 +5,10 @@ namespace System.Text;
 
 
 
-public class GenericList<T> : InfraObject
+struct GenericList<T>
 {
-    public override bool Init()
+    public bool Init()
     {
-        base.Init();
-
-
-
-
         this.Data = new T[InitialCapacity];
 
 

@@ -111,6 +111,19 @@ public class Draw : InfraObject
 
 
 
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+        Constant constant;
+
+        constant = Constant.This;
+
+
+
+
         TextConvert textConvert;
 
         textConvert = TextConvert.This;
@@ -135,18 +148,18 @@ public class Draw : InfraObject
 
         WinRectangle winDestRect;
 
-        winDestRect = Convert.This.WinRectangle(destRect);
+        winDestRect = convert.WinRectangle(destRect);
 
 
 
 
         WinColor winColor;
 
-        winColor = Convert.This.WinColor(color);
+        winColor = convert.WinColor(color);
 
 
 
-        WinTextRenderer.DrawText(this.WinGraphic, u, winFont, winDestRect, winColor, Constant.This.TextFormatFlag);
+        WinTextRenderer.DrawText(this.WinGraphic, u, winFont, winDestRect, winColor, constant.TextFormatFlag);
 
 
 

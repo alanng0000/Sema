@@ -111,11 +111,17 @@ public class Draw : InfraObject
 
 
 
+        TextConvert textConvert;
+
+        textConvert = TextConvert.This;
+
+
+
 
         ReadOnlySpanChar u;
 
 
-        u = Convert.This.ReadOnlySpanChar(charSpan);
+        u = textConvert.ReadOnlySpanChar(charSpan);
 
 
 

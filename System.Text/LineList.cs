@@ -39,6 +39,17 @@ public class LineList : InfraObject
 
 
 
+    public Line[] Data
+    {
+        get
+        {
+            return this.List.Data;
+        }
+    }
+
+
+
+
 
     public Line Get(int index)
     {

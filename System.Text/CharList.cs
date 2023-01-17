@@ -39,6 +39,17 @@ public class CharList : InfraObject
 
 
 
+    public char[] Data
+    {
+        get
+        {
+            return this.List.Data;
+        }
+    }
+
+
+
+
 
     public char Get(int index)
     {

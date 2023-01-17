@@ -4,7 +4,7 @@ namespace System.Text;
 
 
 
-public struct GenericIter<T>
+struct GenericIter<T>
 {
     internal GenericList<T> List { get; set; }
 

@@ -5,7 +5,7 @@ namespace System.Text;
 
 
 
-public class CharList : Infra
+public class CharList : InfraObject
 {
     private GenericList<char> List;
 

@@ -25,9 +25,17 @@ public class Draw : InfraObject
 
     public bool SetClip()
     {
+        Convert convert;
+
+
+        convert = Convert.This;
+
+
+
+
         WinRectangle winRect;
 
-        winRect = Convert.This.WinRectangle(this.Area);
+        winRect = convert.WinRectangle(this.Area);
 
 
 

@@ -3,9 +3,11 @@ namespace System.Text;
 
 
 
+
 public struct LineIter
 {
-    internal ListLineEnumerator Enumerator;
+    internal GenericIter<Line> Iter;
+
 
 
 
@@ -17,10 +19,12 @@ public struct LineIter
 
 
 
+
     public bool Next()
     {
-        return this.Enumerator.MoveNext();
+        return this.Iter.Next();
     }
+
 
 
 
@@ -28,7 +32,25 @@ public struct LineIter
     {
         get
         {
-            return this.Enumerator.Current;
+            return this.Iter.Value;
+        }
+
+        set
+        {
+        }
+    }
+
+
+
+    public int Key
+    {
+        get
+        {
+            return this.Iter.Key;
+        }
+
+        set
+        {
         }
     }
 }

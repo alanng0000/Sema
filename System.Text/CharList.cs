@@ -5,19 +5,25 @@ namespace System.Text;
 
 
 
-public class CharList : GenericList<char>
+public class CharList : Infra
 {
-    public new CharIter Iter()
+    private GenericList<char> List;
+
+
+
+
+    public override bool Init()
     {
-        CharIter iter;
-
-        iter = new CharIter();
-
-        iter.Iter = base.Iter();
-
-        iter.Init();
+        base.Init();
 
 
-        return iter;
+
+        this.List = new GenericList<char>();
+
+        this.List.Init();
+
+
+
+        return true;
     }
 }

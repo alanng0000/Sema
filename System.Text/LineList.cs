@@ -95,6 +95,14 @@ public class LineList : InfraObject
 
 
 
+    public bool Replace(int index, Line[] item, InfraRange range)
+    {
+        return this.List.Replace(index, item, range);
+    }
+
+
+
+
 
     public LineIter Iter()
     {

@@ -95,6 +95,14 @@ public class CharList : InfraObject
 
 
 
+    public bool Replace(int index, char[] item, InfraRange range)
+    {
+        return this.List.Replace(index, item, range);
+    }
+    
+
+
+
 
     public CharIter Iter()
     {

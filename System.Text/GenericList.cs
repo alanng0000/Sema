@@ -257,7 +257,7 @@ struct GenericList<T>
 
 
 
-            this.MoveCharListToNext(index, remainCount, count);
+            this.MoveItemListToNext(index, remainCount, count);
 
 
 
@@ -366,7 +366,7 @@ struct GenericList<T>
 
 
 
-        this.MoveCharListToPrevious(index, count, previous);
+        this.MoveItemListToPrevious(index, count, previous);
 
 
 
@@ -477,7 +477,7 @@ struct GenericList<T>
 
 
 
-    private bool MoveCharListToPrevious(int index, int count, int previous)
+    private bool MoveItemListToPrevious(int index, int count, int previous)
     {
         T[] array;
 
@@ -521,7 +521,7 @@ struct GenericList<T>
 
 
 
-    private bool MoveCharListToNext(int index, int count, int next)
+    private bool MoveItemListToNext(int index, int count, int next)
     {
         T[] array;
 

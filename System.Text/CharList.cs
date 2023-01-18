@@ -69,16 +69,6 @@ public class CharList : InfraObject
 
 
 
-
-    public bool Add(char[] item, InfraRange range)
-    {
-        return this.List.Add(item, range);
-    }
-
-
-
-
-
     public bool Insert(int index, char[] item, InfraRange range)
     {
         return this.List.Insert(index, item, range);

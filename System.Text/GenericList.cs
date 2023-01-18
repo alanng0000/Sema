@@ -5,11 +5,11 @@ namespace System.Text;
 
 
 
-struct GenericList<T>
+struct GenericList<TItem>
 {
     public bool Init()
     {
-        this.Data = new T[InitialCapacity];
+        this.Data = new TItem[InitialCapacity];
 
 
 
@@ -43,7 +43,7 @@ struct GenericList<T>
 
 
 
-    public T[] Data { get; private set; }
+    public TItem[] Data { get; private set; }
 
 
     
@@ -52,11 +52,11 @@ struct GenericList<T>
 
 
 
-    public T Get(int index)
+    public TItem Get(int index)
     {
         if (!this.CheckIndex(index))
         {
-            return default(T);
+            return default(TItem);
         }
 
 
@@ -69,7 +69,7 @@ struct GenericList<T>
 
 
 
-    public bool Set(int index, T item)
+    public bool Set(int index, TItem item)
     {
         if (!this.CheckIndex(index))
         {
@@ -92,79 +92,8 @@ struct GenericList<T>
 
 
 
-    public bool Add(T[] item, InfraRange range)
-    {
-        int count;
 
-
-        count = this.CountRange(range);
-
-
-
-        int newCount;
-
-
-        newCount = this.Count + count;
-
-
-
-
-        if (!this.HasSpace(this.Capacity, newCount))
-        {
-            int capacity;
-
-
-            capacity = this.NewCapacity(newCount);
-
-
-
-
-
-            T[] d;
-
-
-            d = new T[capacity];
-
-
-
-
-            SystemArray.Copy(this.Data, 0, d, 0, this.Count);
-
-
-
-
-            this.Data = d;
-        }
-
-
-
-
-
-
-        SystemArray.Copy(item, range.Start, this.Data, this.Count, count);
-
-
-
-
-
-
-        this.Count = newCount;
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-
-
-
-    public bool Insert(int index, T[] item, InfraRange range)
+    public bool Insert(int index, TItem[] item, InfraRange range)
     {
         int count;
 
@@ -200,10 +129,10 @@ struct GenericList<T>
 
 
 
-            T[] d;
+            TItem[] d;
 
 
-            d = new T[capacity];
+            d = new TItem[capacity];
 
 
 
@@ -388,7 +317,7 @@ struct GenericList<T>
 
 
 
-    public bool Replace(int index, T[] item, InfraRange range)
+    public bool Replace(int index, TItem[] item, InfraRange range)
     {
         int count;
         
@@ -446,12 +375,12 @@ struct GenericList<T>
 
 
 
-    public GenericIter<T> Iter()
+    public GenericIter<TItem> Iter()
     {
-        GenericIter<T> iter;
+        GenericIter<TItem> iter;
 
 
-        iter = new GenericIter<T>();
+        iter = new GenericIter<TItem>();
 
 
         iter.List = this;
@@ -463,7 +392,7 @@ struct GenericList<T>
 
 
 
-        GenericIter<T> ret;
+        GenericIter<TItem> ret;
 
 
         ret = iter;
@@ -479,7 +408,7 @@ struct GenericList<T>
 
     private bool MoveItemListToPrevious(int index, int count, int previous)
     {
-        T[] array;
+        TItem[] array;
 
 
         array = this.Data;
@@ -523,7 +452,7 @@ struct GenericList<T>
 
     private bool MoveItemListToNext(int index, int count, int next)
     {
-        T[] array;
+        TItem[] array;
 
 
         array = this.Data;

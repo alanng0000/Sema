@@ -416,8 +416,8 @@ struct GenericList<T>
 
 
 
-
         SystemArray.Copy(item, range.Start, this.Data, index, count);
+
 
 
 

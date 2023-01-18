@@ -388,6 +388,48 @@ struct GenericList<T>
 
 
 
+    public bool Replace(int index, T[] item, InfraRange range)
+    {
+        int count;
+        
+        count = this.CountRange(range);
+
+
+
+        RangeInfra infra;
+
+        infra = RangeInfra.This;
+
+
+
+        InfraRange o;
+
+        o = infra.Range(index, index + count);
+
+
+
+        if (!this.CheckRange(o))
+        {
+            return true;
+        }
+
+
+
+
+
+        SystemArray.Copy(item, range.Start, this.Data, index, count);
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
     private int CountRange(InfraRange range)
     {
         RangeInfra infra;

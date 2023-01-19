@@ -4,6 +4,7 @@ global using Map = System.List.Map;
 global using Pair = System.List.Pair;
 global using MapIter = System.List.MapIter;
 global using InfraIIter = System.List.IIter;
+global using GenericListInt = System.List.GenericList<int>;
 global using CharSpan = System.Text.CharSpan;
 global using EventHandle = System.Event.Handle;
 global using CompObject = System.Comp.Object;

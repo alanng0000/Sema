@@ -85,6 +85,17 @@ public class Grid : View
 
 
 
+
+
+        this.ChildPosList = new IntList();
+
+
+        this.ChildPosList.Init();
+
+
+
+
+
         return true;
     }
 
@@ -396,6 +407,19 @@ public class Grid : View
 
     private bool UpdateLayout()
     {
+        int count;
+
+        count = this.Col.Count + this.Row.Count;
+
+
+
+
+        this.ChildPosList.SetCount(count);
+
+
+
+
+
         this.SetChildLeftArray();
 
 
@@ -726,20 +750,20 @@ public class Grid : View
 
     private int GridColLeft(int col)
     {
-        return this.GridPosPixelPos(col, this.ChildLeftArray);
+        return this.GridPosPixelPos(col, 0);
     }
 
 
 
     private int GridRowUp(int row)
     {
-        return this.GridPosPixelPos(row, this.ChildUpArray);
+        return this.GridPosPixelPos(row, this.Col.Count);
     }
 
 
 
 
-    private int GridPosPixelPos(int pos, int[] pixelPosArray)
+    private int GridPosPixelPos(int pos, int start)
     {
         int t;
 
@@ -768,7 +792,12 @@ public class Grid : View
             t = t - 1;
 
 
-            u = pixelPosArray[t];
+            int index;
+
+            index = start + t;
+
+
+            u = this.ChildPosList.Data[index];
         }
         
 
@@ -789,7 +818,9 @@ public class Grid : View
 
     private bool SetChildLeftArray()
     {
-        this.ChildLeftArray = new int[this.Col.Count];
+        int start;
+
+        start = 0;
 
 
 
@@ -828,7 +859,13 @@ public class Grid : View
 
 
 
-            this.ChildLeftArray[i] = left;
+            int index;
+
+            index = start + i;
+
+
+
+            this.ChildPosList.Data[index] = left;
 
 
 
@@ -848,7 +885,9 @@ public class Grid : View
 
     private bool SetChildUpArray()
     {
-        this.ChildUpArray = new int[this.Row.Count];
+        int start;
+
+        start = this.Col.Count;
 
 
 
@@ -887,7 +926,13 @@ public class Grid : View
 
 
 
-            this.ChildUpArray[i] = up;
+            int index;
+
+            index = start + i;
+
+
+
+            this.ChildPosList.Data[index] = up;
 
 
 
@@ -905,11 +950,10 @@ public class Grid : View
 
 
 
-    private int[] ChildLeftArray { get; set; }
+
+    private IntList ChildPosList { get; set; }
 
 
-
-    private int[] ChildUpArray { get; set; }
 
 
 

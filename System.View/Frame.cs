@@ -21,7 +21,14 @@ public class Frame : CompObject
 
 
 
-        this.Size = DrawConvert.This.Size(rect.Size);
+        DrawConvert convert;
+
+        convert = DrawConvert.This;
+
+
+
+
+        this.Size = convert.Size(rect.Size);
 
 
 

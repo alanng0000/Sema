@@ -5,6 +5,21 @@ namespace System.Exe;
 
 public class Exe : InfraObject
 {
+    public override bool Init()
+    {
+        base.Init();
+
+
+        this.InitDllFoldPath();
+
+
+
+        return true;
+    }
+
+
+
+
     public int Execute()
     {
         this.ExecuteThread();
@@ -19,6 +34,37 @@ public class Exe : InfraObject
 
         return ret;
     }
+
+
+
+
+    private bool InitDllFoldPath()
+    {
+        EnvironmentSpecialFolder fold;
+
+        fold = EnvironmentSpecialFolder.UserProfile;
+
+
+
+
+        string s;
+        
+
+        s = SystemEnvironment.GetFolderPath(fold);
+
+
+
+        s = Path.Combine(s, "Project", "Out");
+
+
+
+
+        Extern.SetDllDirectoryW(s);
+
+
+        return true;
+    }
+    
 
 
 

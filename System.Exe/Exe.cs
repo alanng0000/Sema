@@ -62,9 +62,11 @@ public class Exe : InfraObject
         Extern.SetDllDirectoryW(s);
 
 
+
+
         return true;
     }
-    
+
 
 
 

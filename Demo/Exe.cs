@@ -15,12 +15,12 @@ class Exe : ExeExe
 
 
 
-        ulong draw;
+        // ulong draw;
 
-        draw = System.Internal.DrawExtern.Draw_Draw_New();
+        // draw = System.Internal.DrawExtern.Draw_Draw_New();
 
 
-        
+        // System.Internal.DrawExtern.Draw_Draw_Delete(draw);
 
 
 

@@ -54,7 +54,7 @@ public class Exe : InfraObject
 
 
 
-        s = Path.Combine(s, "Project", "Out");
+        s = Path.Combine(s, "Out");
 
 
 

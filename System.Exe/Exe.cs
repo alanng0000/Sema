@@ -59,8 +59,36 @@ public class Exe : InfraObject
 
 
 
-        DllExtern.SetDllDirectoryW(s);
+        this.AddPathToEnvironment(s);
 
+
+
+        return true;
+    }
+
+
+
+
+
+    private bool AddPathToEnvironment(string path)
+    {
+        string s;
+        
+
+        s = Environment.GetEnvironmentVariable("PATH");
+
+
+        if (s == null)
+        {
+            s = "";
+        }
+
+
+        s = s + ";" + path;
+
+
+
+        Environment.SetEnvironmentVariable("PATH", s);
 
 
 

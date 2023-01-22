@@ -14,6 +14,17 @@ class Exe : ExeExe
         exe.Init();
 
 
+
+        ulong draw;
+
+        draw = System.Internal.DrawExtern.Draw_Draw_New();
+
+
+        
+
+
+
+
         int o;
 
         o = exe.Execute();

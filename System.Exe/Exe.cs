@@ -59,7 +59,7 @@ public class Exe : InfraObject
 
 
 
-        Extern.SetDllDirectoryW(s);
+        DllExtern.SetDllDirectoryW(s);
 
 
 

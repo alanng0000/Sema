@@ -1,9 +1,9 @@
-namespace System.Exe;
+namespace System.Internal;
 
 
 
 
-static class Extern : Object
+public static class DllExtern
 {
     [DllImport("kernel32.dll")]
     public static extern bool SetDllDirectoryW(string lpPathName);

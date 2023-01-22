@@ -1,0 +1,1 @@
+global using DllImportAttribute = System.Runtime.InteropServices.DllImportAttribute;

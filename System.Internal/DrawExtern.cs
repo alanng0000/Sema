@@ -1,9 +1,9 @@
-namespace System.Draw;
+namespace System.Internal;
 
 
 
 
-static class Extern
+public static class DrawExtern
 {
     const string DrawDll = "Draw.dll";
 

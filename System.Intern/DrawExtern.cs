@@ -150,6 +150,52 @@ public static class DrawExtern
 
 
 
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_New();
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_Init(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_Final(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_Delete(ulong o);
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_GetFamily(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_SetFamily(ulong o, ulong value);
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_GetSize(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_SetSize(ulong o, ulong value);
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_GetStyle(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Font_SetStyle(ulong o, ulong value);
+
+
+
+
+
 
     [DllImport(DrawDll)]
     public static extern ulong Draw_Constant_DefaultColor(ulong o);

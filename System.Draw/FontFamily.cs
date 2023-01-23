@@ -17,10 +17,7 @@ public class FontFamily : InfraObject
 
 
 
-
-
-
-        this.WinFontFamily = new WinFontFamily(this.Name);
+        this.InitIntern();
 
 
 
@@ -88,7 +85,7 @@ public class FontFamily : InfraObject
 
 
 
-    private bool InitInternFamily()
+    private bool InitIntern()
     {
         ulong oo;
 

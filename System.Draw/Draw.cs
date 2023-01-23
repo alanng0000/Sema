@@ -207,7 +207,8 @@ public class Draw : InfraObject
 
 
 
-    private ulong InternDraw;
+
+    public ulong InternDraw;
 
 
 

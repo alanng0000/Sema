@@ -16,9 +16,6 @@ public struct CharSpan
     public char[] Array;
 
 
-    public string String;
-
-
 
     public InfraRange Range;
 }

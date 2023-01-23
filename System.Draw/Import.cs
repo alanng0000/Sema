@@ -10,4 +10,6 @@ global using DrawExtern = System.Intern.DrawExtern;
 global using DrawDrawMethod = System.Intern.DrawDrawMethod;
 global using SystemDelegate = System.Delegate;
 global using Stream = System.IO.Stream;
+global using SeekOrigin = System.IO.SeekOrigin;
 global using IStream = System.Runtime.InteropServices.ComTypes.IStream;
+global using Marshal = System.Runtime.InteropServices.Marshal;

@@ -82,17 +82,24 @@ public class Text : View
 
 
 
-        Color color;
 
-        color = new Color();
+        Constant constant;
 
-        color.Init();
-
-        color.Value = Constant.This.BlackColor;
+        constant = Constant.This;
 
 
 
-        this.Fore = color;
+        ColorBrush brush;
+
+        brush = new ColorBrush();
+
+        brush.Color = constant.BlackColor;
+
+        brush.Init();
+
+
+
+        this.Fore = brush;
 
 
 
@@ -220,11 +227,11 @@ public class Text : View
 
 
 
-    public virtual Color Fore
+    public virtual Brush Fore
     {
         get
         {
-            return (Color)this.ForeField.GetObject();
+            return (Brush)this.ForeField.GetObject();
         }
 
         set
@@ -405,10 +412,10 @@ public class Text : View
 
 
 
-        DrawColor drawColor;
+        Brush brush;
 
 
-        drawColor = this.Fore.Value;
+        brush = this.Fore;
 
 
 
@@ -532,7 +539,7 @@ public class Text : View
 
 
 
-        draw.Text(charSpan, destRect, font, null);
+        draw.Text(charSpan, destRect, font, brush);
 
 
 

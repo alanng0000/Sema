@@ -3,7 +3,7 @@ namespace System.Draw;
 
 
 
-public class DrawHandle : InfraObject
+public class Handle : InfraObject
 {
     public virtual bool Execute(Draw draw)
     {

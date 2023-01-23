@@ -9,11 +9,14 @@ public class Draw : InfraObject
 
 
 
-    public ulong Handle { get; set; }
+    public ulong Video { get; set; }
 
 
 
-    
+
+    public Handle Handle { get; set; }
+
+
 
 
 
@@ -100,7 +103,7 @@ public class Draw : InfraObject
 
 
 
-        DrawExtern.Draw_Draw_SetHandle(draw, this.Handle);
+        DrawExtern.Draw_Draw_SetHandle(draw, this.Video);
 
 
 
@@ -189,7 +192,7 @@ public class Draw : InfraObject
 
     private ulong DrawExecute(ulong u)
     {
-
+        this.Handle.Execute(this);
 
 
 

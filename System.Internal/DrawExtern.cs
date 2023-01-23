@@ -62,7 +62,7 @@ public static class DrawExtern
 
     [DllImport(DrawDll)]
     public static extern ulong Draw_Draw_Rect(ulong o, long left, long up, ulong width, ulong height, ulong brush);
-    
+
 
 
 
@@ -114,4 +114,9 @@ public static class DrawExtern
 
     [DllImport(DrawDll)]
     public static extern ulong Draw_ColorBrush_SetColor(ulong o, ulong value);
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_FrameDrawHandle(ulong arg);
 }

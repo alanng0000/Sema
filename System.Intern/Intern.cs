@@ -243,6 +243,41 @@ public class Intern : InfraObject
 
 
 
+    public bool Bool(ulong internBool)
+    {
+        if (internBool == 0)
+        {
+            return false;
+        }
+
+
+        if (internBool == 1)
+        {
+            return true;
+        }
+
+
+        return true;
+    }
+
+
+
+
+    public ulong InternBool(bool b)
+    {
+        if (b)
+        {
+            return 1;
+        }
+
+
+        return 0;
+    }
+
+
+
+
+
     private ulong ULong(SystemIntPtr u)
     {
         long uu;

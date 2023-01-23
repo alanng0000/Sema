@@ -17,7 +17,7 @@ public class Frame : CompObject
 
         ulong length;
 
-        length = (ulong)title.Length;
+        length = (ulong)this.Title.Length;
 
 
 
@@ -28,13 +28,20 @@ public class Frame : CompObject
 
 
 
-
-        Intern ooo;
-
-        ooo = Intern.This;
+        this.InternTitleData = oss;
 
 
-        ooo.CopyString(title, oss);
+
+
+
+        InternIntern intern;
+
+
+        intern = InternIntern.This;
+
+
+
+        intern.CopyString(this.Title, this.InternTitleData);
 
 
 
@@ -57,10 +64,19 @@ public class Frame : CompObject
 
 
 
+        this.InternTitle = ss;
+
+
+
+
 
         Delegate dda;
 
-        dda = new FrameControlHandleMethod(this.KeyHandle);
+        dda = new FrameControlHandleMethod(this.InternControlHandle);
+
+
+
+        this.ControlHandleMethod = dda;
 
 
 
@@ -71,24 +87,118 @@ public class Frame : CompObject
 
 
 
+        this.DrawHandleMethod = ddb;
 
-        ulong keyHandle;
 
-        keyHandle = ooo.MethodPointer(dda);
+
+
+
+        ulong controlHandle;
+
+        controlHandle = intern.MethodPointer(this.ControlHandleMethod);
 
 
 
 
         ulong drawHandle;
 
-        drawHandle = ooo.MethodPointer(ddb);
+        drawHandle = intern.MethodPointer(this.DrawHandleMethod);
 
 
 
 
 
 
-        this.Size = convert.Size(rect.Size);
+
+        ulong frame;
+
+
+        frame = InfraExtern.Frame_New();
+
+
+
+        InfraExtern.Frame_SetTitle(frame, this.InternTitle);
+
+
+
+
+        InfraExtern.Frame_Init(frame);
+
+
+
+
+
+        ulong video;
+
+        video = InfraExtern.Frame_GetHandle(frame);
+
+
+
+        ulong sizeU;
+
+        sizeU = InfraExtern.Frame_GetSize(frame);
+
+
+
+
+        DrawConvert drawConvert;
+
+
+        drawConvert = DrawConvert.This;
+
+
+
+
+        DrawSize size;
+
+
+        size = drawConvert.Size(sizeU);
+
+
+
+
+        DrawDraw draw;
+
+
+        draw = new DrawDraw();
+
+
+
+        draw.Video = video;
+
+
+
+        draw.Size = size;
+
+
+
+        draw.Init();
+
+
+
+
+
+        this.Draw = draw;
+
+
+
+
+        this.Size = this.Draw.Size;
+
+
+
+
+
+        InfraExtern.Frame_SetControlHandle(frame, controlHandle);
+
+
+
+
+        InfraExtern.Frame_SetDrawHandle(frame, drawHandle);
+
+
+
+        InfraExtern.Frame_SetDrawHandleArg(frame, draw.Intern);
 
 
 
@@ -145,18 +255,41 @@ public class Frame : CompObject
 
 
 
-        this.Draw = new DrawDraw();
+
+        return true;
+    }
 
 
 
-        this.Draw.Init();
 
+
+    public virtual bool Final()
+    {
+        InfraExtern.Frame_Final(this.Intern);
+
+
+
+        InfraExtern.Frame_Delete(this.Intern);
+
+
+
+
+
+        InfraExtern.String_Final(this.InternTitle);
+
+
+
+        InfraExtern.String_Delete(this.InternTitle);
+
+
+
+
+        InfraExtern.Delete(this.InternTitleData);
 
 
 
         return true;
     }
-
 
 
 
@@ -175,9 +308,48 @@ public class Frame : CompObject
 
 
 
+    private ulong InternTitle { get; set; }
+
+
+
+
+    private ulong InternTitleData { get; set; }
+
+
+
+
+
+    private DrawDraw Draw { get; set; }
+
+
 
 
     public ControlControl Control { get; set; }
+
+
+
+
+
+
+
+    private SystemDelegate ControlHandleMethod { get; set; }
+
+
+
+
+    private SystemDelegate DrawHandleMethod { get; set; }
+
+
+
+
+
+
+
+    private ulong InternControlHandle(ulong frame, ulong key, ulong value)
+    {
+        return 0;
+    }
+
 
 
 
@@ -188,13 +360,6 @@ public class Frame : CompObject
     {
         get; private set;
     }
-
-
-
-
-
-    internal DrawDraw Draw { get; set; }
-
 
 
 
@@ -211,7 +376,7 @@ public class Frame : CompObject
         this.Draw.Area = this.Area;
 
 
-        this.Draw.SetClip();
+        this.Draw.Clip();
 
 
         
@@ -265,8 +430,7 @@ public class Frame : CompObject
 
     public virtual bool Execute()
     {
-        
-
+        InfraExtern.Frame_Execute(this.Intern);
 
 
 
@@ -281,7 +445,7 @@ public class Frame : CompObject
 
     public virtual bool Update()
     {
-        this.Form.Invalidate();
+        InfraExtern.Frame_Update(this.Intern);
 
 
 
@@ -297,11 +461,11 @@ public class Frame : CompObject
     {
         get
         {
-            return this.Form.Visible;
+            return this.GetVisible();
         }
         set
         {
-            this.Form.Visible = value;
+            this.SetVisible(value);
         }
     }
 
@@ -309,11 +473,75 @@ public class Frame : CompObject
 
 
 
+    private bool GetVisible()
+    {
+        ulong o;
+
+
+        o = InfraExtern.Frame_GetVisible(this.Intern);
+
+
+
+
+        InternIntern intern;
+
+
+        intern = InternIntern.This;
+
+
+
+
+        bool b;
+
+
+        b = intern.Bool(o);
+
+
+
+        
+        bool ret;
+
+        ret = b;
+
+
+        return ret;
+    }
+
+
+
+
+
+    private bool SetVisible(bool value)
+    {
+        InternIntern intern;
+
+
+        intern = InternIntern.This;
+
+
+
+        ulong o;
+
+
+        o = intern.InternBool(value);
+
+
+
+        InfraExtern.Frame_SetVisible(this.Intern, o);
+
+
+
+        return true;
+    }
+
+
+
+
 
     public virtual bool Close()
     {
-        this.Form.Close();
-        
+        InfraExtern.Frame_Close(this.Intern);
+
 
 
         return true;
@@ -371,7 +599,6 @@ public class Frame : CompObject
 
         return true;
     }
-
 
 
 

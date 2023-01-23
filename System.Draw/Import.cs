@@ -8,5 +8,6 @@ global using InternIntern = System.Intern.Intern;
 global using InfraExtern = System.Intern.InfraExtern;
 global using DrawExtern = System.Intern.DrawExtern;
 global using DrawDrawMethod = System.Intern.DrawDrawMethod;
+global using ComStream = System.Intern.ComStream;
 global using SystemDelegate = System.Delegate;
 global using Stream = System.IO.Stream;

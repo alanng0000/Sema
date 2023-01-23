@@ -233,6 +233,10 @@ public static class DrawExtern
 
 
 
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Image_GetSize(ulong o);
+    
+
 
 
     [DllImport(DrawDll)]

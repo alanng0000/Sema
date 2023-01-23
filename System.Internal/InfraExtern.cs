@@ -82,6 +82,16 @@ public static class InfraExtern
 
 
     [DllImport(InfraFormInfraDll)]
+    public static extern ulong Infra_Form_Init();
+
+
+    [DllImport(InfraFormInfraDll)]
+    public static extern ulong Infra_Form_Final();
+
+
+
+
+    [DllImport(InfraFormInfraDll)]
     public static extern ulong Size_New();
 
 

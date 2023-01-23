@@ -10,12 +10,14 @@ public class Exe : InfraObject
         base.Init();
 
 
+
         this.InitDllFoldPath();
 
 
 
         return true;
     }
+
 
 
 

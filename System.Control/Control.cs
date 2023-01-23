@@ -118,61 +118,7 @@ public class Control : InfraObject
 
     public KeyChar Char(byte key)
     {
-        KeyChar oo;
-
-        oo = new KeyChar();
-
-        oo.Init();
-        
-
-        if (this.IsLetterKey(key))
-        {
-            int index;
-
-            index = this.LetterIndex(key);
-
-
-
-            int u;
-
-
-            u = 'a' + index;
-
-
-            oo.Default = this.IntChar(u);
-
-
-
-            u = 'A' + index;
-
-
-            oo.Shift = this.IntChar(u);
-        }
-
-
-
-        if (this.IsDigitKey(key))
-        {
-            int index;
-
-            index = this.DigitIndex(key);
-
-
-
-            int u;
-
-            u = '0' + index;
-
-
-            oo.Default = this.IntChar(u);
-        }
-
-
-
-
-
-
-        return oo;
+        return this.KeyCharList[key];
     }
 
 

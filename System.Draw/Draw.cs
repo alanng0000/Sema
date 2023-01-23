@@ -289,22 +289,22 @@ public class Draw : InfraObject
 
         long left;
 
-        left = this.Area.Pos.Left;
+        left = rect.Pos.Left;
 
 
         long up;
 
-        up = this.Area.Pos.Up;
+        up = rect.Pos.Up;
 
 
         ulong width;
 
-        width = convert.ULong(this.Area.Size.Width);
+        width = convert.ULong(rect.Size.Width);
 
 
         ulong height;
 
-        height = convert.ULong(this.Area.Size.Height);
+        height = convert.ULong(rect.Size.Height);
 
 
 
@@ -350,12 +350,6 @@ public class Draw : InfraObject
 
 
 
-        TextConvert textConvert;
-
-        textConvert = TextConvert.This;
-
-
-
 
 
         ulong fontU;
@@ -363,11 +357,6 @@ public class Draw : InfraObject
         fontU = font.Intern;
 
         
-
-
-        WinRectangle winDestRect;
-
-        winDestRect = convert.WinRectangle(destRect);
 
 
 
@@ -379,7 +368,7 @@ public class Draw : InfraObject
 
 
 
-        
+
 
 
 

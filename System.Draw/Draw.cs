@@ -435,7 +435,7 @@ public class Draw : InfraObject
         InfraConvert convert;
 
         convert = InfraConvert.This;
-        
+
 
         
 
@@ -494,8 +494,6 @@ public class Draw : InfraObject
 
         return true;
     }
-
-
 
 
 

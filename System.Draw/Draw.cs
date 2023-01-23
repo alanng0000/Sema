@@ -5,10 +5,212 @@ namespace System.Draw;
 
 public class Draw : InfraObject
 {
-    private WinGraphics WinGraphic { get; set; }
+    public Size Size;
 
 
 
+    public ulong Handle { get; set; }
+
+
+
+    
+
+
+
+    public override bool Init()
+    {
+        base.Init();
+
+
+
+        this.InitInternSize();
+
+
+
+        this.InitInternDraw();
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private bool InitInternSize()
+    {
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+
+        ulong w;
+
+
+        ulong h;
+
+
+        w = convert.ULong(this.Size.Width);
+
+
+        h = convert.ULong(this.Size.Height);
+
+
+
+
+        ulong u;
+
+
+        u = InfraExtern.Size_New();
+
+
+        InfraExtern.Size_Init(u);
+
+
+
+        InfraExtern.Size_SetWidth(u, w);
+
+
+        InfraExtern.Size_SetHeight(u, h);
+
+
+
+        this.InternSize = u;
+
+
+
+        return true;
+    }
+
+
+
+
+    private bool InitInternDraw()
+    {
+        ulong draw;
+
+
+        draw = DrawExtern.Draw_Draw_New();
+
+
+
+
+        DrawExtern.Draw_Draw_SetHandle(draw, this.Handle);
+
+
+
+        DrawExtern.Draw_Draw_SetSize(draw, this.InternSize);
+
+
+
+
+        DrawExtern.Draw_Draw_Init(draw);
+
+
+
+        
+        InternIntern ooo;
+
+        ooo = InternIntern.This;
+
+
+
+
+        DrawDrawMethod del;
+
+        del = new DrawDrawMethod(this.DrawExecute);
+
+
+
+        Delegate ddc;
+
+        ddc = del;
+
+
+        this.Del = ddc;
+
+
+
+
+        ulong drawMethod;
+
+
+        drawMethod = ooo.MethodPointer(this.Del);
+
+
+
+
+        DrawExtern.Draw_Draw_SetMethod(draw, drawMethod);
+
+
+
+
+        this.InternDraw = draw;
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+    public virtual bool Final()
+    {
+        DrawExtern.Draw_Draw_Final(this.InternDraw);
+
+
+        DrawExtern.Draw_Draw_Delete(this.InternDraw);
+
+
+
+
+        InfraExtern.Size_Final(this.InternSize);
+
+
+        InfraExtern.Size_Delete(this.InternSize);
+
+        
+
+
+        return true;
+    }
+
+
+
+
+
+    private ulong DrawExecute(ulong u)
+    {
+
+
+
+
+        return 1;        
+    }
+
+
+
+
+
+    private ulong InternSize;
+
+
+
+    private ulong InternDraw;
+
+
+
+
+    private SystemDelegate Del;
+    
 
 
 
@@ -41,39 +243,6 @@ public class Draw : InfraObject
 
         this.WinGraphic.SetClip(winRect);
 
-
-
-        return true;
-    }
-
-
-
-
-    public bool SetWin(WinGraphics graphic)
-    {
-        this.WinGraphic = graphic;
-
-
-
-        this.SetWinDefault(this.WinGraphic);
-
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-    private bool SetWinDefault(WinGraphics g)
-    {
-        g.TextRenderingHint = WinTextRenderingHint.ClearTypeGridFit;
-
-
-        g.PageUnit = WinGraphicsUnit.Pixel;
 
 
         return true;

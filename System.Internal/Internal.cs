@@ -27,6 +27,36 @@ public class Internal : InfraObject
 
 
 
+    public ulong MethodPointer(SystemDelegate d)
+    {
+        IntPtr pp;
+
+        pp = Marshal.GetFunctionPointerForDelegate(d);
+
+
+
+        long ppu;
+
+        ppu = pp.ToInt64();
+
+
+
+        ulong o;
+
+        o = (ulong)ppu;
+
+
+
+        ulong ret;
+
+        ret = o;
+
+        return ret;
+    }
+
+
+
+
     public bool CopyString(string s, ulong pointer)
     {
         unsafe

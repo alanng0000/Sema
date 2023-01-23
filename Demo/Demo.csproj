@@ -12,7 +12,7 @@
         <!-- <ProjectReference Include="../System.Draw/System.Draw.csproj" /> -->
         <!-- <ProjectReference Include="../System.View/System.View.csproj" /> -->
         <ProjectReference Include="../System.Exe/System.Exe.csproj" />
-        <ProjectReference Include="../System.Internal/System.Internal.csproj" />
+        <ProjectReference Include="../System.Intern/System.Intern.csproj" />
     </ItemGroup>
 
     <ItemGroup>

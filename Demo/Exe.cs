@@ -170,16 +170,34 @@ class Exe : ExeExe
 
 
 
-        Delegate dd;
 
-        dd = new FrameDrawHandleMethod(DrawExtern.Draw_FrameDrawHandle);
+        Delegate dda;
+
+        dda = new FrameKeyHandleMethod(this.KeyHandle);
+
+
+
+
+        Delegate ddb;
+
+        ddb = new FrameDrawHandleMethod(DrawExtern.Draw_FrameDrawHandle);
+
+
+
+
+        ulong keyHandle;
+
+        keyHandle = ooo.MethodPointer(dda);
 
 
 
 
         ulong drawHandle;
 
-        drawHandle = ooo.MethodPointer(dd);
+        drawHandle = ooo.MethodPointer(ddb);
+
+
+
 
 
 
@@ -198,6 +216,11 @@ class Exe : ExeExe
 
 
         InfraExtern.Frame_Init(frame);
+
+
+
+
+
 
 
 
@@ -245,16 +268,16 @@ class Exe : ExeExe
 
 
 
-        Delegate dda;
+        Delegate ddc;
 
-        dda = del;
+        ddc = del;
 
 
 
         ulong drawMethod;
 
 
-        drawMethod = ooo.MethodPointer(dda);
+        drawMethod = ooo.MethodPointer(ddc);
 
 
 
@@ -402,6 +425,16 @@ class Exe : ExeExe
 
         return true;
     }
+
+
+
+
+
+    private ulong KeyHandle(ulong frame, ulong key, ulong value)
+    {
+        return 0;
+    }
+
 
 
 

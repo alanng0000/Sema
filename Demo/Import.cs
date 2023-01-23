@@ -21,6 +21,7 @@ global using ExeExe = System.Exe.Exe;
 global using Internal = System.Internal.Internal;
 global using InfraExtern = System.Internal.InfraExtern;
 global using DrawExtern = System.Internal.DrawExtern;
+global using FrameKeyHandleMethod = System.Internal.FrameKeyHandleMethod;
 global using FrameDrawHandleMethod = System.Internal.FrameDrawHandleMethod;
 global using DrawDrawMethod = System.Internal.DrawDrawMethod;
 global using Delegate = System.Delegate;

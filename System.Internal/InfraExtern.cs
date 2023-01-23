@@ -182,6 +182,16 @@ public static class InfraExtern
 
 
     [DllImport(InfraFormDll)]
+    public static extern ulong Frame_GetControlHandle(ulong o);
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_SetControlHandle(ulong o, ulong value);
+
+
+
+
+    [DllImport(InfraFormDll)]
     public static extern ulong Frame_GetDrawHandle(ulong o);
 
 

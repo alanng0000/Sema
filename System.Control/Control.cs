@@ -118,12 +118,6 @@ public class Control : InfraObject
 
     public char Char(bool shift, byte key)
     {
-        InfraConvert convert;
-
-        convert = InfraConvert.This;
-
-
-
         char oc;
 
         oc = this.IntChar(0);

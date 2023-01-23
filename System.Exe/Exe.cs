@@ -121,46 +121,6 @@ public class Exe : InfraObject
 
 
 
-
-    private bool ExecuteThread()
-    {
-        Thread thread;
-
-
-        thread = new Thread(this.ThreadWork);
-
-
-
-
-        bool b;
-
-
-        b = thread.TrySetApartmentState(ApartmentState.STA);
-
-
-        if (!b)
-        {
-            return false;
-        }
-
-
-
-
-        thread.Start();
-
-
-
-        thread.Join();
-
-
-        
-        return true;
-    }
-
-
-
-
-
     private int Result { get; set; }
 
 
@@ -170,22 +130,5 @@ public class Exe : InfraObject
     protected virtual int ExecuteWork()
     {
         return 0;
-    }
-
-    
-
-
-
-
-    private void ThreadWork()
-    {
-        int o;
-
-
-        o = this.ExecuteWork();
-
-
-
-        this.Result = o;
     }
 }

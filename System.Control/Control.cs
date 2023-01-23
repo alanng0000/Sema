@@ -27,27 +27,6 @@ public class Control : InfraObject
 
 
 
-    public virtual EventEvent Input
-    {
-        get
-        {
-            return this.InputData;
-        }
-        set
-        {
-        }
-    }
-
-
-
-    protected EventEvent InputData { get; set; }
-
-
-
-
-
-
-
     public override bool Init()
     {
         base.Init();
@@ -134,6 +113,23 @@ public class Control : InfraObject
     }
 
 
+
+
+
+    public virtual EventEvent Input
+    {
+        get
+        {
+            return this.InputData;
+        }
+        set
+        {
+        }
+    }
+
+
+
+    protected EventEvent InputData { get; set; }
 
 
 

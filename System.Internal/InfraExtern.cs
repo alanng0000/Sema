@@ -12,9 +12,39 @@ public static class InfraExtern
 
 
 
+
+
+
+    [DllImport(InfraDll)]
+    public static extern ulong Console_New();
+
+
+    [DllImport(InfraDll)]
+    public static extern ulong Console_Delete(ulong o);
+
+
+    [DllImport(InfraDll)]
+    public static extern ulong Console_Init(ulong o);
+
+
+    [DllImport(InfraDll)]
+    public static extern ulong Console_Final(ulong o);
+
+
+
+
+
+
+
+
+
     [DllImport(InfraFormInfraDll)]
     public static extern ulong Size_New();
 
+
+    [DllImport(InfraFormInfraDll)]
+    public static extern ulong Size_Delete(ulong o);
+    
 
     [DllImport(InfraFormInfraDll)]
     public static extern ulong Size_Init(ulong o);
@@ -23,9 +53,6 @@ public static class InfraExtern
     [DllImport(InfraFormInfraDll)]
     public static extern ulong Size_Final(ulong o);
 
-
-    [DllImport(InfraFormInfraDll)]
-    public static extern ulong Size_Delete(ulong o);
 
 
 

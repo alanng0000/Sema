@@ -11,6 +11,8 @@ public static class InfraExtern
     const string InfraFormInfraDll = "Infra.Form.Infra.dll";
 
 
+    const string InfraFormDll = "Infra.Form.Windows.dll";
+
 
 
 
@@ -81,11 +83,11 @@ public static class InfraExtern
 
 
 
-    [DllImport(InfraFormInfraDll)]
+    [DllImport(InfraFormDll)]
     public static extern ulong Infra_Form_Init();
 
 
-    [DllImport(InfraFormInfraDll)]
+    [DllImport(InfraFormDll)]
     public static extern ulong Infra_Form_Final();
 
 

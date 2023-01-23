@@ -172,7 +172,7 @@ class Exe : ExeExe
 
         Delegate dd;
 
-        dd = DrawExtern.Draw_FrameDrawHandle;
+        dd = new FrameDrawHandleMethod(DrawExtern.Draw_FrameDrawHandle);
 
 
 
@@ -202,7 +202,111 @@ class Exe : ExeExe
 
 
 
+
+        ulong handle;
+
+        handle = InfraExtern.Frame_GetHandle(frame);
+
+
+
+        ulong size;
+
+        size = InfraExtern.Frame_GetSize(frame);
+
+
+
+
+        ulong draw;
+
+
+        draw = DrawExtern.Draw_Draw_New();
+
+
+
+
+        DrawExtern.Draw_Draw_SetHandle(draw, handle);
+
+
+
+        DrawExtern.Draw_Draw_SetSize(draw, size);
+
+
+
+
+        DrawExtern.Draw_Draw_Init(draw);
+
+
+
+
+
+        DrawDrawMethod del;
+
+        del = new DrawDrawMethod(this.DrawExecute);
+
+
+
+        Delegate dda;
+
+        dda = del;
+
+
+
+        ulong drawMethod;
+
+
+        drawMethod = ooo.MethodPointer(dda);
+
+
+
+
+        DrawExtern.Draw_Draw_SetMethod(draw, drawMethod);
+
+
+
+
+
+        this.SetBrush();
+
+
+
+
+
+        InfraExtern.Frame_SetDrawHandle(frame, drawHandle);
+
+
+
+        InfraExtern.Frame_SetDrawHandleArg(frame, draw);
+
+
+
+
         InfraExtern.Frame_Execute(frame);
+
+
+
+
+
+
+
+        DrawExtern.Draw_Brush_Final(this.Brush);
+
+
+
+        DrawExtern.Draw_Brush_Delete(this.Brush);
+
+
+
+
+
+        DrawExtern.Draw_Draw_Final(draw);
+
+
+
+
+        DrawExtern.Draw_Draw_Delete(draw);
+
+
+
 
 
 
@@ -227,6 +331,84 @@ class Exe : ExeExe
 
 
         InfraExtern.Delete(oss);
+
+
+
+        return 0;
+    }
+
+
+
+
+    private ulong Brush { get; set; }
+
+
+
+
+
+    private bool SetBrush()
+    {
+        ulong brush;
+
+
+        brush = DrawExtern.Draw_Brush_New();
+
+
+
+        DrawExtern.Draw_Brush_Init(brush);
+
+
+
+
+        ulong brushU;
+
+        brushU = DrawExtern.Draw_ColorBrush_Create();
+
+
+
+        ulong gg;
+
+
+        gg = DrawExtern.Draw_Global();
+
+
+
+        ulong constant;
+
+        constant = DrawExtern.Draw_Global_Constant(gg);
+
+
+
+        ulong typeU;
+
+        typeU = DrawExtern.Draw_Constant_ColorBrushType(constant);
+
+
+
+
+        DrawExtern.Draw_Brush_SetType(brush, typeU);
+
+
+
+        DrawExtern.Draw_Brush_SetValue(brush, brushU);
+
+
+
+
+        this.Brush = brush;
+
+
+
+
+        return true;
+    }
+
+
+
+
+    private ulong DrawExecute(ulong draw)
+    {
+        DrawExtern.Draw_Draw_Rect(draw, 100, 100, 400, 400, this.Brush);
 
 
 

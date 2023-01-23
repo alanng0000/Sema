@@ -1,6 +1,6 @@
 global using InfraObject = System.Infra.Object;
 global using ObjectInfra = System.Infra.ObjectInfra;
-global using Intern = System.Intern.Intern;
+global using InternIntern = System.Intern.Intern;
 global using InfraExtern = System.Intern.InfraExtern;
 global using DrawExtern = System.Intern.DrawExtern;
 global using FrameControlHandleMethod = System.Intern.FrameControlHandleMethod;
@@ -31,5 +31,6 @@ global using FontFamily = System.Draw.FontFamily;
 global using FontStyle = System.Draw.FontStyle;
 global using DrawImage = System.Draw.Image;
 global using DrawInfra = System.Draw.Infra;
+global using DrawConvert = System.Draw.Convert;
 global using ControlControl = System.Control.Control;
 global using WinColor = System.Drawing.Color;

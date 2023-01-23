@@ -433,6 +433,9 @@ class Exe : ExeExe
 
 
 
+    private byte Comp { get; set; }
+
+
 
     private ulong KeyHandle(ulong frame, ulong key, ulong value)
     {
@@ -443,9 +446,28 @@ class Exe : ExeExe
 
 
 
-        if (key == 'B')
+        if (key == 'H')
         {
             InfraExtern.Frame_Close(frame);
+        }
+
+
+        if (key == 'B')
+        {
+            int a;
+
+
+            a = this.Comp;
+
+
+            a = a + 10;
+
+
+            this.Comp = (byte)a;
+
+
+
+            InfraExtern.Frame_Update(frame);
         }
 
 
@@ -496,7 +518,13 @@ class Exe : ExeExe
 
     private ulong DrawExecute(ulong draw)
     {
-        DrawExtern.Draw_ColorBrush_SetColor(this.Brush, 0x800000ff);
+        ulong color;
+
+        color = 0x80000000 | this.Comp;
+        
+
+
+        DrawExtern.Draw_ColorBrush_SetColor(this.Brush, color);
 
 
 

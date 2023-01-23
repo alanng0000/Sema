@@ -193,7 +193,14 @@ public class Frame : CompObject
 
 
 
-        InfraExtern.Frame_SetDrawHandleArg(frame, draw.Intern);
+        InfraExtern.Frame_SetDrawHandleArg(frame, this.Draw.Intern);
+
+
+
+
+
+        this.Intern = frame;
+
 
 
 

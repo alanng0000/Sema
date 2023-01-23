@@ -118,9 +118,10 @@ public class Draw : InfraObject
 
 
         
-        InternIntern ooo;
+        InternIntern intern;
 
-        ooo = InternIntern.This;
+
+        intern = InternIntern.This;
 
 
 
@@ -144,7 +145,7 @@ public class Draw : InfraObject
         ulong drawMethod;
 
 
-        drawMethod = ooo.MethodPointer(this.Del);
+        drawMethod = intern.MethodPointer(this.Del);
 
 
 

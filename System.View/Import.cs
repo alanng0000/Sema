@@ -5,7 +5,6 @@ global using InfraExtern = System.Intern.InfraExtern;
 global using DrawExtern = System.Intern.DrawExtern;
 global using FrameControlHandleMethod = System.Intern.FrameControlHandleMethod;
 global using FrameDrawHandleMethod = System.Intern.FrameDrawHandleMethod;
-global using DrawDrawMethod = System.Intern.DrawDrawMethod;
 global using SystemDelegate = System.Delegate;
 global using Map = System.List.Map;
 global using Pair = System.List.Pair;

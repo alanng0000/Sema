@@ -66,6 +66,12 @@ public static class DrawExtern
 
 
     [DllImport(DrawDll)]
+    public static extern ulong Draw_Draw_Text(ulong o, ulong text, ulong length, long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush);
+
+
+
+
+    [DllImport(DrawDll)]
     public static extern ulong Draw_Draw_Clip(ulong o, long left, long up, ulong width, ulong height);
 
 

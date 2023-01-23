@@ -1,6 +1,5 @@
 global using InfraObject = System.Infra.Object;
 global using InfraRange = System.Infra.Range;
-global using RangeInfra = System.Infra.RangeInfra;
 global using ObjectInfra = System.Infra.ObjectInfra;
 global using InfraConvert = System.Infra.Convert;
 global using InfraConstant = System.Infra.Constant;
@@ -11,3 +10,4 @@ global using DrawExtern = System.Intern.DrawExtern;
 global using DrawDrawMethod = System.Intern.DrawDrawMethod;
 global using SystemDelegate = System.Delegate;
 global using Stream = System.IO.Stream;
+global using IStream = System.Runtime.InteropServices.ComTypes.IStream;

@@ -183,11 +183,6 @@ public class Frame : CompObject
 
 
 
-        this.Size = this.Draw.Size;
-
-
-
-
 
         InfraExtern.Frame_SetControlHandle(frame, controlHandle);
 
@@ -200,6 +195,27 @@ public class Frame : CompObject
 
         InfraExtern.Frame_SetDrawHandleArg(frame, draw.Intern);
 
+
+
+
+
+        FrameDrawHandle ooo;
+
+        ooo = new FrameDrawHandle();
+
+        ooo.Frame = this;
+
+        ooo.Init();
+
+
+
+        this.Draw.Handle = ooo;
+
+
+
+
+
+        this.Size = this.Draw.Size;
 
 
 
@@ -320,6 +336,8 @@ public class Frame : CompObject
 
 
     private DrawDraw Draw { get; set; }
+
+
 
 
 

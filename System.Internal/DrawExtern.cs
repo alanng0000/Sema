@@ -119,4 +119,15 @@ public static class DrawExtern
 
     [DllImport(DrawDll)]
     public static extern ulong Draw_FrameDrawHandle(ulong arg);
+
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Init();
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Final();
 }

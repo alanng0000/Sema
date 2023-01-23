@@ -1,1 +1,1 @@
-[assembly: InternalsVisibleTo("System.Intern")]
+[assembly: InternalsVisibleTo("System.View")]

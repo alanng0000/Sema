@@ -122,6 +122,55 @@ class Exe : ExeExe
 
     protected override int ExecuteWork()
     {
+        string title;
+
+        title = "DEMO System Frame Infra";
+
+
+
+        ulong length;
+
+        length = (ulong)title.Length;
+
+
+
+
+        ulong oss;
+
+        oss = InfraExtern.New(length);
+
+
+
+
+        Internal ooo;
+
+        ooo = Internal.This;
+
+
+        ooo.CopyString(title, oss);
+
+
+
+
+        ulong ss;
+
+
+        ss = InfraExtern.String_New();
+
+
+        InfraExtern.String_Init(ss);
+
+
+
+        InfraExtern.String_SetLength(ss, length);
+
+
+        InfraExtern.String_SetData(ss, oss);
+
+
+
+
+
         ulong frame;
 
 
@@ -129,7 +178,17 @@ class Exe : ExeExe
 
 
 
+        InfraExtern.Frame_SetTitle(frame, ss);
+
+
+
+
         InfraExtern.Frame_Init(frame);
+
+
+
+
+        InfraExtern.Frame_SetVisible(frame, 1);
 
 
 
@@ -144,6 +203,22 @@ class Exe : ExeExe
 
 
         InfraExtern.Frame_Delete(frame);
+
+
+
+
+
+        InfraExtern.String_Final(ss);
+
+
+
+        InfraExtern.String_Delete(ss);
+
+
+
+
+        InfraExtern.Delete(oss);
+
 
 
         return 0;

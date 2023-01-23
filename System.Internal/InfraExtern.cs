@@ -171,6 +171,17 @@ public static class InfraExtern
 
 
     [DllImport(InfraFormDll)]
+    public static extern ulong Frame_GetSize(ulong o);
+
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_GetHandle(ulong o);
+
+
+
+
+    [DllImport(InfraFormDll)]
     public static extern ulong Frame_GetDrawHandle(ulong o);
 
 

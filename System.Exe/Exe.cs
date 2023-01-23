@@ -29,7 +29,7 @@ public class Exe : InfraObject
 
 
 
-        this.ExecuteThread();
+        this.Result = this.ExecuteWork();
 
 
 

@@ -28,9 +28,19 @@ public class Exe : InfraObject
 
 
 
+        DrawExtern.Draw_Init();
+
+
+
+
 
         this.Result = this.ExecuteWork();
 
+
+
+
+
+        DrawExtern.Draw_Final();
 
 
 

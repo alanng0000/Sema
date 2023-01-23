@@ -60,7 +60,7 @@ public class Frame : CompObject
 
         Delegate dda;
 
-        dda = new FrameKeyHandleMethod(this.KeyHandle);
+        dda = new FrameControlHandleMethod(this.KeyHandle);
 
 
 

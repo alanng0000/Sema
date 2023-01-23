@@ -29,21 +29,15 @@ public class Intern : InfraObject
 
     public ulong MethodPointer(SystemDelegate d)
     {
-        SystemIntPtr pp;
+        SystemIntPtr u;
 
-        pp = Marshal.GetFunctionPointerForDelegate(d);
-
-
-
-        long ppu;
-
-        ppu = pp.ToInt64();
+        u = Marshal.GetFunctionPointerForDelegate(d);
 
 
 
         ulong o;
 
-        o = (ulong)ppu;
+        o = this.ULong(u);
 
 
 
@@ -176,5 +170,53 @@ public class Intern : InfraObject
 
         
         return ret;
+    }
+
+
+
+
+
+    public ulong IStreamIUnknown(IStream istream)
+    {
+        SystemIntPtr u;
+
+
+        u = Marshal.GetIUnknownForObject(istream);
+
+
+
+        ulong o;
+
+        o = this.ULong(u);
+
+
+
+        ulong ret;
+
+        ret = o;
+
+
+        return ret;
+    }
+
+
+
+
+
+    private ulong ULong(SystemIntPtr u)
+    {
+        long uu;
+
+        uu = u.ToInt64();
+
+
+
+        ulong o;
+
+        o = (ulong)uu;
+
+
+
+        return o;
     }
 }

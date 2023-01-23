@@ -104,4 +104,77 @@ public class Intern : InfraObject
 
         return true;
     }
+
+
+
+
+
+    public ulong DrawDrawText(ulong o, char[] text, InfraRange range, long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
+    {
+        int k;
+
+        k = range.Start;
+
+
+
+
+        RangeInfra infra;
+
+        infra = RangeInfra.This;
+
+
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+
+        int count;
+
+        count = infra.Count(range);
+
+
+
+
+        ulong length;
+
+        length = convert.ULong(count);
+
+
+
+
+        ulong ret;
+
+        ret = 0;
+
+
+
+        unsafe
+        {
+            fixed (char* p = text)
+            {
+                char* pu;
+
+                pu = &p[k];
+
+
+
+                ulong textO;
+
+                textO = (ulong)pu;
+
+
+                
+
+                ret = DrawExtern.Draw_Draw_Text(o, textO, length, destLeft, destUp, destWidth, destHeight, font, brush);
+            }
+        }
+
+
+        
+        return ret;
+    }
 }

@@ -2,18 +2,18 @@ namespace System.Control;
 
 
 
-public class Key : InfraObject
+public class KeyList : InfraObject
 {
-    public static Key This { get; } = CreateGlobal();
+    public static KeyList This { get; } = CreateGlobal();
 
 
 
 
-    private static Key CreateGlobal()
+    private static KeyList CreateGlobal()
     {
-        Key global;
+        KeyList global;
 
-        global = new Key();
+        global = new KeyList();
 
         global.Init();
 

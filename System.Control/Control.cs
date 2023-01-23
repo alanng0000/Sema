@@ -27,11 +27,11 @@ public class Control : InfraObject
 
 
 
-    public virtual EventEvent KeyInput
+    public virtual EventEvent Input
     {
         get
         {
-            return this.KeyInputData;
+            return this.InputData;
         }
         set
         {
@@ -40,29 +40,8 @@ public class Control : InfraObject
 
 
 
-    protected EventEvent KeyInputData { get; set; }
+    protected EventEvent InputData { get; set; }
 
-
-
-
-
-
-    public virtual EventEvent CharInput
-    {
-        get
-        {
-            return this.CharInputData;
-        }
-        set
-        {
-
-        }
-    }
-
-
-
-
-    protected EventEvent CharInputData { get; set; }
 
 
 
@@ -79,7 +58,7 @@ public class Control : InfraObject
         int count;
 
 
-        count = Key.This.Count;
+        count = System.Control.KeyList.This.Count;
 
 
 
@@ -90,19 +69,10 @@ public class Control : InfraObject
 
 
 
-        this.KeyInputData = new EventEvent();
+        this.InputData = new EventEvent();
 
 
-        this.KeyInputData.Init();
-
-
-
-
-
-        this.CharInputData = new EventEvent();
-
-
-        this.CharInput.Init();
+        this.InputData.Init();
 
 
 
@@ -112,15 +82,6 @@ public class Control : InfraObject
 
 
         this.KeyArg.Init();
-
-
-
-
-
-        this.CharArg = new CharArg();
-
-
-        this.CharArg.Init();
 
 
 
@@ -136,9 +97,6 @@ public class Control : InfraObject
 
     private KeyArg KeyArg { get; set; }
 
-
-
-    private CharArg CharArg { get; set; }
 
 
 
@@ -168,28 +126,7 @@ public class Control : InfraObject
 
 
 
-        this.KeyInput.Trigger(this.KeyArg);
-
-
-
-        return true;
-    }
-
-
-
-
-
-
-
-
-    public virtual bool Char(char oc)
-    {
-        this.CharArg.Char = oc;
-
-
-
-        this.CharInput.Trigger(this.CharArg);
-
+        this.Input.Trigger(this.KeyArg);
 
 
 

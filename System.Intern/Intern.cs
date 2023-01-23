@@ -29,7 +29,7 @@ public class Intern : InfraObject
 
     public ulong MethodPointer(SystemDelegate d)
     {
-        IntPtr pp;
+        SystemIntPtr pp;
 
         pp = Marshal.GetFunctionPointerForDelegate(d);
 

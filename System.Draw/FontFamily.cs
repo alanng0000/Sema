@@ -92,8 +92,21 @@ public class FontFamily : InfraObject
     {
         ulong oo;
 
+
         oo = DrawExtern.Draw_FontFamily_New();
+
+
+
+        DrawExtern.Draw_FontFamily_SetName(oo, this.InternName);
+
+
+
+        DrawExtern.Draw_FontFamily_Init(oo);
     
+
+
+        this.Intern = oo;
+
 
 
         return true;
@@ -113,15 +126,14 @@ public class FontFamily : InfraObject
 
 
 
-    private ulong InternFamily { get; set; }
-
-
-
-
-
 
     public virtual bool Final()
     {
+        DrawExtern.Draw_FontFamily_Final(this.Intern);
+
+
+
+        DrawExtern.Draw_FontFamily_Delete(this.Intern);
 
 
 
@@ -133,14 +145,6 @@ public class FontFamily : InfraObject
 
         InfraExtern.String_Delete(this.InternName);
 
-
-
-
-
-        this.WinFontFamily.Dispose();
-
-
-        this.WinFontFamily = null;
 
         
 

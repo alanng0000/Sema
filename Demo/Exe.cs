@@ -122,22 +122,25 @@ class Exe : ExeExe
 
     protected override int ExecuteWork()
     {
-        Demo demo;
+        // Demo demo;
 
 
-        demo = new Demo();
+        // demo = new Demo();
 
 
-        demo.Init();
+        // demo.Init();
 
 
 
-        int o;
+        // int o;
 
 
-        o = demo.Execute();
+        // o = demo.Execute();
 
 
-        return o;
+        // return o;
+
+
+        return 0;
     }
 }

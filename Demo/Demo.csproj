@@ -2,15 +2,15 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net6.0-windows</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="../System.Infra/System.Infra.csproj" />
         <ProjectReference Include="../System.Text/System.Text.csproj" />
         <ProjectReference Include="../System.Event/System.Event.csproj" />
-        <ProjectReference Include="../System.Draw/System.Draw.csproj" />
-        <ProjectReference Include="../System.View/System.View.csproj" />
+        <!-- <ProjectReference Include="../System.Draw/System.Draw.csproj" /> -->
+        <!-- <ProjectReference Include="../System.View/System.View.csproj" /> -->
         <ProjectReference Include="../System.Exe/System.Exe.csproj" />
         <ProjectReference Include="../System.Internal/System.Internal.csproj" />
     </ItemGroup>

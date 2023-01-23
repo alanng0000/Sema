@@ -83,16 +83,6 @@ public static class InfraExtern
 
 
 
-    [DllImport(InfraFormDll)]
-    public static extern ulong Infra_Form_Init();
-
-
-    [DllImport(InfraFormDll)]
-    public static extern ulong Infra_Form_Final();
-
-
-
-
     [DllImport(InfraFormInfraDll)]
     public static extern ulong Size_New();
 
@@ -126,4 +116,60 @@ public static class InfraExtern
 
     [DllImport(InfraFormInfraDll)]
     public static extern ulong Size_SetHeight(ulong o, ulong value);
+
+
+
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Infra_Form_Init();
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Infra_Form_Final();
+
+
+
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_New();
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_Delete(ulong o);
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_Init(ulong o);
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_Final(ulong o);
+
+
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_GetTitle(ulong o);
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_SetTitle(ulong o, ulong value);
+
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_Execute(ulong o);
+
+
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_Close(ulong o);
+
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_Update(ulong o);
 }

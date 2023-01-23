@@ -412,7 +412,7 @@ class Exe : ExeExe
 
 
 
-        DrawExtern.Draw_Draw_Rect(draw, 100, 100, 400, 400, this.Brush);
+        DrawExtern.Draw_Draw_Rect(draw, 200, 200, 400, 400, this.Brush);
 
 
 

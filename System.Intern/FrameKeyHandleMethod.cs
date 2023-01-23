@@ -3,4 +3,4 @@ namespace System.Intern;
 
 
 
-public delegate ulong FrameKeyHandleMethod(ulong frame, ulong key, ulong value);
+public delegate ulong FrameControlHandleMethod(ulong frame, ulong key, ulong value);

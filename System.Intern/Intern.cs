@@ -175,25 +175,65 @@ public class Intern : InfraObject
 
 
 
+    public object ImageStream(Stream stream, ref ulong internStream)
+    {
+        ComStream comStream;
+        
 
-    public ulong IStreamIUnknown(IStream istream)
+        comStream = new ComStream();
+
+
+        comStream.Stream = stream;
+
+
+        comStream.Init();
+
+
+
+
+
+        ulong u;
+
+        u = this.IUnknown(comStream);
+
+
+
+        internStream = u;
+
+
+
+
+
+        object ret;
+
+        ret = comStream;
+
+
+        return ret;
+    }
+
+
+
+
+
+    public ulong IUnknown(object o)
     {
         SystemIntPtr u;
 
 
-        u = Marshal.GetIUnknownForObject(istream);
+        u = Marshal.GetIUnknownForObject(o);
 
 
 
-        ulong o;
+        ulong oo;
 
-        o = this.ULong(u);
+        oo = this.ULong(u);
 
 
 
         ulong ret;
 
-        ret = o;
+        ret = oo;
 
 
         return ret;

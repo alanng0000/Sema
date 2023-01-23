@@ -17,17 +17,6 @@ public class Image : InfraObject
 
 
 
-        this.ComStream = new ComStream();
-
-
-        this.ComStream.Stream = this.Stream;
-
-
-        this.ComStream.Init();
-
-        
-
-
 
         InternIntern intern;
 
@@ -35,10 +24,22 @@ public class Image : InfraObject
 
 
 
-        ulong ou;
 
-        ou = intern.IStreamIUnknown(this.ComStream);
+        ulong u;
+
+        u = 0;
+
+
+
+        object ou;
+
+        ou = intern.ImageStream(this.Stream, ref u);
         
+
+
+
+        this.InternStream = ou;
+
 
 
 
@@ -50,7 +51,7 @@ public class Image : InfraObject
 
 
 
-        DrawExtern.Draw_Image_SetStream(o, ou);
+        DrawExtern.Draw_Image_SetStream(o, u);
 
 
 
@@ -60,6 +61,7 @@ public class Image : InfraObject
 
 
         this.Intern = o;
+
 
 
 
@@ -88,7 +90,8 @@ public class Image : InfraObject
 
 
 
-    private ComStream ComStream { get; set; }
+
+    private object InternStream { get; set; }
 
 
 

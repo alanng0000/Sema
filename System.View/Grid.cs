@@ -347,7 +347,7 @@ public class Grid : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 
@@ -391,7 +391,7 @@ public class Grid : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 
@@ -617,7 +617,7 @@ public class Grid : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 
@@ -644,7 +644,7 @@ public class Grid : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 

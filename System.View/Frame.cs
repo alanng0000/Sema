@@ -330,6 +330,13 @@ public class Frame : CompObject
 
 
 
+    public ControlControl Control { get; set; }
+
+
+
+
+
+
     private ulong Intern { get; set; }
 
 
@@ -349,11 +356,6 @@ public class Frame : CompObject
     private DrawDraw Draw { get; set; }
 
 
-
-
-
-
-    public ControlControl Control { get; set; }
 
 
 

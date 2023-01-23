@@ -424,29 +424,71 @@ public class Draw : InfraObject
 
 
 
-        WinBitmap winBitmap;
+        ulong imageU;
 
-        winBitmap = image.WinBitmap;
-
-
-
-
-        WinRectangle winDestRect;
-
-        winDestRect = Convert.This.WinRectangle(destRect);
+        imageU = image.Intern;
 
 
 
 
-        WinRectangle winSourceRect;
 
-        winSourceRect = Convert.This.WinRectangle(sourceRect);
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+        
+
+        
+
+
+        long destLeft;
+
+        destLeft = destRect.Pos.Left;
+
+
+        long destUp;
+
+        destUp = destRect.Pos.Up;
+
+
+        ulong destWidth;
+
+        destWidth = convert.ULong(destRect.Size.Width);
+
+
+        ulong destHeight;
+
+        destHeight = convert.ULong(destRect.Size.Height);
 
 
 
 
-        this.WinGraphic.DrawImage(winBitmap, winDestRect, winSourceRect, WinGraphicsUnit.Pixel);
 
+        long sourceLeft;
+
+        sourceLeft = sourceRect.Pos.Left;
+
+
+        long sourceUp;
+
+        sourceUp = sourceRect.Pos.Up;
+
+
+        ulong sourceWidth;
+
+        sourceWidth = convert.ULong(sourceRect.Size.Width);
+
+
+        ulong sourceHeight;
+
+        sourceHeight = convert.ULong(sourceRect.Size.Height);
+
+
+
+
+
+        DrawExtern.Draw_Draw_Image(this.InternDraw, imageU, destLeft, destUp, destWidth, destHeight,
+            sourceLeft, sourceUp, sourceWidth, sourceHeight
+        );
 
 
 

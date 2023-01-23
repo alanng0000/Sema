@@ -232,24 +232,36 @@ public class Draw : InfraObject
 
     public bool Clip()
     {
-        Convert convert;
+        InfraConvert convert;
 
-
-        convert = Convert.This;
-
-
-
-        
+        convert = InfraConvert.This;
 
 
 
-        WinRectangle winRect;
 
-        winRect = convert.WinRectangle(this.Area);
+        long left;
+
+        left = this.Area.Pos.Left;
+
+
+        long up;
+
+        up = this.Area.Pos.Up;
+
+
+        ulong width;
+
+        width = convert.ULong(this.Area.Size.Width);
+
+
+        ulong height;
+
+        height = convert.ULong(this.Area.Size.Height);
 
 
 
-        this.WinGraphic.SetClip(winRect);
+        DrawExtern.Draw_Draw_Clip(this.InternDraw, left, up, width, height);
+
 
 
 

@@ -145,7 +145,7 @@ public class Control : InfraObject
 
             oc = this.IntChar(u);
         }
-        
+
 
 
         if (this.IsDigitKey(key))
@@ -187,14 +187,14 @@ public class Control : InfraObject
 
 
 
-    private bool IsLetterKey(byte key)
+    public bool IsLetterKey(byte key)
     {
         return 'A' <= key && key <= 'Z';
     }
 
 
 
-    private bool IsDigitKey(byte key)
+    public bool IsDigitKey(byte key)
     {
         return '0' <= key && key <= '9';
     }

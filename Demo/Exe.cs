@@ -170,6 +170,20 @@ class Exe : ExeExe
 
 
 
+        Delegate dd;
+
+        dd = DrawExtern.Draw_FrameDrawHandle;
+
+
+
+
+        ulong drawHandle;
+
+        drawHandle = ooo.MethodPointer(dd);
+
+
+
+
 
         ulong frame;
 

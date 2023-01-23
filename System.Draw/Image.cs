@@ -16,8 +16,15 @@ public class Image : InfraObject
 
 
 
-        this.WinBitmap = new WinBitmap(this.Stream);
+        this.ComStream = new ComStream();
 
+
+        this.ComStream.Stream = this.Stream;
+
+
+        this.ComStream.Init();
+
+        
 
 
 
@@ -34,6 +41,12 @@ public class Image : InfraObject
 
         return true;
     }
+
+
+
+
+    private ComStream ComStream { get; set; }
+
 
 
 
@@ -55,21 +68,15 @@ public class Image : InfraObject
 
 
 
-    internal WinBitmap WinBitmap { get; set; }
+    internal ulong Intern { get; set; }
 
 
 
 
 
 
-
-    public bool Close()
+    public virtual bool Final()
     {
-        this.WinBitmap.Dispose();
-
-
-        this.WinBitmap = null;
-
         
 
         return true;

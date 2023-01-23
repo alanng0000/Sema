@@ -294,11 +294,18 @@ class Exe : ExeExe
 
 
 
+
+        InfraExtern.Frame_SetControlHandle(frame, keyHandle);
+
+
+
+
         InfraExtern.Frame_SetDrawHandle(frame, drawHandle);
 
 
 
         InfraExtern.Frame_SetDrawHandleArg(frame, draw);
+
 
 
 
@@ -429,9 +436,68 @@ class Exe : ExeExe
 
 
 
+    private long Left { get; set; }
+
+
+
+    private long Up { get; set; }
+
+
+
 
     private ulong KeyHandle(ulong frame, ulong key, ulong value)
     {
+        if (value == 0)
+        {
+            return 0;
+        }
+
+
+
+        if (key == 'B')
+        {
+            InfraExtern.Frame_Close(frame);
+        }
+
+
+
+        if (key == 'A')
+        {
+            this.Left = this.Left - 10;
+
+
+            InfraExtern.Frame_Update(frame);
+        }
+
+
+        if (key == 'D')
+        {
+            this.Left = this.Left + 10;
+
+
+            InfraExtern.Frame_Update(frame);
+        }
+
+
+        if (key == 'W')
+        {
+            this.Up = this.Up - 10;
+
+
+            InfraExtern.Frame_Update(frame);
+        }
+
+
+        if (key == 'S')
+        {
+            this.Up = this.Up + 10;
+
+
+            InfraExtern.Frame_Update(frame);
+        }
+
+
+
         return 0;
     }
 
@@ -445,7 +511,7 @@ class Exe : ExeExe
 
 
 
-        DrawExtern.Draw_Draw_Rect(draw, 200, 200, 400, 400, this.Brush);
+        DrawExtern.Draw_Draw_Rect(draw, this.Left + 200, this.Up + 200, 400, 400, this.Brush);
 
 
 

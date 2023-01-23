@@ -173,7 +173,7 @@ class Exe : ExeExe
 
         Delegate dda;
 
-        dda = new FrameKeyHandleMethod(this.KeyHandle);
+        dda = new FrameControlHandleMethod(this.KeyHandle);
 
 
 

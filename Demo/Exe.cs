@@ -17,10 +17,10 @@ class Exe : ExeExe
 
         // ulong draw;
 
-        // draw = System.Internal.DrawExtern.Draw_Draw_New();
+        // draw = System.Intern.DrawExtern.Draw_Draw_New();
 
 
-        // System.Internal.DrawExtern.Draw_Draw_Delete(draw);
+        // System.Intern.DrawExtern.Draw_Draw_Delete(draw);
 
 
 
@@ -42,9 +42,9 @@ class Exe : ExeExe
 
 
 
-        // Internal oo;
+        // Intern oo;
 
-        // oo = Internal.This;
+        // oo = Intern.This;
 
 
         // oo.CopyString(s, data);
@@ -142,9 +142,9 @@ class Exe : ExeExe
 
 
 
-        Internal ooo;
+        Intern ooo;
 
-        ooo = Internal.This;
+        ooo = Intern.This;
 
 
         ooo.CopyString(title, oss);

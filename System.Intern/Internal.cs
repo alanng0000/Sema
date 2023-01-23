@@ -1,22 +1,22 @@
-namespace System.Internal;
+namespace System.Intern;
 
 
 
 
 
 
-public class Internal : InfraObject
+public class Intern : InfraObject
 {
-    public static Internal This { get; } = CreateGlobal();
+    public static Intern This { get; } = CreateGlobal();
 
 
 
 
-    private static Internal CreateGlobal()
+    private static Intern CreateGlobal()
     {
-        Internal global;
+        Intern global;
 
-        global = new Internal();
+        global = new Intern();
 
         global.Init();
 

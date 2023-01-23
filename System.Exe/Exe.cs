@@ -26,12 +26,14 @@ public class Exe : InfraObject
 
 
 
+
         this.ExecuteThread();
 
 
 
+
         InfraExtern.Infra_Form_Final();
-        
+
 
 
 

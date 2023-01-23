@@ -205,17 +205,17 @@ public class Draw : InfraObject
 
 
 
-    private ulong InternSize;
+    private ulong InternSize { get; set; }
 
 
 
 
-    public ulong Intern;
+    internal ulong Intern { get; set; }
 
 
 
 
-    private SystemDelegate Del;
+    private SystemDelegate Del { get; set; }
     
 
 

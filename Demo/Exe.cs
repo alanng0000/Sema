@@ -188,11 +188,6 @@ class Exe : ExeExe
 
 
 
-        InfraExtern.Frame_SetVisible(frame, 1);
-
-
-
-
         InfraExtern.Frame_Execute(frame);
 
 

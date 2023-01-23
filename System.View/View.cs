@@ -573,7 +573,7 @@ public class View : CompObject
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 
@@ -596,7 +596,7 @@ public class View : CompObject
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 

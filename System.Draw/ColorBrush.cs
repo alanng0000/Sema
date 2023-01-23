@@ -17,15 +17,91 @@ public class ColorBrush : Brush
 
 
 
+        Convert convert;
 
-        WinColor winColor;
-
-
-        winColor = Convert.This.WinColor(this.Color);
+        convert = Convert.This;
 
 
 
-        this.WinBrush = new WinSolidBrush(winColor);
+        ulong internColor;
+
+
+        internColor = convert.InternColor(this.Color);
+
+
+
+        ulong o;
+
+
+        o = DrawExtern.Draw_Brush_New();
+
+
+        DrawExtern.Draw_Brush_Init(o);
+
+
+
+
+        ulong gg;
+
+        gg = DrawExtern.Draw_Global();
+
+
+
+        ulong cc;
+
+        cc = DrawExtern.Draw_Global_Constant(gg);
+
+
+
+        ulong type;
+
+        type = DrawExtern.Draw_Constant_ColorBrushType(cc);
+
+
+
+
+        ulong cuBrush;
+
+        cuBrush = DrawExtern.Draw_ColorBrush_Create();
+
+
+
+
+        DrawExtern.Draw_Brush_SetType(o, type);
+
+
+        DrawExtern.Draw_Brush_SetValue(o, cuBrush);
+
+
+
+        DrawExtern.Draw_ColorBrush_SetColor(o, internColor);
+
+
+
+        this.Intern = o;
+
+
+
+        return true;
+    }
+
+
+
+
+    public override bool Final()
+    {
+        DrawExtern.Draw_Brush_Final(this.Intern);
+
+
+
+        DrawExtern.Draw_Brush_Delete(this.Intern);
+
+
+
+
+
+        base.Final();
+
 
 
 

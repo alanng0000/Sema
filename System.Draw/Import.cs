@@ -6,5 +6,6 @@ global using InfraConvert = System.Infra.Convert;
 global using CharSpan = System.Text.CharSpan;
 global using TextConvert = System.Text.Convert;
 global using InfraExtern = System.Intern.InfraExtern;
+global using DrawExtern = System.Intern.DrawExtern;
 global using ReadOnlySpanChar = System.ReadOnlySpan<char>;
 global using Stream = System.IO.Stream;

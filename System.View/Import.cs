@@ -1,5 +1,6 @@
 global using InfraObject = System.Infra.Object;
 global using ObjectInfra = System.Infra.ObjectInfra;
+global using InfraConvert = System.Infra.Convert;
 global using InternIntern = System.Intern.Intern;
 global using InfraExtern = System.Intern.InfraExtern;
 global using DrawExtern = System.Intern.DrawExtern;

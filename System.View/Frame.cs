@@ -365,6 +365,37 @@ public class Frame : CompObject
 
     private ulong InternControlHandle(ulong frame, ulong key, ulong value)
     {
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+        InternIntern intern;
+
+        intern = InternIntern.This;
+
+
+
+
+        byte ko;
+
+        ko = convert.Byte(key);
+
+
+
+        bool vo;
+
+        vo = intern.Bool(value);
+
+
+
+
+        this.Control.Set(ko, vo);
+
+
+
+
         return 0;
     }
 

@@ -124,6 +124,34 @@ public static class DrawExtern
 
 
     [DllImport(DrawDll)]
+    public static extern ulong Draw_FontFamily_New();
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_FontFamily_Init(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_FontFamily_Final(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_FontFamily_Delete(ulong o);
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_FontFamily_GetName(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_FontFamily_SetName(ulong o, ulong value);
+
+
+
+
+
+    [DllImport(DrawDll)]
     public static extern ulong Draw_Constant_DefaultColor(ulong o);
 
 

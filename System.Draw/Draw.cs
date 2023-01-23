@@ -280,14 +280,43 @@ public class Draw : InfraObject
 
 
 
-        WinRectangle u;
+        InfraConvert convert;
 
-        u = Convert.This.WinRectangle(rect);
-
-
+        convert = InfraConvert.This;
 
 
-        this.WinGraphic.FillRectangle(brush.WinBrush, u);
+
+
+        long left;
+
+        left = this.Area.Pos.Left;
+
+
+        long up;
+
+        up = this.Area.Pos.Up;
+
+
+        ulong width;
+
+        width = convert.ULong(this.Area.Size.Width);
+
+
+        ulong height;
+
+        height = convert.ULong(this.Area.Size.Height);
+
+
+
+
+        ulong brushU;
+
+
+        brushU = brush.Intern;
+
+
+
+        DrawExtern.Draw_Draw_Rect(this.InternDraw, left, up, width, height, brushU);
 
 
 

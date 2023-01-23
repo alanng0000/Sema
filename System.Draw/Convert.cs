@@ -34,16 +34,109 @@ class Convert : InfraObject
 
     public ulong InternColor(Color color)
     {
+        this.CompIndex = 0;
+
+
+
         ulong c;
 
 
         c = 0;
 
 
-        return c;
+        c = c | this.InternColorComp(color.Blue);
+
+
+        c = c | this.InternColorComp(color.Green);
+
+
+        c = c | this.InternColorComp(color.Red);
+
+
+        c = c | this.InternColorComp(color.Alpha);
+
+
+
+        ulong ret;
+
+        ret = c;
+
+        return ret;
     }
 
 
+
+
+    private ulong CompIndex;
+    
+
+
+    private ulong InternColorComp(byte comp)
+    {
+        ulong k;
+
+
+        k = this.IndexInternColorComp(comp, this.CompIndex);
+
+
+
+        this.CompIndex = this.CompIndex + 1;
+
+
+
+        ulong ret;
+
+        ret = k;
+
+        return ret;
+    }
+
+
+
+
+
+    private ulong IndexInternColorComp(byte comp, ulong index)
+    {
+        InfraConstant constant;
+
+        constant = InfraConstant.This;
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+
+        ulong shiftCount;
+
+        shiftCount = constant.ByteBitCount * index;
+
+
+
+        int u;
+
+        u = convert.SInt32(shiftCount);
+
+
+
+        ulong k;
+
+
+        k = comp;
+
+
+        k = k << u;
+
+
+
+        ulong ret;
+
+        ret = k;
+
+        return ret;
+    }
 
 
 

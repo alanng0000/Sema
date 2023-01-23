@@ -288,8 +288,55 @@ class Exe : ExeExe
 
 
 
-        this.SetBrush();
 
+        ulong brush;
+
+
+        brush = DrawExtern.Draw_Brush_New();
+
+
+
+        DrawExtern.Draw_Brush_Init(brush);
+
+
+
+
+        ulong brushU;
+
+        brushU = DrawExtern.Draw_ColorBrush_Create();
+
+
+
+        ulong gg;
+
+
+        gg = DrawExtern.Draw_Global();
+
+
+
+        ulong constant;
+
+        constant = DrawExtern.Draw_Global_Constant(gg);
+
+
+
+        ulong typeU;
+
+        typeU = DrawExtern.Draw_Constant_ColorBrushType(constant);
+
+
+
+
+        DrawExtern.Draw_Brush_SetType(brush, typeU);
+
+
+
+        DrawExtern.Draw_Brush_SetValue(brush, brushU);
+
+
+
+
+        this.Brush = brush;
 
 
 
@@ -374,64 +421,6 @@ class Exe : ExeExe
 
 
 
-
-
-    private bool SetBrush()
-    {
-        ulong brush;
-
-
-        brush = DrawExtern.Draw_Brush_New();
-
-
-
-        DrawExtern.Draw_Brush_Init(brush);
-
-
-
-
-        ulong brushU;
-
-        brushU = DrawExtern.Draw_ColorBrush_Create();
-
-
-
-        ulong gg;
-
-
-        gg = DrawExtern.Draw_Global();
-
-
-
-        ulong constant;
-
-        constant = DrawExtern.Draw_Global_Constant(gg);
-
-
-
-        ulong typeU;
-
-        typeU = DrawExtern.Draw_Constant_ColorBrushType(constant);
-
-
-
-
-        DrawExtern.Draw_Brush_SetType(brush, typeU);
-
-
-
-        DrawExtern.Draw_Brush_SetValue(brush, brushU);
-
-
-
-
-        this.Brush = brush;
-
-
-
-
-        return true;
-    }
 
 
 

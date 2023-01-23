@@ -260,6 +260,7 @@ public class Draw : InfraObject
 
 
 
+
         DrawExtern.Draw_Draw_Clip(this.InternDraw, left, up, width, height);
 
 
@@ -316,6 +317,7 @@ public class Draw : InfraObject
 
 
 
+
         DrawExtern.Draw_Draw_Rect(this.InternDraw, left, up, width, height, brushU);
 
 
@@ -329,24 +331,51 @@ public class Draw : InfraObject
 
 
 
-
-
-    public bool Text(CharSpan charSpan, Rect destRect, Font font, Brush brush)
+    public bool Text(CharSpan text, Rect destRect, Font font, Brush brush)
     {
         this.Absolute(ref destRect.Pos);
 
 
 
-        Convert convert;
 
-        convert = Convert.This;
+        char[] textU;
+
+        textU = text.Array;
 
 
 
-        Constant constant;
+        InfraRange range;
 
-        constant = Constant.This;
+        range = text.Range;
 
+
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+
+        long destLeft;
+
+        destLeft = destRect.Pos.Left;
+
+
+        long destUp;
+
+        destUp = destRect.Pos.Up;
+
+
+        ulong destWidth;
+
+        destWidth = convert.ULong(destRect.Size.Width);
+
+
+        ulong destHeight;
+
+        destHeight = convert.ULong(destRect.Size.Height);
 
 
 
@@ -359,8 +388,6 @@ public class Draw : InfraObject
         
 
 
-
-
         ulong brushU;
 
         brushU = brush.Intern;
@@ -369,16 +396,21 @@ public class Draw : InfraObject
 
 
 
+        InternIntern intern;
+
+        intern = InternIntern.This;
 
 
 
-        WinTextRenderer.DrawText(this.WinGraphic, u, winFont, winDestRect, winColor, constant.TextFormatFlag);
+
+        intern.DrawDrawText(this.InternDraw, textU, range, destLeft, destUp, destWidth, destHeight, fontU, brushU);
 
 
 
 
         return true;
     }
+    
 
 
 

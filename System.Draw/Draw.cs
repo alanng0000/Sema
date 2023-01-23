@@ -230,13 +230,16 @@ public class Draw : InfraObject
 
 
 
-    public bool SetClip()
+    public bool Clip()
     {
         Convert convert;
 
 
         convert = Convert.This;
 
+
+
+        
 
 
 

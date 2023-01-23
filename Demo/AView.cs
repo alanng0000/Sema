@@ -155,7 +155,7 @@ class AView : View
 
 
 
-        text.Value.Span.String = s;
+        text.Value.Span.Array = s.ToCharArray();
 
 
         text.Value.Span.Range.End = s.Length;

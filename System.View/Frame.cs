@@ -72,7 +72,7 @@ public class Frame : CompObject
 
         Delegate dda;
 
-        dda = new FrameControlHandleMethod(this.InternControlHandle);
+        dda = new FrameControlHandleMethod(this.ControlHandle);
 
 
 
@@ -363,7 +363,7 @@ public class Frame : CompObject
 
 
 
-    private ulong InternControlHandle(ulong frame, ulong key, ulong value)
+    private ulong ControlHandle(ulong frame, ulong key, ulong value)
     {
         InfraConvert convert;
 

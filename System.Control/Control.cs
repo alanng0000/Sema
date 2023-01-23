@@ -116,7 +116,7 @@ public class Control : InfraObject
 
 
 
-    public char Char(bool shift, byte key)
+    public KeyChar Char(byte key)
     {
         char oc;
 
@@ -166,7 +166,7 @@ public class Control : InfraObject
         ret = oc;
 
 
-        return ret;
+        return null;
     }
 
 
@@ -311,4 +311,9 @@ public class Control : InfraObject
 
 
     protected virtual bool[] KeyList { get; set; }
+
+
+
+
+    private KeyChar[] KeyCharList { get; set; }
 }

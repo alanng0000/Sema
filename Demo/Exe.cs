@@ -122,23 +122,28 @@ class Exe : ExeExe
 
     protected override int ExecuteWork()
     {
-        // Demo demo;
+        ulong frame;
 
 
-        // demo = new Demo();
-
-
-        // demo.Init();
+        frame = InfraExtern.Frame_New();
 
 
 
-        // int o;
+        InfraExtern.Frame_Init(frame);
 
 
-        // o = demo.Execute();
 
 
-        // return o;
+        InfraExtern.Frame_Execute(frame);
+
+
+
+
+        InfraExtern.Frame_Final(frame);
+
+
+
+        InfraExtern.Frame_Delete(frame);
 
 
         return 0;

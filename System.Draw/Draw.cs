@@ -30,7 +30,7 @@ public class Draw : InfraObject
 
 
 
-        this.InitInternDraw();
+        this.InitIntern();
 
 
 
@@ -94,7 +94,7 @@ public class Draw : InfraObject
 
 
 
-    private bool InitInternDraw()
+    private bool InitIntern()
     {
         ulong draw;
 
@@ -154,7 +154,7 @@ public class Draw : InfraObject
 
 
 
-        this.InternDraw = draw;
+        this.Intern = draw;
 
 
 
@@ -168,10 +168,10 @@ public class Draw : InfraObject
 
     public virtual bool Final()
     {
-        DrawExtern.Draw_Draw_Final(this.InternDraw);
+        DrawExtern.Draw_Draw_Final(this.Intern);
 
 
-        DrawExtern.Draw_Draw_Delete(this.InternDraw);
+        DrawExtern.Draw_Draw_Delete(this.Intern);
 
 
 
@@ -209,7 +209,7 @@ public class Draw : InfraObject
 
 
 
-    public ulong InternDraw;
+    public ulong Intern;
 
 
 
@@ -261,7 +261,7 @@ public class Draw : InfraObject
 
 
 
-        DrawExtern.Draw_Draw_Clip(this.InternDraw, left, up, width, height);
+        DrawExtern.Draw_Draw_Clip(this.Intern, left, up, width, height);
 
 
 
@@ -318,7 +318,7 @@ public class Draw : InfraObject
 
 
 
-        DrawExtern.Draw_Draw_Rect(this.InternDraw, left, up, width, height, brushU);
+        DrawExtern.Draw_Draw_Rect(this.Intern, left, up, width, height, brushU);
 
 
 
@@ -403,7 +403,7 @@ public class Draw : InfraObject
 
 
 
-        intern.DrawDrawText(this.InternDraw, textU, range, destLeft, destUp, destWidth, destHeight, fontU, brushU);
+        intern.DrawDrawText(this.Intern, textU, range, destLeft, destUp, destWidth, destHeight, fontU, brushU);
 
 
 
@@ -486,7 +486,7 @@ public class Draw : InfraObject
 
 
 
-        DrawExtern.Draw_Draw_Image(this.InternDraw, imageU, destLeft, destUp, destWidth, destHeight,
+        DrawExtern.Draw_Draw_Image(this.Intern, imageU, destLeft, destUp, destWidth, destHeight,
             sourceLeft, sourceUp, sourceWidth, sourceHeight
         );
 

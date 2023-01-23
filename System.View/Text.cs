@@ -520,6 +520,10 @@ public class Text : View
 
 
 
+        Infra infra;
+
+        infra = Infra.This;
+
 
 
 
@@ -533,7 +537,7 @@ public class Text : View
 
 
 
-        Infra.This.DrawRect(this.Dest, ref destRect);
+        infra.DrawRect(this.Dest, ref destRect);
 
 
 

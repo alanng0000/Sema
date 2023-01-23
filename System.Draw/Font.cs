@@ -13,11 +13,19 @@ public class Font : InfraObject
 
 
 
+        InfraConvert infraConvert;
 
-        WinFontFamily family;
+
+        infraConvert = InfraConvert.This;
 
 
-        family = this.Family.WinFontFamily;
+
+
+
+        ulong family;
+
+
+        family = this.Family.Intern;
 
 
         
@@ -36,28 +44,53 @@ public class Font : InfraObject
 
 
 
-        float size;
 
-        size = this.Size;
+        ulong size;
 
-
-
-
-
-        WinFontStyle style;
-
-
-        style = Convert.This.WinFontStyle(this.Style);
+        size = infraConvert.ULong(this.Size);
 
 
 
 
+        Convert convert;
+
+        convert = Convert.This;
 
 
-        this.WinFont = new WinFont(family, size, style, WinGraphicsUnit.Pixel);
+
+
+        ulong style;
+
+
+        style = convert.InternFontStyle(this.Style);
 
 
 
+
+
+        ulong oo;
+
+
+        oo = DrawExtern.Draw_Font_New();
+
+
+
+        DrawExtern.Draw_Font_SetFamily(oo, family);
+
+
+        DrawExtern.Draw_Font_SetSize(oo, size);
+
+
+        DrawExtern.Draw_Font_SetStyle(oo, style);
+
+
+
+        DrawExtern.Draw_Font_Init(oo);
+
+
+
+
+        this.Intern = oo;
 
 
 
@@ -69,12 +102,15 @@ public class Font : InfraObject
 
 
 
-    public bool Close()
+
+    public virtual bool Final()
     {
-        this.WinFont.Dispose();
+        DrawExtern.Draw_Font_Final(this.Intern);
 
 
-        this.WinFont = null;
+
+        DrawExtern.Draw_Font_Delete(this.Intern);
+
 
         
 
@@ -102,5 +138,5 @@ public class Font : InfraObject
 
 
 
-    internal WinFont WinFont { get; set; }
+    internal ulong Intern { get; set; }
 }

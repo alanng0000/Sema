@@ -3,8 +3,16 @@ namespace System.Control;
 
 
 
-public class KeyChar : InfraObject
+public struct KeyChar
 {
+    public bool Init()
+    {
+        return true;
+    }
+
+
+
+
     public char Default { get; set; }
 
 

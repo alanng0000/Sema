@@ -118,11 +118,12 @@ public class Control : InfraObject
 
     public KeyChar Char(byte key)
     {
-        char oc;
+        KeyChar oo;
 
-        oc = this.IntChar(0);
+        oo = new KeyChar();
 
-
+        oo.Init();
+        
 
         if (this.IsLetterKey(key))
         {
@@ -134,10 +135,18 @@ public class Control : InfraObject
 
             int u;
 
+
+            u = 'a' + index;
+
+
+            oo.Default = this.IntChar(u);
+
+
+
             u = 'A' + index;
 
 
-            oc = this.IntChar(u);
+            oo.Shift = this.IntChar(u);
         }
 
 
@@ -155,18 +164,15 @@ public class Control : InfraObject
             u = '0' + index;
 
 
-            oc = this.IntChar(u);
+            oo.Default = this.IntChar(u);
         }
 
 
 
 
-        char ret;
-
-        ret = oc;
 
 
-        return null;
+        return oo;
     }
 
 

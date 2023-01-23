@@ -338,7 +338,7 @@ public class Image : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 
@@ -395,7 +395,7 @@ public class Image : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 

@@ -69,7 +69,7 @@ public class Text : View
 
         value.Init();
 
-        value.Span.String = "";
+        value.Span.Array = new char[0];
 
         value.Span.Range.Start = 0;
 
@@ -507,7 +507,7 @@ public class Text : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 
@@ -532,7 +532,7 @@ public class Text : View
 
 
 
-        draw.Text(charSpan, font, drawColor, destRect);
+        draw.Text(charSpan, destRect, font, null);
 
 
 
@@ -548,7 +548,7 @@ public class Text : View
 
 
 
-        draw.SetClip();
+        draw.Clip();
 
 
 

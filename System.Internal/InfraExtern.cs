@@ -159,6 +159,17 @@ public static class InfraExtern
 
 
 
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_GetVisible(ulong o);
+
+
+    [DllImport(InfraFormDll)]
+    public static extern ulong Frame_SetVisible(ulong o, ulong value);
+
+
+
+
     [DllImport(InfraFormDll)]
     public static extern ulong Frame_Execute(ulong o);
 

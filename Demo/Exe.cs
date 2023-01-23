@@ -408,6 +408,10 @@ class Exe : ExeExe
 
     private ulong DrawExecute(ulong draw)
     {
+        DrawExtern.Draw_ColorBrush_SetColor(this.Brush, 0x800000ff);
+
+
+
         DrawExtern.Draw_Draw_Rect(draw, 100, 100, 400, 400, this.Brush);
 
 

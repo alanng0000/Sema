@@ -12,12 +12,16 @@ public class Frame : CompObject
 
 
     
+        InfraConvert infraConvert;
+
+
+        infraConvert = InfraConvert.This;
 
 
 
         ulong length;
 
-        length = (ulong)this.Title.Length;
+        length = infraConvert.ULong(this.Title.Length);
 
 
 

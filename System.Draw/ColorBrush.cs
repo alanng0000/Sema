@@ -78,12 +78,15 @@ public class ColorBrush : Brush
 
 
 
+
         this.Intern = o;
+
 
 
 
         return true;
     }
+
 
 
 

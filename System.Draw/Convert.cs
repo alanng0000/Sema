@@ -58,22 +58,34 @@ class Convert : InfraObject
 
 
 
+        ulong gg;
 
+        gg = DrawExtern.Draw_Global();
+
+
+
+        ulong cc;
+
+        cc = DrawExtern.Draw_Global_Constant(gg);
+
+
+
+        
         if (style.Bold)
         {
-            t = t | 0;
+            t = t | DrawExtern.Draw_Constant_FontStyleBold(cc);
         }
 
 
         if (style.Italic)
         {
-            t = t | 0;
+            t = t | DrawExtern.Draw_Constant_FontStyleItalic(cc);
         }
 
 
         if (style.Underline)
         {
-            t = t | 0;
+            t = t | DrawExtern.Draw_Constant_FontStyleUnderline(cc);
         }
 
 

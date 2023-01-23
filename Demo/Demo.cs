@@ -14,7 +14,7 @@ class Demo : Object
 
 
 
-    private Control Control { get; set; }
+    public Control Control { get; set; }
 
 
 
@@ -83,7 +83,7 @@ class Demo : Object
 
 
 
-        this.Control.CharInput.Handle.AddHandle(handle);
+        this.Control.Input.Handle.AddHandle(handle);
         
 
 

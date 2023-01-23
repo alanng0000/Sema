@@ -11,37 +11,52 @@ class Handle : EventHandle
 
     public override bool Execute(object arg)
     {
-        CharArg o;
+        KeyArg o;
 
-        o = (CharArg)arg;
-
-
-
-        char c;
-
-        c = o.Char;
+        o = (KeyArg)arg;
 
 
 
-        if (c == 'w')
+        byte k;
+
+        k = o.Key;
+
+
+
+
+
+        KeyList keyList;
+
+        keyList = KeyList.This;
+
+
+
+        bool shift;
+
+        shift = this.Demo.Control.Get(keyList.Shift);
+
+
+
+
+        if (k == 'w')
         {
             this.Demo.GridMoveUp();
         }
 
 
-        if (c == 's')
+        if (k == 's')
         {
             this.Demo.GridMoveDown();
         }
 
 
-        if (c == 'a')
+        if (k == 'a')
         {
             this.Demo.GridMoveLeft();
         }
 
 
-        if (c == 'd')
+        if (k == 'd')
         {
             this.Demo.GridMoveRight();
         }
@@ -49,51 +64,50 @@ class Handle : EventHandle
 
 
 
-        if (c == 'i')
+        if (!shift & k == 'i')
         {
             this.Demo.TextMoveUp();
         }
 
 
-        if (c == 'k')
+        if (!shift & k == 'k')
         {
             this.Demo.TextMoveDown();
         }
 
 
-        if (c == 'j')
+        if (!shift & k == 'j')
         {
             this.Demo.TextMoveLeft();
         }
 
 
-        if (c == 'l')
+        if (!shift & k == 'l')
         {
             this.Demo.TextMoveRight();
         }
 
 
 
-
-        if (c == 'I')
+        if (shift & k == 'i')
         {
             this.Demo.ImageSourceMoveUp();
         }
 
 
-        if (c == 'K')
+        if (shift & k == 'k')
         {
             this.Demo.ImageSourceMoveDown();
         }
 
 
-        if (c == 'J')
+        if (shift & k == 'j')
         {
             this.Demo.ImageSourceMoveLeft();
         }
 
 
-        if (c == 'L')
+        if (shift & k == 'l')
         {
             this.Demo.ImageSourceMoveRight();
         }
@@ -101,7 +115,7 @@ class Handle : EventHandle
 
 
 
-        if (c == 'h')
+        if (k == 'h')
         {
             this.Demo.GridToggleVisible();
         }
@@ -110,7 +124,7 @@ class Handle : EventHandle
 
 
 
-        if (c == 'c')
+        if (k == 'c')
         {
             this.Demo.TextWidthIncrease();
         }
@@ -119,7 +133,7 @@ class Handle : EventHandle
 
 
 
-        if (c == 't')
+        if (k == 't')
         {
             this.Demo.FrameNotVisible();
         }
@@ -128,7 +142,7 @@ class Handle : EventHandle
 
 
 
-        if (c == 'b')
+        if (k == 'b')
         {
             this.Demo.Close();
         }

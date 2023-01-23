@@ -16,6 +16,7 @@ public class Image : InfraObject
 
 
 
+
         this.ComStream = new ComStream();
 
 
@@ -28,13 +29,55 @@ public class Image : InfraObject
 
 
 
+        InternIntern intern;
+
+        intern = InternIntern.This;
+
+
+
+        ulong ou;
+
+        ou = intern.IStreamIUnknown(this.ComStream);
+        
+
+
+
+
+        ulong o;
+
+
+        o = DrawExtern.Draw_Image_New();
+
+
+
+        DrawExtern.Draw_Image_SetStream(o, ou);
+
+
+
+        DrawExtern.Draw_Image_Init(o);
+
+
+
+
+        this.Intern = o;
+
+
+
+
+        ulong sizeU;
+
+        sizeU = DrawExtern.Draw_Image_GetSize(this.Intern);
+
+
+
+
         Convert convert;
 
         convert = Convert.This;
 
 
 
-        this.SizeData = convert.Size(this.WinBitmap.Size);
+        this.SizeData = convert.Size(sizeU);
 
 
 
@@ -77,7 +120,14 @@ public class Image : InfraObject
 
     public virtual bool Final()
     {
+        DrawExtern.Draw_Image_Final(this.Intern);
+
+
+
+        DrawExtern.Draw_Image_Delete(this.Intern);
         
+
+
 
         return true;
     }

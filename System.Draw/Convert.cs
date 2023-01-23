@@ -27,11 +27,6 @@ class Convert : InfraObject
 
 
 
-
-
-
-
-
     public ulong InternColor(Color color)
     {
         this.CompIndex = 0;

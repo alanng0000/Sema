@@ -23,10 +23,12 @@ public class ColorBrush : Brush
 
 
 
+
         ulong internColor;
 
 
         internColor = convert.InternColor(this.Color);
+
 
 
 

@@ -207,6 +207,32 @@ public static class DrawExtern
 
 
 
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Image_New();
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Image_Init(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Image_Final(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Image_Delete(ulong o);
+
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Image_GetStream(ulong o);
+
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Image_SetStream(ulong o, ulong value);
+
+
+
 
 
     [DllImport(DrawDll)]

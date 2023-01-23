@@ -3,7 +3,7 @@ namespace System.Draw;
 
 
 
-public class Convert : InfraObject
+class Convert : InfraObject
 {
     public static Convert This { get; } = CreateGlobal();
 
@@ -29,52 +29,15 @@ public class Convert : InfraObject
 
 
 
-    public WinRectangle WinRectangle(Rect rect)
+
+
+
+    public ulong InternColor(Color color)
     {
-        WinRectangle u;
-
-        u = new WinRectangle(this.WinPoint(rect.Pos), this.WinSize(rect.Size));
+        ulong c;
 
 
-        return u;
-    }
-
-
-
-
-
-    public WinPoint WinPoint(Pos pos)
-    {
-        WinPoint u;
-        
-        u = new WinPoint(pos.Left, pos.Up);
-
-
-        return u;
-    }
-
-
-
-
-    public WinSize WinSize(Size size)
-    {
-        WinSize u;
-        
-        u = new WinSize(size.Width, size.Height);
-
-
-        return u;
-    }
-
-
-
-
-    public WinColor WinColor(Color color)
-    {
-        WinColor c;
-
-
-        c = global::System.Drawing.Color.FromArgb(color.Alpha, color.Red, color.Green, color.Blue);
+        c = 0;
 
 
         return c;
@@ -86,37 +49,37 @@ public class Convert : InfraObject
 
 
 
-    public WinFontStyle WinFontStyle(FontStyle style)
+    public ulong InternFontStyle(FontStyle style)
     {
-        WinFontStyle t;
+        ulong t;
 
 
-        t = global::System.Drawing.FontStyle.Regular;
+        t = 0;
 
 
 
 
         if (style.Bold)
         {
-            t = t | global::System.Drawing.FontStyle.Bold;
+            t = t | 0;
         }
 
 
         if (style.Italic)
         {
-            t = t | global::System.Drawing.FontStyle.Italic;
+            t = t | 0;
         }
 
 
         if (style.Underline)
         {
-            t = t | global::System.Drawing.FontStyle.Underline;
+            t = t | 0;
         }
 
 
 
 
-        WinFontStyle ret;
+        ulong ret;
 
 
         ret = t;
@@ -129,17 +92,44 @@ public class Convert : InfraObject
 
 
 
-    public Size Size(WinSize winSize)
+    public Size Size(ulong internSize)
     {
+        ulong width;
+
+        width = InfraExtern.Size_GetWidth(internSize);
+
+
+        ulong height;
+
+        height = InfraExtern.Size_GetHeight(internSize);
+
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+        int w;
+
+        w = convert.SInt32(width);
+
+
+        int h;
+
+        h = convert.SInt32(height);
+
+
+
         Size u;
         
         u = new Size();
 
         u.Init();
 
-        u.Width = winSize.Width;
+        u.Width = w;
 
-        u.Height = winSize.Height;
+        u.Height = h;
 
 
         return u;

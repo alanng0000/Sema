@@ -2,6 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
     
+    <ItemGroup>
+        <ProjectReference Include="../System.Infra/System.Infra.csproj" />
+    </ItemGroup>
+
 </Project>

@@ -1,5 +1,12 @@
 global using InfraObject = System.Infra.Object;
 global using ObjectInfra = System.Infra.ObjectInfra;
+global using Intern = System.Intern.Intern;
+global using InfraExtern = System.Intern.InfraExtern;
+global using DrawExtern = System.Intern.DrawExtern;
+global using FrameKeyHandleMethod = System.Intern.FrameKeyHandleMethod;
+global using FrameDrawHandleMethod = System.Intern.FrameDrawHandleMethod;
+global using DrawDrawMethod = System.Intern.DrawDrawMethod;
+global using Delegate = System.Delegate;
 global using Map = System.List.Map;
 global using Pair = System.List.Pair;
 global using MapIter = System.List.MapIter;

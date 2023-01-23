@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0-windows</TargetFramework>
-        <UseWindowsForms>true</UseWindowsForms>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="../System.Infra/System.Infra.csproj" />
+        <ProjectReference Include="../System.Intern/Systen.Intern.csproj" />
         <ProjectReference Include="../System.List/System.List.csproj" />
         <ProjectReference Include="../System.Text/System.Text.csproj" />
         <ProjectReference Include="../System.Event/System.Event.csproj" />

@@ -11,39 +11,85 @@ public class Frame : CompObject
 
 
 
-
-        WinRectangle rect;
-        
-
-
-        rect = WinScreen.PrimaryScreen.Bounds;
+    
 
 
 
+        ulong length;
 
-        DrawConvert convert;
+        length = (ulong)title.Length;
 
-        convert = DrawConvert.This;
+
+
+
+        ulong oss;
+
+        oss = InfraExtern.New(length);
+
+
+
+
+        Intern ooo;
+
+        ooo = Intern.This;
+
+
+        ooo.CopyString(title, oss);
+
+
+
+
+        ulong ss;
+
+
+        ss = InfraExtern.String_New();
+
+
+        InfraExtern.String_Init(ss);
+
+
+
+        InfraExtern.String_SetLength(ss, length);
+
+
+        InfraExtern.String_SetData(ss, oss);
+
+
+
+
+
+        Delegate dda;
+
+        dda = new FrameKeyHandleMethod(this.KeyHandle);
+
+
+
+
+        Delegate ddb;
+
+        ddb = new FrameDrawHandleMethod(DrawExtern.Draw_FrameDrawHandle);
+
+
+
+
+        ulong keyHandle;
+
+        keyHandle = ooo.MethodPointer(dda);
+
+
+
+
+        ulong drawHandle;
+
+        drawHandle = ooo.MethodPointer(ddb);
+
+
 
 
 
 
         this.Size = convert.Size(rect.Size);
 
-
-
-
-
-
-        this.Form = new FrameForm();
-
-
-
-        this.Form.Frame = this;
-
-
-    
-        this.Form.Init();
 
 
 
@@ -117,14 +163,14 @@ public class Frame : CompObject
 
 
 
-    private FrameForm Form { get; set; }
-
-
-
-
-
 
     public virtual string Title { get; set; }
+
+
+
+
+
+    private ulong Intern { get; set; }
 
 
 
@@ -219,15 +265,9 @@ public class Frame : CompObject
 
     public virtual bool Execute()
     {
-        WinCursor.Hide();
+        
 
 
-
-
-        WinApplication.AddMessageFilter(this.Form);
-
-
-        WinApplication.Run(this.Form);
 
 
 

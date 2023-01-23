@@ -24,43 +24,11 @@ class Constant : InfraObject
 
 
 
-
-
     public override bool Init()
     {
         base.Init();
 
 
-
-        this.InitTextFormatFlag();
-
-
-
-        return true;
-    }
-
-
-
-
-
-    public WinTextFormatFlags TextFormatFlag { get; private set; }
-
-
-
-
-
-
-
-
-    private bool InitTextFormatFlag()
-    {
-        this.TextFormatFlag = 
-        
-        WinTextFormatFlags.Left | 
-        WinTextFormatFlags.Top | 
-        WinTextFormatFlags.NoPadding |
-        WinTextFormatFlags.NoPrefix |
-        WinTextFormatFlags.PreserveGraphicsClipping;
 
 
         return true;

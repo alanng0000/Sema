@@ -14,11 +14,6 @@ public class Draw : InfraObject
 
 
 
-    public Handle Handle { get; set; }
-
-
-
-
 
     public override bool Init()
     {
@@ -117,42 +112,6 @@ public class Draw : InfraObject
 
 
 
-        
-        InternIntern intern;
-
-
-        intern = InternIntern.This;
-
-
-
-
-        DrawDrawMethod del;
-
-        del = new DrawDrawMethod(this.DrawExecute);
-
-
-
-        Delegate ddc;
-
-        ddc = del;
-
-
-        this.Del = ddc;
-
-
-
-
-        ulong drawMethod;
-
-
-        drawMethod = intern.MethodPointer(this.Del);
-
-
-
-
-        DrawExtern.Draw_Draw_SetMethod(draw, drawMethod);
-
-
 
 
         this.Intern = draw;
@@ -192,31 +151,16 @@ public class Draw : InfraObject
 
 
 
-    private ulong DrawExecute(ulong u)
-    {
-        this.Handle.Execute(this);
-
-
-
-        return 1;        
-    }
-
-
-
-
 
     private ulong InternSize { get; set; }
 
 
 
 
-    internal ulong Intern { get; set; }
+    private ulong Intern { get; set; }
 
 
 
-
-    private SystemDelegate Del { get; set; }
-    
 
 
 

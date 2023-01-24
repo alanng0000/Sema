@@ -304,22 +304,22 @@ public class KeyList : InfraObject
 
 
 
-        this.Space = this.AddSignKey(0, ' ', ' ');
+        this.Space = this.AddSignKey(0x20, ' ', ' ');
 
 
-        this.BackTick = this.AddSignKey(0, '`', '~');
+        this.BackTick = this.AddSignKey(0xc0, '`', '~');
 
 
-        this.Dash = this.AddSignKey(0, '-', '_');
+        this.Dash = this.AddSignKey(0xbd, '-', '_');
 
 
-        this.EqualSign = this.AddSignKey(0, '=', '+');
+        this.EqualSign = this.AddSignKey(0xbb, '=', '+');
 
 
-        this.LeftSquare = this.AddSignKey(0, '[', '{');
+        this.LeftSquare = this.AddSignKey(0xdb, '[', '{');
 
 
-        this.RightSquare = this.AddSignKey(0, ']', '}');
+        this.RightSquare = this.AddSignKey(0xdd, ']', '}');
 
 
         this.SemiColon = this.AddSignKey(0, ';', ':');

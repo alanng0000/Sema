@@ -55,6 +55,13 @@ public static class DrawExtern
 
 
 
+
+    [DllImport(DrawDll)]
+    public static extern ulong Draw_Draw_Result(ulong o);
+
+
+
+
     [DllImport(DrawDll)]
     public static extern ulong Draw_Draw_Clear(ulong o, ulong color);
 

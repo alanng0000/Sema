@@ -17,7 +17,7 @@ class Handle : EventHandle
 
 
 
-        byte k;
+        Key k;
 
         k = o.Key;
 
@@ -37,39 +37,50 @@ class Handle : EventHandle
 
 
 
+        Control control;
 
-        KeyList keyList;
+        control = this.Demo.Control;
 
-        keyList = KeyList.This;
+
+
+        KeyList u;
+
+        u = control.Key;
+
+
+
+        int a;
+
+        a = u.Shift.Index;
 
 
 
         bool shift;
 
-        shift = this.Demo.Control.Get(keyList.Shift);
+        shift = control.Get(a);
 
 
 
 
-        if (!shift & k == 'W')
+        if (!shift & k == u.LetterW)
         {
             this.Demo.GridMoveUp();
         }
 
 
-        if (!shift & k == 'S')
+        if (!shift & k == u.LetterS)
         {
             this.Demo.GridMoveDown();
         }
 
 
-        if (!shift & k == 'A')
+        if (!shift & k == u.LetterA)
         {
             this.Demo.GridMoveLeft();
         }
 
 
-        if (!shift & k == 'D')
+        if (!shift & k == u.LetterD)
         {
             this.Demo.GridMoveRight();
         }

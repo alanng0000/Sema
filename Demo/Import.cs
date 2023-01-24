@@ -1,6 +1,7 @@
 global using Object = System.Infra.Object;
 global using EventHandle = System.Event.Handle;
 global using Control = System.Control.Control;
+global using Key = System.Control.Key;
 global using KeyList = System.Control.KeyList;
 global using KeyArg = System.Control.KeyArg;
 global using ColorBrush = System.Draw.ColorBrush;

@@ -722,7 +722,7 @@ public class KeyList : InfraObject
 
 
     private int DigitEnd { get; set; }
-    
+
 
 
 
@@ -781,18 +781,6 @@ public class KeyList : InfraObject
     }
 
 
-
-
-
-    private byte CharByte(char o)
-    {
-        InfraConvert convert;
-
-        convert = InfraConvert.This;
-
-
-        return convert.CharByte(o);
-    }
 
 
 

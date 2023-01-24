@@ -32,6 +32,7 @@ public class Frame : CompObject
 
 
 
+
         this.InternTitleData = oss;
 
 
@@ -436,8 +437,23 @@ public class Frame : CompObject
 
 
 
-    internal bool ExecuteDraw()
+    private bool ExecuteDraw()
     {
+        Constant constant;
+
+
+        constant = Constant.This;
+
+
+
+
+        this.Draw.Clear(constant.WhiteColor);
+
+
+
+
+
+
         this.Draw.Pos = this.Pos;
 
 
@@ -472,6 +488,13 @@ public class Frame : CompObject
 
 
         view.Draw(this.Draw);
+
+
+
+
+
+
+        this.Draw.Result();
 
 
 

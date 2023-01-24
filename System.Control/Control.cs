@@ -42,7 +42,11 @@ public class Control : InfraObject
 
 
 
-        this.KeyList = new bool[count];
+        this.KeyList = new Key[count];
+
+
+
+        this.StateList = new bool[count];
 
 
 
@@ -81,18 +85,25 @@ public class Control : InfraObject
 
 
 
-    public virtual bool Get(byte key)
+    public virtual bool Get(byte index)
     {
-        return this.KeyList[key];
+        return this.StateList[index];
     }
 
 
 
 
 
-    public virtual bool Set(byte key, bool state)
+    public virtual bool Set(byte index, bool state)
     {
-        this.KeyList[key] = state;
+        this.StateList[index]= state;
+        
+        
+
+
+        Key key;
+
+        key = this.KeyList[index];
 
 
 
@@ -116,9 +127,9 @@ public class Control : InfraObject
 
 
 
-    public KeyChar Char(byte key)
+    public Key Key(byte index)
     {
-        return this.KeyCharList[key];
+        return this.KeyList[index];
     }
 
 
@@ -133,82 +144,43 @@ public class Control : InfraObject
 
 
 
-    public bool IsLetterKey(byte key)
+    public bool IsLetterKey(byte index)
     {
-        return 'A' <= key && key <= 'Z';
+        return 'A' <= index && index <= 'Z';
     }
 
 
 
-    public bool IsDigitKey(byte key)
+    public bool IsDigitKey(byte index)
     {
-        return '0' <= key && key <= '9';
-    }
-
-
-
-
-    public int LetterIndex(byte key)
-    {
-        return this.KeyIndex(key, 'A');
-    }
-
-
-
-    public int DigitIndex(byte key)
-    {
-        return this.KeyIndex(key, '0');
+        return '0' <= index && index <= '9';
     }
 
 
 
 
-    private int KeyIndex(byte key, int start)
-    {
-        int k;
-
-
-        k = key;
-
-
-        k = k - start;
-
-
-
-        int ret;
-
-
-        ret = k;
-
-
-        return ret;
-    }
-
-
-
-
-    public byte LetterKey(int index)
+    public Key LetterKey(int letterIndex)
     {
         int cc;
         
         cc = 'A';
 
 
-        return this.IndexKey(index, cc);
+        return this.IndexKey(letterIndex, cc);
     }
 
 
 
 
 
-    public byte DigitKey(int index)
+    public Key DigitKey(int digitIndex)
     {
         int cc;
         
         cc = '0';
 
 
-        return this.IndexKey(index, cc);
+        return this.IndexKey(digitIndex, cc);
     }
 
 
@@ -216,7 +188,7 @@ public class Control : InfraObject
 
 
 
-    private byte IndexKey(int index, int start)
+    private Key IndexKey(int index, int start)
     {
         int k;
 
@@ -231,9 +203,16 @@ public class Control : InfraObject
 
 
 
-        byte ret;
+        Key key;
 
-        ret = o;
+        key = this.Key(o);
+
+
+
+
+        Key ret;
+
+        ret = key;
 
 
         return ret;
@@ -262,10 +241,9 @@ public class Control : InfraObject
 
 
 
-    protected virtual bool[] KeyList { get; set; }
+    protected virtual Key[] KeyList { get; set; }
 
 
 
-
-    private KeyChar[] KeyCharList { get; set; }
+    protected virtual bool[] StateList { get; set; }
 }

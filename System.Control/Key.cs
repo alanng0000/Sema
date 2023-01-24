@@ -8,9 +8,5 @@ public class Key : InfraObject
 
 
 
-    public bool State { get; set; }
-
-
-
     public KeyChar Char { get; set; }
 }

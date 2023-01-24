@@ -222,17 +222,6 @@ public class Control : InfraObject
 
 
 
-    public int KeyCount
-    {
-        get
-        {
-            return this.KeyList.Length;
-        }
-    }
-
-
-
-
 
     public virtual EventEvent Input
     {
@@ -252,7 +241,7 @@ public class Control : InfraObject
 
 
 
-    protected virtual Key[] KeyList { get; set; }
+    protected virtual KeyList KeyList { get; set; }
 
 
 

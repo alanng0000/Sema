@@ -24,6 +24,87 @@ public class KeyList : InfraObject
 
 
 
+    public Key LetterA { get; private set; }
+
+
+    public Key LetterB { get; private set; }
+
+
+    public Key LetterC { get; private set; }
+
+
+    public Key LetterD { get; private set; }
+
+
+    public Key LetterE { get; private set; }
+
+
+    public Key LetterF { get; private set; }
+
+
+    public Key LetterG { get; private set; }
+
+
+    public Key LetterH { get; private set; }
+
+
+    public Key LetterI { get; private set; }
+
+
+    public Key LetterJ { get; private set; }
+
+
+    public Key LetterK { get; private set; }
+
+
+    public Key LetterL { get; private set; }
+
+
+    public Key LetterM { get; private set; }
+
+
+    public Key LetterN { get; private set; }
+
+
+    public Key LetterO { get; private set; }
+
+
+    public Key LetterP { get; private set; }
+
+
+    public Key LetterQ { get; private set; }
+
+
+    public Key LetterR { get; private set; }
+
+
+    public Key LetterS { get; private set; }
+
+
+    public Key LetterT { get; private set; }
+
+
+    public Key LetterU { get; private set; }
+
+
+    public Key LetterV { get; private set; }
+
+
+    public Key LetterW { get; private set; }
+
+
+    public Key LetterX { get; private set; }
+
+
+    public Key LetterY { get; private set; }
+
+
+    public Key LetterZ { get; private set; }
+
+
+
+
+    
 
 
 
@@ -66,58 +147,54 @@ public class KeyList : InfraObject
 
 
 
+        int count;
 
 
-
-        this.Code = 0x0d;
-
-
-
-        this.Enter = this.AddKey();
+        count = 0x100;
 
 
 
 
-
-
-        this.Code = 0x09;
-
-
-
-        this.Tab = this.AddKey();
+        this.List = new Key[count];
 
 
 
 
 
 
-        this.Code = 0x10;
 
-
-
-        this.Shift = this.AddKey();
+        this.Enter = this.AddKey(0x0d);
 
 
 
 
 
-        this.Code = 0x11;
+
+        this.Tab = this.AddKey(0x09);
 
 
 
-        this.Control = this.AddKey();
+
+
+        this.Shift = this.AddKey(0x10);
+
+
+
+
+
+        this.Control = this.AddKey(0x11);
         
 
 
 
 
-
-        this.Code = 0x08;
-
+        this.Backspace = this.AddKey(0x08);
 
 
-        this.Backspace = this.AddKey();
 
+
+
+        this.InitCodeList();
 
 
 
@@ -130,35 +207,61 @@ public class KeyList : InfraObject
 
 
 
-
-
-    private Key AddKey()
+    private bool InitCodeList()
     {
-        int k;
-
-        k = this.Code;
+        this.CodeList = new Key[this.List.Length];
 
 
+        int count;
 
-        byte o;
-
-        o = (byte)k;
-
-
-        
-
-        this.Code = this.Code + 1;
+        count = this.List.Length;
 
 
+        int i;
+
+        i = 0;
+
+        while (i < count)
+        {
+            Key key;
 
 
+            key = this.List[i];
+
+
+
+            this.CodeList[key.Code] = key;
+
+
+
+            i = i + 1;
+        }
+
+
+        return true;
+    }
+
+
+
+
+    private Key AddKey(byte code)
+    {
         Key key;
 
         key = new Key();
 
         key.Init();
 
-        key.Index = o;
+        key.Index = this.Index;
+
+        key.Code = code;
+
+
+
+
+
+        this.Index = this.Index + 1;
+        
 
 
     
@@ -176,6 +279,27 @@ public class KeyList : InfraObject
 
 
 
+    public int Count
+    {
+        get
+        {
+            return this.List.Length;
+        }
+    }
 
-    private int Code { get; set; }
+
+
+
+
+
+    private Key[] List { get; set; }
+
+
+
+    private Key[] CodeList { get; set; }
+
+
+
+
+    private int Index { get; set; }
 }

@@ -230,7 +230,7 @@ class AView : View
 
         string imageFileName;
 
-        imageFileName = "sun_and_cloud.jpg";
+        imageFileName = "sun_and_cloud.img";
 
 
 
@@ -241,12 +241,19 @@ class AView : View
 
 
 
+        ulong streamSize;
+
+        streamSize = (ulong)stream.Length;
+
+
 
         DrawImage drawImage;
 
         drawImage = new DrawImage();
 
         drawImage.Stream = stream;
+
+        drawImage.StreamSize = streamSize;
 
         drawImage.Init();
 

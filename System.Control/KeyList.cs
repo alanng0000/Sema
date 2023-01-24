@@ -745,7 +745,7 @@ public class KeyList : InfraObject
     {
         int cc;
         
-        cc = 26;
+        cc = this.LetterEnd;
 
 
         return this.IndexKey(digitIndex, cc);

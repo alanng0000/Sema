@@ -261,6 +261,10 @@ public class KeyList : InfraObject
 
 
 
+        this.List[key.Index] = key;
+        
+
+
 
         this.Index = this.Index + 1;
         

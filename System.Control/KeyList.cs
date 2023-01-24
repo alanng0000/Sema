@@ -325,6 +325,7 @@ public class KeyList : InfraObject
 
 
 
+
     private Key AddLetterKey()
     {
         int k;
@@ -344,11 +345,13 @@ public class KeyList : InfraObject
         key = this.AddKey(code);
 
 
+
         KeyChar oo;
 
         oo = new KeyChar();
 
         oo.Init();
+
 
 
 
@@ -395,7 +398,79 @@ public class KeyList : InfraObject
 
 
 
+
+    private Key AddDigitKey(char shiftChar)
+    {
+        int k;
+
+        k = this.DigitIndex + '0';
+
+
+
+        byte code;
+
+        code = (byte)k;
+
+
+
+
+        Key key;
+
+        key = this.AddKey(code);
+
+
+
+        KeyChar oo;
+
+        oo = new KeyChar();
+
+        oo.Init();
+
+
+
+
+        char defaultChar;
+
+        defaultChar = (char)k;
+
+
+
+        oo.Default = defaultChar;
+
+        oo.Shift = shiftChar;
+
+
+
+
+        key.Char = oo;
+
+
+
+
+        this.DigitIndex = this.DigitIndex + 1;
+
+
+
+
+        Key ret;
+
+        ret = key;
+
+        return ret;
+    }
+
+
+
+
+
+
     private int LetterIndex { get; set; }
+
+
+
+
+    private int DigitIndex { get; set; }
+
 
 
 

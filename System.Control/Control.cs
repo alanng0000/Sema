@@ -37,7 +37,7 @@ public class Control : InfraObject
         int count;
 
 
-        count = System.Control.KeyList.This.Count;
+        count = 0x100;
 
 
 
@@ -218,6 +218,17 @@ public class Control : InfraObject
         return ret;
     }
 
+
+
+
+
+    public int KeyCount
+    {
+        get
+        {
+            return this.KeyList.Length;
+        }
+    }
 
 
 

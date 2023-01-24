@@ -487,6 +487,45 @@ public class KeyList : InfraObject
 
 
 
+    private Key AddSignKey(byte code, char defaultChar, char shiftChar)
+    {
+        Key key;
+
+        key = this.AddKey(code);
+
+
+
+        KeyChar oo;
+
+        oo = new KeyChar();
+
+        oo.Init();
+
+
+
+        oo.Default = defaultChar;
+
+        oo.Shift = shiftChar;
+
+
+
+
+        key.Char = oo;
+
+
+
+
+        Key ret;
+
+        ret = key;
+
+        return ret;
+    }
+
+
+
+
+
 
     private int LetterIndex { get; set; }
 

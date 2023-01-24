@@ -273,6 +273,12 @@ public class Frame : CompObject
 
     public virtual bool Final()
     {
+        this.Draw.Final();
+        
+
+
+
+
         InfraExtern.Frame_Final(this.Intern);
 
 

@@ -584,6 +584,14 @@ public class KeyList : InfraObject
 
 
 
+    public Key CodeGet(byte code)
+    {
+        return this.CodeList[code];
+    }
+
+
+
+
 
     public bool IsLetterKey(int index)
     {

@@ -304,6 +304,45 @@ public class KeyList : InfraObject
 
 
 
+        this.Space = this.AddSignKey(0, '.', '.');
+
+
+        this.BackTick = this.AddSignKey(0, '.', '.');
+
+
+        this.Dash = this.AddSignKey(0, '.', '.');
+
+
+        this.EqualSign = this.AddSignKey(0, '.', '.');
+
+
+        this.LeftSquare = this.AddSignKey(0, '.', '.');
+
+
+        this.RightSquare = this.AddSignKey(0, '.', '.');
+
+
+        this.SemiColon = this.AddSignKey(0, '.', '.');
+
+
+        this.SingleQuote = this.AddSignKey(0, '.', '.');
+
+
+        this.Comma = this.AddSignKey(0, '.', '.');
+
+
+        this.Dot = this.AddSignKey(0, '.', '.');
+
+
+        this.Slash = this.AddSignKey(0, '.', '.');
+
+
+        this.BackSlash = this.AddSignKey(0, '.', '.');
+
+
+
+
+
         this.Enter = this.AddKey(0x0d);
 
 

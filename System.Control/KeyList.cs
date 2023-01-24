@@ -175,6 +175,8 @@ public class KeyList : InfraObject
 
 
 
+
+
     public Key Enter { get; private set; }
 
 
@@ -200,6 +202,7 @@ public class KeyList : InfraObject
 
 
 
+    public Key CapLock { get; private set; }
 
 
 
@@ -349,7 +352,6 @@ public class KeyList : InfraObject
 
 
 
-
         this.Tab = this.AddKey(0x09);
 
 
@@ -369,6 +371,13 @@ public class KeyList : InfraObject
 
 
         this.Backspace = this.AddKey(0x08);
+
+
+
+
+
+        this.CapLock = this.AddKey(0x14);
+
 
 
 

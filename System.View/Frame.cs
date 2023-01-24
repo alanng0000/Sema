@@ -413,7 +413,27 @@ public class Frame : CompObject
 
 
 
-        this.Control.Set(ko, vo);
+        ControlKey u;
+
+        u = this.Control.Key.CodeGet(ko);
+
+
+
+
+        int index;
+
+        index = u.Index;
+
+
+
+        bool state;
+
+        state = vo;
+
+
+
+        this.Control.Set(index, state);
+
 
 
 

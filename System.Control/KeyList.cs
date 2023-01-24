@@ -322,22 +322,22 @@ public class KeyList : InfraObject
         this.RightSquare = this.AddSignKey(0xdd, ']', '}');
 
 
-        this.SemiColon = this.AddSignKey(0, ';', ':');
+        this.SemiColon = this.AddSignKey(0xba, ';', ':');
 
 
-        this.SingleQuote = this.AddSignKey(0, '\'', '"');
+        this.SingleQuote = this.AddSignKey(0xde, '\'', '"');
 
 
-        this.Comma = this.AddSignKey(0, ',', '<');
+        this.Comma = this.AddSignKey(0xbc, ',', '<');
 
 
-        this.Dot = this.AddSignKey(0, '.', '>');
+        this.Dot = this.AddSignKey(0xbe, '.', '>');
 
 
-        this.Slash = this.AddSignKey(0, '/', '?');
+        this.Slash = this.AddSignKey(0xbf, '/', '?');
 
 
-        this.BackSlash = this.AddSignKey(0, '\\', '|');
+        this.BackSlash = this.AddSignKey(0xdc, '\\', '|');
 
 
 

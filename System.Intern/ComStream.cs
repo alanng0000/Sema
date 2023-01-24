@@ -49,8 +49,21 @@ public class ComStream : InfraObject, IStream
     public void Stat(out STATSTG pstatstg, int grfStatFlag)
     {
         pstatstg = new STATSTG();
+
+        pstatstg.type = this.STGTY_STREAM;
+        
+        pstatstg.grfMode = this.STGM_READ;
+
         pstatstg.cbSize = this.Stream.Length;
     }
+
+
+
+    private int STGM_READ { get { return 0; } }
+
+
+
+    private int STGTY_STREAM { get { return 2; } }
 
 
 

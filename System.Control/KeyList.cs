@@ -289,14 +289,14 @@ public class KeyList : InfraObject
 
 
 
-    public bool IsLetterKey(byte index)
+    public bool IsLetterKey(int index)
     {
         return 0 <= index && index <= 25;
     }
 
 
 
-    public bool IsDigitKey(byte index)
+    public bool IsDigitKey(int index)
     {
         return 26 <= index && index <= 35;
     }

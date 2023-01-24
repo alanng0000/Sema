@@ -175,6 +175,19 @@ public class Draw : InfraObject
 
 
 
+    public bool Result()
+    {
+        DrawExtern.Draw_Draw_Result(this.Intern);
+
+
+
+        return true;
+    }
+
+
+
+
+
     public bool Clip()
     {
         InfraConvert convert;

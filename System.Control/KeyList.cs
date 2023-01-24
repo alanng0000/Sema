@@ -150,7 +150,7 @@ public class KeyList : InfraObject
         int count;
 
 
-        count = 0x100;
+        count = 26 + 10 + 5;
 
 
 
@@ -212,9 +212,11 @@ public class KeyList : InfraObject
         this.CodeList = new Key[this.List.Length];
 
 
+
         int count;
 
         count = this.List.Length;
+
 
 
         int i;

@@ -8,6 +8,9 @@ public class Image : InfraObject
     public Stream Stream { get; set; }
 
 
+    public ulong StreamSize { get; set; }
+
+
 
 
     public override bool Init()
@@ -18,27 +21,47 @@ public class Image : InfraObject
 
 
 
+
+        ulong buffer;
+
+
+        buffer = InfraExtern.New(this.StreamSize);
+
+
+
+
         InternIntern intern;
+
 
         intern = InternIntern.This;
 
 
 
-
-        ulong u;
-
-        u = 0;
+        intern.ReadStream(this.Stream, buffer, this.StreamSize);
 
 
 
-        object ou;
-
-        ou = intern.ImageStream(this.Stream, ref u);
-        
 
 
+        ulong data;
 
-        this.InternStream = ou;
+
+        data = InfraExtern.Data_New();
+
+
+
+        InfraExtern.Data_Init(data);
+
+
+
+        InfraExtern.Data_SetSize(data, this.StreamSize);
+
+
+
+        InfraExtern.Data_SetValue(data, buffer);
+
+
+
 
 
 
@@ -51,7 +74,7 @@ public class Image : InfraObject
 
 
 
-        DrawExtern.Draw_Image_SetStream(o, u);
+        DrawExtern.Draw_Image_SetData(o, data);
 
 
 
@@ -61,6 +84,14 @@ public class Image : InfraObject
 
 
         this.Intern = o;
+
+
+
+        this.InternData = data;
+
+
+
+        this.InternDataValue = buffer;
 
 
 
@@ -91,12 +122,6 @@ public class Image : InfraObject
 
 
 
-    private object InternStream { get; set; }
-
-
-
-
-
     public Size Size
     {
         get
@@ -118,6 +143,14 @@ public class Image : InfraObject
 
 
 
+    private ulong InternData { get; set; }
+
+
+    
+    private ulong InternDataValue { get; set; }
+
+
+
 
 
 
@@ -128,7 +161,20 @@ public class Image : InfraObject
 
 
         DrawExtern.Draw_Image_Delete(this.Intern);
-        
+
+
+
+
+        InfraExtern.Data_Final(this.InternData);
+
+
+
+        InfraExtern.Data_Delete(this.InternData);
+
+
+
+
+        InfraExtern.Delete(this.InternDataValue);
 
 
 

@@ -156,7 +156,7 @@ public class KeyList : InfraObject
 
     public Key SemiColon { get; private set; }
 
-    
+
     public Key SingleQuote { get; private set; }
 
 
@@ -168,7 +168,7 @@ public class KeyList : InfraObject
 
     public Key Slash { get; private set; }
 
-    
+
     public Key BackSlash { get; private set; }
 
 

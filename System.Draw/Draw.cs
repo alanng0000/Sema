@@ -175,6 +175,34 @@ public class Draw : InfraObject
 
 
 
+
+    public bool Clear(Color color)
+    {
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+        ulong colorU;
+
+
+        colorU = convert.InternColor(color);
+
+
+
+        DrawExtern.Draw_Draw_Clear(this.Intern, colorU);
+
+
+
+        return true;
+    }
+
+
+
+
+
+
     public bool Result()
     {
         DrawExtern.Draw_Draw_Result(this.Intern);

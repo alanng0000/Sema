@@ -104,7 +104,7 @@ public class KeyList : InfraObject
 
 
 
-    
+
 
 
 
@@ -273,6 +273,89 @@ public class KeyList : InfraObject
         return ret;
     }
 
+
+
+
+
+
+    public Key Get(int index)
+    {
+        return this.List[index];
+    }
+
+
+
+
+
+
+
+    public bool IsLetterKey(byte index)
+    {
+        return 0 <= index && index <= 25;
+    }
+
+
+
+    public bool IsDigitKey(byte index)
+    {
+        return 26 <= index && index <= 35;
+    }
+
+
+
+
+    public Key LetterKey(int letterIndex)
+    {
+        int cc;
+        
+        cc = 0;
+
+
+        return this.IndexKey(letterIndex, cc);
+    }
+
+
+
+
+
+    public Key DigitKey(int digitIndex)
+    {
+        int cc;
+        
+        cc = 26;
+
+
+        return this.IndexKey(digitIndex, cc);
+    }
+
+
+
+
+
+
+    private Key IndexKey(int index, int start)
+    {
+        int k;
+
+        k = start + index;
+
+
+
+
+        Key key;
+
+        key = this.Get(k);
+
+
+
+
+        Key ret;
+
+        ret = key;
+
+
+        return ret;
+    }
 
 
 

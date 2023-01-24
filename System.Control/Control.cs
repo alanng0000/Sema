@@ -34,19 +34,18 @@ public class Control : InfraObject
         
 
 
-        int count;
-
-
-        count = 0x100;
 
 
 
-
-        this.KeyList = new Key[count];
-
+        this.KeyList = new KeyList();
 
 
-        this.StateList = new bool[count];
+        this.KeyList.Init();
+
+
+
+
+        this.StateList = new bool[this.KeyList.Count];
 
 
 
@@ -103,7 +102,7 @@ public class Control : InfraObject
 
         Key key;
 
-        key = this.KeyList[index];
+        key = this.KeyList.Get(index);
 
 
 
@@ -127,9 +126,12 @@ public class Control : InfraObject
 
 
 
-    public Key Key(byte index)
+    public KeyList Key
     {
-        return this.KeyList[index];
+        get
+        {
+            return this.KeyList;
+        }
     }
 
 
@@ -143,80 +145,6 @@ public class Control : InfraObject
 
 
 
-
-    public bool IsLetterKey(byte index)
-    {
-        return 'A' <= index && index <= 'Z';
-    }
-
-
-
-    public bool IsDigitKey(byte index)
-    {
-        return '0' <= index && index <= '9';
-    }
-
-
-
-
-    public Key LetterKey(int letterIndex)
-    {
-        int cc;
-        
-        cc = 'A';
-
-
-        return this.IndexKey(letterIndex, cc);
-    }
-
-
-
-
-
-    public Key DigitKey(int digitIndex)
-    {
-        int cc;
-        
-        cc = '0';
-
-
-        return this.IndexKey(digitIndex, cc);
-    }
-
-
-
-
-
-
-    private Key IndexKey(int index, int start)
-    {
-        int k;
-
-        k = start + index;
-
-
-
-        byte o;
-
-        o = (byte)k;
-
-
-
-
-        Key key;
-
-        key = this.Key(o);
-
-
-
-
-        Key ret;
-
-        ret = key;
-
-
-        return ret;
-    }
 
 
 

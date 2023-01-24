@@ -1,1 +1,0 @@
-[assembly: InternalsVisibleTo("System.View")]

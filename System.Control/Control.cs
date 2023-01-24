@@ -84,7 +84,7 @@ public class Control : InfraObject
 
 
 
-    public virtual bool Get(byte index)
+    public virtual bool Get(int index)
     {
         return this.StateList[index];
     }
@@ -93,7 +93,7 @@ public class Control : InfraObject
 
 
 
-    public virtual bool Set(byte index, bool state)
+    public virtual bool Set(int index, bool state)
     {
         this.StateList[index]= state;
         
@@ -102,7 +102,7 @@ public class Control : InfraObject
 
         Key key;
 
-        key = this.KeyList.Get(index);
+        key = this.Key.Get(index);
 
 
 
@@ -131,6 +131,9 @@ public class Control : InfraObject
         get
         {
             return this.KeyList;
+        }
+        set
+        {
         }
     }
 

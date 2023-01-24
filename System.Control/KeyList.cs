@@ -217,7 +217,7 @@ public class KeyList : InfraObject
         int count;
 
 
-        count = 26 + 10 + 5;
+        count = 26 + 10 + 12 + 6;
 
 
 
@@ -398,13 +398,13 @@ public class KeyList : InfraObject
 
     private bool InitCodeList()
     {
-        this.CodeList = new Key[this.List.Length];
+        this.CodeList = new Key[0x100];
 
 
 
         int count;
 
-        count = this.List.Length;
+        count = this.Count;
 
 
 

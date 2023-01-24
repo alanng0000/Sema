@@ -104,7 +104,34 @@ public class KeyList : InfraObject
 
 
 
+    public Key Digit0 { get; private set; }
 
+
+    public Key Digit1 { get; private set; }
+
+
+    public Key Digit2 { get; private set; }
+
+
+    public Key Digit3 { get; private set; }
+
+
+    public Key Digit4 { get; private set; }
+
+
+    public Key Digit5 { get; private set; }
+
+
+    public Key Digit6 { get; private set; }
+
+
+    public Key Digit7 { get; private set; }
+
+
+    public Key Digit8 { get; private set; }
+
+
+    public Key Digit9 { get; private set; }
 
 
 

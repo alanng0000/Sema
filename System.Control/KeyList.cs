@@ -188,57 +188,57 @@ public class KeyList : InfraObject
 
 
 
-        this.LetterA = this.AddKey(this.CharByte('A'));
+        this.LetterA = this.AddLetterKey();
 
-        this.LetterB = this.AddKey(this.CharByte('B'));
+        this.LetterB = this.AddLetterKey();
 
-        this.LetterC = this.AddKey(this.CharByte('C'));
+        this.LetterC = this.AddLetterKey();
 
-        this.LetterD = this.AddKey(this.CharByte('D'));
+        this.LetterD = this.AddLetterKey();
 
-        this.LetterE = this.AddKey(this.CharByte('E'));
+        this.LetterE = this.AddLetterKey();
 
-        this.LetterF = this.AddKey(this.CharByte('F'));
+        this.LetterF = this.AddLetterKey();
 
-        this.LetterG = this.AddKey(this.CharByte('G'));
+        this.LetterG = this.AddLetterKey();
 
-        this.LetterH = this.AddKey(this.CharByte('H'));
+        this.LetterH = this.AddLetterKey();
 
-        this.LetterI = this.AddKey(this.CharByte('I'));
+        this.LetterI = this.AddLetterKey();
 
-        this.LetterJ = this.AddKey(this.CharByte('J'));
+        this.LetterJ = this.AddLetterKey();
 
-        this.LetterK = this.AddKey(this.CharByte('K'));
+        this.LetterK = this.AddLetterKey();
 
-        this.LetterL = this.AddKey(this.CharByte('L'));
+        this.LetterL = this.AddLetterKey();
 
-        this.LetterM = this.AddKey(this.CharByte('M'));
+        this.LetterM = this.AddLetterKey();
 
-        this.LetterN = this.AddKey(this.CharByte('N'));
+        this.LetterN = this.AddLetterKey();
 
-        this.LetterO = this.AddKey(this.CharByte('O'));
+        this.LetterO = this.AddLetterKey();
 
-        this.LetterP = this.AddKey(this.CharByte('P'));
+        this.LetterP = this.AddLetterKey();
 
-        this.LetterQ = this.AddKey(this.CharByte('Q'));
+        this.LetterQ = this.AddLetterKey();
 
-        this.LetterR = this.AddKey(this.CharByte('R'));
+        this.LetterR = this.AddLetterKey();
 
-        this.LetterS = this.AddKey(this.CharByte('S'));
+        this.LetterS = this.AddLetterKey();
 
-        this.LetterT = this.AddKey(this.CharByte('T'));
+        this.LetterT = this.AddLetterKey();
 
-        this.LetterU = this.AddKey(this.CharByte('U'));
+        this.LetterU = this.AddLetterKey();
 
-        this.LetterV = this.AddKey(this.CharByte('V'));
+        this.LetterV = this.AddLetterKey();
 
-        this.LetterW = this.AddKey(this.CharByte('W'));
+        this.LetterW = this.AddLetterKey();
 
-        this.LetterX = this.AddKey(this.CharByte('X'));
+        this.LetterX = this.AddLetterKey();
 
-        this.LetterY = this.AddKey(this.CharByte('Y'));
+        this.LetterY = this.AddLetterKey();
 
-        this.LetterZ = this.AddKey(this.CharByte('Z'));
+        this.LetterZ = this.AddLetterKey();
 
 
 
@@ -322,6 +322,80 @@ public class KeyList : InfraObject
 
         return true;
     }
+
+
+
+    private Key AddLetterKey()
+    {
+        int k;
+
+        k = this.LetterIndex + 'A';
+
+
+
+        byte code;
+
+        code = (byte)k;
+
+
+
+        Key key;
+
+        key = this.AddKey(code);
+
+
+        KeyChar oo;
+
+        oo = new KeyChar();
+
+        oo.Init();
+
+
+
+        int u;
+
+        u = this.LetterIndex + 'a';
+
+
+
+        char defaultChar;
+
+        defaultChar = (char)u;
+
+
+
+        char shiftChar;
+
+        shiftChar = (char)k;
+
+
+
+        oo.Default = defaultChar;
+
+        oo.Shift = shiftChar;
+
+
+
+        key.Char = oo;
+
+
+
+        this.LetterIndex = this.LetterIndex + 1;
+
+
+
+
+        Key ret;
+
+        ret = key;
+
+        return ret;
+    }
+
+
+
+
+    private int LetterIndex { get; set; }
 
 
 

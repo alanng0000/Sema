@@ -138,17 +138,6 @@ public class Control : InfraObject
 
 
 
-    private char IntChar(int o)
-    {
-        return (char)o;
-    }
-
-
-
-
-
-
-
 
 
     public virtual EventEvent Input

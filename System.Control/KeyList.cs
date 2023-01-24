@@ -136,6 +136,43 @@ public class KeyList : InfraObject
 
 
 
+    public Key Space { get; private set; }
+
+
+    public Key BackTick { get; private set; }
+
+
+    public Key Dash { get; private set; }
+
+
+    public Key EqualSign { get; private set; }
+
+
+    public Key LeftSquare { get; private set; }
+
+
+    public Key RightSquare { get; private set; }
+
+
+    public Key SemiColon { get; private set; }
+
+    
+    public Key SingleQuote { get; private set; }
+
+
+    public Key Comma { get; private set; }
+
+
+    public Key Dot { get; private set; }
+
+
+    public Key Slash { get; private set; }
+
+    
+    public Key BackSlash { get; private set; }
+
+
+
 
 
     public Key Enter { get; private set; }

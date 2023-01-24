@@ -259,6 +259,11 @@ class AView : View
 
 
 
+        stream.Dispose();
+
+
+
+
 
 
         Image image;
@@ -478,6 +483,36 @@ class AView : View
 
 
 
+        this.FontFamily = fontFamily;
+
+
+        this.Font = font;
+
+
+
+
+        this.DrawImage = drawImage;
+
+
+
+        
+        this.BlueBrush = blueBrush;
+
+
+        this.GreenBrush = greenBrush;
+
+
+        this.RedBrush = redBrush;
+
+
+        this.TransparentBrush = transparentBrush;
+
+
+        this.YellowBrush = yellowBrush;
+
+
+
+
 
         return true;
     }
@@ -502,4 +537,77 @@ class AView : View
 
 
     public GridCol ColA { get; set; }
+
+
+
+
+
+    private ColorBrush BlueBrush { get; set; }
+
+
+    private ColorBrush TransparentBrush { get; set; }
+
+
+    private ColorBrush GreenBrush { get; set; }
+
+
+    private ColorBrush RedBrush { get; set; }
+
+
+    private ColorBrush YellowBrush { get; set; }
+
+
+
+
+    private DrawImage DrawImage { get; set; }
+
+
+
+
+    private FontFamily FontFamily { get; set; }
+
+
+
+    private Font Font { get; set; }
+
+
+
+
+
+    public virtual bool Final()
+    {
+        this.DrawImage.Final();
+
+
+
+
+        this.Font.Final();
+
+
+
+        this.FontFamily.Final();
+
+
+
+
+
+        this.BlueBrush.Final();
+
+
+        this.GreenBrush.Final();
+
+
+        this.RedBrush.Final();
+
+
+        this.TransparentBrush.Final();
+
+
+        this.YellowBrush.Final();
+
+
+
+
+        return true;
+    }
 }

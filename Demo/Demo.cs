@@ -92,8 +92,22 @@ class Demo : Object
 
 
 
+
+        this.Frame.Final();
+
+
+
+
+
+        this.AView.Final();
+
+
+
+
+
         return 0;
     }
+    
 
 
 

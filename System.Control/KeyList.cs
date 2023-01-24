@@ -161,6 +161,59 @@ public class KeyList : InfraObject
 
 
 
+        this.LetterA = this.AddKey(this.CharByte('A'));
+
+        this.LetterB = this.AddKey(this.CharByte('B'));
+
+        this.LetterC = this.AddKey(this.CharByte('C'));
+
+        this.LetterD = this.AddKey(this.CharByte('D'));
+
+        this.LetterE = this.AddKey(this.CharByte('E'));
+
+        this.LetterF = this.AddKey(this.CharByte('F'));
+
+        this.LetterG = this.AddKey(this.CharByte('G'));
+
+        this.LetterH = this.AddKey(this.CharByte('H'));
+
+        this.LetterI = this.AddKey(this.CharByte('I'));
+
+        this.LetterJ = this.AddKey(this.CharByte('J'));
+
+        this.LetterK = this.AddKey(this.CharByte('K'));
+
+        this.LetterL = this.AddKey(this.CharByte('L'));
+
+        this.LetterM = this.AddKey(this.CharByte('M'));
+
+        this.LetterN = this.AddKey(this.CharByte('N'));
+
+        this.LetterO = this.AddKey(this.CharByte('O'));
+
+        this.LetterP = this.AddKey(this.CharByte('P'));
+
+        this.LetterQ = this.AddKey(this.CharByte('Q'));
+
+        this.LetterR = this.AddKey(this.CharByte('R'));
+
+        this.LetterS = this.AddKey(this.CharByte('S'));
+
+        this.LetterT = this.AddKey(this.CharByte('T'));
+
+        this.LetterU = this.AddKey(this.CharByte('U'));
+
+        this.LetterV = this.AddKey(this.CharByte('V'));
+
+        this.LetterW = this.AddKey(this.CharByte('W'));
+
+        this.LetterX = this.AddKey(this.CharByte('X'));
+
+        this.LetterY = this.AddKey(this.CharByte('Y'));
+
+        this.LetterZ = this.AddKey(this.CharByte('Z'));
+
+
 
 
         this.Enter = this.AddKey(0x0d);
@@ -293,8 +346,6 @@ public class KeyList : InfraObject
 
 
 
-
-
     public bool IsLetterKey(int index)
     {
         return 0 <= index && index <= 25;
@@ -363,6 +414,19 @@ public class KeyList : InfraObject
         return ret;
     }
 
+
+
+
+
+    private byte CharByte(char o)
+    {
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+        return convert.CharByte(o);
+    }
 
 
 

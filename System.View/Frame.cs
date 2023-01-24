@@ -87,7 +87,7 @@ public class Frame : CompObject
 
         Delegate ddb;
 
-        ddb = new FrameDrawHandleMethod(DrawExtern.Draw_FrameDrawHandle);
+        ddb = new FrameDrawHandleMethod(this.DrawHandle);
 
 
 
@@ -197,30 +197,10 @@ public class Frame : CompObject
 
 
 
-        InfraExtern.Frame_SetDrawHandleArg(frame, this.Draw.Intern);
-
-
-
 
 
         this.Intern = frame;
 
-
-
-
-
-
-        FrameDrawHandle ooo;
-
-        ooo = new FrameDrawHandle();
-
-        ooo.Frame = this;
-
-        ooo.Init();
-
-
-
-        this.Draw.Handle = ooo;
 
 
 
@@ -369,8 +349,30 @@ public class Frame : CompObject
 
 
     private SystemDelegate DrawHandleMethod { get; set; }
+    
 
 
+
+
+    private ulong DrawHandle(ulong arg)
+    {
+        this.ExecuteDraw();
+
+
+
+
+        InternIntern intern;
+
+        intern = InternIntern.This;
+
+
+
+        ulong ret;
+        
+        ret = intern.InternBool(true);
+
+        return ret;
+    }
 
 
 
@@ -409,7 +411,12 @@ public class Frame : CompObject
 
 
 
-        return 0;
+
+        ulong ret;
+        
+        ret = intern.InternBool(true);
+
+        return ret;
     }
 
 

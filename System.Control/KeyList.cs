@@ -243,6 +243,30 @@ public class KeyList : InfraObject
 
 
 
+        this.Digit0 = this.AddDigitKey(')');
+
+        this.Digit1 = this.AddDigitKey('!');
+
+        this.Digit2 = this.AddDigitKey('@');
+
+        this.Digit3 = this.AddDigitKey('#');
+
+        this.Digit4 = this.AddDigitKey('$');
+
+        this.Digit5 = this.AddDigitKey('%');
+
+        this.Digit6 = this.AddDigitKey('^');
+
+        this.Digit7 = this.AddDigitKey('&');
+
+        this.Digit8 = this.AddDigitKey('*');
+
+        this.Digit9 = this.AddDigitKey('(');
+        
+
+
+
+
         this.Enter = this.AddKey(0x0d);
 
 

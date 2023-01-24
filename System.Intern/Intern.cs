@@ -176,6 +176,65 @@ public class Intern : InfraObject
 
 
 
+
+    public bool ReadStream(Stream stream, ulong buffer, ulong size)
+    {
+        SpanByte span;
+
+        span = this.ByteSpan(buffer, size);
+
+
+
+        stream.Read(span);
+
+
+
+        return true;
+    }
+
+
+
+
+    private SpanByte ByteSpan(ulong pointer, ulong count)
+    {
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+        int u;
+
+        u = convert.SInt32(count);
+
+
+
+
+        SpanByte span;
+
+
+
+
+        unsafe
+        {
+            void* ptr;
+
+            ptr = (void*)pointer;
+
+
+
+            span = new SpanByte(ptr, u);
+        }
+
+
+
+        return span;
+    }
+
+
+
+
+
     public bool Bool(ulong internBool)
     {
         if (internBool == 0)

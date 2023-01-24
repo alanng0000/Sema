@@ -88,50 +88,50 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == 'I')
+        if (!shift & k == u.LetterI)
         {
             this.Demo.TextMoveUp();
         }
 
 
-        if (!shift & k == 'K')
+        if (!shift & k == u.LetterK)
         {
             this.Demo.TextMoveDown();
         }
 
 
-        if (!shift & k == 'J')
+        if (!shift & k == u.LetterJ)
         {
             this.Demo.TextMoveLeft();
         }
 
 
-        if (!shift & k == 'L')
+        if (!shift & k == u.LetterL)
         {
             this.Demo.TextMoveRight();
         }
 
 
 
-        if (shift & k == 'I')
+        if (shift & k == u.LetterI)
         {
             this.Demo.ImageSourceMoveUp();
         }
 
 
-        if (shift & k == 'K')
+        if (shift & k == u.LetterK)
         {
             this.Demo.ImageSourceMoveDown();
         }
 
 
-        if (shift & k == 'J')
+        if (shift & k == u.LetterJ)
         {
             this.Demo.ImageSourceMoveLeft();
         }
 
 
-        if (shift & k == 'L')
+        if (shift & k == u.LetterL)
         {
             this.Demo.ImageSourceMoveRight();
         }
@@ -139,7 +139,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == 'H')
+        if (!shift & k == u.LetterH)
         {
             this.Demo.GridToggleVisible();
         }
@@ -148,7 +148,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == 'C')
+        if (!shift & k == u.LetterC)
         {
             this.Demo.TextWidthIncrease();
         }
@@ -157,7 +157,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == 'T')
+        if (!shift & k == u.LetterT)
         {
             this.Demo.FrameNotVisible();
         }
@@ -166,7 +166,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == 'B')
+        if (!shift & k == u.LetterB)
         {
             this.Demo.Close();
         }

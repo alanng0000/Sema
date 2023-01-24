@@ -38,25 +38,25 @@ class Handle : EventHandle
 
 
 
-        if (k == 'w')
+        if (!shift & k == 'W')
         {
             this.Demo.GridMoveUp();
         }
 
 
-        if (k == 's')
+        if (!shift & k == 'S')
         {
             this.Demo.GridMoveDown();
         }
 
 
-        if (k == 'a')
+        if (!shift & k == 'A')
         {
             this.Demo.GridMoveLeft();
         }
 
 
-        if (k == 'd')
+        if (!shift & k == 'D')
         {
             this.Demo.GridMoveRight();
         }
@@ -64,50 +64,50 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == 'i')
+        if (!shift & k == 'I')
         {
             this.Demo.TextMoveUp();
         }
 
 
-        if (!shift & k == 'k')
+        if (!shift & k == 'K')
         {
             this.Demo.TextMoveDown();
         }
 
 
-        if (!shift & k == 'j')
+        if (!shift & k == 'J')
         {
             this.Demo.TextMoveLeft();
         }
 
 
-        if (!shift & k == 'l')
+        if (!shift & k == 'L')
         {
             this.Demo.TextMoveRight();
         }
 
 
 
-        if (shift & k == 'i')
+        if (shift & k == 'I')
         {
             this.Demo.ImageSourceMoveUp();
         }
 
 
-        if (shift & k == 'k')
+        if (shift & k == 'K')
         {
             this.Demo.ImageSourceMoveDown();
         }
 
 
-        if (shift & k == 'j')
+        if (shift & k == 'J')
         {
             this.Demo.ImageSourceMoveLeft();
         }
 
 
-        if (shift & k == 'l')
+        if (shift & k == 'L')
         {
             this.Demo.ImageSourceMoveRight();
         }
@@ -115,7 +115,7 @@ class Handle : EventHandle
 
 
 
-        if (k == 'h')
+        if (!shift & k == 'H')
         {
             this.Demo.GridToggleVisible();
         }
@@ -124,7 +124,7 @@ class Handle : EventHandle
 
 
 
-        if (k == 'c')
+        if (!shift & k == 'C')
         {
             this.Demo.TextWidthIncrease();
         }
@@ -133,7 +133,7 @@ class Handle : EventHandle
 
 
 
-        if (k == 't')
+        if (!shift & k == 'T')
         {
             this.Demo.FrameNotVisible();
         }
@@ -142,7 +142,7 @@ class Handle : EventHandle
 
 
 
-        if (k == 'b')
+        if (!shift & k == 'B')
         {
             this.Demo.Close();
         }

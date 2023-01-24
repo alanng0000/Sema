@@ -23,6 +23,19 @@ class Handle : EventHandle
 
 
 
+        bool state;
+
+        state = o.State;
+        
+
+
+
+        if (!state)
+        {
+            return true;
+        }
+
+
 
 
         KeyList keyList;

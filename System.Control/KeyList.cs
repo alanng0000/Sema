@@ -389,6 +389,28 @@ public class KeyList : InfraObject
 
 
 
+        int letterCount;
+
+        letterCount = this.LetterIndex;
+
+
+
+        int digitCount;
+
+        digitCount = this.DigitIndex;
+
+
+
+
+        this.LetterEnd = letterCount;
+
+
+
+        this.DigitEnd = this.LetterEnd + digitCount;
+
+
+
+
         return true;
     }
 
@@ -431,6 +453,8 @@ public class KeyList : InfraObject
 
         return true;
     }
+
+
 
 
 
@@ -680,15 +704,25 @@ public class KeyList : InfraObject
 
     public bool IsLetterKey(int index)
     {
-        return 0 <= index && index <= 25;
+        return 0 <= index && index < this.LetterEnd;
     }
 
 
 
     public bool IsDigitKey(int index)
     {
-        return 26 <= index && index <= 35;
+        return this.LetterEnd <= index && index < this.DigitEnd;
     }
+
+
+
+
+    private int LetterEnd { get; set; }
+
+
+
+    private int DigitEnd { get; set; }
+    
 
 
 

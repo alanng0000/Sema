@@ -41,9 +41,15 @@ public class FontFamily : InfraObject
 
 
 
+
         ulong oss;
 
         oss = InfraExtern.New(length);
+
+
+
+        this.InternNameData = oss;
+
 
 
 
@@ -53,7 +59,7 @@ public class FontFamily : InfraObject
         ooo = InternIntern.This;
 
 
-        ooo.CopyString(this.Name, oss);
+        ooo.CopyString(this.Name, this.InternNameData);
 
 
 
@@ -71,7 +77,7 @@ public class FontFamily : InfraObject
         InfraExtern.String_SetLength(ss, length);
 
 
-        InfraExtern.String_SetData(ss, oss);
+        InfraExtern.String_SetData(ss, this.InternNameData);
 
 
 
@@ -122,6 +128,10 @@ public class FontFamily : InfraObject
 
 
 
+    private ulong InternNameData { get; set; }
+
+
+
 
 
     public virtual bool Final()
@@ -141,6 +151,11 @@ public class FontFamily : InfraObject
 
 
         InfraExtern.String_Delete(this.InternName);
+
+
+
+
+        InfraExtern.Delete(this.InternNameData);
 
 
         

@@ -403,18 +403,6 @@ public class KeyList : InfraObject
 
     private Key AddLetterKey()
     {
-        int k;
-
-        k = this.LetterIndex + 'A';
-
-
-
-        byte code;
-
-        code = (byte)k;
-
-
-
         Key key;
 
         key = this.AddKey();
@@ -435,6 +423,12 @@ public class KeyList : InfraObject
         u = this.LetterIndex + 'a';
 
 
+        int v;
+
+        v = this.LetterIndex + 'A';
+
+
+
 
         char defaultChar;
 
@@ -444,7 +438,7 @@ public class KeyList : InfraObject
 
         char shiftChar;
 
-        shiftChar = (char)k;
+        shiftChar = (char)v;
 
 
 
@@ -476,19 +470,6 @@ public class KeyList : InfraObject
 
     private Key AddDigitKey(char shiftChar)
     {
-        int k;
-
-        k = this.DigitIndex + '0';
-
-
-
-        byte code;
-
-        code = (byte)k;
-
-
-
-
         Key key;
 
         key = this.AddKey();
@@ -503,10 +484,15 @@ public class KeyList : InfraObject
 
 
 
+        int u;
+
+        u = this.DigitIndex + '0';
+
+
 
         char defaultChar;
 
-        defaultChar = (char)k;
+        defaultChar = (char)u;
 
 
 

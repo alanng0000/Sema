@@ -11,7 +11,15 @@ class AView : View
 
 
 
+        DrawConstant constant;
 
+        constant = DrawConstant.This;
+
+
+
+        DrawInfra infra;
+
+        infra = DrawInfra.This;
 
 
 
@@ -20,12 +28,9 @@ class AView : View
 
         blueBrush = new ColorBrush();
 
-        blueBrush.Color.Alpha = Constant.This.ColorCompMax;
-
-        blueBrush.Color.Blue = Constant.This.ColorCompMax;
-
         blueBrush.Init();
 
+        blueBrush.Color = infra.CreateColor(constant.ColorCompMax, 0, 0, constant.ColorCompMax);
 
 
 
@@ -50,9 +55,9 @@ class AView : View
 
         transparentBrush = new ColorBrush();
 
-        transparentBrush.Color = Constant.This.TransparentColor;
-
         transparentBrush.Init();
+
+        transparentBrush.Color = constant.TransparentColor;
 
 
 
@@ -61,11 +66,9 @@ class AView : View
 
         greenBrush = new ColorBrush();
 
-        greenBrush.Color.Alpha = Constant.This.ColorCompMax;
-
-        greenBrush.Color.Green = Constant.This.ColorCompMax;
-
         greenBrush.Init();
+
+        greenBrush.Color = infra.CreateColor(constant.ColorCompMax, 0, constant.ColorCompMax, 0);
 
 
 
@@ -74,11 +77,9 @@ class AView : View
 
         redBrush = new ColorBrush();
 
-        redBrush.Color.Alpha = Constant.This.ColorCompMax;
-
-        redBrush.Color.Red = Constant.This.ColorCompMax;
-
         redBrush.Init();
+
+        redBrush.Color = infra.CreateColor(constant.ColorCompMax, constant.ColorCompMax, 0, 0);
 
 
 
@@ -89,13 +90,9 @@ class AView : View
 
         yellowBrush = new ColorBrush();
 
-        yellowBrush.Color.Alpha = Constant.This.ColorCompMax;
-
-        yellowBrush.Color.Red = Constant.This.ColorCompMax;
-
-        yellowBrush.Color.Green = Constant.This.ColorCompMax;
-
         yellowBrush.Init();
+
+        yellowBrush.Color = infra.CreateColor(constant.ColorCompMax, constant.ColorCompMax, constant.ColorCompMax, 0);
 
 
 

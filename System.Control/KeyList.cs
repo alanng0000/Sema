@@ -380,12 +380,7 @@ public class KeyList : InfraObject
 
 
         this.Backspace = this.AddKey();
-
-
-
-
-
-        this.CapLock = this.AddKey();
+        
 
 
 

@@ -420,7 +420,7 @@ public class KeyList : InfraObject
 
     private bool InitCodeList()
     {
-        this.CodeList = new Key[0x100];
+        this.CodeList = new Key[this.CodeCount];
 
 
 
@@ -795,6 +795,15 @@ public class KeyList : InfraObject
     }
 
 
+
+
+    private int CodeCount
+    {
+        get
+        {
+            return 0x100;
+        }
+    }
 
 
 

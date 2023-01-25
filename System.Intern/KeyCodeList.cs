@@ -35,7 +35,7 @@ public class KeyCodeList : InfraObject
 
         int count;
 
-        count = 0x100;
+        count = this.CodeCount;
 
 
 
@@ -44,42 +44,87 @@ public class KeyCodeList : InfraObject
 
 
 
+        Constant constant;
+
+        constant = Constant.This;
 
 
-        this.AddCode(0x20, ' ', ' ');
+
+        InfraConvert convert;
 
 
-        this.AddCode(0xc0, '`', '~');
+        convert = InfraConvert.This;
 
 
-        this.AddCode(0xbd, '-', '_');
 
 
-        this.AddCode(0xbb, '=', '+');
+        int letterCount;
+
+        letterCount = constant.LetterKeyCount;
 
 
-        this.AddCode(0xdb, '[', '{');
+
+        byte startCode;
+
+        startCode = convert.CharByte('A');
 
 
-        this.AddCode(0xdd, ']', '}');
+
+        this.AddCodeRange(letterCount, startCode);
 
 
-        this.AddCode(0xba, ';', ':');
 
 
-        this.AddCode(0xde, '\'', '"');
+        int digitCount;
+
+        digitCount = constant.DigitKeyCount;
 
 
-        this.AddCode(0xbc, ',', '<');
+
+        startCode = convert.CharByte('0');
 
 
-        this.AddCode(0xbe, '.', '>');
+
+        this.AddCodeRange(digitCount, startCode);
 
 
-        this.AddCode(0xbf, '/', '?');
 
 
-        this.AddCode(0xdc, '\\', '|');
+
+        this.AddCode(0x20);
+
+
+        this.AddCode(0xc0);
+
+
+        this.AddCode(0xbd);
+
+
+        this.AddCode(0xbb);
+
+
+        this.AddCode(0xdb);
+
+
+        this.AddCode(0xdd);
+
+
+        this.AddCode(0xba);
+
+
+        this.AddCode(0xde);
+
+
+        this.AddCode(0xbc);
+
+
+        this.AddCode(0xbe);
+
+
+        this.AddCode(0xbf);
+
+
+        this.AddCode(0xdc);
 
 
 
@@ -116,8 +161,51 @@ public class KeyCodeList : InfraObject
 
 
         this.AddCode(0x14);
+
+
+
+
+
+        return true;
     }
 
+
+
+
+
+
+    private bool AddCodeRange(int count, byte startCode)
+    {
+        int u;
+
+
+        byte ob;
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            u = startCode + i;
+
+
+            ob = (byte)u;
+
+
+
+            this.AddCode(ob);
+
+
+
+            i = i + 1;
+        }
+
+
+        return true;
+    }
 
 
 
@@ -134,6 +222,16 @@ public class KeyCodeList : InfraObject
         return true;
     }
 
+
+
+
+    private int CodeCount
+    {
+        get
+        {
+            return 0x100;
+        }
+    }
 
 
 

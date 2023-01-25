@@ -394,16 +394,31 @@ public class Frame : CompObject
 
 
 
+        byte code;
 
-        int index;
-
-        index = this.Control.Key.CodeIndex(ko);
+        code = ko;
 
 
 
         bool state;
 
         state = vo;
+
+
+
+
+        KeyCodeList keyCodeList;
+
+        keyCodeList = KeyCodeList.This;
+
+
+        
+
+        int index;
+
+        index = keyCodeList.Index(code);
+
+
 
 
 

@@ -53,8 +53,22 @@ public class Constant : InfraObject
 
 
 
+
+
+        this.LetterIndexEnd = this.LetterKeyCount;
+
+
+
+        this.DigitIndexEnd = this.LetterIndexEnd + this.DigitKeyCount;
+
+
+
+
+
         return true;
     }
+    
+
 
 
 
@@ -88,4 +102,15 @@ public class Constant : InfraObject
         get;
         private set;
     }
+
+
+
+
+
+    public int LetterIndexEnd { get; private set; }
+
+
+
+    public int DigitIndexEnd { get; private set; }
+
 }

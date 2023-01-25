@@ -166,11 +166,6 @@ public class KeyCodeList : InfraObject
 
 
 
-        this.KeyCount = this.CurrentIndex;
-
-        
-
-
 
         return true;
     }
@@ -261,12 +256,6 @@ public class KeyCodeList : InfraObject
     }
 
 
-
-
-    public int KeyCount
-    {
-        get; private set;
-    }
 
 
 

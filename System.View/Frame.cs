@@ -17,6 +17,21 @@ public class Frame : CompObject
 
 
 
+
+        FrameControlHandleMethod controlHandleMethod;
+
+        controlHandleMethod = new FrameControlHandleMethod(this.ControlHandle);
+
+
+
+        FrameDrawHandleMethod drawHandleMethod;
+
+        drawHandleMethod = new FrameDrawHandleMethod(this.DrawHandle);
+
+
+
+
+
     
         InfraConvert infraConvert;
 
@@ -73,17 +88,17 @@ public class Frame : CompObject
 
 
 
-        Delegate controlMethod;
+        Delegate controlDelegate;
 
-        controlMethod = new FrameControlHandleMethod(this.ControlHandle);
-
-
+        controlDelegate = controlHandleMethod;
 
 
 
-        Delegate drawMethod;
 
-        drawMethod = new FrameDrawHandleMethod(this.DrawHandle);
+
+        Delegate drawDelegate;
+
+        drawDelegate = drawHandleMethod;
 
 
 
@@ -91,14 +106,14 @@ public class Frame : CompObject
 
         ulong controlHandle;
 
-        controlHandle = intern.MethodPointer(controlMethod);
+        controlHandle = intern.MethodPointer(controlDelegate);
 
 
 
 
         ulong drawHandle;
 
-        drawHandle = intern.MethodPointer(drawMethod);
+        drawHandle = intern.MethodPointer(drawDelegate);
 
 
 
@@ -199,11 +214,11 @@ public class Frame : CompObject
 
 
 
-        this.ControlHandleMethod = controlMethod;
+        this.ControlDelegate = controlDelegate;
 
 
 
-        this.DrawHandleMethod = drawMethod;
+        this.DrawDelegate = drawDelegate;
 
 
 
@@ -337,15 +352,14 @@ public class Frame : CompObject
 
 
 
-
-
-    private SystemDelegate ControlHandleMethod { get; set; }
+    private SystemDelegate ControlDelegate { get; set; }
 
 
 
 
-    private SystemDelegate DrawHandleMethod { get; set; }
+    private SystemDelegate DrawDelegate { get; set; }
     
+
 
 
 

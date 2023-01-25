@@ -319,6 +319,15 @@ public class Draw : InfraObject
 
     public bool Text(CharSpan text, Rect destRect, Font font, Brush brush)
     {
+        if (!this.CheckCharSpan(text))
+        {
+            return false;
+        }
+
+
+
+
+
         this.Absolute(ref destRect.Pos);
 
 
@@ -385,6 +394,77 @@ public class Draw : InfraObject
         return true;
     }
     
+
+
+
+    private bool CheckCharSpan(CharSpan span)
+    {
+        bool ret;
+
+        ret = false;
+
+
+
+        bool b;
+
+        b = false;
+
+
+
+        if (!b & !this.Null(span.String))
+        {
+            ret = this.CheckCharSpanRange(span.String.Length, span.Range);
+
+
+            b = true;
+        }
+
+
+
+        if (!b & !this.Null(span.Array))
+        {
+            ret = this.CheckCharSpanRange(span.Array.Length, span.Range);
+
+
+            b = true;
+        }
+
+
+
+        return ret;
+    }
+
+
+
+
+    private bool CheckCharSpanRange(int count, InfraRange range)
+    {
+        if (range.Start < 0)
+        {
+            return false;
+        }
+
+
+        if (!(range.Start < count))
+        {
+            return false;
+        }
+
+
+        if (count < range.End)
+        {
+            return false;
+        }
+
+
+        if (range.End < range.Start)
+        {
+            return false;
+        }
+
+
+        return true;
+    }
 
 
 
@@ -484,5 +564,18 @@ public class Draw : InfraObject
 
 
         return true;
+    }
+
+
+
+
+    private bool Null(object o)
+    {
+        ObjectInfra infra;
+
+        infra = ObjectInfra.This;
+
+
+        return infra.Null(o);
     }
 }

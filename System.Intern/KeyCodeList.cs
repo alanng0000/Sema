@@ -155,12 +155,7 @@ public class KeyCodeList : InfraObject
 
 
         this.AddCode(0x08);
-
-
-
-
-
-        this.AddCode(0x14);
+        
 
 
 

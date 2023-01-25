@@ -48,7 +48,7 @@ public class Constant : InfraObject
 
 
 
-        this.ControlKeyCount = 6;
+        this.ControlKeyCount = 5;
 
 
 

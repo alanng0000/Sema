@@ -214,11 +214,20 @@ public class KeyList : InfraObject
 
 
 
+
+
+        KeyCodeList keyCodeList;
+
+
+        keyCodeList = KeyCodeList.This;
+
+
+
+
         int count;
 
 
-        count = 26 + 10 + 12 + 6;
-
+        count = keyCodeList.KeyCount;
 
 
 
@@ -379,29 +388,6 @@ public class KeyList : InfraObject
         this.CapLock = this.AddKey();
 
 
-
-
-
-
-
-        int letterCount;
-
-        letterCount = this.LetterIndex;
-
-
-
-        int digitCount;
-
-        digitCount = this.DigitIndex;
-
-
-
-
-        this.LetterEnd = letterCount;
-
-
-
-        this.DigitEnd = this.LetterEnd + digitCount;
 
 
 
@@ -651,24 +637,31 @@ public class KeyList : InfraObject
 
     public bool IsLetterKey(int index)
     {
-        return 0 <= index && index < this.LetterEnd;
+        InternConstant constant;
+
+        constant = InternConstant.This;
+
+
+
+        return 0 <= index && index < constant.LetterIndexEnd;
     }
+
 
 
 
     public bool IsDigitKey(int index)
     {
-        return this.LetterEnd <= index && index < this.DigitEnd;
+        InternConstant constant;
+
+        constant = InternConstant.This;
+
+
+
+        return constant.LetterIndexEnd <= index && index < constant.DigitIndexEnd;
     }
 
 
 
-
-    private int LetterEnd { get; set; }
-
-
-
-    private int DigitEnd { get; set; }
 
 
 
@@ -690,9 +683,15 @@ public class KeyList : InfraObject
 
     public Key DigitKey(int digitIndex)
     {
+        InternConstant constant;
+
+        constant = InternConstant.This;
+
+
+
         int cc;
         
-        cc = this.LetterEnd;
+        cc = constant.LetterIndexEnd;
 
 
         return this.IndexKey(digitIndex, cc);

@@ -216,10 +216,10 @@ public class KeyList : InfraObject
 
 
 
-        KeyCodeList keyCodeList;
+        InternConstant constant;
 
 
-        keyCodeList = KeyCodeList.This;
+        constant = InternConstant.This;
 
 
 
@@ -227,7 +227,7 @@ public class KeyList : InfraObject
         int count;
 
 
-        count = keyCodeList.KeyCount;
+        count = constant.KeyCount;
 
 
 

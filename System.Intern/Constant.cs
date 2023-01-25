@@ -44,6 +44,14 @@ public class Constant : InfraObject
 
 
 
+        this.SignKeyCount = 12;
+
+
+
+        this.ControlKeyCount = 6;
+
+
+
 
         return true;
     }
@@ -60,6 +68,22 @@ public class Constant : InfraObject
 
 
     public int DigitKeyCount
+    {
+        get;
+        private set;
+    }
+
+
+
+    public int SignKeyCount
+    {
+        get;
+        private set;
+    }
+
+
+
+    public int ControlKeyCount
     {
         get;
         private set;

@@ -463,7 +463,7 @@ public class Frame : CompObject
 
 
 
-    private bool ExecuteDraw()
+    protected virtual bool ExecuteDraw()
     {
         Constant constant;
 

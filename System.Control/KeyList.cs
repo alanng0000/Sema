@@ -629,7 +629,7 @@ public class KeyList : InfraObject
 
 
 
-        return 0 <= index && index < constant.LetterIndexEnd;
+        return !(index < 0) & index < constant.LetterIndexEnd;
     }
 
 
@@ -643,7 +643,7 @@ public class KeyList : InfraObject
 
 
 
-        return constant.LetterIndexEnd <= index && index < constant.DigitIndexEnd;
+        return !(index < constant.LetterIndexEnd) & index < constant.DigitIndexEnd;
     }
 
 

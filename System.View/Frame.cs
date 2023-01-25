@@ -11,6 +11,12 @@ public class Frame : CompObject
 
 
 
+        string title;
+
+        title = this.Title;
+
+
+
     
         InfraConvert infraConvert;
 
@@ -19,9 +25,10 @@ public class Frame : CompObject
 
 
 
+
         ulong length;
 
-        length = infraConvert.ULong(this.Title.Length);
+        length = infraConvert.ULong(title.Length);
 
 
 
@@ -29,11 +36,6 @@ public class Frame : CompObject
         ulong oss;
 
         oss = InfraExtern.New(length);
-
-
-
-
-        this.InternTitleData = oss;
 
 
 
@@ -46,7 +48,7 @@ public class Frame : CompObject
 
 
 
-        intern.CopyString(this.Title, this.InternTitleData);
+        intern.CopyString(title, oss);
 
 
 
@@ -69,30 +71,19 @@ public class Frame : CompObject
 
 
 
-        this.InternTitle = ss;
+
+
+        Delegate controlMethod;
+
+        controlMethod = new FrameControlHandleMethod(this.ControlHandle);
 
 
 
 
 
-        Delegate dda;
+        Delegate drawMethod;
 
-        dda = new FrameControlHandleMethod(this.ControlHandle);
-
-
-
-        this.ControlHandleMethod = dda;
-
-
-
-
-        Delegate ddb;
-
-        ddb = new FrameDrawHandleMethod(this.DrawHandle);
-
-
-
-        this.DrawHandleMethod = ddb;
+        drawMethod = new FrameDrawHandleMethod(this.DrawHandle);
 
 
 
@@ -100,15 +91,14 @@ public class Frame : CompObject
 
         ulong controlHandle;
 
-        controlHandle = intern.MethodPointer(this.ControlHandleMethod);
+        controlHandle = intern.MethodPointer(controlMethod);
 
 
 
 
         ulong drawHandle;
 
-        drawHandle = intern.MethodPointer(this.DrawHandleMethod);
-
+        drawHandle = intern.MethodPointer(drawMethod);
 
 
 
@@ -122,7 +112,7 @@ public class Frame : CompObject
 
 
 
-        InfraExtern.Frame_SetTitle(frame, this.InternTitle);
+        InfraExtern.Frame_SetTitle(frame, ss);
 
 
 
@@ -162,6 +152,7 @@ public class Frame : CompObject
 
 
 
+
         DrawDraw draw;
 
 
@@ -183,12 +174,6 @@ public class Frame : CompObject
 
 
 
-        this.Draw = draw;
-
-
-
-
-
         InfraExtern.Frame_SetControlHandle(frame, controlHandle);
 
 
@@ -200,14 +185,37 @@ public class Frame : CompObject
 
 
 
+        
+        this.InternTitleData = oss;
+
+
+
+        this.InternTitle = ss;
+
+
+
         this.Intern = frame;
 
 
 
 
+        this.ControlHandleMethod = controlMethod;
 
 
-        this.Size = this.Draw.Size;
+
+        this.DrawHandleMethod = drawMethod;
+
+
+
+
+
+        this.Size = size;
+
+
+
+
+        this.DrawOp = draw;
+
 
 
 
@@ -254,7 +262,7 @@ public class Frame : CompObject
 
     public virtual bool Final()
     {
-        this.Draw.Final();
+        this.DrawOp.Final();
         
 
 
@@ -321,7 +329,7 @@ public class Frame : CompObject
 
 
 
-    private DrawDraw Draw { get; set; }
+    private DrawDraw DrawOp { get; set; }
 
 
 
@@ -461,7 +469,7 @@ public class Frame : CompObject
 
 
 
-    protected virtual bool ExecuteDraw()
+    private bool ExecuteDraw()
     {
         DrawConstant constant;
 
@@ -471,27 +479,49 @@ public class Frame : CompObject
 
 
 
-        this.Draw.Clear(constant.WhiteColor);
+        this.DrawOp.Clear(constant.WhiteColor);
 
 
 
 
 
 
-        this.Draw.Pos = this.Pos;
+        this.DrawOp.Pos = this.Pos;
 
 
 
-        this.Draw.Area = this.Area;
+        this.DrawOp.Area = this.Area;
 
 
-        this.Draw.Clip();
+        this.DrawOp.Clip();
 
 
         
 
 
 
+        this.Draw(this.DrawOp);
+
+
+
+
+
+
+        this.DrawOp.Result();
+
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+    protected virtual bool Draw(DrawDraw draw)
+    {
         View view;
 
 
@@ -510,16 +540,7 @@ public class Frame : CompObject
 
 
 
-
-        view.Draw(this.Draw);
-
-
-
-
-
-
-        this.Draw.Result();
-
+        view.Draw(draw);
 
 
 

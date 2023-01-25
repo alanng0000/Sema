@@ -436,14 +436,22 @@ public class Frame : CompObject
 
         
 
-        int index;
+        int? u;
 
-        index = keyCodeList.Index(code);
-
-
+        u = keyCodeList.Index(code);
 
 
-        this.ControlChange(index, state);
+
+        if (u.HasValue)
+        {
+            int index;
+
+            index = u.Value;
+
+
+
+            this.ControlChange(index, state);
+        }
 
 
 

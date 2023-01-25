@@ -39,7 +39,7 @@ public class KeyCodeList : InfraObject
 
 
 
-        this.List = new int[count];
+        this.List = new int?[count];
 
 
 
@@ -170,7 +170,7 @@ public class KeyCodeList : InfraObject
 
 
 
-    public int Index(byte code)
+    public int? Index(byte code)
     {
         return this.List[code];
     }
@@ -255,7 +255,7 @@ public class KeyCodeList : InfraObject
 
 
 
-    private int[] List { get; set; }
+    private int?[] List { get; set; }
 
 
 

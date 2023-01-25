@@ -140,45 +140,6 @@ public class Control : InfraObject
 
 
 
-    public bool CapLock
-    {
-        get
-        {
-            return this.GetCapLock();
-        }
-        set
-        {
-        }
-    }
-
-
-
-
-    private bool GetCapLock()
-    {
-        InternIntern intern;
-
-
-        intern = InternIntern.This;
-
-
-
-        bool b;
-
-        b = intern.CapLockKeyOn();
-
-
-
-        bool ret;
-
-        ret = b;
-
-        return ret;    
-    }
-
-
-
-
 
 
     public virtual EventEvent Input

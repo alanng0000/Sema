@@ -140,6 +140,31 @@ public class Control : InfraObject
 
 
 
+    public bool CapLock
+    {
+        get
+        {
+            return this.GetCapLock();
+        }
+        set
+        {
+        }
+    }
+
+
+
+
+    private bool GetCapLock()
+    {
+        
+
+
+
+        return true;    
+    }
+
+
+
 
 
 

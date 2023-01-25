@@ -202,7 +202,7 @@ public class Intern : InfraObject
     {
         char* pu;
 
-        pu = &pointer[index];
+        pu = pointer + index;
 
 
 

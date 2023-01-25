@@ -10,9 +10,4 @@ public class Key : InfraObject
 
 
     public KeyChar Char { get; set; }
-
-
-
-
-    internal byte Code { get; set; }
 }

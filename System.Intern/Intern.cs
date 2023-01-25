@@ -105,9 +105,17 @@ public class Intern : InfraObject
 
 
 
-    public ulong DrawDrawText(ulong o, string textString, char[] textArray, InfraRange range, 
+    public bool DrawDrawText(ulong internDraw, string textString, char[] textArray, InfraRange range, 
         long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
     {
+        if (!this.CheckCharSpan(textString, textArray, range))
+        {
+            return true;
+        }
+
+
+
+
         int index;
 
         index = range.Start;
@@ -143,9 +151,9 @@ public class Intern : InfraObject
 
 
 
-        ulong ret;
+        ulong u;
 
-        ret = 0;
+        u = 0;
 
 
 
@@ -161,7 +169,7 @@ public class Intern : InfraObject
             {
                 fixed (char* pointer = textString)
                 {
-                    ret = this.DrawDrawTextPointer(o, pointer, index, length,
+                    u = this.DrawDrawTextPointer(internDraw, pointer, index, length,
                         destLeft, destUp, destWidth, destHeight, font, brush
                     );
                 }
@@ -180,7 +188,7 @@ public class Intern : InfraObject
             {
                 fixed (char* pointer = textArray)
                 {
-                    ret = this.DrawDrawTextPointer(o, pointer, index, length,
+                    u = this.DrawDrawTextPointer(internDraw, pointer, index, length,
                         destLeft, destUp, destWidth, destHeight, font, brush
                     );
                 }
@@ -192,6 +200,23 @@ public class Intern : InfraObject
         
 
 
+
+
+        bool o;
+
+        o = false;
+
+
+        if (b)
+        {
+            o = this.Bool(u);
+        }        
+
+
+
+        bool ret;
+
+        ret = o;
         
         return ret;
     }
@@ -199,7 +224,95 @@ public class Intern : InfraObject
 
 
 
-    private unsafe ulong DrawDrawTextPointer(ulong o, char* pointer, int index, ulong length, 
+    private bool CheckCharSpan(string textString, char[] textArray, InfraRange range)
+    {
+        bool ret;
+
+        ret = false;
+
+
+
+        bool b;
+
+        b = false;
+
+
+
+        int dataCount;
+
+        dataCount = 0;
+
+
+
+
+        if (!b & !this.Null(textString))
+        {
+            dataCount = textString.Length;
+
+
+            b = true;
+        }
+
+
+
+        if (!b & !this.Null(textArray))
+        {
+            dataCount = textArray.Length;
+
+
+            b = true;
+        }
+
+
+
+        if (b)
+        {
+            ret = this.CheckCharSpanRange(dataCount, range);
+        }
+
+
+
+        return ret;
+    }
+
+
+
+
+
+    private bool CheckCharSpanRange(int count, InfraRange range)
+    {
+        if (range.Start < 0)
+        {
+            return false;
+        }
+
+
+        if (!(range.Start < count))
+        {
+            return false;
+        }
+
+
+        if (count < range.End)
+        {
+            return false;
+        }
+
+
+        if (range.End < range.Start)
+        {
+            return false;
+        }
+
+
+        return true;
+    }
+
+
+
+
+
+    private unsafe ulong DrawDrawTextPointer(ulong internDraw, char* pointer, int index, ulong length, 
         long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
     {
         char* pu;
@@ -216,7 +329,7 @@ public class Intern : InfraObject
         
         ulong ret;
 
-        ret = DrawExtern.Draw_Draw_Text(o, textO, length, destLeft, destUp, destWidth, destHeight, font, brush);
+        ret = DrawExtern.Draw_Draw_Text(internDraw, textO, length, destLeft, destUp, destWidth, destHeight, font, brush);
 
 
         return ret;

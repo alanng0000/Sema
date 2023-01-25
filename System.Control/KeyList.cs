@@ -420,7 +420,7 @@ public class KeyList : InfraObject
 
     private bool InitCodeList()
     {
-        this.CodeList = new Key[this.CodeCount];
+        this.CodeList = new int[this.CodeCount];
 
 
 
@@ -443,7 +443,7 @@ public class KeyList : InfraObject
 
 
 
-            this.CodeList[key.Code] = key;
+            this.CodeList[key.Code] = key.Index;
 
 
 
@@ -693,7 +693,7 @@ public class KeyList : InfraObject
 
 
 
-    public Key CodeGet(byte code)
+    public int CodeIndex(byte code)
     {
         return this.CodeList[code];
     }
@@ -812,7 +812,7 @@ public class KeyList : InfraObject
 
 
 
-    private Key[] CodeList { get; set; }
+    private int[] CodeList { get; set; }
 
 
 

@@ -134,6 +134,12 @@ public class View : CompObject
 
 
 
+        DrawConstant constant;
+
+        constant = DrawConstant.This;
+
+
+        
         
         ColorBrush brush;
 
@@ -141,10 +147,13 @@ public class View : CompObject
         brush = new ColorBrush();
 
 
-        brush.Color = Constant.This.WhiteColor;
-
-
         brush.Init();
+
+
+        brush.Color = constant.WhiteColor;
+
+
+        
         
 
 

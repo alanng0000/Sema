@@ -465,10 +465,10 @@ public class Frame : CompObject
 
     protected virtual bool ExecuteDraw()
     {
-        Constant constant;
+        DrawConstant constant;
 
 
-        constant = Constant.This;
+        constant = DrawConstant.This;
 
 
 

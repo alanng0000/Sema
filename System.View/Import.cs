@@ -33,3 +33,4 @@ global using FontStyle = System.Draw.FontStyle;
 global using DrawImage = System.Draw.Image;
 global using DrawInfra = System.Draw.Infra;
 global using DrawConvert = System.Draw.Convert;
+global using DrawConstant = System.Draw.Constant;

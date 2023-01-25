@@ -83,9 +83,9 @@ public class Text : View
 
 
 
-        Constant constant;
+        DrawConstant constant;
 
-        constant = Constant.This;
+        constant = DrawConstant.This;
 
 
 
@@ -93,9 +93,10 @@ public class Text : View
 
         brush = new ColorBrush();
 
+        brush.Init();
+
         brush.Color = constant.BlackColor;
 
-        brush.Init();
 
 
 

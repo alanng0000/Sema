@@ -27,6 +27,64 @@ public class Infra : InfraObject
 
 
 
+
+    public Pos CreatePos(int left, int up)
+    {
+        Pos pos;
+
+        pos = new Pos();
+
+        pos.Init();
+
+        pos.Left = left;
+
+        pos.Up = up;
+
+
+        return pos;
+    }
+
+
+
+
+    public Size CreateSize(int width, int height)
+    {
+        Size size;
+
+        size = new Size();
+
+        size.Init();
+
+        size.Width = width;
+
+        size.Height = height;
+
+
+        return size;
+    }
+
+
+
+
+
+    public Rect CreateRect(Pos pos, Size size)
+    {
+        Rect rect;
+
+        rect = new Rect();
+
+        rect.Init();
+
+        rect.Pos = pos;
+
+        rect.Size = size;
+
+
+        return rect;
+    }
+
+
+
     public Color CreateColor(byte alpha, byte red, byte green, byte blue)
     {
         Color color;

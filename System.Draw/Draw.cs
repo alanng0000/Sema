@@ -324,18 +324,6 @@ public class Draw : InfraObject
 
 
 
-        char[] textU;
-
-        textU = text.Array;
-
-
-
-        InfraRange range;
-
-        range = text.Range;
-
-
-
 
         InfraConvert convert;
 
@@ -389,7 +377,7 @@ public class Draw : InfraObject
 
 
 
-        intern.DrawDrawText(this.Intern, textU, range, destLeft, destUp, destWidth, destHeight, fontU, brushU);
+        intern.DrawDrawText(this.Intern, text.String, text.Array, text.Range, destLeft, destUp, destWidth, destHeight, fontU, brushU);
 
 
 

@@ -174,6 +174,16 @@ public class KeyCodeList : InfraObject
 
 
 
+    public int Index(byte code)
+    {
+        return this.List[code];
+    }
+
+
+
+
+
+
     private bool AddCodeRange(int count, byte startCode)
     {
         int u;
@@ -212,11 +222,11 @@ public class KeyCodeList : InfraObject
 
     private bool AddCode(byte code)
     {
-        this.List[code] = this.Index;
+        this.List[code] = this.CurrentIndex;
 
 
 
-        this.Index = this.Index + 1;
+        this.CurrentIndex = this.CurrentIndex + 1;
 
 
         return true;
@@ -252,5 +262,5 @@ public class KeyCodeList : InfraObject
 
 
 
-    private int Index { get; set; }
+    private int CurrentIndex { get; set; }
 }

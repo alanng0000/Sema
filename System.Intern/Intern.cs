@@ -103,11 +103,12 @@ public class Intern : InfraObject
 
 
 
-    public ulong DrawDrawText(ulong o, char[] text, InfraRange range, long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
+    public ulong DrawDrawText(ulong o, string textString, char[] textArray, InfraRange range, 
+        long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
     {
-        int k;
+        int index;
 
-        k = range.Start;
+        index = range.Start;
 
 
 
@@ -146,32 +147,78 @@ public class Intern : InfraObject
 
 
 
-        unsafe
+        bool b;
+
+        b = false;
+
+        
+
+        if (!b & !this.Null(textString))
         {
-            fixed (char* p = text)
+            unsafe
             {
-                char* pu;
-
-                pu = &p[k];
-
-
-
-                ulong textO;
-
-                textO = (ulong)pu;
-
-
-                
-
-                ret = DrawExtern.Draw_Draw_Text(o, textO, length, destLeft, destUp, destWidth, destHeight, font, brush);
+                fixed (char* pointer = textString)
+                {
+                    ret = this.DrawDrawTextPointer(o, pointer, index, length,
+                        destLeft, destUp, destWidth, destHeight, font, brush
+                    );
+                }
             }
+
+
+            b = true;
         }
+
+        
+
+
+        if (!b & !this.Null(textArray))
+        {
+            unsafe
+            {
+                fixed (char* pointer = textArray)
+                {
+                    ret = this.DrawDrawTextPointer(o, pointer, index, length,
+                        destLeft, destUp, destWidth, destHeight, font, brush
+                    );
+                }
+            }
+
+
+            b = true;
+        }
+        
 
 
         
         return ret;
     }
 
+
+
+
+    private unsafe ulong DrawDrawTextPointer(ulong o, char* pointer, int index, ulong length, 
+        long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
+    {
+        char* pu;
+
+        pu = &pointer[index];
+
+
+
+        ulong textO;
+
+        textO = (ulong)pu;
+
+
+        
+        ulong ret;
+
+        ret = DrawExtern.Draw_Draw_Text(o, textO, length, destLeft, destUp, destWidth, destHeight, font, brush);
+
+
+        return ret;
+    }
 
 
 
@@ -286,5 +333,18 @@ public class Intern : InfraObject
 
 
         return o;
+    }
+
+
+
+
+    private bool Null(object o)
+    {
+        ObjectInfra infra;
+
+        infra = ObjectInfra.This;
+
+
+        return infra.Null(o);
     }
 }

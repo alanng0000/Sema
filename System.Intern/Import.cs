@@ -1,6 +1,7 @@
 global using InfraObject = System.Infra.Object;
 global using InfraRange = System.Infra.Range;
 global using RangeInfra = System.Infra.RangeInfra;
+global using ObjectInfra = System.Infra.ObjectInfra;
 global using InfraConvert = System.Infra.Convert;
 global using SystemDelegate = System.Delegate;
 global using SystemIntPtr = System.IntPtr;

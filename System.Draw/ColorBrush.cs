@@ -70,13 +70,33 @@ public class ColorBrush : Brush
 
 
 
-    public Color Color;
+    public Color Color
+    {
+        get
+        {
+            return this.ColorData;
+        }
+        set
+        {
+            this.ColorData = value;
+
+
+
+            this.SetColor();
+        }
+    }
 
 
 
 
 
-    public bool SetColor()
+    private Color ColorData;
+
+
+
+
+
+    private bool SetColor()
     {        
         Convert convert;
 
@@ -87,7 +107,7 @@ public class ColorBrush : Brush
         ulong internColor;
 
 
-        internColor = convert.InternColor(this.Color);
+        internColor = convert.InternColor(this.ColorData);
 
 
 

@@ -321,7 +321,7 @@ public class Draw : InfraObject
     {
         if (!this.CheckCharSpan(text))
         {
-            return false;
+            return true;
         }
 
 

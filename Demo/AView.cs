@@ -155,6 +155,9 @@ class AView : View
         text.Value.Span.String = s;
 
 
+        text.Value.Span.Range.Start = 3;
+
+
         text.Value.Span.Range.End = s.Length;
 
 

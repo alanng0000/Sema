@@ -30,12 +30,6 @@ class Handle : EventHandle
 
 
 
-        if (!state)
-        {
-            return true;
-        }
-
-
 
         Control control;
 
@@ -49,32 +43,46 @@ class Handle : EventHandle
 
 
 
-        bool capLock;
+        if (!state)
+        {
+            if (k == u.Tab)
+            {
+                this.Tab = !this.Tab;
+            }
 
-        capLock = control.CapLock;
+
+            return true;
+        }
+
+
+
+        bool b;
+
+        b = this.Tab;
+        
 
 
 
 
-        if (!capLock & k == u.LetterW)
+        if (!b & k == u.LetterW)
         {
             this.Demo.GridMoveUp();
         }
 
 
-        if (!capLock & k == u.LetterS)
+        if (!b & k == u.LetterS)
         {
             this.Demo.GridMoveDown();
         }
 
 
-        if (!capLock & k == u.LetterA)
+        if (!b & k == u.LetterA)
         {
             this.Demo.GridMoveLeft();
         }
 
 
-        if (!capLock & k == u.LetterD)
+        if (!b & k == u.LetterD)
         {
             this.Demo.GridMoveRight();
         }
@@ -82,50 +90,50 @@ class Handle : EventHandle
 
 
 
-        if (!capLock & k == u.LetterI)
+        if (!b & k == u.LetterI)
         {
             this.Demo.TextMoveUp();
         }
 
 
-        if (!capLock & k == u.LetterK)
+        if (!b & k == u.LetterK)
         {
             this.Demo.TextMoveDown();
         }
 
 
-        if (!capLock & k == u.LetterJ)
+        if (!b & k == u.LetterJ)
         {
             this.Demo.TextMoveLeft();
         }
 
 
-        if (!capLock & k == u.LetterL)
+        if (!b & k == u.LetterL)
         {
             this.Demo.TextMoveRight();
         }
 
 
 
-        if (capLock & k == u.LetterI)
+        if (b & k == u.LetterI)
         {
             this.Demo.ImageSourceMoveUp();
         }
 
 
-        if (capLock & k == u.LetterK)
+        if (b & k == u.LetterK)
         {
             this.Demo.ImageSourceMoveDown();
         }
 
 
-        if (capLock & k == u.LetterJ)
+        if (b & k == u.LetterJ)
         {
             this.Demo.ImageSourceMoveLeft();
         }
 
 
-        if (capLock & k == u.LetterL)
+        if (b & k == u.LetterL)
         {
             this.Demo.ImageSourceMoveRight();
         }
@@ -133,7 +141,7 @@ class Handle : EventHandle
 
 
 
-        if (!capLock & k == u.LetterH)
+        if (!b & k == u.LetterH)
         {
             this.Demo.GridToggleVisible();
         }
@@ -142,7 +150,7 @@ class Handle : EventHandle
 
 
 
-        if (!capLock & k == u.LetterC)
+        if (!b & k == u.LetterC)
         {
             this.Demo.TextWidthIncrease();
         }
@@ -151,7 +159,7 @@ class Handle : EventHandle
 
 
 
-        if (!capLock & k == u.LetterT)
+        if (!b & k == u.LetterT)
         {
             this.Demo.FrameNotVisible();
         }
@@ -160,7 +168,7 @@ class Handle : EventHandle
 
 
 
-        if (!capLock & k == u.LetterB)
+        if (!b & k == u.LetterB)
         {
             this.Demo.Close();
         }
@@ -168,5 +176,13 @@ class Handle : EventHandle
 
 
         return true;
+    }
+
+
+
+
+    private bool Tab
+    {
+        get; set;
     }
 }

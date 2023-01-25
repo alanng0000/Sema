@@ -323,7 +323,12 @@ public class Grid : View
 
 
 
-        this.DrawInfra.BoundArea(u, ref rect);
+        DrawInfra infra;
+
+        infra = DrawInfra.This;
+
+
+        infra.BoundArea(u, ref rect);
 
 
 
@@ -592,8 +597,12 @@ public class Grid : View
 
 
 
+        DrawInfra infra;
 
-        this.DrawInfra.BoundArea(u, ref rect);
+        infra = DrawInfra.This;
+
+
+        infra.BoundArea(u, ref rect);
 
 
 

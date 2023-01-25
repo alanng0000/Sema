@@ -314,7 +314,12 @@ public class Image : View
 
 
 
-        this.DrawInfra.BoundArea(u, ref rect);
+        DrawInfra infra;
+
+        infra = DrawInfra.This;
+
+
+        infra.BoundArea(u, ref rect);
 
 
 

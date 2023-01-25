@@ -13,16 +13,6 @@ public class View : CompObject
 
 
 
-        this.DrawInfra = new DrawInfra();
-
-
-
-        this.DrawInfra.Init();
-
-
-
-
-
 
         this.PosField = new Field();
 
@@ -558,7 +548,12 @@ public class View : CompObject
 
 
 
-        this.DrawInfra.BoundArea(u, ref rect);
+        DrawInfra infra;
+
+        infra = DrawInfra.This;
+
+
+        infra.BoundArea(u, ref rect);
 
 
 
@@ -612,17 +607,6 @@ public class View : CompObject
 
         return true;
     }
-
-    
-
-
-
-
-
-
-    protected DrawInfra DrawInfra { get; set; }
-
-
 
 
 

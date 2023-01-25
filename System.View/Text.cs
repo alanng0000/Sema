@@ -491,7 +491,12 @@ public class Text : View
 
 
 
-        this.DrawInfra.BoundArea(u, ref rect);
+        DrawInfra drawInfra;
+
+        drawInfra = DrawInfra.This;
+
+
+        drawInfra.BoundArea(u, ref rect);
 
 
 

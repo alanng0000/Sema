@@ -635,6 +635,7 @@ public class KeyList : InfraObject
 
 
 
+
     public bool IsDigitKey(int index)
     {
         InternConstant constant;
@@ -645,9 +646,6 @@ public class KeyList : InfraObject
 
         return !(index < constant.LetterIndexEnd) & index < constant.DigitIndexEnd;
     }
-
-
-
 
 
 

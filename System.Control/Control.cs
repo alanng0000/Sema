@@ -156,11 +156,24 @@ public class Control : InfraObject
 
     private bool GetCapLock()
     {
-        
+        InternIntern intern;
+
+
+        intern = InternIntern.This;
 
 
 
-        return true;    
+        bool b;
+
+        b = intern.CapLockKeyOn();
+
+
+
+        bool ret;
+
+        ret = b;
+
+        return ret;    
     }
 
 

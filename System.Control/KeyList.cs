@@ -307,83 +307,78 @@ public class KeyList : InfraObject
 
 
 
-        this.Space = this.AddSignKey(0x20, ' ', ' ');
+        this.Space = this.AddSignKey(' ', ' ');
 
 
-        this.BackTick = this.AddSignKey(0xc0, '`', '~');
+        this.BackTick = this.AddSignKey('`', '~');
 
 
-        this.Dash = this.AddSignKey(0xbd, '-', '_');
+        this.Dash = this.AddSignKey('-', '_');
 
 
-        this.EqualSign = this.AddSignKey(0xbb, '=', '+');
+        this.EqualSign = this.AddSignKey('=', '+');
 
 
-        this.LeftSquare = this.AddSignKey(0xdb, '[', '{');
+        this.LeftSquare = this.AddSignKey('[', '{');
 
 
-        this.RightSquare = this.AddSignKey(0xdd, ']', '}');
+        this.RightSquare = this.AddSignKey(']', '}');
 
 
-        this.SemiColon = this.AddSignKey(0xba, ';', ':');
+        this.SemiColon = this.AddSignKey(';', ':');
 
 
-        this.SingleQuote = this.AddSignKey(0xde, '\'', '"');
+        this.SingleQuote = this.AddSignKey('\'', '"');
 
 
-        this.Comma = this.AddSignKey(0xbc, ',', '<');
+        this.Comma = this.AddSignKey(',', '<');
 
 
-        this.Dot = this.AddSignKey(0xbe, '.', '>');
+        this.Dot = this.AddSignKey('.', '>');
 
 
-        this.Slash = this.AddSignKey(0xbf, '/', '?');
+        this.Slash = this.AddSignKey('/', '?');
 
 
-        this.BackSlash = this.AddSignKey(0xdc, '\\', '|');
-
-
-
-
-
-        this.Enter = this.AddKey(0x0d);
+        this.BackSlash = this.AddSignKey('\\', '|');
 
 
 
 
 
-        this.Tab = this.AddKey(0x09);
+        this.Enter = this.AddKey();
 
 
 
 
 
-        this.Shift = this.AddKey(0x10);
+        this.Tab = this.AddKey();
 
 
 
 
 
-        this.Control = this.AddKey(0x11);
+        this.Shift = this.AddKey();
+
+
+
+
+
+        this.Control = this.AddKey();
         
 
 
 
 
-        this.Backspace = this.AddKey(0x08);
+        this.Backspace = this.AddKey();
 
 
 
 
 
-        this.CapLock = this.AddKey(0x14);
+        this.CapLock = this.AddKey();
 
 
-
-
-
-
-        this.InitCodeList();
 
 
 
@@ -418,45 +413,6 @@ public class KeyList : InfraObject
 
 
 
-    private bool InitCodeList()
-    {
-        this.CodeList = new int[this.CodeCount];
-
-
-
-        int count;
-
-        count = this.Count;
-
-
-
-        int i;
-
-        i = 0;
-
-        while (i < count)
-        {
-            Key key;
-
-
-            key = this.List[i];
-
-
-
-            this.CodeList[key.Code] = key.Index;
-
-
-
-            i = i + 1;
-        }
-
-
-        return true;
-    }
-
-
-
-
 
 
     private Key AddLetterKey()
@@ -475,7 +431,7 @@ public class KeyList : InfraObject
 
         Key key;
 
-        key = this.AddKey(code);
+        key = this.AddKey();
 
 
 
@@ -549,7 +505,7 @@ public class KeyList : InfraObject
 
         Key key;
 
-        key = this.AddKey(code);
+        key = this.AddKey();
 
 
 
@@ -596,11 +552,11 @@ public class KeyList : InfraObject
 
 
 
-    private Key AddSignKey(byte code, char defaultChar, char shiftChar)
+    private Key AddSignKey(char defaultChar, char shiftChar)
     {
         Key key;
 
-        key = this.AddKey(code);
+        key = this.AddKey();
 
 
 
@@ -647,7 +603,7 @@ public class KeyList : InfraObject
 
 
 
-    private Key AddKey(byte code)
+    private Key AddKey()
     {
         Key key;
 
@@ -656,8 +612,6 @@ public class KeyList : InfraObject
         key.Init();
 
         key.Index = this.Index;
-
-        key.Code = code;
 
 
 
@@ -690,13 +644,6 @@ public class KeyList : InfraObject
         return this.List[index];
     }
 
-
-
-
-    public int CodeIndex(byte code)
-    {
-        return this.CodeList[code];
-    }
 
 
 
@@ -797,22 +744,8 @@ public class KeyList : InfraObject
 
 
 
-    private int CodeCount
-    {
-        get
-        {
-            return 0x100;
-        }
-    }
-
-
-
 
     private Key[] List { get; set; }
-
-
-
-    private int[] CodeList { get; set; }
 
 
 

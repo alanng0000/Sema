@@ -13,6 +13,10 @@ public struct CharSpan
 
 
 
+    public string String;
+
+
+
     public char[] Array;
 
 

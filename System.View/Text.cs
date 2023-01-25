@@ -69,7 +69,7 @@ public class Text : View
 
         value.Init();
 
-        value.Span.Array = new char[0];
+        value.Span.String = "";
 
         value.Span.Range.Start = 0;
 

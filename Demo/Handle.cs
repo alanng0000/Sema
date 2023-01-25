@@ -49,38 +49,32 @@ class Handle : EventHandle
 
 
 
-        int a;
+        bool capLock;
 
-        a = u.Shift.Index;
-
-
-
-        bool shift;
-
-        shift = control.Get(a);
+        capLock = control.CapLock;
 
 
 
 
-        if (!shift & k == u.LetterW)
+        if (!capLock & k == u.LetterW)
         {
             this.Demo.GridMoveUp();
         }
 
 
-        if (!shift & k == u.LetterS)
+        if (!capLock & k == u.LetterS)
         {
             this.Demo.GridMoveDown();
         }
 
 
-        if (!shift & k == u.LetterA)
+        if (!capLock & k == u.LetterA)
         {
             this.Demo.GridMoveLeft();
         }
 
 
-        if (!shift & k == u.LetterD)
+        if (!capLock & k == u.LetterD)
         {
             this.Demo.GridMoveRight();
         }
@@ -88,50 +82,50 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == u.LetterI)
+        if (!capLock & k == u.LetterI)
         {
             this.Demo.TextMoveUp();
         }
 
 
-        if (!shift & k == u.LetterK)
+        if (!capLock & k == u.LetterK)
         {
             this.Demo.TextMoveDown();
         }
 
 
-        if (!shift & k == u.LetterJ)
+        if (!capLock & k == u.LetterJ)
         {
             this.Demo.TextMoveLeft();
         }
 
 
-        if (!shift & k == u.LetterL)
+        if (!capLock & k == u.LetterL)
         {
             this.Demo.TextMoveRight();
         }
 
 
 
-        if (shift & k == u.LetterI)
+        if (capLock & k == u.LetterI)
         {
             this.Demo.ImageSourceMoveUp();
         }
 
 
-        if (shift & k == u.LetterK)
+        if (capLock & k == u.LetterK)
         {
             this.Demo.ImageSourceMoveDown();
         }
 
 
-        if (shift & k == u.LetterJ)
+        if (capLock & k == u.LetterJ)
         {
             this.Demo.ImageSourceMoveLeft();
         }
 
 
-        if (shift & k == u.LetterL)
+        if (capLock & k == u.LetterL)
         {
             this.Demo.ImageSourceMoveRight();
         }
@@ -139,7 +133,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == u.LetterH)
+        if (!capLock & k == u.LetterH)
         {
             this.Demo.GridToggleVisible();
         }
@@ -148,7 +142,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == u.LetterC)
+        if (!capLock & k == u.LetterC)
         {
             this.Demo.TextWidthIncrease();
         }
@@ -157,7 +151,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == u.LetterT)
+        if (!capLock & k == u.LetterT)
         {
             this.Demo.FrameNotVisible();
         }
@@ -166,7 +160,7 @@ class Handle : EventHandle
 
 
 
-        if (!shift & k == u.LetterB)
+        if (!capLock & k == u.LetterB)
         {
             this.Demo.Close();
         }

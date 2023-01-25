@@ -6,28 +6,9 @@ namespace System.Draw;
 
 public class ColorBrush : Brush
 {
-    public Color Color;
-
-
-
-
     public override bool Init()
     {
         base.Init();
-
-
-
-        Convert convert;
-
-        convert = Convert.This;
-
-
-
-
-        ulong internColor;
-
-
-        internColor = convert.InternColor(this.Color);
 
 
 
@@ -76,12 +57,62 @@ public class ColorBrush : Brush
 
 
 
-        DrawExtern.Draw_ColorBrush_SetColor(o, internColor);
-
-
-
 
         this.Intern = o;
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+    public Color Color
+    {
+        get
+        {
+            return this.ColorData;
+        }
+        set
+        {
+            this.ColorData = value;
+
+
+
+            this.SetColor();
+        }
+    }
+
+
+
+
+
+    private Color ColorData;
+
+
+
+
+
+    private bool SetColor()
+    {        
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+        ulong internColor;
+
+
+        internColor = convert.InternColor(this.ColorData);
+
+
+
+
+        DrawExtern.Draw_ColorBrush_SetColor(this.Intern, internColor);
 
 
 

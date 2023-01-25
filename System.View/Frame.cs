@@ -213,37 +213,18 @@ public class Frame : CompObject
 
 
 
+        DrawInfra infra;
 
-        this.Pos = new DrawPos();
-
-
-        this.Pos.Init();
+        infra = DrawInfra.This;
 
 
-        this.Pos.Left = 0;
 
-
-        this.Pos.Up = 0;
+        this.Pos = infra.CreatePos(0, 0);
 
 
 
 
-
-        this.Area = new DrawRect();
-
-
-        this.Area.Init();
-
-
-
-        this.Area.Pos = this.Pos;
-
-
-
-        this.Area.Size.Width = this.Size.Width;
-
-
-        this.Area.Size.Height = this.Size.Height;
+        this.Area = infra.CreateRect(this.Pos, this.Size);
 
 
 

@@ -394,16 +394,10 @@ public class Frame : CompObject
 
 
 
-        ControlKey u;
-
-        u = this.Control.Key.CodeGet(ko);
-
-
-
 
         int index;
 
-        index = u.Index;
+        index = this.Control.Key.CodeIndex(ko);
 
 
 

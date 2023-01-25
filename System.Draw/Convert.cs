@@ -27,7 +27,7 @@ public class Convert : InfraObject
 
 
 
-    public ulong InternColor(Color color)
+    internal ulong InternColor(Color color)
     {
         this.CompIndex = 0;
 
@@ -137,7 +137,7 @@ public class Convert : InfraObject
 
 
 
-    public ulong InternFontStyle(FontStyle style)
+    internal ulong InternFontStyle(FontStyle style)
     {
         ulong t;
 

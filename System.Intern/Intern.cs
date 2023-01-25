@@ -108,14 +108,6 @@ public class Intern : InfraObject
     public bool DrawDrawText(ulong internDraw, string textString, char[] textArray, InfraRange range, 
         long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
     {
-        if (!this.CheckCharSpan(textString, textArray, range))
-        {
-            return true;
-        }
-
-
-
-
         int index;
 
         index = range.Start;
@@ -224,7 +216,7 @@ public class Intern : InfraObject
 
 
 
-    private bool CheckCharSpan(string textString, char[] textArray, InfraRange range)
+    public bool CheckCharSpan(string textString, char[] textArray, InfraRange range)
     {
         bool ret;
 

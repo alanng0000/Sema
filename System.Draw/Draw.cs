@@ -318,7 +318,22 @@ public class Draw : InfraObject
 
 
     public bool Text(CharSpan text, Rect destRect, Font font, Brush brush)
-    {
+    {        
+        InternIntern intern;
+
+        intern = InternIntern.This;
+
+
+
+        if (!intern.CheckCharSpan(text.String, text.Array, text.Range))
+        {
+            return true;
+        }
+
+
+
+
+
         this.Absolute(ref destRect.Pos);
 
 
@@ -365,14 +380,6 @@ public class Draw : InfraObject
         ulong brushU;
 
         brushU = brush.Intern;
-
-
-
-
-
-        InternIntern intern;
-
-        intern = InternIntern.This;
 
 
 

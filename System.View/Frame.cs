@@ -421,7 +421,7 @@ public class Frame : CompObject
 
 
 
-        this.SetControlState(index, state);
+        this.ControlChange(index, state);
 
 
 
@@ -438,7 +438,7 @@ public class Frame : CompObject
 
 
 
-    protected virtual bool SetControlState(int index, bool state)
+    protected virtual bool ControlChange(int index, bool state)
     {
         this.Control.Set(index, state);
 

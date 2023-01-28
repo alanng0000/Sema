@@ -53,7 +53,13 @@ public class Constant : InfraObject
 
 
 
-        this.KeyCount = this.LetterKeyCount + this.DigitKeyCount + this.SignKeyCount + this.ControlKeyCount;
+
+        this.CharKeyCount = this.LetterKeyCount + this.DigitKeyCount + this.SignKeyCount;
+
+
+
+
+        this.KeyCount = this.CharKeyCount + this.ControlKeyCount;
         
 
 
@@ -65,12 +71,13 @@ public class Constant : InfraObject
 
         this.DigitIndexEnd = this.LetterIndexEnd + this.DigitKeyCount;
 
-
+        
 
 
 
         return true;
     }
+    
     
 
 
@@ -93,6 +100,11 @@ public class Constant : InfraObject
 
 
     public int ControlKeyCount { get; private set; }
+
+
+
+
+    public int CharKeyCount { get; private set; }
 
 
 

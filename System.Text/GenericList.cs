@@ -359,6 +359,63 @@ struct GenericList<TItem>
 
 
 
+    public bool SetCount(int value)
+    {
+        int newCount;
+
+
+        newCount = value;
+
+
+
+
+        if (!this.HasSpace(this.Capacity, newCount))
+        {
+            int capacity;
+
+
+            capacity = this.NewCapacity(newCount);
+
+
+
+
+
+            TItem[] d;
+
+
+            d = new TItem[capacity];
+
+
+
+
+            SystemArray.Copy(this.Data, 0, d, 0, this.Count);
+
+
+
+
+            this.Data = d;
+        }
+
+
+
+
+        this.Count = newCount;
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
+
+
+
     private int CountRange(InfraRange range)
     {
         RangeInfra infra;

@@ -64,6 +64,11 @@ public class Constant : InfraObject
 
 
         this.KeyCount = constant.KeyCount;
+
+
+
+
+        this.CharKeyCount = constant.CharKeyCount;
         
 
 
@@ -86,6 +91,10 @@ public class Constant : InfraObject
 
 
     public int KeyCount { get; private set; }
+
+
+
+    public int CharKeyCount { get; private set; }
 
 
 

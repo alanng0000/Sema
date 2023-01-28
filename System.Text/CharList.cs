@@ -94,6 +94,19 @@ public class CharList : InfraObject
 
 
 
+    public bool SetCount(int value)
+    {
+        this.List.SetCount(value);
+
+
+
+        return true;
+    }
+
+
+
+
+
     public CharIter Iter()
     {
         CharIter iter;

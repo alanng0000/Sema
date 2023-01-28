@@ -94,6 +94,19 @@ public class LineList : InfraObject
 
 
 
+    public bool SetCount(int value)
+    {
+        this.List.SetCount(value);
+
+
+
+        return true;
+    }
+
+
+
+
+
     public LineIter Iter()
     {
         LineIter iter;

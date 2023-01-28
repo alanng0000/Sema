@@ -717,7 +717,12 @@ public class KeyList : InfraObject
         {
             return this.List.Length;
         }
+        set
+        {
+        }
     }
+
+
 
 
 

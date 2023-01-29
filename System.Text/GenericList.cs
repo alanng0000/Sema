@@ -71,7 +71,8 @@ struct GenericList<TItem>
 
 
 
-    public bool Insert(int index, TItem[] item, InfraRange range)
+
+    public bool Insert(InfraRange range)
     {
         int count;
 
@@ -114,14 +115,9 @@ struct GenericList<TItem>
 
 
 
-            SystemArray.Copy(this.Data, 0, d, 0, index);
+            SystemArray.Copy(this.Data, 0, d, 0, range.Start);
 
 
-
-
-
-
-            SystemArray.Copy(item, range.Start, d, index, count);
 
 
 
@@ -129,7 +125,7 @@ struct GenericList<TItem>
             int k;
 
 
-            k = index + count;
+            k = range.Start + count;
 
 
 
@@ -137,12 +133,12 @@ struct GenericList<TItem>
             int remainCount;
 
 
-            remainCount = this.Count - index;
+            remainCount = this.Count - range.Start;
 
 
 
 
-            SystemArray.Copy(this.Data, index, d, k, remainCount);
+            SystemArray.Copy(this.Data, range.Start, d, k, remainCount);
 
 
 
@@ -159,18 +155,12 @@ struct GenericList<TItem>
             int remainCount;
 
 
-            remainCount = this.Count - index;
+            remainCount = this.Count - range.Start;
 
 
 
 
-            this.MoveItemListToNext(index, remainCount, count);
-
-
-
-
-
-            SystemArray.Copy(item, range.Start, this.Data, index, count);
+            this.MoveItemListToNext(range.Start, remainCount, count);
         }
 
 

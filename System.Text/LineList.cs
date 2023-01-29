@@ -62,9 +62,9 @@ public class LineList : InfraObject
 
 
 
-    public bool Insert(InfraRange range)
+    public bool Insert(int index, Line[] item, InfraRange range)
     {
-        return this.List.Insert(range);
+        return this.List.Insert(index, item, range);
     }
 
 

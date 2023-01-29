@@ -59,13 +59,6 @@ public class LineList : InfraObject
 
 
 
-    public bool Set(int index, Line item)
-    {
-        return this.List.Set(index, item);
-    }
-
-
-
 
 
 
@@ -85,9 +78,9 @@ public class LineList : InfraObject
 
 
 
-    public bool Replace(int index, Line[] item, InfraRange range)
+    public bool Set(int index, Line[] item, InfraRange range)
     {
-        return this.List.Replace(index, item, range);
+        return this.List.Set(index, item, range);
     }
 
 

@@ -69,28 +69,6 @@ struct GenericList<TItem>
 
 
 
-    public bool Set(int index, TItem item)
-    {
-        if (!this.CheckIndex(index))
-        {
-            return true;
-        }
-
-
-
-        
-        this.Data[index] = item;
-
-
-        return true;
-    }
-
-
-
-
-
-
-
 
 
     public bool Insert(InfraRange range)
@@ -306,7 +284,7 @@ struct GenericList<TItem>
 
 
 
-    public bool Replace(int index, TItem[] item, InfraRange range)
+    public bool Set(int index, TItem[] item, InfraRange range)
     {
         int count;
         

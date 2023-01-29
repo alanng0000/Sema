@@ -167,7 +167,7 @@ struct GenericList<TItem>
 
 
         this.SetDefaultItem(range.Start, count);
-        
+
 
 
 
@@ -179,6 +179,7 @@ struct GenericList<TItem>
 
         return true;
     }
+    
 
 
 

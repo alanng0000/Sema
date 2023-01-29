@@ -166,6 +166,12 @@ struct GenericList<TItem>
 
 
 
+        this.SetDefaultItem(range.Start, count);
+        
+
+
+
+
         this.Count = newCount;
 
 
@@ -175,6 +181,16 @@ struct GenericList<TItem>
     }
 
 
+
+
+
+    private bool SetDefaultItem(int index, int count)
+    {
+        SystemArray.Fill(this.Data, default(TItem), index, count);
+
+
+        return true;
+    }
 
 
 

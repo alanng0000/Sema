@@ -74,7 +74,7 @@ struct GenericList<TItem>
 
     public bool Insert(InfraRange range)
     {
-        if (!this.CheckRange(range))
+        if (!this.CheckInsertRange(range))
         {
             return true;
         }
@@ -489,6 +489,31 @@ struct GenericList<TItem>
     private bool CheckIndex(int index)
     {
         return index < this.Count;
+    }
+
+
+
+
+
+
+
+    private bool CheckInsertRange(InfraRange range)
+    {
+        bool ba;
+
+
+        ba = range.Start < this.Count + 1;
+
+
+
+        bool bb;
+
+
+        bb = range.End < range.Start;
+
+
+
+        return (ba & !bb);
     }
 
 

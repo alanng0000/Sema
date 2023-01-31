@@ -132,7 +132,7 @@ public class Font : InfraObject
 
 
 
-    public FontStyle Style { get; set; }
+    public FontStyle Style;
 
 
 

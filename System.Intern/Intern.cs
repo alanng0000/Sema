@@ -106,7 +106,7 @@ public class Intern : InfraObject
 
 
     public bool DrawDrawText(ulong internDraw, string textString, char[] textArray, InfraRange range, 
-        long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
+        ulong destLeft, ulong destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
     {
         int index;
 
@@ -305,7 +305,7 @@ public class Intern : InfraObject
 
 
     private unsafe ulong DrawDrawTextPointer(ulong internDraw, char* pointer, int index, ulong length, 
-        long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
+        ulong destLeft, ulong destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush)
     {
         char* pu;
 

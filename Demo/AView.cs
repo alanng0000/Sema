@@ -320,6 +320,12 @@ class AView : View
         grid.Back = yellowBrush;
 
 
+        grid.Dest.Size.Width = 500;
+
+
+        grid.Dest.Size.Height = 500;
+
+
 
 
         GridRow rowA;

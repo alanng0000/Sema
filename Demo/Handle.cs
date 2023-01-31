@@ -90,6 +90,32 @@ class Handle : EventHandle
 
 
 
+        if (b & k == u.LetterW)
+        {
+            this.Demo.GridDestMoveUp();
+        }
+
+
+        if (b & k == u.LetterS)
+        {
+            this.Demo.GridMoveDown();
+        }
+
+
+        if (b & k == u.LetterA)
+        {
+            this.Demo.GridMoveLeft();
+        }
+
+
+        if (b & k == u.LetterD)
+        {
+            this.Demo.GridMoveRight();
+        }
+
+
+
+
         if (!b & k == u.LetterI)
         {
             this.Demo.TextMoveUp();

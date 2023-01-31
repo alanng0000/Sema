@@ -145,6 +145,38 @@ class Demo : Object
 
 
 
+    public bool GridDestMoveUp()
+    {
+        return this.MoveVertical(this.AView.Grid.Dest.Pos, -10);
+    }
+
+
+
+    public bool GridDestMoveDown()
+    {
+        return this.MoveVertical(this.AView.Grid.Pos, 10);
+    }
+
+
+
+
+    public bool GridDestMoveLeft()
+    {
+        return this.MoveHorizontal(this.AView.Grid.Pos, -10);
+    }
+
+
+
+
+    public bool GridDestMoveRight()
+    {
+        return this.MoveHorizontal(this.AView.Grid.Pos, 10);
+    }
+
+
+
+
+
     public bool TextMoveUp()
     {
         return this.MoveVertical(this.AView.Text.Pos, -10);

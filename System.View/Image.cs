@@ -314,12 +314,12 @@ public class Image : View
 
 
 
-        DrawInfra infra;
+        DrawInfra drawInfra;
 
-        infra = DrawInfra.This;
+        drawInfra = DrawInfra.This;
 
 
-        infra.BoundArea(u, ref rect);
+        drawInfra.BoundArea(u, ref rect);
 
 
 
@@ -350,6 +350,11 @@ public class Image : View
 
 
 
+        Infra infra;
+
+        infra = Infra.This;
+
+
 
         DrawRect destRect;
 
@@ -361,7 +366,7 @@ public class Image : View
 
 
 
-        Infra.This.DrawRect(this.Dest, ref destRect);
+        infra.DrawRect(this.Dest, ref destRect);
 
 
 
@@ -377,7 +382,7 @@ public class Image : View
 
 
 
-        Infra.This.DrawRect(this.Source, ref sourceRect);
+        infra.DrawRect(this.Source, ref sourceRect);
         
 
 

@@ -279,7 +279,6 @@ public class Grid : View
         {
             return (Rect)this.DestField.Get();
         }
-
         set
         {
             this.DestField.Set(value);

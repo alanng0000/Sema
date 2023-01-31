@@ -342,21 +342,63 @@ class Demo : Object
     
     public bool TextWidthIncrease()
     {
+        this.SizeWidthChange(this.AView.Text.Size, 10);
+
+
+
+        
+        return true;
+    }
+
+
+
+
+    public bool GridDestWidthIncrease()
+    {
+        this.SizeWidthChange(this.AView.Grid.Dest.Size, 10);
+
+
+
+        
+        return true;
+    }
+
+
+
+
+    public bool GridDestWidthDecrease()
+    {
+        this.SizeWidthChange(this.AView.Grid.Dest.Size, -10);
+
+
+
+        
+        return true;
+    }
+
+
+
+
+
+
+
+    private bool SizeWidthChange(Size size, int different)
+    {
         int width;
 
 
 
-        width = this.AView.Text.Size.Width;
+        width = size.Width;
 
 
 
 
-        width = width + 10;
+        width = width + different;
 
 
 
 
-        this.AView.Text.Size.Width = width;
+        size.Width = width;
 
 
 
@@ -369,7 +411,6 @@ class Demo : Object
         
         return true;
     }
-
 
 
 

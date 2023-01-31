@@ -17,6 +17,7 @@ global using Grid = System.View.Grid;
 global using Text = System.View.Text;
 global using Image = System.View.Image;
 global using Pos = System.View.Pos;
+global using Size = System.View.Size;
 global using GridCol = System.View.GridCol;
 global using GridRow = System.View.GridRow;
 global using GridChild = System.View.GridChild;

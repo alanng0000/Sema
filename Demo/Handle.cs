@@ -185,6 +185,21 @@ class Handle : EventHandle
 
 
 
+        if (b & k == u.LetterC)
+        {
+            this.Demo.GridDestWidthIncrease();
+        }
+
+
+        if (b & k == u.LetterV)
+        {
+            this.Demo.GridDestWidthDecrease();
+        }
+
+
+
+
+
         if (!b & k == u.LetterT)
         {
             this.Demo.FrameNotVisible();

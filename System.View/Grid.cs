@@ -423,6 +423,87 @@ public class Grid : View
 
 
 
+        
+        left = this.Dest.Pos.Left;
+
+
+
+        up = this.Dest.Pos.Up;
+
+
+
+        left = left + draw.Pos.Left;
+
+
+        up = up + draw.Pos.Up;
+
+
+
+
+        width = this.Dest.Size.Width;
+
+
+
+        height = this.Dest.Size.Height;
+
+
+
+
+        pos.Left = left;
+
+        pos.Up = up;
+
+
+
+        rect.Pos.Left = left;
+
+        rect.Pos.Up = up;
+
+        rect.Size.Width = width;
+
+        rect.Size.Height = height;
+
+
+
+
+        DrawRect uo;
+
+        uo = draw.Area;
+
+
+
+        infra.BoundArea(uo, ref rect);
+
+
+
+
+
+
+        DrawPos uno;
+
+        uno = draw.Pos;
+
+
+
+
+
+        draw.Pos = pos;
+
+
+
+
+        draw.Area = rect;
+
+
+
+        draw.Clip();
+
+
+
+
+
+
+
         ListIter iter;
 
 
@@ -444,6 +525,20 @@ public class Grid : View
 
             this.DrawGridChild(draw, child);
         }
+
+
+
+
+
+        draw.Pos = uno;
+
+
+
+        draw.Area = uo;
+
+
+
+        draw.Clip();
 
 
 

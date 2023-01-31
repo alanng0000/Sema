@@ -469,6 +469,18 @@ public class Draw : InfraObject
         destUp = destRect.Pos.Up;
 
 
+
+        ulong destLeftI;
+
+        destLeftI = (ulong)destLeft;
+
+
+        ulong destUpI;
+
+        destUpI = (ulong)destUp;
+
+
+
         ulong destWidth;
 
         destWidth = convert.ULong(destRect.Size.Width);
@@ -492,6 +504,19 @@ public class Draw : InfraObject
         sourceUp = sourceRect.Pos.Up;
 
 
+
+        ulong sourceLeftI;
+
+        sourceLeftI = (ulong)sourceLeft;
+
+
+        ulong sourceUpI;
+
+        sourceUpI = (ulong)sourceUp;
+
+
+
+
         ulong sourceWidth;
 
         sourceWidth = convert.ULong(sourceRect.Size.Width);
@@ -505,8 +530,8 @@ public class Draw : InfraObject
 
 
 
-        DrawExtern.Draw_Draw_Image(this.Intern, imageU, destLeft, destUp, destWidth, destHeight,
-            sourceLeft, sourceUp, sourceWidth, sourceHeight
+        DrawExtern.Draw_Draw_Image(this.Intern, imageU, destLeftI, destUpI, destWidth, destHeight,
+            sourceLeftI, sourceUpI, sourceWidth, sourceHeight
         );
 
 

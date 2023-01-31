@@ -98,19 +98,19 @@ class Handle : EventHandle
 
         if (b & k == u.LetterS)
         {
-            this.Demo.GridMoveDown();
+            this.Demo.GridDestMoveDown();
         }
 
 
         if (b & k == u.LetterA)
         {
-            this.Demo.GridMoveLeft();
+            this.Demo.GridDestMoveLeft();
         }
 
 
         if (b & k == u.LetterD)
         {
-            this.Demo.GridMoveRight();
+            this.Demo.GridDestMoveRight();
         }
 
 

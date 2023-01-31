@@ -154,7 +154,7 @@ class Demo : Object
 
     public bool GridDestMoveDown()
     {
-        return this.MoveVertical(this.AView.Grid.Pos, 10);
+        return this.MoveVertical(this.AView.Grid.Dest.Pos, 10);
     }
 
 
@@ -162,7 +162,7 @@ class Demo : Object
 
     public bool GridDestMoveLeft()
     {
-        return this.MoveHorizontal(this.AView.Grid.Pos, -10);
+        return this.MoveHorizontal(this.AView.Grid.Dest.Pos, -10);
     }
 
 
@@ -170,7 +170,7 @@ class Demo : Object
 
     public bool GridDestMoveRight()
     {
-        return this.MoveHorizontal(this.AView.Grid.Pos, 10);
+        return this.MoveHorizontal(this.AView.Grid.Dest.Pos, 10);
     }
 
 

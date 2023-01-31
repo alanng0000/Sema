@@ -235,6 +235,18 @@ public class Draw : InfraObject
         up = this.Area.Pos.Up;
 
 
+
+        ulong leftI;
+
+        leftI = (ulong)left;
+
+
+        ulong upI;
+
+        upI = (ulong)up;
+
+
+
         ulong width;
 
         width = convert.ULong(this.Area.Size.Width);
@@ -247,7 +259,7 @@ public class Draw : InfraObject
 
 
 
-        DrawExtern.Draw_Draw_Clip(this.Intern, left, up, width, height);
+        DrawExtern.Draw_Draw_Clip(this.Intern, leftI, upI, width, height);
 
 
 
@@ -284,6 +296,18 @@ public class Draw : InfraObject
         up = rect.Pos.Up;
 
 
+
+        ulong leftI;
+
+        leftI = (ulong)left;
+
+
+        ulong upI;
+
+        upI = (ulong)up;
+
+
+
         ulong width;
 
         width = convert.ULong(rect.Size.Width);
@@ -304,7 +328,7 @@ public class Draw : InfraObject
 
 
 
-        DrawExtern.Draw_Draw_Rect(this.Intern, left, up, width, height, brushU);
+        DrawExtern.Draw_Draw_Rect(this.Intern, leftI, upI, width, height, brushU);
 
 
 
@@ -357,6 +381,20 @@ public class Draw : InfraObject
         destUp = destRect.Pos.Up;
 
 
+
+
+        ulong destLeftI;
+
+        destLeftI = (ulong)destLeft;
+
+
+        ulong destUpI;
+
+        destUpI = (ulong)destUp;
+
+
+
+
         ulong destWidth;
 
         destWidth = convert.ULong(destRect.Size.Width);
@@ -384,7 +422,7 @@ public class Draw : InfraObject
 
 
 
-        intern.DrawDrawText(this.Intern, text.String, text.Array, text.Range, destLeft, destUp, destWidth, destHeight, fontU, brushU);
+        intern.DrawDrawText(this.Intern, text.String, text.Array, text.Range, destLeftI, destUpI, destWidth, destHeight, fontU, brushU);
 
 
 

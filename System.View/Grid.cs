@@ -46,6 +46,19 @@ public class Grid : View
 
 
 
+        this.DestField = new Field();
+
+
+        this.DestField.Object = this;
+
+
+        this.DestField.Init();
+
+
+
+
+
+
         List row;
 
         row = new List();
@@ -82,6 +95,19 @@ public class Grid : View
 
         this.Child = child;
         
+
+
+
+
+        Rect dest;
+
+        dest = new Rect();
+
+        dest.Init();
+
+
+        this.Dest = dest;
+
 
 
 
@@ -236,6 +262,43 @@ public class Grid : View
 
         return true;
     }
+
+
+
+
+
+
+    public virtual Field DestField { get; set; }
+
+
+
+
+    public virtual Rect Dest
+    {
+        get
+        {
+            return (Rect)this.DestField.Get();
+        }
+
+        set
+        {
+            this.DestField.Set(value);
+        }
+    }
+
+
+
+
+
+    protected virtual bool ChangeDest(Change change)
+    {
+        this.Trigger(this.DestField);
+
+
+
+        return true;
+    }
+
 
 
 

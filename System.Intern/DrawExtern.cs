@@ -68,24 +68,24 @@ public static class DrawExtern
 
 
     [DllImport(DrawDll)]
-    public static extern ulong Draw_Draw_Rect(ulong o, long left, long up, ulong width, ulong height, ulong brush);
+    public static extern ulong Draw_Draw_Rect(ulong o, ulong left, ulong up, ulong width, ulong height, ulong brush);
 
 
 
     [DllImport(DrawDll)]
-    public static extern ulong Draw_Draw_Text(ulong o, ulong text, ulong length, long destLeft, long destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush);
+    public static extern ulong Draw_Draw_Text(ulong o, ulong text, ulong length, ulong destLeft, ulong destUp, ulong destWidth, ulong destHeight, ulong font, ulong brush);
 
 
 
     [DllImport(DrawDll)]
-    public static extern ulong Draw_Draw_Image(ulong o, ulong image, long destLeft, long destUp, ulong destWidth, ulong destHeight,
-        long sourceLeft, long sourceUp, ulong sourceWidth, ulong sourceHeight);
+    public static extern ulong Draw_Draw_Image(ulong o, ulong image, ulong destLeft, ulong destUp, ulong destWidth, ulong destHeight,
+        ulong sourceLeft, ulong sourceUp, ulong sourceWidth, ulong sourceHeight);
 
 
 
 
     [DllImport(DrawDll)]
-    public static extern ulong Draw_Draw_Clip(ulong o, long left, long up, ulong width, ulong height);
+    public static extern ulong Draw_Draw_Clip(ulong o, ulong left, ulong up, ulong width, ulong height);
 
 
 

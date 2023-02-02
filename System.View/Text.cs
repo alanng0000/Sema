@@ -83,9 +83,9 @@ public class Text : View
 
 
 
-        DrawConstant constant;
+        DrawConstant drawConstant;
 
-        constant = DrawConstant.This;
+        drawConstant = DrawConstant.This;
 
 
 
@@ -95,7 +95,7 @@ public class Text : View
 
         brush.Init();
 
-        brush.Color = constant.BlackColor;
+        brush.Color = drawConstant.BlackColor;
 
 
 
@@ -106,7 +106,14 @@ public class Text : View
 
 
 
-        this.InitFont();
+        Constant constant;
+
+        constant = Constant.This;
+
+
+
+        this.Font = constant.DefaultFont;
+
 
 
 
@@ -126,60 +133,6 @@ public class Text : View
 
         return true;
     }
-
-
-
-
-
-    private bool InitFont()
-    {
-        FontFamily fontFamily;
-
-        fontFamily = new FontFamily();
-
-        fontFamily.Name = "Segoe UI Variable Display";
-
-        fontFamily.Init();
-
-
-
-
-
-        FontStyle fontStyle;
-
-        fontStyle = new FontStyle();
-
-        fontStyle.Init();
-
-
-
-
-        Font font;
-
-
-        font = new Font();
-
-
-        font.Family = fontFamily;
-
-
-        font.Size = 16;
-
-
-        font.Style = fontStyle;
-
-
-        font.Init();
-
-
-
-        this.Font = font;
-
-
-        
-        return true;
-    }
-
 
 
 

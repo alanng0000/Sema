@@ -208,6 +208,120 @@ public class KeyList : InfraObject
 
 
 
+
+
+    public Key LeftUp
+    {
+        get
+        {
+            return this.LetterW;
+        }
+        set
+        {
+        }
+    }
+
+
+
+    public Key LeftDown
+    {
+        get
+        {
+            return this.LetterS;
+        }
+        set
+        {
+        }
+    }
+
+
+
+
+    public Key LeftLeft
+    {
+        get
+        {
+            return this.LetterA;
+        }
+        set
+        {
+        }
+    }
+
+
+
+    public Key LeftRight
+    {
+        get
+        {
+            return this.LetterD;
+        }
+        set
+        {
+        }
+    }
+
+
+
+
+
+
+    public Key RightUp
+    {
+        get
+        {
+            return this.LetterI;
+        }
+        set
+        {
+        }
+    }
+
+
+
+    public Key RightDown
+    {
+        get
+        {
+            return this.LetterK;
+        }
+        set
+        {
+        }
+    }
+
+
+
+
+    public Key RightLeft
+    {
+        get
+        {
+            return this.LetterJ;
+        }
+        set
+        {
+        }
+    }
+
+
+
+    public Key RightRight
+    {
+        get
+        {
+            return this.LetterL;
+        }
+        set
+        {
+        }
+    }
+
+
+
+
+
+
     public override bool Init()
     {
         base.Init();

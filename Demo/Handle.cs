@@ -64,25 +64,25 @@ class Handle : EventHandle
 
 
 
-        if (!b & k == u.LetterW)
+        if (!b & k == u.LeftUp)
         {
             this.Demo.GridMoveUp();
         }
 
 
-        if (!b & k == u.LetterS)
+        if (!b & k == u.LeftDown)
         {
             this.Demo.GridMoveDown();
         }
 
 
-        if (!b & k == u.LetterA)
+        if (!b & k == u.LeftLeft)
         {
             this.Demo.GridMoveLeft();
         }
 
 
-        if (!b & k == u.LetterD)
+        if (!b & k == u.LeftRight)
         {
             this.Demo.GridMoveRight();
         }
@@ -90,25 +90,25 @@ class Handle : EventHandle
 
 
 
-        if (b & k == u.LetterW)
+        if (b & k == u.LeftUp)
         {
             this.Demo.GridDestMoveUp();
         }
 
 
-        if (b & k == u.LetterS)
+        if (b & k == u.LeftDown)
         {
             this.Demo.GridDestMoveDown();
         }
 
 
-        if (b & k == u.LetterA)
+        if (b & k == u.LeftLeft)
         {
             this.Demo.GridDestMoveLeft();
         }
 
 
-        if (b & k == u.LetterD)
+        if (b & k == u.LeftRight)
         {
             this.Demo.GridDestMoveRight();
         }
@@ -116,50 +116,50 @@ class Handle : EventHandle
 
 
 
-        if (!b & k == u.LetterI)
+        if (!b & k == u.RightUp)
         {
             this.Demo.TextMoveUp();
         }
 
 
-        if (!b & k == u.LetterK)
+        if (!b & k == u.RightDown)
         {
             this.Demo.TextMoveDown();
         }
 
 
-        if (!b & k == u.LetterJ)
+        if (!b & k == u.RightLeft)
         {
             this.Demo.TextMoveLeft();
         }
 
 
-        if (!b & k == u.LetterL)
+        if (!b & k == u.RightRight)
         {
             this.Demo.TextMoveRight();
         }
 
 
 
-        if (b & k == u.LetterI)
+        if (b & k == u.RightUp)
         {
             this.Demo.ImageSourceMoveUp();
         }
 
 
-        if (b & k == u.LetterK)
+        if (b & k == u.RightDown)
         {
             this.Demo.ImageSourceMoveDown();
         }
 
 
-        if (b & k == u.LetterJ)
+        if (b & k == u.RightLeft)
         {
             this.Demo.ImageSourceMoveLeft();
         }
 
 
-        if (b & k == u.LetterL)
+        if (b & k == u.RightRight)
         {
             this.Demo.ImageSourceMoveRight();
         }

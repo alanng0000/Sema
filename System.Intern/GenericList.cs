@@ -1,4 +1,4 @@
-namespace System.List;
+namespace System.Intern;
 
 
 

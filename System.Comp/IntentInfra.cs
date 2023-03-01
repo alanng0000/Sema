@@ -4,18 +4,18 @@ namespace System.Comp;
 
 
 
-class IntentInfra : InfraObject
+class IntInfra : InfraObject
 {
-    public static IntentInfra This { get; } = CreateGlobal();
+    public static IntInfra This { get; } = CreateGlobal();
 
 
 
 
-    private static IntentInfra CreateGlobal()
+    private static IntInfra CreateGlobal()
     {
-        IntentInfra global;
+        IntInfra global;
 
-        global = new IntentInfra();
+        global = new IntInfra();
 
         global.Init();
 

@@ -3,7 +3,7 @@ namespace System.Comp;
 
 
 
-public class IntentCompare : Compare
+public class IntCompare : Compare
 {
     public override int Execute(object left, object right)
     {
@@ -23,19 +23,19 @@ public class IntentCompare : Compare
 
 
 
-        Intent leftO;
+        Int leftO;
 
 
-        leftO = (Intent)left;
+        leftO = (Int)left;
 
 
 
 
 
-        Intent rightO;
+        Int rightO;
 
 
-        rightO = (Intent)right;
+        rightO = (Int)right;
 
 
 

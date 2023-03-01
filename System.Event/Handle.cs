@@ -5,7 +5,7 @@ namespace System.Event;
 
 public class Handle : InfraObject
 {
-    public HandleIntent Intent { get; set; }
+    public HandleInt Int { get; set; }
 
 
 
@@ -20,19 +20,19 @@ public class Handle : InfraObject
         ulong o;
 
 
-        o = HandleIntentInfra.This.NewValue();
+        o = HandleIntInfra.This.NewValue();
         
 
 
 
 
-        this.Intent = new HandleIntent();
+        this.Int = new HandleInt();
 
 
-        this.Intent.Init();
+        this.Int.Init();
 
 
-        this.Intent.Value = o;
+        this.Int.Value = o;
 
 
 

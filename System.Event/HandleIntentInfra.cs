@@ -4,18 +4,18 @@ namespace System.Event;
 
 
 
-class HandleIntentInfra : InfraObject
+class HandleIntInfra : InfraObject
 {
-    public static HandleIntentInfra This { get; } = CreateGlobal();
+    public static HandleIntInfra This { get; } = CreateGlobal();
 
 
 
 
-    private static HandleIntentInfra CreateGlobal()
+    private static HandleIntInfra CreateGlobal()
     {
-        HandleIntentInfra global;
+        HandleIntInfra global;
 
-        global = new HandleIntentInfra();
+        global = new HandleIntInfra();
 
         global.Init();
 

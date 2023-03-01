@@ -25,19 +25,19 @@ public class Object : InfraObject
         ulong o;
 
 
-        o = IntentInfra.This.NewValue();
+        o = IntInfra.This.NewValue();
         
 
 
 
 
-        this.Intent = new Intent();
+        this.Int = new Int();
 
 
-        this.Intent.Init();
+        this.Int.Init();
 
 
-        this.Intent.Value = o;
+        this.Int.Value = o;
 
 
 
@@ -60,7 +60,7 @@ public class Object : InfraObject
 
 
 
-    public Intent Intent { get; set; }
+    public Int Int { get; set; }
 
 
 

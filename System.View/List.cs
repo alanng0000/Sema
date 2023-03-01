@@ -11,10 +11,10 @@ public class List : CompObject
 
 
 
-        IntentCompare compare;
+        IntCompare compare;
 
 
-        compare = new IntentCompare();
+        compare = new IntCompare();
 
 
         compare.Init();
@@ -131,7 +131,7 @@ public class List : CompObject
         pair.Init();
 
 
-        pair.Key = item.Intent;
+        pair.Key = item.Int;
 
 
         pair.Value = item;
@@ -258,7 +258,7 @@ public class List : CompObject
 
 
 
-    public virtual bool Contain(Intent key)
+    public virtual bool Contain(Int key)
     {
         return this.Valid(key);
     }
@@ -269,7 +269,7 @@ public class List : CompObject
 
 
 
-    public virtual bool Insert(Intent key, CompObject item)
+    public virtual bool Insert(Int key, CompObject item)
     {
         if (!this.Valid(key))
         {
@@ -297,7 +297,7 @@ public class List : CompObject
         pair.Init();
 
 
-        pair.Key = item.Intent;
+        pair.Key = item.Int;
 
 
         pair.Value = item;
@@ -333,12 +333,12 @@ public class List : CompObject
 
 
 
-    public virtual bool Remove(Intent intent)
+    public virtual bool Remove(Int varInt)
     {
         CompObject item;
 
 
-        item = this.Get(intent);
+        item = this.Get(varInt);
         
 
 
@@ -351,7 +351,7 @@ public class List : CompObject
 
 
 
-        this.ItemMap.Remove(item.Intent);
+        this.ItemMap.Remove(item.Int);
 
 
 
@@ -404,7 +404,7 @@ public class List : CompObject
 
 
 
-    public virtual bool Valid(Intent key)
+    public virtual bool Valid(Int key)
     {
         return !this.Null(this.Get(key));
     }
@@ -413,7 +413,7 @@ public class List : CompObject
 
 
 
-    public virtual CompObject Get(Intent key)
+    public virtual CompObject Get(Int key)
     {
         return (CompObject)this.ItemMap.Get(key);
     }

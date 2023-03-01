@@ -3,7 +3,7 @@ namespace System.Comp;
 
 
 
-public class Intent : InfraObject
+public class Int : InfraObject
 {
     public ulong Value { get; set; }
 }

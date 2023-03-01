@@ -7,10 +7,10 @@ public class HandleMap : Map
 {
     public override bool Init()
     {
-        HandleIntentCompare compare;
+        HandleIntCompare compare;
         
         
-        compare = new HandleIntentCompare();
+        compare = new HandleIntCompare();
 
 
         compare.Init();
@@ -40,7 +40,7 @@ public class HandleMap : Map
 
         pair.Init();
 
-        pair.Key = handle.Intent;
+        pair.Key = handle.Int;
 
         pair.Value = handle;
 
@@ -58,7 +58,7 @@ public class HandleMap : Map
 
     public bool RemoveHandle(Handle handle)
     {
-        this.Remove(handle.Intent);
+        this.Remove(handle.Int);
 
 
 

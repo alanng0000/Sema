@@ -3,7 +3,7 @@ namespace System.Event;
 
 
 
-public class HandleIntentCompare : Compare
+public class HandleIntCompare : Compare
 {
     public override int Execute(object left, object right)
     {
@@ -23,19 +23,19 @@ public class HandleIntentCompare : Compare
 
 
 
-        HandleIntent leftO;
+        HandleInt leftO;
 
 
-        leftO = (HandleIntent)left;
+        leftO = (HandleInt)left;
 
 
 
 
 
-        HandleIntent rightO;
+        HandleInt rightO;
 
 
-        rightO = (HandleIntent)right;
+        rightO = (HandleInt)right;
 
 
 

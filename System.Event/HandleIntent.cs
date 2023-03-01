@@ -3,7 +3,7 @@ namespace System.Event;
 
 
 
-public class HandleIntent : InfraObject
+public class HandleInt : InfraObject
 {
     public ulong Value { get; set; }
 }

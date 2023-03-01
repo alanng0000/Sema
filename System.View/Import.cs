@@ -1,5 +1,7 @@
 global using InfraObject = System.Infra.Object;
 global using ObjectInfra = System.Infra.ObjectInfra;
+global using Int = System.Infra.Int;
+global using IntCompare = System.Infra.IntCompare;
 global using InfraConvert = System.Infra.Convert;
 global using InternIntern = System.Intern.Intern;
 global using InfraExtern = System.Intern.InfraExtern;
@@ -16,8 +18,6 @@ global using CharSpan = System.Text.CharSpan;
 global using EventHandle = System.Event.Handle;
 global using ControlControl = System.Control.Control;
 global using CompObject = System.Comp.Object;
-global using Int = System.Comp.Int;
-global using IntCompare = System.Comp.IntCompare;
 global using Field = System.Comp.Field;
 global using Change = System.Comp.Change;
 global using DrawDraw = System.Draw.Draw;

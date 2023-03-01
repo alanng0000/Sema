@@ -2,7 +2,7 @@
 
 
 
-cd Demo/bin/Debug/net6.0
+cd Demo/bin/Debug/net7.0
 
 
 dotnet Demo.dll

@@ -230,7 +230,7 @@ class AView : View
 
         string imageFileName;
 
-        imageFileName = "sun_and_cloud.img";
+        imageFileName = "image.img";
 
 
 

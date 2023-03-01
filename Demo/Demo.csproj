@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="sun_and_cloud.img" CopyToOutputDirectory="PreserveNewest" />
+        <Content Include="image.img" CopyToOutputDirectory="PreserveNewest" />
     </ItemGroup>
 
 </Project>

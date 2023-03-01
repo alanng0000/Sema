@@ -7,10 +7,10 @@ public class HandleMap : Map
 {
     public override bool Init()
     {
-        HandleIntCompare compare;
+        IntCompare compare;
         
         
-        compare = new HandleIntCompare();
+        compare = new IntCompare();
 
 
         compare.Init();

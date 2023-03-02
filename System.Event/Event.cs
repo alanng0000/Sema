@@ -42,17 +42,10 @@ public class Event : InfraObject
 
         while (iter.Next())
         {
-            Pair pair;
-
-
-            pair = (Pair)iter.Value;
-
-
-
             Handle handle;
 
 
-            handle = (Handle)pair.Value;
+            handle = (Handle)iter.Value;
 
 
 

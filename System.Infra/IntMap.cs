@@ -175,13 +175,14 @@ class IntMap : Object
             aa = start + i;
 
 
+
             e = v[aa];
 
 
 
 
             uu = this.GetNewInt(ref e, ll, index);
-            
+
 
 
             v[aa] = e;
@@ -190,9 +191,9 @@ class IntMap : Object
 
             if (uu.HasValue)
             {
-                if (this.IsBlockAllEntryUse(v))
+                if (this.IsBlockEntryArrayUse(v, start, count))
                 {
-
+                    
                 }
 
 
@@ -237,17 +238,12 @@ class IntMap : Object
 
 
 
-    private bool IsBlockAllEntryUse(BlockEntry[] array)
+    private bool IsBlockEntryArrayUse(BlockEntry[] array, int start, int count)
     {
         Constant constant;
 
         constant = Constant.This;
 
-
-
-        int count;
-
-        count = constant.BlockEntryCount;
 
 
 
@@ -257,7 +253,14 @@ class IntMap : Object
 
 
 
+
+        int aa;
+        
+
+
+
         ulong a;
+
 
 
 
@@ -267,7 +270,12 @@ class IntMap : Object
 
         while (i < count)
         {
-            a = array[i].Key;
+            aa = start + i;
+
+
+
+            a = array[aa].Key;
+
 
 
             if (!(a == cc))

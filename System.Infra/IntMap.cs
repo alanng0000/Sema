@@ -31,7 +31,7 @@ class IntMap : Object
 
 
 
-    private ulong? GetNewInt(ref BlockEntry entry, int level, ulong index)
+    private ulong? GetNewInt(ref BlockEntry entry, int level, int index)
     {
         Constant constant;
 
@@ -54,7 +54,12 @@ class IntMap : Object
 
         if (level == cc)
         {
-            return index;
+            ulong ooo;
+
+            ooo = convert.ULong(index);
+
+
+            return ooo;
         }
 
 
@@ -84,7 +89,7 @@ class IntMap : Object
 
         int? u;
 
-        u = this.GetKeyAvailableInt(key);
+        u = this.GetKeyAvailableBitIndex(key);
 
 
         if (!u.HasValue)
@@ -177,7 +182,7 @@ class IntMap : Object
 
 
 
-            uu = this.GetNewInt(ref e, ll, index);
+            uu = this.GetNewInt(ref e, ll, aa);
 
 
 
@@ -305,7 +310,7 @@ class IntMap : Object
 
 
 
-    private int? GetKeyAvailableInt(ulong key)
+    private int? GetKeyAvailableBitIndex(ulong key)
     {
         Constant constant;
 

@@ -15,8 +15,33 @@ class IntMap : Object
 
 
 
-    private ulong? GetNewInt(ulong key, BlockEntry[] array)
+    private ulong? GetNewInt(BlockEntry entry, int level)
     {
+        if (level == 4)
+        {
+
+        }
+
+
+
+        ulong key;
+
+        key = entry.Key;
+
+
+
+        BlockEntry[] value;
+
+        value = entry.Value;
+
+
+        if (value == null)
+        {
+            return null;
+        }
+
+
+
         int? u;
 
         u = this.GetKeyAvailableInt(key);
@@ -55,9 +80,27 @@ class IntMap : Object
 
 
 
+        int index;
+
+
+
+        ulong? uu;
+
+
+
+        int kk;
+
+        kk = level + 1;
+
+
+
         int count;
 
         count = j;
+
+
+
+        BlockEntry e;
 
 
 
@@ -67,8 +110,22 @@ class IntMap : Object
 
         while (i < count)
         {
-            
-            
+            index = start + i;
+
+
+            e = value[index];
+
+
+
+
+            uu = this.GetNewInt(e, kk);
+
+
+            if (uu.HasValue)
+            {
+                return uu;
+            }
+
 
 
             i = i + 1;
@@ -77,7 +134,7 @@ class IntMap : Object
 
 
 
-        return 0;
+        return null;
     }
 
 
@@ -127,5 +184,19 @@ class IntMap : Object
 
 
         return null;
+    }
+
+
+
+
+    private int LevelCount
+    {
+        get
+        {
+            return 4;
+        }
+        set
+        {
+        }
     }
 }

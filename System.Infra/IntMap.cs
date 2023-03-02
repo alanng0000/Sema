@@ -141,11 +141,6 @@ class IntMap : Object
 
 
 
-        int ce;
-
-        ce = cc - 1;
-
-
 
         int kk;
 
@@ -212,7 +207,7 @@ class IntMap : Object
 
 
 
-                kk = ce - level;
+                kk = cc - level;
 
 
                 kk = kk * jj;

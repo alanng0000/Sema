@@ -182,15 +182,9 @@ public class List : CompObject
 
         while (iter.Next())
         {
-            Pair pair;
-            
-            pair = (Pair)iter.Value;
-
-
-
             CompObject item;
 
-            item = (CompObject)pair.Value;
+            item = (CompObject)iter.Value;
 
 
 

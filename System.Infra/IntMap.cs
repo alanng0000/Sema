@@ -452,6 +452,7 @@ class IntMap : Object
 
 
 
+
         BlockEntry e;
 
 
@@ -494,8 +495,9 @@ class IntMap : Object
         key = key & ua;
 
 
+
         entry.Key = key;
-        
+
 
 
 

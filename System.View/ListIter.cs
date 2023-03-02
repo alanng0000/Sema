@@ -44,29 +44,8 @@ public struct ListIter : InfraIIter
     {
         get
         {
-            Pair pair;
-
-
-            pair = (Pair)this.Iter.Value;
-
-
-
-
-            CompObject item;
             
-
-            item = (CompObject)pair.Value;
-
-
-
-
-            CompObject ret;
-
-
-            ret = item;
-
-
-            return ret;
+            return this.Iter.Value;
         }
 
         set

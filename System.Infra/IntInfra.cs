@@ -4,7 +4,7 @@ namespace System.Infra;
 
 
 
-class IntInfra : Object
+public class IntInfra : Object
 {
     public static IntInfra This { get; } = CreateGlobal();
 
@@ -39,6 +39,11 @@ class IntInfra : Object
 
 
 
+
+        this.Lock = new object();
+
+
+
         return true;
     }
 
@@ -50,7 +55,13 @@ class IntInfra : Object
     {
         ulong? u;
 
-        u = this.Map.NewInt();
+
+
+        lock (this.Lock)
+        {
+            u = this.Map.NewInt();
+        }
+        
 
 
 
@@ -81,4 +92,8 @@ class IntInfra : Object
 
 
     private IntMap Map { get; set; }
+
+
+
+    private object Lock { get; set; }
 }

@@ -1,9 +1,9 @@
-namespace Class.Infra;
+namespace System.Module;
 
 
 
 
-public class ModuleVerCompare : Compare
+public class VerCompare : Compare
 {
     public override int Execute(object left, object right)
     {
@@ -22,21 +22,21 @@ public class ModuleVerCompare : Compare
 
 
 
-        ModuleVer leftVer;
+        Ver leftVer;
 
 
 
-        leftVer = (ModuleVer)left;
+        leftVer = (Ver)left;
 
 
 
 
 
-        ModuleVer rightVer;
+        Ver rightVer;
 
 
 
-        rightVer = (ModuleVer)right;
+        rightVer = (Ver)right;
 
 
 

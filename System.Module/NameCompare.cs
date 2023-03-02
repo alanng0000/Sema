@@ -1,9 +1,9 @@
-namespace Class.Infra;
+namespace System.Module;
 
 
 
 
-public class ModuleNameCompare : Compare
+public class NameCompare : Compare
 {
     private StringCompare StringCompare { get; set; }
 
@@ -46,20 +46,20 @@ public class ModuleNameCompare : Compare
 
 
 
-        ModuleName leftName;
+        Name leftName;
 
 
 
-        leftName = (ModuleName)left;
+        leftName = (Name)left;
 
 
 
 
-        ModuleName rightName;
+        Name rightName;
 
 
 
-        rightName = (ModuleName)right;
+        rightName = (Name)right;
 
 
 

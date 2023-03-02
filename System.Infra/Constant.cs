@@ -49,13 +49,44 @@ public class Constant : Object
 
 
 
+
         this.BlockEntryCount = 4 * 1024;
+
+
+
+        ulong n;
         
+        n = this.IntByteCount * this.ByteBitCount;
+
+
+
+
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+        int k;
+
+        k = convert.SInt32(n);
+
+
+        this.BlockEntryKeyBitCount = k;
+
+
+
+
+        k = this.BlockEntryCount / this.BlockEntryKeyBitCount;
+
+
+        this.BlockEntryValueLoopCount = k;
 
 
 
         return true;
     }
+    
 
 
 
@@ -77,7 +108,26 @@ public class Constant : Object
 
 
 
-    internal ulong BlockEntryCount
+
+    internal int BlockEntryCount
+    {
+        get;
+        private set;
+    }
+
+
+
+
+    internal int BlockEntryKeyBitCount
+    {
+        get;
+        private set;
+    }
+
+
+
+
+    internal int BlockEntryValueLoopCount
     {
         get;
         private set;

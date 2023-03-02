@@ -10,4 +10,13 @@ public class Object
     {
         return true;
     }
+
+
+
+
+    public virtual Int Int
+    {
+        get;
+        set;
+    }
 }

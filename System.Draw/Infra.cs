@@ -202,7 +202,7 @@ public class Infra : InfraObject
         w = right - left;
 
 
-        w = this.Int(w);
+        w = this.ClassInt(w);
 
 
 
@@ -213,7 +213,7 @@ public class Infra : InfraObject
         h = down - up;
 
 
-        h = this.Int(h);
+        h = this.ClassInt(h);
 
 
 
@@ -239,7 +239,7 @@ public class Infra : InfraObject
 
 
 
-    private int Int(int a)
+    private int ClassInt(int a)
     {
         int o;
 

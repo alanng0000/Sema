@@ -461,12 +461,15 @@ class IntMap : Object
         this.RemoveInt(varInt, ref e, level + 1, aa);
 
 
-        v[index] = e;
+        v[aa] = e;
 
 
 
 
-        
+        ulong key;
+
+        key = entry.Key;
+
 
 
 

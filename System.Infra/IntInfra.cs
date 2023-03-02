@@ -51,7 +51,43 @@ public class IntInfra : Object
 
 
 
-    public ulong NewValue()
+
+    public Int New()
+    {
+        ulong o;
+
+        o = this.NewValue();
+
+
+        Int a;
+
+        a = new Int();
+
+        a.Value = o;
+
+
+        return a;
+    }
+
+
+
+
+
+    public bool Remove(Int a)
+    {
+        this.RemoveValue(a.Value);
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private ulong NewValue()
     {
         ulong? u;
 
@@ -93,7 +129,7 @@ public class IntInfra : Object
 
 
 
-    public bool RemoveValue(ulong a)
+    private bool RemoveValue(ulong a)
     {
         lock (this.Lock)
         {

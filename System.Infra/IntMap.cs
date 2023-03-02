@@ -359,7 +359,7 @@ class IntMap : Object
 
     public bool Remove(ulong varInt)
     {
-        this.RemoveInt(varInt, ref this.RootEntry, 0, 0);
+        this.RemoveInt(varInt, ref this.RootEntry, 0);
 
 
 
@@ -370,7 +370,7 @@ class IntMap : Object
 
 
 
-    private bool RemoveInt(ulong varInt, ref BlockEntry entry, int level, int index)
+    private bool RemoveInt(ulong varInt, ref BlockEntry entry, int level)
     {
         Constant constant;
 
@@ -459,7 +459,7 @@ class IntMap : Object
         e = v[aa];
 
 
-        this.RemoveInt(varInt, ref e, level + 1, aa);
+        this.RemoveInt(varInt, ref e, level + 1);
 
 
         v[aa] = e;

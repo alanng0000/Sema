@@ -53,11 +53,36 @@ class IntMap : Object
 
 
 
+
+        ulong key;
+
+        key = entry.Key;
+
+
+
+
+        ulong ka;
+
+
+        ka = constant.BlockEntryKeyAllUse;
+
+
+
         if (level == cc)
         {
             ulong ooo;
 
             ooo = convert.ULong(index);
+
+
+
+            key = ka;
+
+
+
+            entry.Key = key;
+
+
 
 
             return ooo;
@@ -66,9 +91,6 @@ class IntMap : Object
 
 
 
-        ulong key;
-
-        key = entry.Key;
 
 
 
@@ -106,6 +128,7 @@ class IntMap : Object
 
 
 
+
         int oo;
 
         oo = constant.BlockEntryValueLoopCount;
@@ -120,6 +143,12 @@ class IntMap : Object
 
 
         int aa;
+
+
+
+        int ce;
+
+        ce = cc - 1;
 
 
 
@@ -144,6 +173,12 @@ class IntMap : Object
 
 
         int kk;
+
+
+
+
+        bool b;
+
 
 
 
@@ -178,60 +213,69 @@ class IntMap : Object
 
 
 
-            uu = this.GetNewInt(ref e, ll, aa);
+            b = (e.Key == ka);
 
 
 
-            v[aa] = e;
-
-
-
-            if (uu.HasValue)
+            if (!b)
             {
-                if (this.IsBlockEntryArrayUse(v, start, count))
+                uu = this.GetNewInt(ref e, ll, aa);
+
+
+
+                v[aa] = e;
+
+
+
+                if (uu.HasValue)
                 {
-                    ulong ua;
+                    bool ba;
 
-                    ua = 1;
+                    ba = this.IsBlockEntryArrayUse(v, start, count);
+
+
+                    if (ba)
+                    {
+                        key = this.SetKeyBit(key, k);
+
+
+
+                        entry.Key = key;
+                    }
+
+
+
+
+                    kk = ce - level;
+
+
+                    kk = kk * jj;
+
+
+
+                    au = convert.ULong(aa);
+
+
+                    au = au << kk;
+
                     
-                    ua = ua << k;
+
+
+                    nn = uu.Value;
+
+
+                    au = au | nn;
 
 
 
-                    key = key | ua;
-
-
-
-                    entry.Key = key;
+                    return au;
                 }
-
-
-
-
-                kk = cc - level;
-
-
-                kk = kk * jj;
-
-
-
-                au = convert.ULong(index);
-
-
-                au = au << kk;
-
-                
-
-
-                nn = uu.Value;
-
-
-                au = au | nn;
-
-
-
-                return au;
             }
+
+
+
+
+            
 
 
 
@@ -244,6 +288,26 @@ class IntMap : Object
         return null;
     }
 
+
+
+
+
+    private ulong SetKeyBit(ulong key, int bitIndex)
+    {
+        ulong ua;
+
+        ua = 1;
+        
+        ua = ua << bitIndex;
+
+
+
+        key = key | ua;
+
+
+
+        return key;
+    }
     
 
 

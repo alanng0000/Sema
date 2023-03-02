@@ -77,10 +77,6 @@ class IntMap : Object
 
 
             entry.Value = v;
-
-
-            
-            return null;
         }
 
 
@@ -193,7 +189,19 @@ class IntMap : Object
             {
                 if (this.IsBlockEntryArrayUse(v, start, count))
                 {
+                    ulong ua;
+
+                    ua = 1;
                     
+                    ua = ua << k;
+
+
+
+                    key = key | ua;
+
+
+
+                    entry.Key = key;
                 }
 
 
@@ -234,6 +242,8 @@ class IntMap : Object
 
         return null;
     }
+
+    
 
 
 

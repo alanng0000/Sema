@@ -11,6 +11,16 @@ public class GridChild : CompObject
 
 
 
+        IntInfra infra;
+
+        infra = IntInfra.This;
+
+
+
+        this.Int = infra.New();
+
+
+
 
 
         this.ViewField = new Field();

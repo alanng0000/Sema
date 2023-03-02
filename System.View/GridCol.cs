@@ -11,6 +11,17 @@ public class GridCol : CompObject
 
 
 
+        IntInfra infra;
+
+        infra = IntInfra.This;
+
+
+
+        this.Int = infra.New();
+
+
+
+
 
         this.WidthField = new Field();
 

@@ -11,6 +11,17 @@ public class GridRow : CompObject
 
 
 
+        IntInfra infra;
+
+        infra = IntInfra.This;
+
+
+
+        this.Int = infra.New();
+
+
+
+
 
         this.HeightField = new Field();
 

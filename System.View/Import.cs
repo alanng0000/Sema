@@ -1,6 +1,7 @@
 global using InfraObject = System.Infra.Object;
 global using ObjectInfra = System.Infra.ObjectInfra;
 global using Int = System.Infra.Int;
+global using IntInfra = System.Infra.IntInfra;
 global using IntCompare = System.Infra.IntCompare;
 global using InfraConvert = System.Infra.Convert;
 global using InternIntern = System.Intern.Intern;

@@ -98,6 +98,7 @@ public class Constant : Object
 
 
 
+        this.BlockEntryKeyAllUse = 0xffffffffffffffff;
 
 
 
@@ -162,6 +163,14 @@ public class Constant : Object
 
 
     internal int BlockEntryIndexBitCount
+    {
+        get;
+        private set;
+    }
+
+
+
+    internal ulong BlockEntryKeyAllUse
     {
         get;
         private set;

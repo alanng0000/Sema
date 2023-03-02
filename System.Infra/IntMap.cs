@@ -224,6 +224,56 @@ class IntMap : Object
 
 
 
+    private bool IsBlockAllEntryUse(BlockEntry[] array)
+    {
+        Constant constant;
+
+        constant = Constant.This;
+
+
+
+        int count;
+
+        count = constant.BlockEntryCount;
+
+
+
+        ulong cc;
+
+        cc = constant.BlockEntryKeyAllUse;
+
+
+
+        ulong a;
+
+
+
+        int i;
+
+        i = 0;
+
+        while (i < count)
+        {
+            a = array[i].Key;
+
+
+            if (!(a == cc))
+            {
+                return false;
+            }
+
+
+            i = i + 1;
+        }
+
+
+
+        return true;
+    }
+
+
+
+
     private int? GetKeyAvailableInt(ulong key)
     {
         Constant constant;

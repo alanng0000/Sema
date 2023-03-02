@@ -466,12 +466,36 @@ class IntMap : Object
 
 
 
+
         ulong key;
 
         key = entry.Key;
 
 
 
+
+        int uuu;
+
+        uuu = index / constant.BlockEntryKeyBitCount;
+
+
+
+
+        ulong ua;
+
+        ua = 1;
+        
+        ua = ua << uuu;
+
+        ua = ~ua;
+
+
+
+        key = key & ua;
+
+
+        entry.Key = key;
+        
 
 
 

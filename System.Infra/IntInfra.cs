@@ -57,6 +57,7 @@ public class IntInfra : Object
         ulong o;
 
         o = this.NewValue();
+        
 
 
         Int a;

@@ -1,21 +1,21 @@
-namespace Class.Infra;
+namespace System.Module;
 
 
 
 
-public class ModulePath : Object
+public class Path : InfraObject
 {
-    public static ModulePath This { get; } = CreateGlobal();
+    public static Path This { get; } = CreateGlobal();
 
 
 
 
-    private static ModulePath CreateGlobal()
+    private static Path CreateGlobal()
     {
-        ModulePath global;
+        Path global;
 
 
-        global = new ModulePath();
+        global = new Path();
 
 
         global.Init();
@@ -42,11 +42,11 @@ public class ModulePath : Object
         string s;
         
 
-        s = Environment.GetFolderPath(fold);
+        s = SystemEnvironment.GetFolderPath(fold);
 
 
 
-        s = Path.Combine(s, "Module");
+        s = SystemPath.Combine(s, "Module");
 
 
 
@@ -67,7 +67,7 @@ public class ModulePath : Object
 
 
 
-    public string Module(ulong intent, ulong ver)
+    public string Module(ulong varInt, ulong ver)
     {
         Convert convert;
 
@@ -80,7 +80,7 @@ public class ModulePath : Object
 
         string u;
 
-        u = convert.Int60BitListString(intent);
+        u = convert.Int60BitListString(varInt);
 
 
 
@@ -96,7 +96,7 @@ public class ModulePath : Object
         string s;
 
 
-        s = Path.Combine(this.Root, u, v);
+        s = SystemPath.Combine(this.Root, u, v);
 
 
 
@@ -134,6 +134,9 @@ public class ModulePath : Object
         get
         {
             return this.RootData;
+        }
+        set
+        {
         }
     }
 

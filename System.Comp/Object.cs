@@ -21,29 +21,6 @@ public class Object : InfraObject
 
 
 
-
-        ulong o;
-
-
-        o = IntInfra.This.NewValue();
-        
-
-
-
-
-        this.Int = new Int();
-
-
-        this.Int.Init();
-
-
-        this.Int.Value = o;
-
-
-
-
-
-
         this.TriggerArg = new Change();
 
 
@@ -54,13 +31,6 @@ public class Object : InfraObject
 
         return true;
     }
-
-
-
-
-
-
-    public Int Int { get; set; }
 
 
 

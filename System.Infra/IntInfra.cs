@@ -91,7 +91,27 @@ public class IntInfra : Object
 
 
 
+
+
+    public bool RemoveValue(ulong a)
+    {
+        lock (this.Lock)
+        {
+            this.Map.Remove(a);
+        }
+
+
+
+        return true;
+    }
+
+    
+
+
+
+
     private IntMap Map { get; set; }
+
 
 
 

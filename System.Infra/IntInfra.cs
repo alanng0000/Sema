@@ -33,12 +33,9 @@ class IntInfra : Object
 
 
 
+        this.Map = new IntMap();
 
-        this.Lock = new object();
-
-
-
-        this.CurrentValue = 0;
+        this.Map.Init();
 
 
 
@@ -49,35 +46,39 @@ class IntInfra : Object
 
 
 
-
-    private object Lock;
-
-
-
-
-    private ulong CurrentValue;
-    
-
-
-
-
     public ulong NewValue()
     {
-        ulong o;
+        ulong? u;
+
+        u = this.Map.NewInt();
 
 
-        
-        lock (this.Lock)
+
+        if (!u.HasValue)
         {
-            o = this.CurrentValue;
+            Console.Write("Error: System.Infra:IntInfra NewValue Fail\n");
 
-
-
-            this.CurrentValue = this.CurrentValue + 1;
+            Environment.Exit(10);
         }
 
 
 
-        return o;
+
+        ulong k;
+
+        k = u.Value;
+
+
+
+        ulong ret;
+
+        ret = k;
+
+        return ret;
     }
+
+
+
+
+    private IntMap Map { get; set; }
 }

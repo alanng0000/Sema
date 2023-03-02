@@ -542,15 +542,19 @@ public class Map : List
 
 
 
-        MapIter mapIter;
+        MapIter iter;
 
 
 
-        mapIter = new MapIter();
+        iter = new MapIter();
 
 
 
-        mapIter.Init(listIter);
+        iter.ListIter = listIter;
+
+
+
+        iter.Init();
 
 
 
@@ -560,7 +564,7 @@ public class Map : List
         MapIter ret;
 
 
-        ret = mapIter;
+        ret = iter;
 
 
         return ret;

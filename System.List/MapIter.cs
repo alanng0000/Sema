@@ -6,18 +6,14 @@ namespace System.List;
 
 public struct MapIter : IIter
 {
-    private ListIter ListIter;
+    internal ListIter ListIter;
 
 
 
 
 
-    internal bool Init(ListIter listIter)
+    public bool Init()
     {
-        this.ListIter = listIter;
-
-
-
         return true;
     }
 
@@ -33,11 +29,12 @@ public struct MapIter : IIter
 
 
 
+
     public object Value
     {
         get
         {
-            return this.ListIter.Value;
+            return this.Pair().Value;
         }
 
 
@@ -53,33 +50,26 @@ public struct MapIter : IIter
     {
         get
         {
-            Pair pair;
-            
-            
-            pair = (Pair)this.Value;
-
-
-
-
-            object key;
-
-
-            key = pair.Key;
-
-
-
-
-            object ret;
-
-
-            ret = key;
-
-
-            return ret;
+            return this.Pair().Key;
         }
 
         set
         {
         }
+    }
+
+
+
+
+    private Pair Pair()
+    {
+        Pair a;
+            
+            
+        a = (Pair)this.ListIter.Value;
+
+
+
+        return a;
     }
 }

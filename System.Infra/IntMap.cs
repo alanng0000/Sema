@@ -219,7 +219,7 @@ class IntMap : Object
 
 
 
-                au = convert.ULong(aa);
+                au = convert.ULong(index);
 
 
                 au = au << kk;

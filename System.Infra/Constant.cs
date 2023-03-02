@@ -49,6 +49,11 @@ public class Constant : Object
 
 
 
+        this.BlockEntryCount = 4 * 1024;
+        
+
+
+
         return true;
     }
 
@@ -64,6 +69,15 @@ public class Constant : Object
 
 
     public ulong ByteBitCount
+    {
+        get;
+        private set;
+    }
+
+
+
+
+    internal ulong BlockEntryCount
     {
         get;
         private set;

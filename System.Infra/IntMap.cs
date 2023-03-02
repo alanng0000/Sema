@@ -8,5 +8,28 @@ class IntMap : Object
 
 
 
-    
+    private ulong NewInt()
+    {
+        return 0;
+    }
+
+
+
+    private ulong GetNewInt(BlockEntry entry)
+    {
+        return 0;
+    }
+
+
+
+
+    private ulong GetKeyAvailableInt(ulong key)
+    {
+        Constant constant;
+
+        constant = Constant.This;
+
+
+        return 0;
+    }
 }

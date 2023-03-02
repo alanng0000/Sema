@@ -15,8 +15,6 @@ class IntMap : Object
 
         this.RootEntry = new BlockEntry();
 
-        this.RootEntry.Init();
-
 
         return true;
     }

@@ -24,14 +24,14 @@ class IntMap : Object
 
     public ulong? NewInt()
     {
-        return this.GetNewInt(this.RootEntry, 0, 0);
+        return this.GetNewInt(ref this.RootEntry, 0, 0);
     }
 
 
 
 
 
-    private ulong? GetNewInt(BlockEntry entry, int level, ulong index)
+    private ulong? GetNewInt(ref BlockEntry entry, int level, ulong index)
     {
         Constant constant;
 
@@ -180,11 +180,24 @@ class IntMap : Object
 
 
 
-            uu = this.GetNewInt(e, ll, index);
+            uu = this.GetNewInt(ref e, ll, index);
+            
+
+
+            v[aa] = e;
+
 
 
             if (uu.HasValue)
             {
+                if (this.IsBlockAllEntryUse(v))
+                {
+
+                }
+
+
+
+
                 kk = ce - level;
 
 

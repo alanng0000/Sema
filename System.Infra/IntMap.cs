@@ -359,13 +359,13 @@ class IntMap : Object
 
     public bool Remove(ulong varInt)
     {
-
-
+        this.RemoveInt(varInt, ref this.RootEntry, 0, 0);
 
 
 
         return true;
     }
+
 
 
 
@@ -477,7 +477,7 @@ class IntMap : Object
 
         int uuu;
 
-        uuu = index / constant.BlockEntryKeyBitCount;
+        uuu = aa / constant.BlockEntryKeyBitCount;
 
 
 

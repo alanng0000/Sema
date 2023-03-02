@@ -50,7 +50,15 @@ public class Constant : Object
 
 
 
-        this.BlockEntryCount = 4 * 1024;
+        this.BlockEntryIndexBitCount = 12;
+
+
+
+
+        this.BlockEntryCount = 1 << this.BlockEntryIndexBitCount;
+        
+
+
 
 
 
@@ -81,6 +89,16 @@ public class Constant : Object
 
 
         this.BlockEntryValueLoopCount = k;
+
+
+
+
+        this.BlockLevelCount = 4;
+
+
+
+
+
 
 
 
@@ -128,6 +146,22 @@ public class Constant : Object
 
 
     internal int BlockEntryValueLoopCount
+    {
+        get;
+        private set;
+    }
+
+
+
+    internal int BlockLevelCount
+    {
+        get;
+        private set;
+    }
+
+
+
+    internal int BlockEntryIndexBitCount
     {
         get;
         private set;

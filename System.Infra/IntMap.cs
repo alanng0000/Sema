@@ -4,23 +4,61 @@ namespace System.Infra;
 
 class IntMap : Object
 {
-    private BlockEntry Root;
+    private BlockEntry RootEntry;
 
 
 
-    private ulong NewInt()
+    public override bool Init()
     {
-        return 0;
+        base.Init();
+
+
+        this.RootEntry = new BlockEntry();
+
+        this.RootEntry.Init();
+
+
+        return true;
     }
 
 
 
-    private ulong? GetNewInt(BlockEntry entry, int level)
-    {
-        if (level == 4)
-        {
 
+    public ulong? NewInt()
+    {
+        return this.GetNewInt(this.RootEntry, 0, 0);
+    }
+
+
+
+
+
+    private ulong? GetNewInt(BlockEntry entry, int level, ulong index)
+    {
+        Constant constant;
+
+        constant = Constant.This;
+
+
+
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+
+        int cc;
+
+        cc = constant.BlockLevelCount;
+
+
+
+        if (level == cc)
+        {
+            return index;
         }
+
 
 
 
@@ -30,15 +68,23 @@ class IntMap : Object
 
 
 
-        BlockEntry[] value;
+        BlockEntry[] v;
 
-        value = entry.Value;
+        v = entry.Value;
 
 
-        if (value == null)
+        if (v == null)
         {
+            v = new BlockEntry[constant.BlockEntryCount];
+
+
+            entry.Value = v;
+
+
+            
             return null;
         }
+
 
 
 
@@ -60,27 +106,21 @@ class IntMap : Object
 
 
 
-        Constant constant;
+        int oo;
 
-        constant = Constant.This;
-
-
-
-
-        int j;
-
-        j = constant.BlockEntryValueLoopCount;
+        oo = constant.BlockEntryValueLoopCount;
 
 
         
 
         int start;
 
-        start = k * j;
+        start = k * oo;
 
 
 
-        int index;
+        int aa;
+
 
 
 
@@ -88,15 +128,39 @@ class IntMap : Object
 
 
 
+        ulong nn;
+
+
+
+        ulong au;
+
+
+
+        int ll;
+
+        ll = level + 1;
+
+
+
+        int ce;
+
+        ce = cc - 1;
+
+
+
         int kk;
 
-        kk = level + 1;
+
+
+        int jj;
+
+        jj = constant.BlockEntryIndexBitCount;
 
 
 
         int count;
 
-        count = j;
+        count = oo;
 
 
 
@@ -110,20 +174,42 @@ class IntMap : Object
 
         while (i < count)
         {
-            index = start + i;
+            aa = start + i;
 
 
-            e = value[index];
+            e = v[aa];
 
 
 
 
-            uu = this.GetNewInt(e, kk);
+            uu = this.GetNewInt(e, ll, index);
 
 
             if (uu.HasValue)
             {
-                return uu;
+                kk = ce - level;
+
+
+                kk = kk * jj;
+
+
+
+                au = convert.ULong(i);
+
+
+                au = au << kk;
+
+                
+
+
+                nn = uu.Value;
+
+
+                au = au | nn;
+
+
+
+                return au;
             }
 
 
@@ -184,19 +270,5 @@ class IntMap : Object
 
 
         return null;
-    }
-
-
-
-
-    private int LevelCount
-    {
-        get
-        {
-            return 4;
-        }
-        set
-        {
-        }
     }
 }

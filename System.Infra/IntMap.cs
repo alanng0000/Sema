@@ -13,6 +13,7 @@ class IntMap : Object
         base.Init();
 
 
+
         this.RootEntry = new BlockEntry();
 
 
@@ -22,7 +23,7 @@ class IntMap : Object
 
 
 
-    public ulong? NewInt()
+    public ulong? New()
     {
         return this.GetNewInt(ref this.RootEntry, 0, 0);
     }
@@ -349,5 +350,128 @@ class IntMap : Object
 
 
         return null;
+    }
+
+
+
+
+
+
+    public bool Remove(ulong varInt)
+    {
+
+
+
+
+
+        return true;
+    }
+
+
+
+
+    private bool RemoveInt(ulong varInt, ref BlockEntry entry, int level, int index)
+    {
+        Constant constant;
+
+        constant = Constant.This;
+
+
+
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+
+        int cc;
+
+        cc = constant.BlockLevelCount;
+
+
+
+        if (level == cc)
+        {
+            return true;
+        }
+
+
+
+
+        int j;
+
+        j = constant.BlockEntryIndexBitCount;
+
+
+
+
+        int k;
+
+        k = cc - 1 - level;
+
+
+        k = k * j;
+
+
+
+
+        ulong jj;
+
+        jj = convert.ULong(constant.BlockEntryCount);
+
+        jj = jj - 1;
+
+
+
+
+        ulong uu;
+
+
+        uu = varInt;
+
+
+        uu = uu >> k;
+
+
+        uu = uu & jj;
+
+
+
+
+        int aa;
+
+        aa = convert.SInt32(uu);
+
+
+
+
+        BlockEntry[] v;
+
+        v = entry.Value;
+
+
+
+        BlockEntry e;
+
+
+        e = v[aa];
+
+
+        this.RemoveInt(varInt, ref e, level + 1, aa);
+
+
+        v[index] = e;
+
+
+
+
+        
+
+
+
+
+
+        return true;
     }
 }

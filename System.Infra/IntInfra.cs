@@ -59,7 +59,7 @@ public class IntInfra : Object
 
         lock (this.Lock)
         {
-            u = this.Map.NewInt();
+            u = this.Map.New();
         }
         
 

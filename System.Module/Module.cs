@@ -18,4 +18,8 @@ public class Module : InfraObject
 
 
     public Array Export { get; set; }
+
+
+
+    public Array Member { get; set; }
 }

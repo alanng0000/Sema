@@ -3,10 +3,7 @@ namespace System.Module;
 
 
 
-class Import : Object
+class Export : InfraObject
 {
-    public Ref Module { get; set; }
-
-
     public ClassIndex Index { get; set; }
 }

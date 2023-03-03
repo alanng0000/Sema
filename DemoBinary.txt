@@ -1,0 +1,49 @@
+ModuleIntent ModuleVer
+
+
+ClassCount
+ClassName Per Class
+
+
+ImportCount
+Import : ModuleIntent ModuleVer ClassIndex
+
+
+ExportCount
+ClassIndex Per Export
+
+
+Entry : ClassIndex
+
+
+
+
+GlobalCount
+ClassIndex Per unique ClassName of GlobalExpress
+
+
+
+IntCount
+Big Int Per Big Int Constant
+
+
+
+StringCount
+String Per StringConstant
+
+
+
+
+Base : ClassIndex per Class
+
+
+MemberList Per Class
+
+FieldCount
+Field : ClassIndex FieldName Access
+
+
+MethodCount
+Method : ClassIndex MethodName Access 
+            ParamCount 
+            ClassIndex VarName Per Param

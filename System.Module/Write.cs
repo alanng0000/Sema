@@ -285,7 +285,7 @@ public class Write : InfraObject
 
 
 
-            this.ExecuteString(name);
+            this.ExecuteName(name);
 
 
 
@@ -332,12 +332,7 @@ public class Write : InfraObject
 
 
 
-            this.ExecuteModuleRef(import.Module);
-
-
-
-            this.ExecuteClass(import.Class);
-
+            this.ExecuteImport(import);
 
 
 
@@ -383,7 +378,7 @@ public class Write : InfraObject
 
 
 
-            this.ExecuteClass(export.Class);
+            this.ExecuteExport(export);
 
 
 
@@ -426,7 +421,7 @@ public class Write : InfraObject
 
 
 
-            this.ExecuteClass(varBase.Class);
+            this.ExecuteBase(varBase);
 
 
 
@@ -438,6 +433,51 @@ public class Write : InfraObject
 
         return true;
     }
+
+
+
+
+
+
+
+
+    private bool ExecuteMemberArray(ListArray array)
+    {
+        int count;
+
+        count = array.Count;
+
+
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Member member;
+
+            member = (Member)array.Get(i);
+
+
+
+
+            this.ExecuteMember(member);
+
+
+
+
+            i = i + 1;
+        }
+
+
+
+        return true;
+    }
+
 
 
 
@@ -473,6 +513,109 @@ public class Write : InfraObject
 
 
 
+    private bool ExecuteBase(Base varBase)
+    {
+        this.ExecuteClass(varBase.Class);
+
+
+        return true;
+    }
+
+
+
+
+
+    private bool ExecuteMember(Member member)
+    {
+        this.ExecuteFieldArray(member.Field);
+
+
+        this.ExecuteMethodArray(member.Method);
+
+
+
+
+        return true;
+    }
+
+
+
+
+    private bool ExecuteFieldArray(ListArray array)
+    {
+        int count;
+
+        count = array.Count;
+
+
+
+
+        this.ExecuteCount(count);
+
+
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Field field;
+
+            field = (Field)array.Get(i);
+
+
+
+
+            this.ExecuteField(field);
+
+
+
+
+            i = i + 1;
+        }
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private bool ExecuteField(Field field)
+    {
+        this.ExecuteClass(field.Class);
+
+
+        this.ExecuteAccess(field.Access);
+
+
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private bool ExecuteMethodArray(ListArray array)
+    {
+        return true;
+    }
+
+
+
+
 
     private bool ExecuteClass(int varClass)
     {
@@ -490,6 +633,19 @@ public class Write : InfraObject
     private bool ExecuteAccess(int access)
     {
         this.ExecuteSInt32Int(access);
+
+
+
+
+        return true;
+    }
+
+
+
+
+    private bool ExecuteName(string name)
+    {
+        this.ExecuteString(name);
 
 
 

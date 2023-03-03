@@ -6,9 +6,9 @@ namespace System.Module;
 
 public class Member : InfraObject
 {
-    public Array Field { get; set; }
+    public ListArray Field { get; set; }
 
 
 
-    public Array Method { get; set; }
+    public ListArray Method { get; set; }
 }

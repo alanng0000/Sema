@@ -67,7 +67,7 @@ public class Path : InfraObject
 
 
 
-    public string Module(ulong varInt, ulong ver)
+    public string Module(Ref varRef)
     {
         Convert convert;
 
@@ -80,14 +80,14 @@ public class Path : InfraObject
 
         string u;
 
-        u = convert.Int60BitListString(varInt);
+        u = convert.Int60BitListString(varRef.Int.Value);
 
 
 
 
         string v;
 
-        v = convert.Int60BitListString(ver);
+        v = convert.Int60BitListString(varRef.Ver.Value);
 
 
 

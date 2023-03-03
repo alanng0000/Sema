@@ -193,6 +193,10 @@ public class Write : InfraObject
 
 
 
+        this.ExecuteBaseArray(module.Base);
+
+
+
         return true;
     }
 
@@ -388,6 +392,49 @@ public class Write : InfraObject
 
 
             this.ExecuteClassIndex(export.Class);
+
+
+
+
+            i = i + 1;
+        }
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
+    private bool ExecuteBaseArray(ListArray array)
+    {
+        int count;
+
+        count = array.Count;
+
+
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Base varBase;
+
+            varBase = (Base)array.Get(i);
+
+
+
+
+            this.ExecuteClassIndex(varBase.Class);
 
 
 

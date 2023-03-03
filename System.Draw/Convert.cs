@@ -62,7 +62,7 @@ public class Convert : InfraObject
 
 
 
-    private ulong CompIndex;
+    private int CompIndex;
     
 
 
@@ -90,7 +90,7 @@ public class Convert : InfraObject
 
 
 
-    private ulong IndexInternColorComp(byte comp, ulong index)
+    private ulong IndexInternColorComp(byte comp, int index)
     {
         InfraConstant constant;
 
@@ -104,15 +104,11 @@ public class Convert : InfraObject
 
 
 
-        ulong shiftCount;
+        int shiftCount;
 
         shiftCount = constant.ByteBitCount * index;
 
 
-
-        int u;
-
-        u = convert.SInt32(shiftCount);
 
 
 
@@ -122,7 +118,7 @@ public class Convert : InfraObject
         k = comp;
 
 
-        k = k << u;
+        k = k << shiftCount;
 
 
 

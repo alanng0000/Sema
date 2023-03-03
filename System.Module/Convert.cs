@@ -29,7 +29,7 @@ public class Convert : InfraObject
 
 
 
-    public ulong ByteListULong(byte[] u, ulong start)
+    public ulong ByteListULong(byte[] u, int start)
     {
         InfraConstant constant;
 
@@ -44,9 +44,16 @@ public class Convert : InfraObject
 
 
 
-        ulong m;
+        int m;
 
         m = constant.ByteBitCount;
+
+
+
+        int ua;
+
+        ua = constant.IntByteCount;
+
 
 
 
@@ -58,7 +65,7 @@ public class Convert : InfraObject
 
 
 
-        ulong index;
+        int index;
 
 
 
@@ -69,20 +76,18 @@ public class Convert : InfraObject
 
 
 
-        ulong shiftCount;
-
-
-        int v;
+        int shiftCount;
 
 
 
-        ulong count;
 
-        count = constant.IntByteCount;
+        int count;
+
+        count = ua;
 
 
 
-        ulong i;
+        int i;
 
         i = 0;
 
@@ -90,9 +95,6 @@ public class Convert : InfraObject
         while (i < count)
         {
             shiftCount = i * m;
-
-
-            v = convert.SInt32(shiftCount);
 
 
 
@@ -107,7 +109,7 @@ public class Convert : InfraObject
             k = ob;
             
 
-            k = k << v;
+            k = k << shiftCount;
 
 
 

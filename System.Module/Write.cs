@@ -194,6 +194,10 @@ public class Write : InfraObject
 
 
 
+        this.ExecuteMemberArray(module.Member);
+
+
+
         return true;
     }
 
@@ -596,7 +600,7 @@ public class Write : InfraObject
         this.ExecuteAccess(field.Access);
 
 
-
+        this.ExecuteName(field.Name);
 
 
 
@@ -610,8 +614,135 @@ public class Write : InfraObject
 
     private bool ExecuteMethodArray(ListArray array)
     {
+        int count;
+
+        count = array.Count;
+
+
+
+
+        this.ExecuteCount(count);
+
+
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Method method;
+
+            method = (Method)array.Get(i);
+
+
+
+
+            this.ExecuteMethod(method);
+
+
+
+
+            i = i + 1;
+        }
+
+
+
         return true;
     }
+
+
+
+
+
+    private bool ExecuteMethod(Method method)
+    {
+        this.ExecuteClass(method.Class);
+
+
+        this.ExecuteAccess(method.Access);
+
+
+        this.ExecuteName(method.Name);
+
+
+        this.ExecuteVarArray(method.Param);
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+
+
+    private bool ExecuteVarArray(ListArray array)
+    {
+        int count;
+
+        count = array.Count;
+
+
+
+
+        this.ExecuteCount(count);
+
+
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Var varVar;
+
+            varVar = (Var)array.Get(i);
+
+
+
+
+            this.ExecuteVar(varVar);
+
+
+
+
+            i = i + 1;
+        }
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private bool ExecuteVar(Var varVar)
+    {
+        this.ExecuteClass(varVar.Class);
+
+
+        this.ExecuteName(varVar.Name);
+
+
+
+        return true;
+    }
+
+
 
 
 

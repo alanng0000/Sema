@@ -18,5 +18,5 @@ public class Method : InfraObject
 
 
 
-    public Array Param { get; set; }
+    public ListArray Param { get; set; }
 }

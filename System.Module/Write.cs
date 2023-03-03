@@ -282,18 +282,13 @@ public class Write : InfraObject
 
 
 
-            Name name;
+            string name;
 
             name = varClass.Name;
 
 
-            string s;
 
-            s = name.Value;
-
-
-
-            this.ExecuteString(s);
+            this.ExecuteString(name);
 
 
 

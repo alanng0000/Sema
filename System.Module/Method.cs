@@ -14,7 +14,7 @@ public class Method : InfraObject
 
 
 
-    public Name Name { get; set; }
+    public string Name { get; set; }
 
 
 

@@ -62,22 +62,11 @@ public class Constant : Object
 
 
 
-        ulong n;
-        
-        n = this.IntByteCount * this.ByteBitCount;
-
-
-
-
-        Convert convert;
-
-        convert = Convert.This;
-
-
-
         int k;
+        
+        k = this.IntByteCount * this.ByteBitCount;
 
-        k = convert.SInt32(n);
+
 
 
         this.BlockEntryKeyBitCount = k;
@@ -111,7 +100,7 @@ public class Constant : Object
 
 
 
-    public ulong IntByteCount
+    public int IntByteCount
     {
         get;
         private set;
@@ -119,7 +108,7 @@ public class Constant : Object
 
 
 
-    public ulong ByteBitCount
+    public int ByteBitCount
     {
         get;
         private set;

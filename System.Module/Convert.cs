@@ -29,7 +29,7 @@ public class Convert : InfraObject
 
 
 
-    public ulong ByteListULong(byte[] u, int start)
+    public ulong ByteListULong(byte[] u, ulong start)
     {
         InfraConstant constant;
 
@@ -65,7 +65,11 @@ public class Convert : InfraObject
 
 
 
-        int index;
+        ulong index;
+
+
+
+        ulong uu;
 
 
 
@@ -98,7 +102,11 @@ public class Convert : InfraObject
 
 
 
-            index = start + i;
+            uu = convert.ULong(i);
+
+
+
+            index = start + uu;
 
 
 

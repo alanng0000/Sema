@@ -1,4 +1,5 @@
 global using InfraObject = System.Infra.Object;
+global using ObjectInfra = System.Infra.ObjectInfra;
 global using Compare = System.Infra.Compare;
 global using StringCompare = System.Infra.StringCompare;
 global using InfraData = System.Infra.Data;

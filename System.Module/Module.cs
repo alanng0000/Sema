@@ -21,5 +21,9 @@ public class Module : InfraObject
 
 
 
+    public Array Base { get; set; }
+
+
+
     public Array Member { get; set; }
 }

@@ -3,7 +3,7 @@ namespace System.Module;
 
 
 
-public class Import : Object
+public class Import : InfraObject
 {
     public Ref Module { get; set; }
 

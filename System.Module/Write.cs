@@ -21,8 +21,7 @@ public class Write : InfraObject
         this.Data = null;
 
 
-        
-        this.Index = 0;
+
 
 
 
@@ -41,8 +40,12 @@ public class Write : InfraObject
 
 
 
-        this.ExecuteRefer(this.Module);
+        
+        this.Index = 0;
 
+
+
+        this.ExecuteRefer(this.Module);
 
 
 
@@ -54,7 +57,25 @@ public class Write : InfraObject
 
 
 
+
         
+        this.ExecuteState(this.Module);
+
+
+
+
+
+        ulong uu;
+
+        uu = this.Index;
+        
+
+
+
+        ulong stateSize;
+        
+        stateSize = uu - referSize;
+
 
 
 
@@ -69,27 +90,25 @@ public class Write : InfraObject
 
         ulong totalSize;
 
-        totalSize = headSize + constant.IntByteCount;
+        totalSize = uu + 2 * constant.IntByteCount;
         
 
 
 
-        byte[] uu;
 
-        uu = new byte[totalSize];
+        byte[] ud;
+
+        ud = new byte[totalSize];
 
 
 
-        this.Data = new Data();
+        this.Data = new InfraData();
 
         this.Data.Init();
 
-        this.Data.Value = uu;
+        this.Data.Value = ud;
 
 
-
-
-        this.Index = 0;
 
 
 
@@ -109,13 +128,26 @@ public class Write : InfraObject
 
 
 
-
-        this.Int(headSize);
-
-
+        
+        this.Index = 0;
 
 
-        this.ExecuteModule(this.Module);
+
+
+        this.Int(referSize);
+
+
+
+        this.Int(stateSize);
+
+
+
+
+        this.ExecuteRefer(this.Module);
+
+
+        this.ExecuteState(this.Module);
+
 
 
 
@@ -144,6 +176,15 @@ public class Write : InfraObject
 
         return true;
     }
+
+
+
+
+    private bool ExecuteState(Module module)
+    {
+        return true;
+    }
+
 
 
 

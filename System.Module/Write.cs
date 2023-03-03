@@ -229,7 +229,7 @@ public class Write : InfraObject
 
     private bool ExecuteModuleInt(Int varInt)
     {
-        this.Int(varInt.Value);
+        this.ExecuteInt(varInt.Value);
 
 
         return true;
@@ -240,7 +240,7 @@ public class Write : InfraObject
 
     private bool ExecuteModuleVer(Ver ver)
     {
-        this.Int(ver.Value);
+        this.ExecuteInt(ver.Value);
 
 
         return true;
@@ -250,57 +250,54 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteClassArray(Array varClass)
+    private bool ExecuteClassArray(ListArray array)
     {
         Convert convert;
-
 
         convert = Convert.This;
 
 
 
 
-        ulong k;
 
-        k = convert.ULong(varClass.Count);
+        int count;
 
-
-
-
-        ulong count;
-
-        count = k;
+        count = array.Count;
 
 
 
 
-        this.Int(count);
+        this.ExecuteCount(count);
 
 
 
-        int uu;
 
 
-
-        ulong i;
+        int i;
 
         i = 0;
 
 
         while (i < count)
         {
-            uu = convert.SInt32(i);
+            Class varClass;
 
+            varClass = (Class)array.Get(i);
+
+
+
+            Name name;
+
+            name = varClass.Name;
 
 
             string s;
 
-            s = (string)varClass.Get(uu);
+            s = name.Value;
 
 
 
-
-            this.String(s);
+            this.ExecuteString(s);
 
 
 
@@ -319,7 +316,7 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteImportArray(Array import)
+    private bool ExecuteImportArray(ListArray import)
     {
         Convert convert;
 
@@ -387,7 +384,7 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteExportArray(Array export)
+    private bool ExecuteExportArray(ListArray export)
     {
         Convert convert;
 

@@ -9,25 +9,25 @@ public class Module : InfraObject
 
 
 
-    public Array Class { get; set; }
+    public ListArray Class { get; set; }
 
 
 
-    public Array Import { get; set; }
+    public ListArray Import { get; set; }
 
 
 
-    public Array Export { get; set; }
+    public ListArray Export { get; set; }
 
 
 
-    public Array Base { get; set; }
+    public ListArray Base { get; set; }
 
 
 
-    public Array Member { get; set; }
+    public ListArray Member { get; set; }
 
     
-    
-    public Array State { get; set; }
+
+    public ListArray State { get; set; }
 }

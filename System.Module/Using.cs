@@ -4,6 +4,7 @@ global using StringCompare = System.Infra.StringCompare;
 global using InfraData = System.Infra.Data;
 global using InfraConvert = System.Infra.Convert;
 global using InfraConstant = System.Infra.Constant;
+global using ListArray = System.List.Array;
 global using Map = System.List.Map;
 global using Pair = System.List.Pair;
 global using SystemEnvironment = System.Environment;

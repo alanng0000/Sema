@@ -763,7 +763,7 @@ public class Write : InfraObject
 
     private bool ExecuteAccess(int access)
     {
-        this.ExecuteSInt32Int(access);
+        this.ExecuteSInt32Byte(access);
 
 
 
@@ -851,6 +851,36 @@ public class Write : InfraObject
     private bool ExecuteCount(int count)
     {
         this.ExecuteSInt32Int(count);
+
+
+
+
+        return true;
+    }
+
+
+
+
+    private bool ExecuteSInt32Byte(int a)
+    {
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+        ulong k;
+
+        k = convert.ULong(a);
+
+
+        
+        byte o;
+
+        o = convert.Byte(k);
+
+
+
+        this.ExecuteByte(o);
 
 
 

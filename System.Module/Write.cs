@@ -68,7 +68,7 @@ public class Write : InfraObject
         ulong uu;
 
         uu = this.Index;
-        
+
 
 
 
@@ -180,6 +180,8 @@ public class Write : InfraObject
 
 
 
+
+
     private bool ExecuteState(Module module)
     {
         return true;
@@ -189,12 +191,13 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteModuleRefer(ModuleRefer refer)
+
+    private bool ExecuteModuleRef(Ref varRef)
     {
-        this.ExecuteModuleIntent(refer.Intent);
+        this.ExecuteModuleInt(varRef.Int);
 
 
-        this.ExecuteModuleVer(refer.Ver);
+        this.ExecuteModuleVer(varRef.Ver);
 
 
 
@@ -205,9 +208,9 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteModuleIntent(ModuleIntent intent)
+    private bool ExecuteModuleInt(Int varInt)
     {
-        this.Int(intent.Value);
+        this.Int(varInt.Value);
 
 
         return true;
@@ -216,7 +219,7 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteModuleVer(ModuleVer ver)
+    private bool ExecuteModuleVer(Ver ver)
     {
         this.Int(ver.Value);
 
@@ -224,16 +227,6 @@ public class Write : InfraObject
         return true;
     }
 
-
-
-
-    private bool ExecuteModuleName(ModuleName name)
-    {
-        this.String(name.Value);
-
-
-        return true;
-    }
 
 
 
@@ -471,21 +464,24 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteEntry(ClassIndex entry)
-    {
-        this.ExecuteClassIndex(entry);
-
-
-        return true;
-    }
-
-
-
 
 
     private bool ExecuteClassIndex(ClassIndex index)
     {
-        this.Int(index.Value);
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+        ulong k;
+
+        k = convert.ULong(index.Value);
+
+
+
+        this.ExecuteInt(k);
+
+
 
 
         return true;
@@ -495,30 +491,23 @@ public class Write : InfraObject
 
 
 
-    private bool String(string o)
+    private bool ExecuteString(string o)
     {
-        Convert convert;
+        InfraConvert convert;
 
-        convert = Convert.This;
-
-
-
-
-        ulong k;
-
-        k = convert.ULong(o.Length);
+        convert = InfraConvert.This;
 
 
 
 
-        ulong count;
+        int count;
 
-        count = k;
-
-
+        count = o.Length;
 
 
-        this.Int(count);
+
+
+        this.ExecuteCount(count);
 
 
 
@@ -532,27 +521,20 @@ public class Write : InfraObject
 
 
 
-        int uu;
-
-
-
-        ulong i;
+        int i;
 
         i = 0;
 
         while (i < count)
         {
-            uu = convert.SInt32(i);
-
-
-            oc = o[uu];
+            oc = o[i];
 
 
             ob = convert.CharByte(oc);
 
 
 
-            this.Byte(ob);
+            this.ExecuteByte(ob);
 
 
 
@@ -569,32 +551,61 @@ public class Write : InfraObject
 
 
 
-    private bool Int(ulong o)
+    private bool ExecuteCount(int count)
     {
-        Constant constant;
+        InfraConvert convert;
 
-        constant = Constant.This;
+        convert = InfraConvert.This;
 
 
+        ulong k;
 
-        Convert convert;
-
-        convert = Convert.This;
-
+        k = convert.ULong(count);
 
 
 
-        ulong uu;
+        this.ExecuteInt(k);
+
+
+
+
+        return true;
+    }
+
+    
+
+
+
+
+    private bool ExecuteInt(ulong o)
+    {
+        InfraConstant constant;
+
+        constant = InfraConstant.This;
+
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+
+        int uu;
 
         uu = constant.ByteBitCount;
 
 
 
-        ulong shiftCount;
+        int uv;
+
+        uv = constant.IntByteCount;
 
 
 
-        int ou;
+
+        int shiftCount;
 
 
 
@@ -607,13 +618,15 @@ public class Write : InfraObject
         
 
 
-        ulong count;
 
-        count = constant.IntByteCount;
+        int count;
+
+        count = uv;
 
 
 
-        ulong i;
+
+        int i;
 
         i = 0;
 
@@ -623,10 +636,8 @@ public class Write : InfraObject
             shiftCount = i * uu;
 
 
-            ou = convert.SInt32(shiftCount);
 
-
-            k = o >> ou;
+            k = o >> shiftCount;
 
 
 
@@ -635,7 +646,7 @@ public class Write : InfraObject
 
 
 
-            this.Byte(ob);
+            this.ExecuteByte(ob);
             
 
 
@@ -654,7 +665,7 @@ public class Write : InfraObject
 
 
 
-    private bool Byte(byte ob)
+    private bool ExecuteByte(byte ob)
     {
         this.ByteOp.Execute(ob);
 

@@ -252,14 +252,6 @@ public class Write : InfraObject
 
     private bool ExecuteClassArray(ListArray array)
     {
-        Convert convert;
-
-        convert = Convert.This;
-
-
-
-
-
         int count;
 
         count = array.Count;
@@ -316,57 +308,39 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteImportArray(ListArray import)
+    private bool ExecuteImportArray(ListArray array)
     {
-        Convert convert;
+        int count;
 
-
-        convert = Convert.This;
-
-
-
-
-        ulong k;
-
-        k = convert.ULong(import.Count);
+        count = array.Count;
 
 
 
 
-        ulong count;
-
-        count = k;
+        this.ExecuteCount(count);
 
 
 
 
-        this.Int(count);
 
-
-
-        int uu;
-
-
-
-        ulong i;
+        int i;
 
         i = 0;
 
 
         while (i < count)
         {
-            uu = convert.SInt32(i);
+            Import import;
+
+            import = (Import)array.Get(i);
 
 
 
-            Import a;
-
-            a = (Import)import.Get(uu);
+            this.ExecuteModuleRef(import.Module);
 
 
 
-
-            this.ExecuteImport(a);
+            this.ExecuteClassIndex(import.Class);
 
 
 
@@ -384,57 +358,36 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteExportArray(ListArray export)
+    private bool ExecuteExportArray(ListArray array)
     {
-        Convert convert;
+        int count;
 
-
-        convert = Convert.This;
-
-
-
-
-        ulong k;
-
-        k = convert.ULong(export.Count);
+        count = array.Count;
 
 
 
 
-        ulong count;
-
-        count = k;
+        this.ExecuteCount(count);
 
 
 
 
-        this.Int(count);
 
-
-
-        int uu;
-
-
-
-        ulong i;
+        int i;
 
         i = 0;
 
 
         while (i < count)
         {
-            uu = convert.SInt32(i);
+            Export export;
 
-
-
-            Export a;
-
-            a = (Export)export.Get(uu);
+            export = (Export)array.Get(i);
 
 
 
 
-            this.ExecuteExport(a);
+            this.ExecuteClassIndex(export.Class);
 
 
 

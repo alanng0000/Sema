@@ -18,6 +18,10 @@ public class Write : InfraObject
 
     public bool Execute()
     {
+        this.Data = null;
+
+
+        
         this.Index = 0;
 
 
@@ -37,16 +41,21 @@ public class Write : InfraObject
 
 
 
-        this.ExecuteModule(this.Module);
+        this.ExecuteRefer(this.Module);
 
 
 
 
 
 
-        ulong headSize;
+        ulong referSize;
 
-        headSize = this.Index;
+        referSize = this.Index;
+
+
+
+        
+
 
 
 
@@ -119,12 +128,8 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteModule(Module module)
+    private bool ExecuteRefer(Module module)
     {
-        this.ExecuteModuleRefer(module.Refer);
-
-
-
         this.ExecuteClassArray(module.Class);
 
 
@@ -134,10 +139,6 @@ public class Write : InfraObject
 
 
         this.ExecuteExportArray(module.Export);
-
-
-
-        this.ExecuteEntry(module.Entry);
 
 
 

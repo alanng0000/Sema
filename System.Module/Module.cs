@@ -26,4 +26,8 @@ public class Module : InfraObject
 
 
     public Array Member { get; set; }
+
+    
+    
+    public Array State { get; set; }
 }

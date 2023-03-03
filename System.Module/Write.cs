@@ -81,16 +81,35 @@ public class Write : InfraObject
 
 
 
-        Constant constant;
+        InfraConstant constant;
 
-        constant = Constant.This;
+        constant = InfraConstant.This;
+
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+
+        int ua;
+
+        ua = constant.IntByteCount;
+
+
+        ulong uh;
+
+        uh = convert.ULong(ua);
+
 
 
 
 
         ulong totalSize;
 
-        totalSize = uu + 2 * constant.IntByteCount;
+        totalSize = uu + 2 * uh;
         
 
 
@@ -134,11 +153,11 @@ public class Write : InfraObject
 
 
 
-        this.Int(referSize);
+        this.ExecuteInt(referSize);
 
 
 
-        this.Int(stateSize);
+        this.ExecuteInt(stateSize);
 
 
 
@@ -440,10 +459,10 @@ public class Write : InfraObject
 
     private bool ExecuteImport(Import import)
     {
-        this.ExecuteModuleRefer(import.Refer);
+        this.ExecuteModuleRef(import.Module);
 
 
-        this.ExecuteClassIndex(import.Index);
+        this.ExecuteClassIndex(import.Class);
 
 
         return true;
@@ -455,7 +474,7 @@ public class Write : InfraObject
 
     private bool ExecuteExport(Export export)
     {
-        this.ExecuteClassIndex(export.Index);
+        this.ExecuteClassIndex(export.Class);
 
 
         return true;

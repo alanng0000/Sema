@@ -3,7 +3,7 @@ namespace System.Module;
 
 
 
-class Export : InfraObject
+public class Export : InfraObject
 {
-    public ClassIndex Index { get; set; }
+    public ClassIndex Class { get; set; }
 }

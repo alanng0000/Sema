@@ -18,8 +18,4 @@ public class Module : InfraObject
 
 
     public Array Export { get; set; }
-
-
-
-    public ClassIndex Entry { get; set; }
 }

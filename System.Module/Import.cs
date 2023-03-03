@@ -3,10 +3,10 @@ namespace System.Module;
 
 
 
-class Import : Object
+public class Import : Object
 {
     public Ref Module { get; set; }
 
 
-    public ClassIndex Index { get; set; }
+    public ClassIndex Class { get; set; }
 }

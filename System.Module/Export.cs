@@ -5,5 +5,5 @@ namespace System.Module;
 
 public class Export : InfraObject
 {
-    public ClassIndex Class { get; set; }
+    public int Class { get; set; }
 }

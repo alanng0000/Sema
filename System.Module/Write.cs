@@ -339,7 +339,7 @@ public class Write : InfraObject
 
 
 
-            this.ExecuteClassIndex(import.Class);
+            this.ExecuteClass(import.Class);
 
 
 
@@ -386,7 +386,7 @@ public class Write : InfraObject
 
 
 
-            this.ExecuteClassIndex(export.Class);
+            this.ExecuteClass(export.Class);
 
 
 
@@ -429,7 +429,7 @@ public class Write : InfraObject
 
 
 
-            this.ExecuteClassIndex(varBase.Class);
+            this.ExecuteClass(varBase.Class);
 
 
 
@@ -454,7 +454,7 @@ public class Write : InfraObject
         this.ExecuteModuleRef(import.Module);
 
 
-        this.ExecuteClassIndex(import.Class);
+        this.ExecuteClass(import.Class);
 
 
         return true;
@@ -466,7 +466,7 @@ public class Write : InfraObject
 
     private bool ExecuteExport(Export export)
     {
-        this.ExecuteClassIndex(export.Class);
+        this.ExecuteClass(export.Class);
 
 
         return true;
@@ -477,20 +477,22 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteClassIndex(ClassIndex index)
+    private bool ExecuteClass(int varClass)
     {
-        InfraConvert convert;
-
-        convert = InfraConvert.This;
-
-
-        ulong k;
-
-        k = convert.ULong(index.Value);
+        this.ExecuteSInt32Int(varClass);
 
 
 
-        this.ExecuteInt(k);
+
+        return true;
+    }
+
+
+
+
+    private bool ExecuteAccess(int access)
+    {
+        this.ExecuteSInt32Int(access);
 
 
 
@@ -564,6 +566,21 @@ public class Write : InfraObject
 
     private bool ExecuteCount(int count)
     {
+        this.ExecuteSInt32Int(count);
+
+
+
+
+        return true;
+    }
+
+
+
+
+
+
+    private bool ExecuteSInt32Int(int a)
+    {
         InfraConvert convert;
 
         convert = InfraConvert.This;
@@ -571,7 +588,7 @@ public class Write : InfraObject
 
         ulong k;
 
-        k = convert.ULong(count);
+        k = convert.ULong(a);
 
 
 

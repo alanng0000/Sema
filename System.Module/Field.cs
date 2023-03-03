@@ -6,11 +6,11 @@ namespace System.Module;
 
 public class Field : InfraObject
 {
-    public ClassIndex Class { get; set; }
+    public int Class { get; set; }
 
 
 
-    public Access Access { get; set; }
+    public int Access { get; set; }
 
 
 

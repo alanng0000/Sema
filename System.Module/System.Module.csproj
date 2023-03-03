@@ -6,6 +6,7 @@
 
     <ItemGroup>
         <ProjectReference Include="../System.Infra/System.Infra.csproj" />
+        <ProjectReference Include="../System.List/System.List.csproj" />
     </ItemGroup>
 
 </Project>

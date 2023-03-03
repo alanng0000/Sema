@@ -128,6 +128,19 @@ public class Path : InfraObject
 
 
 
+    public string EntryName
+    {
+        get
+        {
+            return "_";
+        }
+        set
+        {
+        }
+    }
+
+
+
 
     public string Root
     {

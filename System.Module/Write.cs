@@ -58,6 +58,9 @@ public class Write : InfraObject
 
 
 
+        this.Index = 0;
+
+
         
         this.ExecuteState(this.Module);
 
@@ -65,16 +68,10 @@ public class Write : InfraObject
 
 
 
-        ulong uu;
-
-        uu = this.Index;
-
-
-
 
         ulong stateSize;
         
-        stateSize = uu - referSize;
+        stateSize = this.Index;
 
 
 
@@ -109,7 +106,7 @@ public class Write : InfraObject
 
         ulong totalSize;
 
-        totalSize = uu + 2 * uh;
+        totalSize = referSize + stateSize + 2 * uh;
         
 
 

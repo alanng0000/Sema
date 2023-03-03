@@ -15,4 +15,8 @@ public class Method : InfraObject
 
 
     public Name Name { get; set; }
+
+
+
+    public Array Param { get; set; }
 }

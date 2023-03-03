@@ -11,7 +11,7 @@ public class Write : InfraObject
 
 
     
-    public Data Data { get; set; }
+    public InfraData Data { get; set; }
 
 
 

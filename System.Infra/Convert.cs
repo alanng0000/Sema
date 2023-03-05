@@ -58,4 +58,12 @@ public class Convert : Object
     {
         return (byte)a;
     }
+
+
+
+
+    public char ByteChar(byte a)
+    {
+        return (char)a;
+    }
 }

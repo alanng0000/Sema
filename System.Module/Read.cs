@@ -51,6 +51,79 @@ public class Read : InfraObject
 
 
 
+    private ListArray ExecuteImportArray()
+    {
+        int? u;
+
+        u = this.ExecuteCount();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int count;
+
+        count = u.Value;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Import import;
+
+            import = this.ExecuteImport();
+
+
+
+            if (this.Null(import))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, import);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
+
+
     private ListArray ExecuteExportArray()
     {
         int? u;

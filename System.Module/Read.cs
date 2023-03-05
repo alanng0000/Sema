@@ -35,16 +35,36 @@ public class Read : InfraObject
 
 
 
+        Module m;
+
+        m = this.ExecuteModule();
 
 
 
 
+        this.ClassArray = null;
+
+
+
+
+        if (this.Null(m))
+        {
+            return false;
+        }
+
+
+
+
+        this.Module = m;
 
 
 
 
         return true;
     }
+
+
+    
 
 
 

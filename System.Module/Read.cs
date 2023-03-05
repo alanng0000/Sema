@@ -52,6 +52,96 @@ public class Read : InfraObject
 
 
 
+    private Import ExecuteImport()
+    {
+        Ref varRef;
+
+        varRef = this.ExecuteModuleRef();
+
+
+        if (this.Null(varRef))
+        {
+            return null;
+        }
+
+
+
+
+        int? u;
+
+        u = this.ExecuteClass();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int varClass;
+
+        varClass = u.Value;
+
+
+
+
+
+        Import ret;
+
+        ret = new Import();
+
+        ret.Init();
+
+        ret.Module = varRef;
+
+        ret.Class = varClass;
+
+        return ret;
+    }
+
+
+
+
+
+
+    private Export ExecuteExport()
+    {
+        int? u;
+
+        u = this.ExecuteClass();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+
+        int varClass;
+
+        varClass = u.Value;
+
+
+
+
+        Export ret;
+
+        ret = new Export();
+
+        ret.Init();
+
+        ret.Class = varClass;
+
+        return ret;
+    }
+
+
+
+
+
     private Ref ExecuteModuleRef()
     {
         Int varInt;

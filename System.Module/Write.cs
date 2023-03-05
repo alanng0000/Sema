@@ -276,13 +276,7 @@ public class Write : InfraObject
 
 
 
-            string name;
-
-            name = varClass.Name;
-
-
-
-            this.ExecuteName(name);
+            this.ExecuteClassArrayClass(varClass);
 
 
 
@@ -477,6 +471,16 @@ public class Write : InfraObject
 
 
 
+
+
+
+    private bool ExecuteClassArrayClass(Class varClass)
+    {
+        this.ExecuteName(varClass.Name);
+
+
+        return true;
+    }
 
 
 

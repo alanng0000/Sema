@@ -64,7 +64,7 @@ public class Read : InfraObject
     }
 
 
-    
+
 
 
 
@@ -89,6 +89,45 @@ public class Read : InfraObject
 
 
 
+        ListArray import;
+
+        import = this.ExecuteImportArray();
+
+
+        if (this.Null(import))
+        {
+            return null;
+        }
+
+
+
+
+        ListArray export;
+
+        export = this.ExecuteExportArray();
+
+
+        if (this.Null(export))
+        {
+            return null;
+        }
+
+
+
+
+        ListArray varBase;
+
+        varBase = this.ExecuteBaseArray();
+
+
+        if (this.Null(varBase))
+        {
+            return null;
+        }
+
+
+
+
 
         Module ret;
 
@@ -97,6 +136,12 @@ public class Read : InfraObject
         ret.Init();
 
         ret.Class = varClass;
+
+        ret.Import = import;
+
+        ret.Export = export;
+
+        ret.Base = varBase;
 
         return ret;
     }

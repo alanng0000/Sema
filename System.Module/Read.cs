@@ -670,8 +670,343 @@ public class Read : InfraObject
 
     private Member ExecuteMember()
     {
-        return null;
+        ListArray field;
+
+        field = this.ExecuteFieldArray();
+
+
+        if (this.Null(field))
+        {
+            return null;
+        }
+
+
+
+
+        ListArray method;
+
+        method = this.ExecuteMethodArray();
+
+
+        if (this.Null(method))
+        {
+            return null;
+        }
+
+
+
+
+        Member ret;
+
+        ret = new Member();
+
+        ret.Init();
+
+        ret.Field = field;
+
+        ret.Method = method;
+
+        return ret;
     }
+
+
+
+
+
+
+
+    private ListArray ExecuteFieldArray()
+    {
+        int? u;
+
+        u = this.ExecuteCount();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int count;
+
+        count = u.Value;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Field field;
+
+            field = this.ExecuteField();
+
+
+
+            if (this.Null(field))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, field);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
+
+
+
+    private ListArray ExecuteMethodArray()
+    {
+        int? u;
+
+        u = this.ExecuteCount();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int count;
+
+        count = u.Value;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Method method;
+
+            method = this.ExecuteMethod();
+
+
+
+            if (this.Null(method))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, method);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
+
+
+
+
+    private Field ExecuteField()
+    {
+        int? u;
+
+
+
+        u = this.ExecuteClass();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int varClass;
+
+        varClass = u.Value;
+
+
+
+
+        u = this.ExecuteAccess();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int access;
+
+        access = u.Value;
+
+
+
+
+        string name;
+
+        name = this.ExecuteName();
+
+
+
+        if (this.Null(name))
+        {
+            return null;
+        }
+
+
+
+
+        Field ret;
+
+        ret = new Field();
+
+        ret.Init();
+
+        ret.Class = varClass;
+
+        ret.Access = access;
+
+        ret.Name = name;
+
+        return ret;
+    }
+
+
+
+
+
+
+    private Method ExecuteMethod()
+    {
+        int? u;
+
+
+
+        u = this.ExecuteClass();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int varClass;
+
+        varClass = u.Value;
+
+
+
+
+        u = this.ExecuteAccess();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int access;
+
+        access = u.Value;
+
+
+
+
+        string name;
+
+        name = this.ExecuteName();
+
+
+
+        if (this.Null(name))
+        {
+            return null;
+        }
+
+
+
+
+        Method ret;
+
+        ret = new Method();
+
+        ret.Init();
+
+        ret.Class = varClass;
+
+        ret.Access = access;
+
+        ret.Name = name;
+
+        return ret;
+    }
+
 
 
 
@@ -728,6 +1063,40 @@ public class Read : InfraObject
     private int? ExecuteClass()
     {
         return this.ExecuteIntSInt32();
+    }
+
+
+
+
+
+    private int? ExecuteAccess()
+    {
+        if (!this.CheckByteAvailable(1))
+        {
+            return null;
+        }
+
+
+
+        byte u;
+
+        u = this.ExecuteByte();
+
+
+
+        int a;
+
+        a = u;
+
+
+
+
+        int ret;
+
+        ret = a;
+
+
+        return ret;
     }
 
 

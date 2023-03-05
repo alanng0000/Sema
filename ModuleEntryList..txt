@@ -15,9 +15,9 @@ System.Draw
 System.View
 System.Module
 System.Source
-System.Class
-System.Class.Token
-System.Class.Node
-System.Class.Check
-System.Class.Module
-System.Class.Infra
+System.Case
+System.Case.Token
+System.Case.Node
+System.Case.Check
+System.Case.Module
+System.Case.Infra

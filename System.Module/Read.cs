@@ -97,6 +97,65 @@ public class Read : InfraObject
 
 
 
+
+
+    private int? ExecuteClass()
+    {
+        return this.ExecuteIntSInt32();
+    }
+
+
+
+
+
+
+    private int? ExecuteIntSInt32()
+    {
+        ulong? u;
+
+        u = this.ExecuteInt();
+
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        ulong ua;
+
+        ua = u.Value;
+
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
+        int k;
+
+        k = convert.SInt32(ua);
+    
+
+
+
+        int ret;
+
+        ret = k;
+
+
+        return ret;
+    }
+
+
+
+
+
+
     private Int ExecuteModuleInt()
     {
         ulong? u;

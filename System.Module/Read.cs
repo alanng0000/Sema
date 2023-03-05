@@ -51,6 +51,77 @@ public class Read : InfraObject
 
 
 
+    private ListArray ExecuteExportArray()
+    {
+        int? u;
+
+        u = this.ExecuteCount();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int count;
+
+        count = u.Value;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Export export;
+
+            export = this.ExecuteExport();
+
+
+
+            if (this.Null(export))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, export);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
 
     private Import ExecuteImport()
     {
@@ -194,6 +265,13 @@ public class Read : InfraObject
         return this.ExecuteIntSInt32();
     }
 
+
+
+
+    private int? ExecuteCount()
+    {
+        return this.ExecuteIntSInt32();
+    }
 
 
 
@@ -346,7 +424,7 @@ public class Read : InfraObject
 
     private string ExecuteString()
     {
-        ulong? u;
+        int? u;
 
 
         u = this.ExecuteCount();
@@ -361,30 +439,10 @@ public class Read : InfraObject
 
 
 
-        ulong k;
-
-        k = u.Value;
-
-
-
-
-        InfraConvert convert;
-
-        convert = InfraConvert.This;
-
-
-
-
-        int uu;
-
-        uu = convert.SInt32(k);
-
-
-
 
         int count;
 
-        count = uu;
+        count = u.Value;
 
 
 
@@ -393,6 +451,15 @@ public class Read : InfraObject
         {
             return null;
         }
+
+
+
+
+
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
 
 
 
@@ -458,18 +525,6 @@ public class Read : InfraObject
     }
 
 
-
-
-
-    private ulong? ExecuteCount()
-    {
-        ulong? u;
-
-        u = this.ExecuteInt();
-
-
-        return u;
-    }
 
 
 

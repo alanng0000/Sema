@@ -128,6 +128,19 @@ public class Read : InfraObject
 
 
 
+        ListArray member;
+
+        member = this.ExecuteMemberArray();
+
+
+        if (this.Null(member))
+        {
+            return null;
+        }
+
+
+
+
 
         Module ret;
 
@@ -142,6 +155,8 @@ public class Read : InfraObject
         ret.Export = export;
 
         ret.Base = varBase;
+
+        ret.Member = member;
 
         return ret;
     }
@@ -431,6 +446,68 @@ public class Read : InfraObject
 
 
 
+
+    private ListArray ExecuteMemberArray()
+    {
+        int count;
+
+        count = this.ClassArray.Count;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Member member;
+
+            member = this.ExecuteMember();
+
+
+
+            if (this.Null(member))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, member);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
+
+
     private Class ExecuteClassArrayClass()
     {
         string name;
@@ -583,6 +660,17 @@ public class Read : InfraObject
         ret.Class = varClass;
 
         return ret;
+    }
+
+
+
+
+
+
+
+    private Member ExecuteMember()
+    {
+        return null;
     }
 
 

@@ -455,7 +455,7 @@ public class Read : InfraObject
     {
         return this.ExecuteString();
     }
-    
+
 
 
 
@@ -589,13 +589,6 @@ public class Read : InfraObject
 
     private bool CheckByteAvailable(int count)
     {
-        InfraConvert convert;
-
-        convert = InfraConvert.This;
-
-
-
-
         int a;
 
 

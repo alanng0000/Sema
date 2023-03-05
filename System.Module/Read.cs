@@ -451,6 +451,14 @@ public class Read : InfraObject
 
 
 
+    private string ExecuteName()
+    {
+        return this.ExecuteString();
+    }
+    
+
+
+
 
     private int? ExecuteIntSInt32()
     {

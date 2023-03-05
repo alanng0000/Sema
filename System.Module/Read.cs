@@ -857,12 +857,6 @@ public class Read : InfraObject
 
 
 
-        InfraConvert infraConvert;
-
-        infraConvert = InfraConvert.This;
-
-
-
         Convert convert;
 
         convert = Convert.This;

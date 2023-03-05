@@ -51,6 +51,126 @@ public class Read : InfraObject
 
 
 
+
+    private Ref ExecuteModuleRef()
+    {
+        Int varInt;
+
+        varInt = this.ExecuteModuleInt();
+
+
+        if (this.Null(varInt))
+        {
+            return null;
+        }
+
+
+
+
+        Ver ver;
+
+        ver = this.ExecuteModuleVer();
+
+
+        if (this.Null(ver))
+        {
+            return null;
+        }
+
+
+
+
+        Ref ret;
+
+        ret = new Ref();
+
+        ret.Init();
+
+        ret.Int = varInt;
+
+        ret.Ver = ver;
+
+        return ret;
+    }
+
+
+
+
+
+    private Int ExecuteModuleInt()
+    {
+        ulong? u;
+
+        u = this.ExecuteInt();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        ulong value;
+
+
+        value = u.Value;
+
+
+
+        Int ret;
+
+        ret = new Int();
+
+        ret.Init();
+
+        ret.Value = value;
+
+        return ret;
+    }
+
+
+
+
+
+
+    private Ver ExecuteModuleVer()
+    {
+        ulong? u;
+
+        u = this.ExecuteInt();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        ulong value;
+
+
+        value = u.Value;
+
+
+
+        Ver ret;
+
+        ret = new Ver();
+
+        ret.Init();
+
+        ret.Value = value;
+
+        return ret;
+    }
+
+
+
+
+
+
     private bool CheckByteAvailable(int count)
     {
         InfraConvert convert;
@@ -64,7 +184,7 @@ public class Read : InfraObject
 
 
         a = this.Data.Value.Length;
-        
+
 
 
 

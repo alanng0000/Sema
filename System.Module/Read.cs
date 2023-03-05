@@ -49,6 +49,114 @@ public class Read : InfraObject
 
 
 
+    private Module ExecuteModule()
+    {
+        ListArray varClass;
+
+        varClass = this.ExecuteClassArray();
+
+
+        if (this.Null(varClass))
+        {
+            return null;
+        }
+
+
+
+        this.ClassArray = varClass;
+
+
+
+
+
+
+        Module ret;
+
+        ret = new Module();
+
+        ret.Init();
+
+        ret.Class = varClass;
+
+        return ret;
+    }
+
+
+
+
+
+    private ListArray ExecuteClassArray()
+    {
+        int? u;
+
+        u = this.ExecuteCount();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int count;
+
+        count = u.Value;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Class varClass;
+
+            varClass = this.ExecuteClassArrayClass();
+
+
+
+            if (this.Null(varClass))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, varClass);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
+
 
 
     private ListArray ExecuteImportArray()
@@ -253,6 +361,35 @@ public class Read : InfraObject
         return ret;
     }
 
+
+
+
+
+
+    private Class ExecuteClassArrayClass()
+    {
+        string name;
+
+        name = this.ExecuteName();
+
+
+        if (this.Null(name))
+        {
+            return null;
+        }
+
+
+
+        Class ret;
+
+        ret = new Class();
+
+        ret.Init();
+
+        ret.Name = name;
+
+        return ret;
+    }
 
 
 

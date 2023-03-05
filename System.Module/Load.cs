@@ -16,6 +16,14 @@ public class Load : InfraObject
 
 
 
+    public bool Refer { get; set; }
+
+
+
+    public bool State { get; set; }
+
+
+
 
 
     public bool Execute()
@@ -23,6 +31,13 @@ public class Load : InfraObject
         this.Data = null;
 
 
+
+        if (!(this.Refer | this.State))
+        {
+            return false;
+        }
+
+        
 
 
 
@@ -85,19 +100,55 @@ public class Load : InfraObject
 
 
 
-        Convert convert;
-
-        convert = Convert.This;
 
 
+        int referSize;
 
 
-        ulong referSize;
+        referSize = this.Size(u, 0);
 
 
-        referSize = convert.ByteListULong(u, 0);
 
 
+        int stateSize;
+
+
+        stateSize = this.Size(u, ou);
+
+
+
+
+        int totalSize;
+
+        totalSize = 0;
+
+
+        if (this.Refer)
+        {
+            totalSize = totalSize + referSize;
+        }
+
+
+        if (this.State)
+        {
+            totalSize = totalSize + stateSize;
+        }
+
+
+
+
+        long uu;
+
+
+        uu = 0;
+
+
+        if (!this.Refer)
+        {
+            uu = referSize;
+        }
+
+        
 
 
         
@@ -105,7 +156,24 @@ public class Load : InfraObject
         byte[] d;
 
 
-        d = new byte[referSize];
+        d = new byte[totalSize];
+
+
+
+        
+        long uua;
+
+
+        uua = fileStream.Position;
+
+
+
+        uua = uua + uu;
+
+
+
+
+        fileStream.Position = uua;
 
 
 
@@ -151,6 +219,36 @@ public class Load : InfraObject
 
 
 
+
+
+    private int Size(byte[] array, int start)
+    {
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+        ulong u;
+
+        u = convert.ByteListULong(array, start);
+
+
+
+        InfraConvert infraConvert;
+
+        infraConvert = InfraConvert.This;
+
+
+
+        int k;
+
+        k = infraConvert.SInt32(u);
+
+
+
+        return k;
+    }
 
 
 

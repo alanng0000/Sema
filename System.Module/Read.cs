@@ -196,6 +196,69 @@ public class Read : InfraObject
 
 
 
+
+    private ListArray ExecuteBaseArray()
+    {
+        int count;
+
+        count = this.ClassArray.Count;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Base varBase;
+
+            varBase = this.ExecuteBase();
+
+
+
+            if (this.Null(varBase))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, varBase);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
+
+
+
     private Import ExecuteImport()
     {
         Ref varRef;
@@ -281,6 +344,45 @@ public class Read : InfraObject
 
         return ret;
     }
+
+
+
+
+
+
+    private Base ExecuteBase()
+    {
+        int? u;
+
+        u = this.ExecuteClass();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+
+        int varClass;
+
+        varClass = u.Value;
+
+
+
+
+        Base ret;
+
+        ret = new Base();
+
+        ret.Init();
+
+        ret.Class = varClass;
+
+        return ret;
+    }
+
 
 
 
@@ -465,6 +567,12 @@ public class Read : InfraObject
 
         return ret;
     }
+
+
+
+
+
+    private ListArray ClassArray { get; set; }
 
 
 

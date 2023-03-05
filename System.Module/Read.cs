@@ -863,6 +863,79 @@ public class Read : InfraObject
 
 
 
+    private ListArray ExecuteVarArray()
+    {
+        int? u;
+
+        u = this.ExecuteCount();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int count;
+
+        count = u.Value;
+
+
+
+
+        ListArray array;
+
+        array = new ListArray();
+
+        array.Count = count;
+
+        array.Init();
+
+
+
+        int i;
+
+        i = 0;
+
+
+        while (i < count)
+        {
+            Var varVar;
+
+            varVar = this.ExecuteVar();
+
+
+
+            if (this.Null(varVar))
+            {
+                return null;
+            }
+
+
+
+            array.Set(i, varVar);
+            
+
+
+
+            i = i + 1;
+        }
+
+
+
+        ListArray ret;
+
+        ret = array;
+
+        return ret;
+    }
+
+
+
+
+
+
 
     private Field ExecuteField()
     {
@@ -992,6 +1065,21 @@ public class Read : InfraObject
 
 
 
+        ListArray param;
+
+        param = this.ExecuteVarArray();
+
+
+        
+        if (this.Null(param))
+        {
+            return null;
+        }
+
+
+
+
+
         Method ret;
 
         ret = new Method();
@@ -1004,10 +1092,61 @@ public class Read : InfraObject
 
         ret.Name = name;
 
+        ret.Param = param;
+
         return ret;
     }
 
 
+
+
+
+    private Var ExecuteVar()
+    {
+        int? u;
+
+        u = this.ExecuteClass();
+
+
+        if (!u.HasValue)
+        {
+            return null;
+        }
+
+
+
+        int varClass;
+
+        varClass = u.Value;
+
+
+
+
+        string name;
+
+        name = this.ExecuteName();
+
+
+        if (this.Null(name))
+        {
+            return null;
+        }
+
+
+
+
+        Var ret;
+
+        ret = new Var();
+
+        ret.Init();
+
+        ret.Class = varClass;
+
+        ret.Name = name;
+
+        return ret;
+    }
 
 
 

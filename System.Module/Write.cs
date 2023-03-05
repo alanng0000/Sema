@@ -23,6 +23,12 @@ public class Write : InfraObject
 
 
 
+        InfraConvert convert;
+
+        convert = InfraConvert.This;
+
+
+
 
 
         CountByteOp countOp;
@@ -51,7 +57,7 @@ public class Write : InfraObject
 
 
 
-        ulong referSize;
+        int referSize;
 
         referSize = this.Index;
 
@@ -68,8 +74,7 @@ public class Write : InfraObject
 
 
 
-
-        ulong stateSize;
+        int stateSize;
         
         stateSize = this.Index;
 
@@ -84,29 +89,17 @@ public class Write : InfraObject
 
 
 
-        InfraConvert convert;
-
-        convert = InfraConvert.This;
-
-
-
 
         int ua;
 
         ua = constant.IntByteCount;
 
 
-        ulong uh;
-
-        uh = convert.ULong(ua);
 
 
+        int totalSize;
 
-
-
-        ulong totalSize;
-
-        totalSize = referSize + stateSize + 2 * uh;
+        totalSize = referSize + stateSize + 2 * ua;
         
 
 
@@ -150,11 +143,11 @@ public class Write : InfraObject
 
 
 
-        this.ExecuteInt(referSize);
+        this.ExecuteSize(referSize);
 
 
 
-        this.ExecuteInt(stateSize);
+        this.ExecuteSize(stateSize);
 
 
 
@@ -848,6 +841,19 @@ public class Write : InfraObject
 
 
 
+    private bool ExecuteSize(int size)
+    {
+        this.ExecuteSInt32Int(size);
+
+
+
+
+        return true;
+    }
+
+
+
+
     private bool ExecuteCount(int count)
     {
         this.ExecuteSInt32Int(count);
@@ -1023,7 +1029,7 @@ public class Write : InfraObject
 
 
 
-    public ulong Index { get; set; }
+    public int Index { get; set; }
 
 
 

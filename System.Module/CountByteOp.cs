@@ -11,7 +11,7 @@ class CountByteOp : ByteOp
 
     public override bool Execute(byte ob)
     {
-        ulong k;
+        int k;
 
 
         k = this.Write.Index;

@@ -19,7 +19,7 @@ class WriteByteOp : ByteOp
 
         
 
-        ulong k;
+        int k;
 
 
         k = this.Write.Index;

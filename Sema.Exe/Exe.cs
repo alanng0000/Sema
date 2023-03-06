@@ -97,7 +97,7 @@ public class Exe : InfraObject
         string s;
         
 
-        s = Environment.GetEnvironmentVariable("PATH");
+        s = SystemEnvironment.GetEnvironmentVariable("PATH");
 
 
         if (s == null)
@@ -110,7 +110,7 @@ public class Exe : InfraObject
 
 
 
-        Environment.SetEnvironmentVariable("PATH", s);
+        SystemEnvironment.SetEnvironmentVariable("PATH", s);
 
 
 

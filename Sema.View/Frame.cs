@@ -352,12 +352,12 @@ public class Frame : CompObject
 
 
 
-    private SystemDelegate ControlDelegate { get; set; }
+    private Delegate ControlDelegate { get; set; }
 
 
 
 
-    private SystemDelegate DrawDelegate { get; set; }
+    private Delegate DrawDelegate { get; set; }
     
 
 

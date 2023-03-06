@@ -21,6 +21,6 @@ global using Size = Sema.View.Size;
 global using GridCol = Sema.View.GridCol;
 global using GridRow = Sema.View.GridRow;
 global using GridChild = Sema.View.GridChild;
-global using ExeExe = System.Exe.Exe;
+global using ExeExe = Sema.Exe.Exe;
 global using Stream = System.IO.Stream;
 global using FileStream = System.IO.FileStream;

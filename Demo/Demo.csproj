@@ -11,7 +11,7 @@
         <ProjectReference Include="../Sema.Event/Sema.Event.csproj" />
         <ProjectReference Include="../Sema.Draw/Sema.Draw.csproj" />
         <ProjectReference Include="../Sema.View/Sema.View.csproj" />
-        <ProjectReference Include="../System.Exe/System.Exe.csproj" />
+        <ProjectReference Include="../Sema.Exe/Sema.Exe.csproj" />
     </ItemGroup>
 
     <ItemGroup>

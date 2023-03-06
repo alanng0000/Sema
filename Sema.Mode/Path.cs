@@ -114,7 +114,7 @@ public class Path : Object
 
 
 
-    public string ModuleDataName
+    public string ModeDataName
     {
         get
         {

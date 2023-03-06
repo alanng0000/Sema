@@ -276,7 +276,7 @@ public class Load : Object
         string su;
 
 
-        su = path.ModuleDataName;
+        su = path.ModeDataName;
 
 
 

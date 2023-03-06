@@ -1,4 +1,4 @@
-global using InfraObject = Sema.Object;
+global using Object = Sema.Object;
 global using ObjectInfra = Sema.ObjectInfra;
 global using Int = Sema.Int;
 global using IntInfra = Sema.IntInfra;

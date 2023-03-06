@@ -1,4 +1,4 @@
-global using InfraObject = Sema.Object;
+global using Object = Sema.Object;
 global using InfraExtern = Sema.Intern.InfraExtern;
 global using DrawExtern = Sema.Intern.DrawExtern;
 global using Environment = System.Environment;

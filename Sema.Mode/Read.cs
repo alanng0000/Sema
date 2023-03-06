@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 
 
-public class Read : InfraObject
+public class Read : Object
 {
     public InfraData Data { get; set; }
 

@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 
 
-public class EntryLoad : InfraObject
+public class EntryLoad : Object
 {
     private string EntryFilePath { get; set; }
 

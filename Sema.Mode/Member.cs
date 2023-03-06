@@ -4,7 +4,7 @@ namespace Sema.Mode;
 
 
 
-public class Member : InfraObject
+public class Member : Object
 {
     public ListArray Field { get; set; }
 

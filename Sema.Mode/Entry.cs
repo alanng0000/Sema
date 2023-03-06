@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 
 
-public class Entry : InfraObject
+public class Entry : Object
 {
     public new Int Int { get; set; }
 

@@ -4,7 +4,7 @@ namespace Sema.Mode;
 
 
 
-public class Field : InfraObject
+public class Field : Object
 {
     public int Class { get; set; }
 

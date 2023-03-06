@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Load : InfraObject
+public class Load : Object
 {
     public Ref Module { get; set; }
 

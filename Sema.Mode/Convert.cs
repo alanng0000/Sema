@@ -2,7 +2,7 @@ namespace Sema.Mode;
 
 
 
-public class Convert : InfraObject
+public class Convert : Object
 {
     public static Convert This { get; } = CreateGlobal();
 

@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 
 
-public class Int : InfraObject
+public class Int : Object
 {
     public ulong Value { get; set; }
 }

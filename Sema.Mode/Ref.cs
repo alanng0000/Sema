@@ -4,7 +4,7 @@ namespace Sema.Mode;
 
 
 
-public class Ref : InfraObject
+public class Ref : Object
 {
     public new Int Int { get; set; }
 

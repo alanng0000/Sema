@@ -104,9 +104,9 @@ public class IntInfra : Object
 
         if (!u.HasValue)
         {
-            Console.Write("Error: System.Infra:IntInfra NewValue Fail\n");
+            SystemConsole.Write("Error: System.Infra:IntInfra NewValue Fail\n");
 
-            Environment.Exit(10);
+            SystemEnvironment.Exit(10);
         }
 
 

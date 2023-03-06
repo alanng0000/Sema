@@ -13,7 +13,7 @@ System.Storage
 System.Network
 Sema.Draw
 Sema.View
-System.Module
+Sema.Module
 System.Source
 System.Case
 System.Case.Token

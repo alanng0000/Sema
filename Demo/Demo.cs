@@ -27,7 +27,7 @@ class Demo : Object
         frame = new Frame();
 
 
-        frame.Title = "System Demo";
+        frame.Title = "Sema Demo";
 
 
         frame.Init();

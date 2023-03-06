@@ -1,4 +1,4 @@
-global using Object = Sema.Object;
+global using InfraObject = Sema.Object;
 global using ObjectInfra = Sema.ObjectInfra;
 global using Compare = Sema.Compare;
 global using StringCompare = Sema.StringCompare;

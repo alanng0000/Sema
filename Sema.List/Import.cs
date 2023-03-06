@@ -1,2 +1,2 @@
 global using Compare = Sema.Compare;
-global using Object = Sema.Object;
+global using InfraObject = Sema.Object;

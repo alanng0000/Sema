@@ -1,4 +1,4 @@
-global using InfraObject = Sema.Object;
+global using Object = Sema.Object;
 global using EventHandle = Sema.Event.Handle;
 global using Control = Sema.Control.Control;
 global using Key = Sema.Control.Key;

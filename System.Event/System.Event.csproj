@@ -6,7 +6,7 @@
 
     <ItemGroup>
         <ProjectReference Include="../Sema/Sema.csproj" />
-        <ProjectReference Include="../System.List/System.List.csproj" />
+        <ProjectReference Include="../Sema.List/Sema.List.csproj" />
     </ItemGroup>
 
 </Project>

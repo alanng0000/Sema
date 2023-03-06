@@ -1,4 +1,4 @@
-namespace System.Intern;
+namespace Sema.Intern;
 
 
 

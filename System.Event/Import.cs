@@ -1,6 +1,6 @@
 global using InfraObject = Sema.Object;
 global using IntInfra = Sema.IntInfra;
 global using IntCompare = Sema.IntCompare;
-global using Map = System.List.Map;
-global using MapIter = System.List.MapIter;
-global using Pair = System.List.Pair;
+global using Map = Sema.List.Map;
+global using MapIter = Sema.List.MapIter;
+global using Pair = Sema.List.Pair;

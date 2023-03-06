@@ -1,10 +1,10 @@
-global using InfraObject = System.Infra.Object;
-global using ObjectInfra = System.Infra.ObjectInfra;
-global using Compare = System.Infra.Compare;
-global using StringCompare = System.Infra.StringCompare;
-global using InfraData = System.Infra.Data;
-global using InfraConvert = System.Infra.Convert;
-global using InfraConstant = System.Infra.Constant;
+global using InfraObject = Sema.Object;
+global using ObjectInfra = Sema.ObjectInfra;
+global using Compare = Sema.Compare;
+global using StringCompare = Sema.StringCompare;
+global using InfraData = Sema.Data;
+global using InfraConvert = Sema.Convert;
+global using InfraConstant = Sema.Constant;
 global using ListArray = System.List.Array;
 global using Map = System.List.Map;
 global using Pair = System.List.Pair;

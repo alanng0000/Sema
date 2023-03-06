@@ -1,5 +1,5 @@
-global using InfraObject = System.Infra.Object;
-global using Int = System.Infra.Int;
-global using ObjectInfra = System.Infra.ObjectInfra;
+global using InfraObject = Sema.Object;
+global using Int = Sema.Int;
+global using ObjectInfra = Sema.ObjectInfra;
 global using EventEvent = System.Event.Event;
 global using Handle = System.Event.Handle;

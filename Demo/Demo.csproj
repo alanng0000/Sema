@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="../System.Infra/System.Infra.csproj" />
+        <ProjectReference Include="../Sema/Sema.csproj" />
         <ProjectReference Include="../System.Text/System.Text.csproj" />
         <ProjectReference Include="../System.Event/System.Event.csproj" />
         <ProjectReference Include="../System.Draw/System.Draw.csproj" />

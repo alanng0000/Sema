@@ -1,4 +1,4 @@
-global using Object = System.Infra.Object;
+global using Object = Sema.Object;
 global using EventHandle = System.Event.Handle;
 global using Control = System.Control.Control;
 global using Key = System.Control.Key;

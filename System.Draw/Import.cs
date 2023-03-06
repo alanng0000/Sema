@@ -1,8 +1,8 @@
-global using InfraObject = System.Infra.Object;
-global using InfraRange = System.Infra.Range;
-global using ObjectInfra = System.Infra.ObjectInfra;
-global using InfraConvert = System.Infra.Convert;
-global using InfraConstant = System.Infra.Constant;
+global using InfraObject = Sema.Object;
+global using InfraRange = Sema.Range;
+global using ObjectInfra = Sema.ObjectInfra;
+global using InfraConvert = Sema.Convert;
+global using InfraConstant = Sema.Constant;
 global using CharSpan = System.Text.CharSpan;
 global using InternIntern = System.Intern.Intern;
 global using InfraExtern = System.Intern.InfraExtern;

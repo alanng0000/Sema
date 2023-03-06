@@ -1,2 +1,2 @@
-global using Compare = System.Infra.Compare;
-global using InfraObject = System.Infra.Object;
+global using Compare = Sema.Compare;
+global using InfraObject = Sema.Object;

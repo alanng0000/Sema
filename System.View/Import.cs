@@ -1,9 +1,9 @@
-global using InfraObject = System.Infra.Object;
-global using ObjectInfra = System.Infra.ObjectInfra;
-global using Int = System.Infra.Int;
-global using IntInfra = System.Infra.IntInfra;
-global using IntCompare = System.Infra.IntCompare;
-global using InfraConvert = System.Infra.Convert;
+global using InfraObject = Sema.Object;
+global using ObjectInfra = Sema.ObjectInfra;
+global using Int = Sema.Int;
+global using IntInfra = Sema.IntInfra;
+global using IntCompare = Sema.IntCompare;
+global using InfraConvert = Sema.Convert;
 global using InternIntern = System.Intern.Intern;
 global using InfraExtern = System.Intern.InfraExtern;
 global using KeyCodeList = System.Intern.KeyCodeList;

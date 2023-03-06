@@ -1,4 +1,4 @@
-namespace System.Infra;
+namespace Sema;
 
 
 
@@ -104,7 +104,7 @@ public class IntInfra : Object
 
         if (!u.HasValue)
         {
-            SystemConsole.Write("Error: System.Infra:IntInfra NewValue Fail\n");
+            SystemConsole.Write("Error: Sema:IntInfra NewValue Fail\n");
 
             SystemEnvironment.Exit(10);
         }

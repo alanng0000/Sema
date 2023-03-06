@@ -10,7 +10,7 @@
         <ProjectReference Include="../Sema.List/Sema.List.csproj" />
         <ProjectReference Include="../System.Text/System.Text.csproj" />
         <ProjectReference Include="../Sema.Event/Sema.Event.csproj" />
-        <ProjectReference Include="../System.Comp/System.Comp.csproj" />
+        <ProjectReference Include="../Sema.Comp/Sema.Comp.csproj" />
         <ProjectReference Include="../Sema.Control/Sema.Control.csproj" />
         <ProjectReference Include="../Sema.Draw/Sema.Draw.csproj" />
     </ItemGroup>

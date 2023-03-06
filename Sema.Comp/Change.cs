@@ -1,4 +1,4 @@
-namespace System.Comp;
+namespace Sema.Comp;
 
 
 

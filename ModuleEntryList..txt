@@ -1,6 +1,6 @@
 System
 Sema.List
-System.Text
+Sema.Text
 Sema.Event
 Sema.Comp
 System.Thread

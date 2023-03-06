@@ -8,7 +8,7 @@
         <ProjectReference Include="../Sema/Sema.csproj" />
         <ProjectReference Include="../Sema.Intern/Sema.Intern.csproj" />
         <ProjectReference Include="../Sema.List/Sema.List.csproj" />
-        <ProjectReference Include="../System.Text/System.Text.csproj" />
+        <ProjectReference Include="../Sema.Text/Sema.Text.csproj" />
         <ProjectReference Include="../Sema.Event/Sema.Event.csproj" />
         <ProjectReference Include="../Sema.Comp/Sema.Comp.csproj" />
         <ProjectReference Include="../Sema.Control/Sema.Control.csproj" />

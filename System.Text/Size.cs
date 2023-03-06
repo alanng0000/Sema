@@ -1,4 +1,4 @@
-namespace System.Text;
+namespace Sema.Text;
 
 
 

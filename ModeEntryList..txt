@@ -13,7 +13,7 @@ Sema.Storage
 Sema.Network
 Sema.Draw
 Sema.View
-Sema.Module
+Sema.Mode
 Sema.Source
 Sema.Case
 Sema.Case.Token

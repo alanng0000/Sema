@@ -1,3 +1,3 @@
 # Sema
 
-Sema Module.
+Sema Mode.

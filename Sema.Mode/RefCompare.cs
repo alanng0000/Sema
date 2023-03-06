@@ -1,4 +1,4 @@
-namespace Sema.Module;
+namespace Sema.Mode;
 
 
 

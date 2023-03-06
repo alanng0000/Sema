@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 public class Write : Object
 {
-    public Module Module { get; set; }
+    public Mode Module { get; set; }
 
 
 
@@ -169,7 +169,7 @@ public class Write : Object
 
 
 
-    private bool ExecuteRefer(Module module)
+    private bool ExecuteRefer(Mode module)
     {
         this.ExecuteClassArray(module.Class);
 
@@ -199,7 +199,7 @@ public class Write : Object
 
 
 
-    private bool ExecuteState(Module module)
+    private bool ExecuteState(Mode module)
     {
         return true;
     }

@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Module : Object
+public class Mode : Object
 {
     public Ref Ref { get; set; }
 

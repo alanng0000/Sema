@@ -20,7 +20,7 @@ public class Read : Object
 
 
 
-    public Module Module { get; set; }
+    public Mode Module { get; set; }
 
 
 
@@ -35,7 +35,7 @@ public class Read : Object
 
 
 
-        Module m;
+        Mode m;
 
         m = this.ExecuteModule();
 
@@ -69,7 +69,7 @@ public class Read : Object
 
 
 
-    private Module ExecuteModule()
+    private Mode ExecuteModule()
     {
         ListArray varClass;
 
@@ -142,9 +142,9 @@ public class Read : Object
 
 
 
-        Module ret;
+        Mode ret;
 
-        ret = new Module();
+        ret = new Mode();
 
         ret.Init();
 

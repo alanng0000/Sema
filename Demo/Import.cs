@@ -1,5 +1,5 @@
 global using Object = Sema.Object;
-global using EventHandle = System.Event.Handle;
+global using EventHandle = Sema.Event.Handle;
 global using Control = Sema.Control.Control;
 global using Key = Sema.Control.Key;
 global using KeyList = Sema.Control.KeyList;

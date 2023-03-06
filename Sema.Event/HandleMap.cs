@@ -1,4 +1,4 @@
-namespace System.Event;
+namespace Sema.Event;
 
 
 

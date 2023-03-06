@@ -7,7 +7,7 @@
     <ItemGroup>
         <ProjectReference Include="../Sema/Sema.csproj" />
         <ProjectReference Include="../Sema.Intern/Sema.Intern.csproj" />
-        <ProjectReference Include="../System.Event/System.Event.csproj" />
+        <ProjectReference Include="../Sema.Event/Sema.Event.csproj" />
     </ItemGroup>
 
 </Project>

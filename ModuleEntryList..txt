@@ -1,7 +1,7 @@
 System
 Sema.List
 System.Text
-System.Event
+Sema.Event
 System.Comp
 System.Thread
 System.Stream

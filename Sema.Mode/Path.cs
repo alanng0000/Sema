@@ -46,7 +46,7 @@ public class Path : Object
 
 
 
-        s = SystemPath.Combine(s, "Module");
+        s = SystemPath.Combine(s, "Mode");
 
 
 
@@ -67,7 +67,7 @@ public class Path : Object
 
 
 
-    public string Module(Ref varRef)
+    public string Mode(Ref varRef)
     {
         Convert convert;
 

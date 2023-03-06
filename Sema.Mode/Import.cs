@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 public class Import : Object
 {
-    public Ref Module { get; set; }
+    public Ref Mode { get; set; }
 
 
     public int Class { get; set; }

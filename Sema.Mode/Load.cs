@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 public class Load : Object
 {
-    public Ref Module { get; set; }
+    public Ref Mode { get; set; }
 
 
 
@@ -268,7 +268,7 @@ public class Load : Object
         string s;
 
 
-        s = path.Module(this.Module);
+        s = path.Mode(this.Mode);
 
 
 

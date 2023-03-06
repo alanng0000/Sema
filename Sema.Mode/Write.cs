@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 public class Write : Object
 {
-    public Mode Module { get; set; }
+    public Mode Mode { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public class Write : Object
 
 
 
-        this.ExecuteRefer(this.Module);
+        this.ExecuteRefer(this.Mode);
 
 
 
@@ -68,7 +68,7 @@ public class Write : Object
 
 
         
-        this.ExecuteState(this.Module);
+        this.ExecuteState(this.Mode);
 
 
 
@@ -152,10 +152,10 @@ public class Write : Object
 
 
 
-        this.ExecuteRefer(this.Module);
+        this.ExecuteRefer(this.Mode);
 
 
-        this.ExecuteState(this.Module);
+        this.ExecuteState(this.Mode);
 
 
 
@@ -489,7 +489,7 @@ public class Write : Object
 
     private bool ExecuteImport(Import import)
     {
-        this.ExecuteModuleRef(import.Module);
+        this.ExecuteModuleRef(import.Mode);
 
 
         this.ExecuteClass(import.Class);

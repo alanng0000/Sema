@@ -20,7 +20,7 @@ public class Read : Object
 
 
 
-    public Mode Module { get; set; }
+    public Mode Mode { get; set; }
 
 
 
@@ -30,7 +30,7 @@ public class Read : Object
 
     public bool Execute()
     {
-        this.Module = null;
+        this.Mode = null;
 
 
 
@@ -55,7 +55,7 @@ public class Read : Object
 
 
 
-        this.Module = m;
+        this.Mode = m;
 
 
 
@@ -579,7 +579,7 @@ public class Read : Object
 
         ret.Init();
 
-        ret.Module = varRef;
+        ret.Mode = varRef;
 
         ret.Class = varClass;
 

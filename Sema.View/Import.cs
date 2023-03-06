@@ -33,4 +33,4 @@ global using DrawImage = Sema.Draw.Image;
 global using DrawInfra = Sema.Draw.Infra;
 global using DrawConvert = Sema.Draw.Convert;
 global using DrawConstant = Sema.Draw.Constant;
-global using SystemDelegate = System.Delegate;
+global using Delegate = System.Delegate;

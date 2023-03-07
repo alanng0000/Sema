@@ -518,7 +518,7 @@ public class Grid : View
             GridChild child;
 
 
-            child = (GridChild)iter.Value;
+            child = (GridChild)iter.Valu;
 
 
 
@@ -1017,7 +1017,7 @@ public class Grid : View
             GridCol gridCol;
 
 
-            gridCol = (GridCol)iter.Value;
+            gridCol = (GridCol)iter.Valu;
 
 
 
@@ -1084,7 +1084,7 @@ public class Grid : View
             GridRow gridRow;
 
 
-            gridRow = (GridRow)iter.Value;
+            gridRow = (GridRow)iter.Valu;
 
 
 

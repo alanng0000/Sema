@@ -96,7 +96,7 @@ class IntMap : Object
 
         BlockEntry[] v;
 
-        v = entry.Value;
+        v = entry.Valu;
 
 
         if (v == null)
@@ -104,7 +104,7 @@ class IntMap : Object
             v = new BlockEntry[constant.BlockEntryCount];
 
 
-            entry.Value = v;
+            entry.Valu = v;
         }
 
 
@@ -512,7 +512,7 @@ class IntMap : Object
 
         BlockEntry[] v;
 
-        v = entry.Value;
+        v = entry.Valu;
 
 
 

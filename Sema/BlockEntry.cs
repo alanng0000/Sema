@@ -8,5 +8,5 @@ struct BlockEntry
 
 
 
-    public BlockEntry[] Value;
+    public BlockEntry[] Valu;
 }

@@ -5,11 +5,21 @@ namespace Sema.Mode;
 
 public class VerInfra : InfraObject
 {
-    public Ver GetCurrentVer(Int intent)
+    public Ver GetCurrentVer(Int varInt)
     {
+        Path path;
+
+        path = Path.This;
+
+
+
         string u;
         
-        u = this.VerPath(intent);
+
+        u = path.ModeInt(varInt);
+
+
+        u = SystemPath.Combine(u, path.VerName);
 
 
 
@@ -93,67 +103,4 @@ public class VerInfra : InfraObject
 
 
 
-    private string VerPath(Int intent)
-    {
-        Convert convert;
-
-        convert = Convert.This;
-
-
-
-
-        ulong o;
-
-        o = intent.Value;
-
-
-
-
-        string u;
-
-        u = convert.Int60BitListString(o);
-
-
-
-
-        
-
-        Path modulePath;
-
-
-        modulePath = Path.This;
-
-
-
-
-
-        string s;
-
-
-        s = SystemPath.Combine(modulePath.Root, u);
-
-
-        s = SystemPath.Combine(s, this.VerFileName);
-
-
-
-
-        string ret;
-
-        ret = s;
-
-
-        return ret;
-    }
-
-
-
-
-    private string VerFileName
-    {
-        get
-        {
-            return "_";
-        }
-    }
 }

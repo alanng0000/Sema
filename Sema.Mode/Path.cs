@@ -114,6 +114,55 @@ public class Path : InfraObject
 
 
 
+    public string ModeInt(Int varInt)
+    {
+        Convert convert;
+
+        convert = Convert.This;
+
+
+
+
+        ulong o;
+
+        o = varInt.Value;
+
+
+
+
+        string u;
+
+        u = convert.Int60BitListString(o);
+
+
+
+
+
+        string s;
+
+
+        s = SystemPath.Combine(this.Root, u);
+
+
+
+
+
+        string ret;
+
+        ret = s;
+
+
+        return ret;
+    }
+
+
+
+
+
+
+
+
+
     public string ModeDataName
     {
         get
@@ -138,6 +187,23 @@ public class Path : InfraObject
         {
         }
     }
+
+
+
+
+
+
+    public string VerName
+    {
+        get
+        {
+            return "_";
+        }
+        set
+        {
+        }
+    }
+
 
 
 

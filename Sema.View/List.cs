@@ -134,7 +134,7 @@ public class List : CompObject
         pair.Key = item.Int;
 
 
-        pair.Value = item;
+        pair.Valu = item;
 
 
 
@@ -294,7 +294,7 @@ public class List : CompObject
         pair.Key = item.Int;
 
 
-        pair.Value = item;
+        pair.Valu = item;
 
 
 

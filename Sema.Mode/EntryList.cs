@@ -5,7 +5,7 @@ namespace Sema.Mode;
 
 
 
-public class EntryList : Object
+public class EntryList : InfraObject
 {
     public override bool Init()
     {

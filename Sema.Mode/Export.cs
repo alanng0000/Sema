@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Export : Object
+public class Export : InfraObject
 {
     public int Class { get; set; }
 }

@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Write : Object
+public class Write : InfraObject
 {
     public Mode Mode { get; set; }
 

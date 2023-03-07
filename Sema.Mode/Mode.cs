@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Mode : Object
+public class Mode : InfraObject
 {
     public Ref Ref { get; set; }
 

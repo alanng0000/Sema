@@ -4,7 +4,7 @@ namespace Sema.Mode;
 
 
 
-class ByteOp : Object
+class ByteOp : InfraObject
 {
     public virtual bool Execute(byte ob)
     {

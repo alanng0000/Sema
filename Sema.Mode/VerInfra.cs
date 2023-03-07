@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class VerInfra : Object
+public class VerInfra : InfraObject
 {
     public Ver GetCurrentVer(Int intent)
     {

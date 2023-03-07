@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Path : Object
+public class Path : InfraObject
 {
     public static Path This { get; } = CreateGlobal();
 

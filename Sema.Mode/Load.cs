@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Load : Object
+public class Load : InfraObject
 {
     public Ref Mode { get; set; }
 
@@ -79,7 +79,7 @@ public class Load : Object
         FileStream fileStream;
 
 
-        fileStream = new FileStream(dataPath, System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.Read);
+        fileStream = new FileStream(dataPath, FileMode.Open, FileAccess.Read, FileShare.Read);
 
 
 

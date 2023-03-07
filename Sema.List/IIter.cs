@@ -15,7 +15,7 @@ public interface IIter
 
 
 
-    object Value
+    object Valu
     {
         get;
 

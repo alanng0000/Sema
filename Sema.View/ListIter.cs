@@ -45,7 +45,7 @@ public struct ListIter : InfraIIter
         get
         {
             
-            return this.Iter.Value;
+            return this.Iter.Valu;
         }
 
         set

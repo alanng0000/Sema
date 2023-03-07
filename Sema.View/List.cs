@@ -184,7 +184,7 @@ public class List : CompObject
         {
             CompObject item;
 
-            item = (CompObject)iter.Value;
+            item = (CompObject)iter.Valu;
 
 
 

@@ -30,7 +30,7 @@ public struct MapIter : IIter
 
 
 
-    public object Value
+    public object Valu
     {
         get
         {
@@ -66,7 +66,7 @@ public struct MapIter : IIter
         Pair a;
             
             
-        a = (Pair)this.ListIter.Value;
+        a = (Pair)this.ListIter.Valu;
 
 
 

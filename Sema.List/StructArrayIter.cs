@@ -87,7 +87,7 @@ public struct StructArrayIter<TItem> : IIter where TItem : struct
 
 
 
-    object IIter.Value
+    object IIter.Valu
     {
         get
         {

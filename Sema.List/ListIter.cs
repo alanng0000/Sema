@@ -110,7 +110,7 @@ public struct ListIter : IIter
 
 
 
-    public object Value
+    public object Valu
     {
         get
         {

@@ -69,7 +69,7 @@ public struct ArrayIter : IIter
 
 
 
-    public object Value
+    public object Valu
     {
         get
         {

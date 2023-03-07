@@ -45,7 +45,7 @@ public class Event : InfraObject
             Handle handle;
 
 
-            handle = (Handle)iter.Value;
+            handle = (Handle)iter.Valu;
 
 
 

@@ -5,14 +5,14 @@ namespace Sema.List;
 
 public class Array : List
 {
-    private object[] Value { get; set; }
+    private object[] Valu { get; set; }
 
 
 
 
     public override bool Init()
     {
-        this.Value = new object[this.Count];
+        this.Valu = new object[this.Count];
 
 
 
@@ -166,7 +166,7 @@ public class Array : List
 
 
 
-        return this.Value[index];
+        return this.Valu[index];
     }
 
 
@@ -215,7 +215,7 @@ public class Array : List
 
 
 
-        this.Value[index] = valu;
+        this.Valu[index] = valu;
 
 
 

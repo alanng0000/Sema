@@ -63,21 +63,21 @@ public class Text : View
         
 
 
-        TextValu value;
+        TextValu valu;
 
-        value = new TextValu();
+        valu = new TextValu();
 
-        value.Init();
+        valu.Init();
 
-        value.Span.String = "";
+        valu.Span.String = "";
 
-        value.Span.Range.Start = 0;
+        valu.Span.Range.Start = 0;
 
-        value.Span.Range.End = 0;
+        valu.Span.Range.End = 0;
 
 
 
-        this.Valu = value;
+        this.Valu = valu;
 
 
 

@@ -40,7 +40,7 @@ public struct ListIter : InfraIIter
 
 
 
-    public object Value
+    public object Valu
     {
         get
         {

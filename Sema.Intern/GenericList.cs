@@ -54,12 +54,12 @@ public class GenericList<TItem> : InfraObject
 
 
 
-    public bool SetCount(int value)
+    public bool SetCount(int valu)
     {
         int newCount;
 
 
-        newCount = value;
+        newCount = valu;
 
 
 
@@ -147,5 +147,5 @@ public class GenericList<TItem> : InfraObject
 
     
 
-    private static int InitialCapacity { get; } = 256;
+    private static int InitialCapacity { get; } = 64;
 }

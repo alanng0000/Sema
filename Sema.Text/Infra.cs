@@ -473,11 +473,11 @@ public class Infra : InfraObject
 
 
 
-        ulong value;
+        ulong valu;
 
 
 
-        value = j;
+        valu = j;
 
 
 
@@ -485,7 +485,7 @@ public class Infra : InfraObject
         ulong ret;
 
 
-        ret = value;
+        ret = valu;
 
 
         return ret;

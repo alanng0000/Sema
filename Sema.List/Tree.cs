@@ -164,11 +164,11 @@ class Tree : InfraObject
                 // The right subtree increases
 
 
-                direction = -DirectionValue;
+                direction = -DirectionValu;
             }
             else
             {
-                direction = +DirectionValue;
+                direction = +DirectionValu;
             }
 
 
@@ -304,11 +304,11 @@ class Tree : InfraObject
                            // BF(X) has not yet been updated!
             if (N == X.LeftChild)
             {
-                direction = - DirectionValue;
+                direction = - DirectionValu;
             }
             else
             {
-                direction = + DirectionValue;
+                direction = + DirectionValu;
             }
 
 
@@ -324,7 +324,7 @@ class Tree : InfraObject
                 // ==> rebalancing is required.
 
 
-                if (direction == -DirectionValue)
+                if (direction == -DirectionValu)
                 {
 
                     Z = X.RightChild; // Sibling of N (higher by 2)
@@ -604,7 +604,7 @@ class Tree : InfraObject
 
 
 
-    private static readonly int DirectionValue = 1;
+    private static readonly int DirectionValu = 1;
 
 
 
@@ -614,14 +614,14 @@ class Tree : InfraObject
     {
         if (u < 0)
         {
-            return -DirectionValue;
+            return -DirectionValu;
         }
 
 
 
         if (0 < u)
         {
-            return +DirectionValue;
+            return +DirectionValu;
         }
 
 
@@ -649,7 +649,7 @@ class Tree : InfraObject
         bool b;
 
 
-        b = (direction == - DirectionValue);
+        b = (direction == - DirectionValu);
 
 
 
@@ -700,7 +700,7 @@ class Tree : InfraObject
         bool b;
 
 
-        b = (direction ==  - DirectionValue);
+        b = (direction ==  - DirectionValu);
 
 
         if (b)

@@ -56,7 +56,7 @@ public class IntInfra : Object
     {
         ulong o;
 
-        o = this.NewValue();
+        o = this.NewValu();
         
 
 
@@ -76,7 +76,7 @@ public class IntInfra : Object
 
     public bool Remove(Int a)
     {
-        this.RemoveValue(a.Valu);
+        this.RemoveValu(a.Valu);
 
 
 
@@ -88,7 +88,7 @@ public class IntInfra : Object
 
 
 
-    private ulong NewValue()
+    private ulong NewValu()
     {
         ulong? u;
 
@@ -104,7 +104,7 @@ public class IntInfra : Object
 
         if (!u.HasValue)
         {
-            SystemConsole.Write("Error: Sema:IntInfra NewValue Fail\n");
+            SystemConsole.Write("Error: Sema:IntInfra NewValu Fail\n");
 
             SystemEnvironment.Exit(10);
         }
@@ -130,7 +130,7 @@ public class IntInfra : Object
 
 
 
-    private bool RemoveValue(ulong a)
+    private bool RemoveValu(ulong a)
     {
         lock (this.Lock)
         {

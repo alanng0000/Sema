@@ -42,7 +42,7 @@ public class Path : InfraObject
         string s;
         
 
-        s = SystemEnvironment.GetFolderPath(fold);
+        s = Environment.GetFolderPath(fold);
 
 
 

@@ -346,16 +346,16 @@ public class Text : View
 
     protected virtual bool DrawText(DrawDraw draw)
     {
-        TextValu value;
+        TextValu valu;
 
 
-        value = this.Valu;
+        valu = this.Valu;
 
 
 
         CharSpan charSpan;
 
-        charSpan = value.Span;
+        charSpan = valu.Span;
 
 
 

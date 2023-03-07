@@ -98,9 +98,4 @@ public class VerInfra : InfraObject
 
         return ret;
     }
-
-
-
-
-
 }

@@ -469,7 +469,7 @@ public class List : InfraObject
 
 
 
-    public virtual bool Set(object key, object value)
+    public virtual bool Set(object key, object valu)
     {
         if (this.Null(key))
         {
@@ -500,7 +500,7 @@ public class List : InfraObject
 
 
 
-        node.Valu = value;
+        node.Valu = valu;
 
 
 

@@ -111,7 +111,7 @@ public class Map : List
 
 
 
-    public override bool Set(object key, object value)
+    public override bool Set(object key, object valu)
     {
         if (this.Null(key))
         {
@@ -149,7 +149,7 @@ public class Map : List
 
 
 
-        pair.Valu = value;
+        pair.Valu = valu;
         
 
 

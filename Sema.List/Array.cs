@@ -174,7 +174,7 @@ public class Array : List
 
 
 
-    public override bool Set(object key, object value)
+    public override bool Set(object key, object valu)
     {
         int? u;
 
@@ -198,7 +198,7 @@ public class Array : List
 
 
 
-        return this.Set(index, value);
+        return this.Set(index, valu);
     }
 
 
@@ -206,7 +206,7 @@ public class Array : List
 
 
 
-    public virtual bool Set(int index, object value)
+    public virtual bool Set(int index, object valu)
     {
         if (!this.CheckIndex(index))
         {
@@ -215,7 +215,7 @@ public class Array : List
 
 
 
-        this.Value[index] = value;
+        this.Value[index] = valu;
 
 
 

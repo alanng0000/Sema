@@ -64,7 +64,7 @@ public class IntInfra : Object
 
         a = new Int();
 
-        a.Value = o;
+        a.Valu = o;
 
 
         return a;
@@ -76,7 +76,7 @@ public class IntInfra : Object
 
     public bool Remove(Int a)
     {
-        this.RemoveValue(a.Value);
+        this.RemoveValue(a.Valu);
 
 
 

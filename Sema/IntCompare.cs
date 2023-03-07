@@ -44,7 +44,7 @@ public class IntCompare : Compare
         int t;
 
 
-        t = leftO.Value.CompareTo(rightO.Value);
+        t = leftO.Valu.CompareTo(rightO.Valu);
 
 
 

@@ -60,7 +60,7 @@ public class Field : InfraObject
 
 
 
-    protected Object Value { get; set; }
+    protected Object Valu { get; set; }
 
 
 
@@ -68,31 +68,31 @@ public class Field : InfraObject
 
     public Object Get()
     {
-        return this.Value;
+        return this.Valu;
     }
 
 
 
 
 
-    public bool Set(Object value)
+    public bool Set(Object valu)
     {
-        if (!this.Null(this.Value))
+        if (!this.Null(this.Valu))
         {
-            this.Value.Changed.Handle.RemoveHandle(this.Handle);
+            this.Valu.Changed.Handle.RemoveHandle(this.Handle);
         }
 
 
 
 
-        this.Value = value;
+        this.Valu = valu;
 
 
 
 
-        if (!this.Null(this.Value))
+        if (!this.Null(this.Valu))
         {
-            this.Value.Changed.Handle.AddHandle(this.Handle);
+            this.Valu.Changed.Handle.AddHandle(this.Handle);
         }
 
 
@@ -112,22 +112,22 @@ public class Field : InfraObject
 
 
 
-    protected bool BoolValue { get; set; }
+    protected bool BoolValu { get; set; }
 
 
 
 
     public bool GetBool()
     {
-        return this.BoolValue;
+        return this.BoolValu;
     }
 
 
 
 
-    public bool SetBool(bool value)
+    public bool SetBool(bool valu)
     {
-        this.BoolValue = value;
+        this.BoolValu = valu;
 
 
 
@@ -148,30 +148,30 @@ public class Field : InfraObject
 
 
 
-    protected int IntValue { get; set; }
+    protected int IntValu { get; set; }
 
 
 
 
     public int GetInt()
     {
-        return this.IntValue;
+        return this.IntValu;
     }
 
 
 
 
-    public bool SetInt(int value)
+    public bool SetInt(int valu)
     {
-        if (value < 0)
+        if (valu < 0)
         {
-            value = 0;
+            valu = 0;
         }
         
 
 
 
-        this.IntValue = value;
+        this.IntValu = valu;
 
 
 
@@ -193,22 +193,22 @@ public class Field : InfraObject
 
 
 
-    protected string StringValue { get; set; }
+    protected string StringValu { get; set; }
 
 
 
 
     public string GetString()
     {
-        return this.StringValue;
+        return this.StringValu;
     }
 
 
 
 
-    public bool SetString(string value)
+    public bool SetString(string valu)
     {
-        this.StringValue = value;
+        this.StringValu = valu;
 
 
 
@@ -230,22 +230,22 @@ public class Field : InfraObject
 
 
 
-    protected int AxisIntValue { get; set; }
+    protected int AxisIntValu { get; set; }
 
 
 
 
     public int GetAxisInt()
     {
-        return this.AxisIntValue;
+        return this.AxisIntValu;
     }
 
 
 
 
-    public bool SetAxisInt(int value)
+    public bool SetAxisInt(int valu)
     {
-        this.AxisIntValue = value;
+        this.AxisIntValu = valu;
 
 
 
@@ -267,22 +267,22 @@ public class Field : InfraObject
 
 
 
-    protected float FloatValue { get; set; } = 0;
+    protected float FloatValu { get; set; } = 0;
 
 
 
 
     public float GetFloat()
     {
-        return this.FloatValue;
+        return this.FloatValu;
     }
 
 
 
 
-    public bool SetFloat(float value)
+    public bool SetFloat(float valu)
     {
-        this.FloatValue = value;
+        this.FloatValu = valu;
 
 
 
@@ -301,23 +301,23 @@ public class Field : InfraObject
 
 
 
-    protected object ObjectValue { get; set; }
+    protected object ObjectValu { get; set; }
 
 
 
 
     public object GetObject()
     {
-        return this.ObjectValue;
+        return this.ObjectValu;
     }
 
 
 
 
 
-    public bool SetObject(object value)
+    public bool SetObject(object valu)
     {
-        this.ObjectValue = value;
+        this.ObjectValu = valu;
 
 
 
@@ -372,6 +372,11 @@ public class Field : InfraObject
 
     private bool Null(object o)
     {
-        return ObjectInfra.This.Null(o);
+        ObjectInfra infra;
+
+        infra = ObjectInfra.This;
+
+
+        return infra.Null(o);
     }
 }

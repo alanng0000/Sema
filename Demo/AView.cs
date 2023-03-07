@@ -273,7 +273,7 @@ class AView : View
         image.Init();
 
 
-        image.Value = drawImage;
+        image.Valu = drawImage;
 
 
         image.Size.Width = 500;

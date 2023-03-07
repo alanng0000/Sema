@@ -12,13 +12,13 @@ public class Image : View
 
 
 
-        this.ValueField = new Field();
+        this.ValuField = new Field();
 
 
-        this.ValueField.Object = this;
+        this.ValuField.Object = this;
 
 
-        this.ValueField.Init();
+        this.ValuField.Init();
 
 
 
@@ -52,7 +52,7 @@ public class Image : View
 
 
 
-        this.Value = null;
+        this.Valu = null;
 
 
 
@@ -91,21 +91,21 @@ public class Image : View
 
 
 
-    public virtual Field ValueField { get; set; }
+    public virtual Field ValuField { get; set; }
 
 
 
 
-    public virtual DrawImage Value
+    public virtual DrawImage Valu
     {
         get
         {
-            return (DrawImage)this.ValueField.GetObject();
+            return (DrawImage)this.ValuField.GetObject();
         }
 
         set
         {
-            this.ValueField.SetObject(value);
+            this.ValuField.SetObject(value);
         }
     }
 
@@ -115,7 +115,7 @@ public class Image : View
 
     protected virtual bool ChangeValue(Change change)
     {
-        this.Trigger(this.ValueField);
+        this.Trigger(this.ValuField);
 
 
 
@@ -225,7 +225,7 @@ public class Image : View
 
     protected virtual bool DrawImage(DrawDraw draw)
     {
-        if (this.Null(this.Value))
+        if (this.Null(this.Valu))
         {
             return true;
         }
@@ -237,7 +237,7 @@ public class Image : View
         DrawImage image;
 
 
-        image = this.Value;
+        image = this.Valu;
 
 
 
@@ -430,7 +430,7 @@ public class Image : View
 
 
 
-        if (this.ValueField == field)
+        if (this.ValuField == field)
         {
             this.ChangeValue(change);
         }

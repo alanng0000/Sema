@@ -147,7 +147,7 @@ public class EntryLoad : InfraObject
 
         varInt.Init();
 
-        varInt.Value = index;
+        varInt.Valu = index;
 
 
 
@@ -158,7 +158,7 @@ public class EntryLoad : InfraObject
 
         name.Init();
 
-        name.Value = line;
+        name.Valu = line;
 
 
 

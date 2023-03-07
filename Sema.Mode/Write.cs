@@ -115,7 +115,7 @@ public class Write : InfraObject
 
         this.Data.Init();
 
-        this.Data.Value = ud;
+        this.Data.Valu = ud;
 
 
 
@@ -227,7 +227,7 @@ public class Write : InfraObject
 
     private bool ExecuteModuleInt(Int varInt)
     {
-        this.ExecuteInt(varInt.Value);
+        this.ExecuteInt(varInt.Valu);
 
 
         return true;
@@ -238,7 +238,7 @@ public class Write : InfraObject
 
     private bool ExecuteModuleVer(Ver ver)
     {
-        this.ExecuteInt(ver.Value);
+        this.ExecuteInt(ver.Valu);
 
 
         return true;

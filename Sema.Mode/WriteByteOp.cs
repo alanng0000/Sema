@@ -14,7 +14,7 @@ class WriteByteOp : ByteOp
         byte[] o;
 
 
-        o = this.Write.Data.Value;
+        o = this.Write.Data.Valu;
 
 
         

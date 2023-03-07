@@ -66,7 +66,7 @@ public class EntryList : InfraObject
 
         pairA.Key = entry.Int;
 
-        pairA.Value = entry;
+        pairA.Valu = entry;
 
 
 
@@ -85,7 +85,7 @@ public class EntryList : InfraObject
 
         pairB.Key = entry.Name;
 
-        pairB.Value = entry;
+        pairB.Valu = entry;
 
 
 

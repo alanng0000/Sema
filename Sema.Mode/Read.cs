@@ -181,7 +181,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Value;
+        count = u.Valu;
 
 
 
@@ -255,7 +255,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Value;
+        count = u.Valu;
 
 
 
@@ -328,7 +328,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Value;
+        count = u.Valu;
 
 
 
@@ -567,7 +567,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Value;
+        varCase = u.Valu;
 
 
 
@@ -608,7 +608,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Value;
+        varCase = u.Valu;
 
 
 
@@ -646,7 +646,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Value;
+        varCase = u.Valu;
 
 
 
@@ -731,7 +731,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Value;
+        count = u.Valu;
 
 
 
@@ -805,7 +805,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Value;
+        count = u.Valu;
 
 
 
@@ -879,7 +879,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Value;
+        count = u.Valu;
 
 
 
@@ -955,7 +955,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Value;
+        varCase = u.Valu;
 
 
 
@@ -972,7 +972,7 @@ public class Read : InfraObject
 
         int access;
 
-        access = u.Value;
+        access = u.Valu;
 
 
 
@@ -1029,7 +1029,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Value;
+        varCase = u.Valu;
 
 
 
@@ -1046,7 +1046,7 @@ public class Read : InfraObject
 
         int access;
 
-        access = u.Value;
+        access = u.Valu;
 
 
 
@@ -1117,7 +1117,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Value;
+        varCase = u.Valu;
 
 
 
@@ -1275,7 +1275,7 @@ public class Read : InfraObject
 
         ulong ua;
 
-        ua = u.Value;
+        ua = u.Valu;
 
 
 
@@ -1319,10 +1319,10 @@ public class Read : InfraObject
 
 
 
-        ulong value;
+        ulong valu;
 
 
-        value = u.Value;
+        valu = u.Valu;
 
 
 
@@ -1332,7 +1332,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Value = value;
+        ret.Valu = valu;
 
         return ret;
     }
@@ -1356,10 +1356,10 @@ public class Read : InfraObject
 
 
 
-        ulong value;
+        ulong valu;
 
 
-        value = u.Value;
+        valu = u.Valu;
 
 
 
@@ -1369,7 +1369,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Value = value;
+        ret.Valu = valu;
 
         return ret;
     }
@@ -1390,7 +1390,7 @@ public class Read : InfraObject
         int a;
 
 
-        a = this.Data.Value.Length;
+        a = this.Data.Valu.Length;
 
 
 
@@ -1422,7 +1422,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Value;
+        count = u.Valu;
 
 
 
@@ -1551,7 +1551,7 @@ public class Read : InfraObject
         ulong k;
 
 
-        k = convert.ByteListULong(this.Data.Value, this.Index);
+        k = convert.ByteListULong(this.Data.Valu, this.Index);
 
 
 
@@ -1578,7 +1578,7 @@ public class Read : InfraObject
     {
         byte ob;
 
-        ob = this.Data.Value[this.Index];
+        ob = this.Data.Valu[this.Index];
 
 
 

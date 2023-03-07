@@ -67,7 +67,7 @@ public class NameCompare : Compare
         int u;
 
 
-        u = this.StringCompare.Execute(leftName.Value, rightName.Value);
+        u = this.StringCompare.Execute(leftName.Valu, rightName.Valu);
 
 
         return u;

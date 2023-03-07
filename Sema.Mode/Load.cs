@@ -206,7 +206,7 @@ public class Load : InfraObject
         data.Init();
 
 
-        data.Value = d;
+        data.Valu = d;
 
 
 

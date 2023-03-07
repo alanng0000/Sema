@@ -80,14 +80,14 @@ public class Path : InfraObject
 
         string u;
 
-        u = convert.Int60BitListString(varRef.Int.Value);
+        u = convert.Int60BitListString(varRef.Int.Valu);
 
 
 
 
         string v;
 
-        v = convert.Int60BitListString(varRef.Ver.Value);
+        v = convert.Int60BitListString(varRef.Ver.Valu);
 
 
 
@@ -125,7 +125,7 @@ public class Path : InfraObject
 
         ulong o;
 
-        o = varInt.Value;
+        o = varInt.Valu;
 
 
 

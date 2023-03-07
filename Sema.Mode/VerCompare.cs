@@ -44,7 +44,7 @@ public class VerCompare : Compare
         int u;
 
 
-        u = leftVer.Value.CompareTo(rightVer.Value);
+        u = leftVer.Valu.CompareTo(rightVer.Valu);
 
 
 

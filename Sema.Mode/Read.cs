@@ -42,7 +42,7 @@ public class Read : InfraObject
 
 
 
-        this.ClassArray = null;
+        this.CaseArray = null;
 
 
 
@@ -71,19 +71,19 @@ public class Read : InfraObject
 
     private Mode ExecuteModule()
     {
-        ListArray varClass;
+        ListArray varCase;
 
-        varClass = this.ExecuteClassArray();
+        varCase = this.ExecuteCaseArray();
 
 
-        if (this.Null(varClass))
+        if (this.Null(varCase))
         {
             return null;
         }
 
 
 
-        this.ClassArray = varClass;
+        this.CaseArray = varCase;
 
 
 
@@ -148,7 +148,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Case = varClass;
+        ret.Case = varCase;
 
         ret.Import = import;
 
@@ -165,7 +165,7 @@ public class Read : InfraObject
 
 
 
-    private ListArray ExecuteClassArray()
+    private ListArray ExecuteCaseArray()
     {
         int? u;
 
@@ -203,20 +203,20 @@ public class Read : InfraObject
 
         while (i < count)
         {
-            Case varClass;
+            Case varCase;
 
-            varClass = this.ExecuteClassArrayClass();
+            varCase = this.ExecuteCaseArrayCase();
 
 
 
-            if (this.Null(varClass))
+            if (this.Null(varCase))
             {
                 return null;
             }
 
 
 
-            array.Set(i, varClass);
+            array.Set(i, varCase);
             
 
 
@@ -389,7 +389,7 @@ public class Read : InfraObject
     {
         int count;
 
-        count = this.ClassArray.Count;
+        count = this.CaseArray.Count;
 
 
 
@@ -451,7 +451,7 @@ public class Read : InfraObject
     {
         int count;
 
-        count = this.ClassArray.Count;
+        count = this.CaseArray.Count;
 
 
 
@@ -508,7 +508,7 @@ public class Read : InfraObject
 
 
 
-    private Case ExecuteClassArrayClass()
+    private Case ExecuteCaseArrayCase()
     {
         string name;
 
@@ -555,7 +555,7 @@ public class Read : InfraObject
 
         int? u;
 
-        u = this.ExecuteClass();
+        u = this.ExecuteCase();
 
 
         if (!u.HasValue)
@@ -565,9 +565,9 @@ public class Read : InfraObject
 
 
 
-        int varClass;
+        int varCase;
 
-        varClass = u.Value;
+        varCase = u.Value;
 
 
 
@@ -581,7 +581,7 @@ public class Read : InfraObject
 
         ret.Mode = varRef;
 
-        ret.Case = varClass;
+        ret.Case = varCase;
 
         return ret;
     }
@@ -595,7 +595,7 @@ public class Read : InfraObject
     {
         int? u;
 
-        u = this.ExecuteClass();
+        u = this.ExecuteCase();
 
 
         if (!u.HasValue)
@@ -606,9 +606,9 @@ public class Read : InfraObject
 
 
 
-        int varClass;
+        int varCase;
 
-        varClass = u.Value;
+        varCase = u.Value;
 
 
 
@@ -619,7 +619,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Case = varClass;
+        ret.Case = varCase;
 
         return ret;
     }
@@ -633,7 +633,7 @@ public class Read : InfraObject
     {
         int? u;
 
-        u = this.ExecuteClass();
+        u = this.ExecuteCase();
 
 
         if (!u.HasValue)
@@ -644,9 +644,9 @@ public class Read : InfraObject
 
 
 
-        int varClass;
+        int varCase;
 
-        varClass = u.Value;
+        varCase = u.Value;
 
 
 
@@ -657,7 +657,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Case = varClass;
+        ret.Case = varCase;
 
         return ret;
     }
@@ -943,7 +943,7 @@ public class Read : InfraObject
 
 
 
-        u = this.ExecuteClass();
+        u = this.ExecuteCase();
 
 
         if (!u.HasValue)
@@ -953,9 +953,9 @@ public class Read : InfraObject
 
 
 
-        int varClass;
+        int varCase;
 
-        varClass = u.Value;
+        varCase = u.Value;
 
 
 
@@ -997,7 +997,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Case = varClass;
+        ret.Case = varCase;
 
         ret.Access = access;
 
@@ -1017,7 +1017,7 @@ public class Read : InfraObject
 
 
 
-        u = this.ExecuteClass();
+        u = this.ExecuteCase();
 
 
         if (!u.HasValue)
@@ -1027,9 +1027,9 @@ public class Read : InfraObject
 
 
 
-        int varClass;
+        int varCase;
 
-        varClass = u.Value;
+        varCase = u.Value;
 
 
 
@@ -1086,7 +1086,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Case = varClass;
+        ret.Case = varCase;
 
         ret.Access = access;
 
@@ -1105,7 +1105,7 @@ public class Read : InfraObject
     {
         int? u;
 
-        u = this.ExecuteClass();
+        u = this.ExecuteCase();
 
 
         if (!u.HasValue)
@@ -1115,9 +1115,9 @@ public class Read : InfraObject
 
 
 
-        int varClass;
+        int varCase;
 
-        varClass = u.Value;
+        varCase = u.Value;
 
 
 
@@ -1141,7 +1141,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Case = varClass;
+        ret.Case = varCase;
 
         ret.Name = name;
 
@@ -1199,7 +1199,7 @@ public class Read : InfraObject
 
 
 
-    private int? ExecuteClass()
+    private int? ExecuteCase()
     {
         return this.ExecuteIntSInt32();
     }
@@ -1378,7 +1378,7 @@ public class Read : InfraObject
 
 
 
-    private ListArray ClassArray { get; set; }
+    private ListArray CaseArray { get; set; }
 
 
 

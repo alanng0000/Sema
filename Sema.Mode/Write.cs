@@ -171,7 +171,7 @@ public class Write : InfraObject
 
     private bool ExecuteRefer(Mode module)
     {
-        this.ExecuteClassArray(module.Case);
+        this.ExecuteCaseArray(module.Case);
 
 
 
@@ -248,7 +248,7 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteClassArray(ListArray array)
+    private bool ExecuteCaseArray(ListArray array)
     {
         int count;
 
@@ -270,13 +270,13 @@ public class Write : InfraObject
 
         while (i < count)
         {
-            Case varClass;
+            Case varCase;
 
-            varClass = (Case)array.Get(i);
+            varCase = (Case)array.Get(i);
 
 
 
-            this.ExecuteClassArrayClass(varClass);
+            this.ExecuteCaseArrayCase(varCase);
 
 
 
@@ -474,9 +474,9 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteClassArrayClass(Case varClass)
+    private bool ExecuteCaseArrayCase(Case varCase)
     {
-        this.ExecuteName(varClass.Name);
+        this.ExecuteName(varCase.Name);
 
 
         return true;
@@ -492,7 +492,7 @@ public class Write : InfraObject
         this.ExecuteModuleRef(import.Mode);
 
 
-        this.ExecuteClass(import.Case);
+        this.ExecuteCase(import.Case);
 
 
         return true;
@@ -504,7 +504,7 @@ public class Write : InfraObject
 
     private bool ExecuteExport(Export export)
     {
-        this.ExecuteClass(export.Case);
+        this.ExecuteCase(export.Case);
 
 
         return true;
@@ -516,7 +516,7 @@ public class Write : InfraObject
 
     private bool ExecuteBase(Base varBase)
     {
-        this.ExecuteClass(varBase.Case);
+        this.ExecuteCase(varBase.Case);
 
 
         return true;
@@ -591,7 +591,7 @@ public class Write : InfraObject
 
     private bool ExecuteField(Field field)
     {
-        this.ExecuteClass(field.Case);
+        this.ExecuteCase(field.Case);
 
 
         this.ExecuteAccess(field.Access);
@@ -657,7 +657,7 @@ public class Write : InfraObject
 
     private bool ExecuteMethod(Method method)
     {
-        this.ExecuteClass(method.Case);
+        this.ExecuteCase(method.Case);
 
 
         this.ExecuteAccess(method.Access);
@@ -729,7 +729,7 @@ public class Write : InfraObject
 
     private bool ExecuteVar(Var varVar)
     {
-        this.ExecuteClass(varVar.Case);
+        this.ExecuteCase(varVar.Case);
 
 
         this.ExecuteName(varVar.Name);
@@ -745,9 +745,9 @@ public class Write : InfraObject
 
 
 
-    private bool ExecuteClass(int varClass)
+    private bool ExecuteCase(int varCase)
     {
-        this.ExecuteSInt32Int(varClass);
+        this.ExecuteSInt32Int(varCase);
 
 
 

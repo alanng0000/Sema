@@ -174,7 +174,7 @@ public class StructArray<TItem> : List where TItem : struct
 
 
 
-    public override bool Set(object key, object value)
+    public override bool Set(object key, object valu)
     {
         int? u;
 
@@ -198,7 +198,7 @@ public class StructArray<TItem> : List where TItem : struct
 
 
 
-        return this.Set(index, value);
+        return this.Set(index, valu);
     }
 
 
@@ -206,7 +206,7 @@ public class StructArray<TItem> : List where TItem : struct
 
 
 
-    public virtual bool Set(int index, TItem value)
+    public virtual bool Set(int index, TItem valu)
     {
         if (!this.CheckIndex(index))
         {
@@ -215,7 +215,7 @@ public class StructArray<TItem> : List where TItem : struct
 
 
 
-        this.Value[index] = value;
+        this.Value[index] = valu;
 
 
 

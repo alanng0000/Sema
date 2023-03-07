@@ -12,13 +12,13 @@ public class Text : View
 
 
 
-        this.ValueField = new Field();
+        this.ValuField = new Field();
 
 
-        this.ValueField.Object = this;
+        this.ValuField.Object = this;
 
 
-        this.ValueField.Init();
+        this.ValuField.Init();
 
 
 
@@ -77,7 +77,7 @@ public class Text : View
 
 
 
-        this.Value = value;
+        this.Valu = value;
 
 
 
@@ -139,21 +139,21 @@ public class Text : View
 
 
 
-    public virtual Field ValueField { get; set; }
+    public virtual Field ValuField { get; set; }
 
 
 
 
-    public virtual TextValu Value
+    public virtual TextValu Valu
     {
         get
         {
-            return (TextValu)this.ValueField.GetObject();
+            return (TextValu)this.ValuField.GetObject();
         }
 
         set
         {
-            this.ValueField.SetObject(value);
+            this.ValuField.SetObject(value);
         }
     }
 
@@ -161,9 +161,9 @@ public class Text : View
 
 
 
-    protected virtual bool ChangeValue(Change change)
+    protected virtual bool ChangeValu(Change change)
     {
-        this.Trigger(this.ValueField);
+        this.Trigger(this.ValuField);
 
 
 
@@ -290,9 +290,9 @@ public class Text : View
 
 
 
-        if (this.ValueField == field)
+        if (this.ValuField == field)
         {
-            this.ChangeValue(change);
+            this.ChangeValu(change);
         }
 
 
@@ -349,7 +349,7 @@ public class Text : View
         TextValu value;
 
 
-        value = this.Value;
+        value = this.Valu;
 
 
 

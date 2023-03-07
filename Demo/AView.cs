@@ -152,13 +152,13 @@ class AView : View
 
 
 
-        text.Value.Span.String = s;
+        text.Valu.Span.String = s;
 
 
-        text.Value.Span.Range.Start = 3;
+        text.Valu.Span.Range.Start = 3;
 
 
-        text.Value.Span.Range.End = s.Length;
+        text.Valu.Span.Range.End = s.Length;
 
 
 

@@ -3,7 +3,7 @@ namespace Sema.View;
 
 
 
-public class TextValue : InfraObject
+public class TextValu : InfraObject
 {
     public CharSpan Span;
 }

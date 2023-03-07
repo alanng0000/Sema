@@ -63,9 +63,9 @@ public class Text : View
         
 
 
-        TextValue value;
+        TextValu value;
 
-        value = new TextValue();
+        value = new TextValu();
 
         value.Init();
 
@@ -144,11 +144,11 @@ public class Text : View
 
 
 
-    public virtual TextValue Value
+    public virtual TextValu Value
     {
         get
         {
-            return (TextValue)this.ValueField.GetObject();
+            return (TextValu)this.ValueField.GetObject();
         }
 
         set
@@ -346,7 +346,7 @@ public class Text : View
 
     protected virtual bool DrawText(DrawDraw draw)
     {
-        TextValue value;
+        TextValu value;
 
 
         value = this.Value;

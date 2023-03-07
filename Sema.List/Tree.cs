@@ -465,7 +465,7 @@ class Tree : InfraObject
 
 
 
-        node.Value = value;
+        node.Valu = value;
 
 
 

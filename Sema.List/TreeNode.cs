@@ -39,5 +39,5 @@ class TreeNode : InfraObject
 
 
 
-    public object Value;
+    public object Valu;
 }

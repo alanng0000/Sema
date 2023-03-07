@@ -182,7 +182,7 @@ public class Map : List
 
 
 
-        listNode = (ListNode)t.Node.Value;
+        listNode = (ListNode)t.Node.Valu;
 
 
 

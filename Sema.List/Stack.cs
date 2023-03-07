@@ -59,7 +59,7 @@ public class Stack : List
             object ret;
 
 
-            ret = this.LastNode.Value;
+            ret = this.LastNode.Valu;
 
 
             return ret;

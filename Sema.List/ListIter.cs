@@ -114,7 +114,7 @@ public struct ListIter : IIter
     {
         get
         {
-            return this.CurrentNode.Value;
+            return this.CurrentNode.Valu;
         }
 
 

@@ -90,7 +90,7 @@ public class Map : List
 
 
 
-        pair = (Pair)node.Value;
+        pair = (Pair)node.Valu;
 
 
 
@@ -144,7 +144,7 @@ public class Map : List
 
 
 
-        pair = (Pair)node.Value;
+        pair = (Pair)node.Valu;
 
 
 

@@ -95,7 +95,7 @@ public class List : InfraObject
 
 
 
-        node.Value = item;
+        node.Valu = item;
 
 
 
@@ -203,7 +203,7 @@ public class List : InfraObject
 
 
 
-        node.Value = item;
+        node.Valu = item;
 
 
 
@@ -451,7 +451,7 @@ public class List : InfraObject
         object t;
 
 
-        t = node.Value;
+        t = node.Valu;
 
 
 
@@ -500,7 +500,7 @@ public class List : InfraObject
 
 
 
-        node.Value = value;
+        node.Valu = value;
 
 
 

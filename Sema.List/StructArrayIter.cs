@@ -69,11 +69,11 @@ public struct StructArrayIter<TItem> : IIter where TItem : struct
 
 
 
-    public TItem Value
+    public TItem Valu
     {
         get
         {
-            return this.GetValue();
+            return this.GetValu();
         }
 
         set
@@ -91,7 +91,7 @@ public struct StructArrayIter<TItem> : IIter where TItem : struct
     {
         get
         {
-            return this.GetValue();
+            return this.GetValu();
         }
 
         set
@@ -138,7 +138,7 @@ public struct StructArrayIter<TItem> : IIter where TItem : struct
 
 
 
-    private TItem GetValue()
+    private TItem GetValu()
     {
         return this.Array.Get(this.CurrentIndex);
     }

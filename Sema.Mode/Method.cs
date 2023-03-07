@@ -6,7 +6,7 @@ namespace Sema.Mode;
 
 public class Method : InfraObject
 {
-    public int Class { get; set; }
+    public int Case { get; set; }
 
 
 

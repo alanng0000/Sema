@@ -3,7 +3,7 @@ namespace Sema.Mode;
 
 
 
-public class Class : InfraObject
+public class Case : InfraObject
 {
     public string Name { get; set; }
 }

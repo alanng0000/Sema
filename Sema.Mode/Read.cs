@@ -148,7 +148,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Class = varClass;
+        ret.Case = varClass;
 
         ret.Import = import;
 
@@ -203,7 +203,7 @@ public class Read : InfraObject
 
         while (i < count)
         {
-            Class varClass;
+            Case varClass;
 
             varClass = this.ExecuteClassArrayClass();
 
@@ -508,7 +508,7 @@ public class Read : InfraObject
 
 
 
-    private Class ExecuteClassArrayClass()
+    private Case ExecuteClassArrayClass()
     {
         string name;
 
@@ -522,9 +522,9 @@ public class Read : InfraObject
 
 
 
-        Class ret;
+        Case ret;
 
-        ret = new Class();
+        ret = new Case();
 
         ret.Init();
 
@@ -581,7 +581,7 @@ public class Read : InfraObject
 
         ret.Mode = varRef;
 
-        ret.Class = varClass;
+        ret.Case = varClass;
 
         return ret;
     }
@@ -619,7 +619,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Class = varClass;
+        ret.Case = varClass;
 
         return ret;
     }
@@ -657,7 +657,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Class = varClass;
+        ret.Case = varClass;
 
         return ret;
     }
@@ -997,7 +997,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Class = varClass;
+        ret.Case = varClass;
 
         ret.Access = access;
 
@@ -1086,7 +1086,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Class = varClass;
+        ret.Case = varClass;
 
         ret.Access = access;
 
@@ -1141,7 +1141,7 @@ public class Read : InfraObject
 
         ret.Init();
 
-        ret.Class = varClass;
+        ret.Case = varClass;
 
         ret.Name = name;
 

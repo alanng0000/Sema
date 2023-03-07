@@ -9,7 +9,7 @@ public class Mode : InfraObject
 
 
 
-    public ListArray Class { get; set; }
+    public ListArray Case { get; set; }
 
 
 

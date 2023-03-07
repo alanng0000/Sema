@@ -6,5 +6,5 @@ namespace Sema;
 
 public class Data : Object
 {
-    public byte[] Value { get; set; }
+    public byte[] Valu { get; set; }
 }

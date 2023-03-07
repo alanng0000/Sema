@@ -47,7 +47,7 @@ public class VerInfra : InfraObject
 
         ulong valu;
 
-        valu = uu.Valu;
+        valu = uu.Value;
 
 
 

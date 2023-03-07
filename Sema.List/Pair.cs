@@ -9,5 +9,5 @@ public class Pair : InfraObject
 
 
 
-    public object Value { get; set; }
+    public object Valu { get; set; }
 }

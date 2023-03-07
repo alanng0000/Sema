@@ -181,7 +181,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Valu;
+        count = u.Value;
 
 
 
@@ -255,7 +255,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Valu;
+        count = u.Value;
 
 
 
@@ -328,7 +328,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Valu;
+        count = u.Value;
 
 
 
@@ -567,7 +567,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Valu;
+        varCase = u.Value;
 
 
 
@@ -608,7 +608,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Valu;
+        varCase = u.Value;
 
 
 
@@ -646,7 +646,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Valu;
+        varCase = u.Value;
 
 
 
@@ -731,7 +731,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Valu;
+        count = u.Value;
 
 
 
@@ -805,7 +805,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Valu;
+        count = u.Value;
 
 
 
@@ -879,7 +879,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Valu;
+        count = u.Value;
 
 
 
@@ -955,7 +955,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Valu;
+        varCase = u.Value;
 
 
 
@@ -972,7 +972,7 @@ public class Read : InfraObject
 
         int access;
 
-        access = u.Valu;
+        access = u.Value;
 
 
 
@@ -1029,7 +1029,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Valu;
+        varCase = u.Value;
 
 
 
@@ -1046,7 +1046,7 @@ public class Read : InfraObject
 
         int access;
 
-        access = u.Valu;
+        access = u.Value;
 
 
 
@@ -1117,7 +1117,7 @@ public class Read : InfraObject
 
         int varCase;
 
-        varCase = u.Valu;
+        varCase = u.Value;
 
 
 
@@ -1275,7 +1275,7 @@ public class Read : InfraObject
 
         ulong ua;
 
-        ua = u.Valu;
+        ua = u.Value;
 
 
 
@@ -1322,7 +1322,7 @@ public class Read : InfraObject
         ulong valu;
 
 
-        valu = u.Valu;
+        valu = u.Value;
 
 
 
@@ -1359,7 +1359,7 @@ public class Read : InfraObject
         ulong valu;
 
 
-        valu = u.Valu;
+        valu = u.Value;
 
 
 
@@ -1422,7 +1422,7 @@ public class Read : InfraObject
 
         int count;
 
-        count = u.Valu;
+        count = u.Value;
 
 
 

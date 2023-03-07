@@ -100,7 +100,7 @@ public class Map : List
 
 
 
-        ret = pair.Value;
+        ret = pair.Valu;
 
 
 
@@ -149,7 +149,7 @@ public class Map : List
 
 
 
-        pair.Value = value;
+        pair.Valu = value;
         
 
 

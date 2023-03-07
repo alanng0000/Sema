@@ -34,7 +34,7 @@ public struct MapIter : IIter
     {
         get
         {
-            return this.Pair().Value;
+            return this.Pair().Valu;
         }
 
 

@@ -21,7 +21,7 @@ class Tree : InfraObject
 
 
 
-    public bool Insert(object key, object value)
+    public bool Insert(object key, object valu)
     {
         if (this.Null(key))
         {
@@ -35,7 +35,7 @@ class Tree : InfraObject
 
 
 
-        node = this.TreeInsert(key, value);
+        node = this.TreeInsert(key, valu);
 
 
 
@@ -430,7 +430,7 @@ class Tree : InfraObject
 
 
 
-    private TreeNode TreeInsert(object key, object value)
+    private TreeNode TreeInsert(object key, object valu)
     {
         NodeResult t;
 
@@ -465,7 +465,7 @@ class Tree : InfraObject
 
 
 
-        node.Valu = value;
+        node.Valu = valu;
 
 
 

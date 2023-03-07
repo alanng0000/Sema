@@ -113,7 +113,7 @@ public class Image : View
 
 
 
-    protected virtual bool ChangeValue(Change change)
+    protected virtual bool ChangeValu(Change change)
     {
         this.Trigger(this.ValuField);
 
@@ -432,7 +432,7 @@ public class Image : View
 
         if (this.ValuField == field)
         {
-            this.ChangeValue(change);
+            this.ChangeValu(change);
         }
 
 
